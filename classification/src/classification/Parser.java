@@ -57,13 +57,15 @@ public class Parser {
 		
 	// do data imputation (if necessary)
 	if (dataImputation == true) {
-		// write and call method
+		// TODO: Data Imputer
+		DataImputer di = new DataImputer();
 	}
 	
 	
 	// do data discretization (if necessary)
 	if (dataDiscretization == true) {
-		// write and call method
+		// TODO: DataDiscretizer
+		DataDiscretizer dd = new DataDiscretizer();
 	}	
 	
 	
