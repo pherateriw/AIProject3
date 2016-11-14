@@ -97,7 +97,7 @@ public class RunModels {
     		dataImputation = false;
     		dataDiscretization = true;
     		idNumLoc = 0;
-    	} else if (shortName.equals("house-voters-data")) {
+    	} else if (shortName.equals("house-votes-84")) {
     		classVariableLoc = 0;
     		dataImputation = true;
     		// NOTE: will need to also do one without discretization, where we just treat '?' as a third value
