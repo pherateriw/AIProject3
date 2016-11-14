@@ -77,6 +77,7 @@ public class RunModels {
     }
 
 	
+	// will need to add param for bc, where we remove instances with '?'
 	public static void getParserArgs(String shortName, ArrayList<String> parserArgs) {
     	// variables for parser, because particulars of dataset vary
     	int classVariableLoc = Integer.MAX_VALUE;
@@ -89,7 +90,8 @@ public class RunModels {
     	if (shortName.equals("breast-cancer-wisconsin")){
     		classVariableLoc = 10;
     		dataImputation = true;
-    		// NOTE: will need to also do one without discretization, where we just remove missing vals
+    		// NOTE: will need to also do one without discretization, where we just remove missing vals (complete
+    		// case analysis)
     		dataDiscretization = false;
     		idNumLoc = 0;
     	} else if (shortName.equals("glass")) {
