@@ -84,6 +84,10 @@ public class Parser {
 	
 	
 	}
+
+	public ArrayList getData(){
+		return this.data;
+	}
 	
 	
 	
