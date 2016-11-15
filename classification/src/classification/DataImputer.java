@@ -1,10 +1,8 @@
 package classification;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /*
  * Some of the datasets have missing attribute values (indicated with a '?'), and these values 
@@ -21,6 +19,9 @@ public class DataImputer {
 		int numFeatures = data.get(0).length;
 		int[] missingFeatureVals = new int[numFeatures];
 
+		// used to store attribute/class/count information
+		Map<String, Map<String, Integer>> attributeMap = new HashMap<String, Map<String, Integer>>();;
+		
 		// loops through each of the instances in the dataset, looking for
 		// missing values
 		for (String[] arr : data) {
@@ -38,10 +39,11 @@ public class DataImputer {
 		// for the features we know that we have missing data, determine the
 		// data distribution (given the class)
 		for (int i = 0; i < missingFeatureVals.length; i++) {
+			System.out.println(missingFeatureVals[i]);
 			// stores the feature/class combinations
 			// key is the class value, value is the value of the associated
 			// attribute, integer represents the count
-			Map<String, Map<String, Integer>> attributeMap = new HashMap<String, Map<String, Integer>>();
+			attributeMap = new HashMap<String, Map<String, Integer>>();
 
 			if (missingFeatureVals[i] != 0) {
 				// there are some attributes here with missing values
@@ -80,61 +82,41 @@ public class DataImputer {
 								attributeMap.get(key).put(value, count);
 							}
 						}
-					} 
-
-				} // end for: have gotten distribution for this attribute
-
-
-				// gets the keys
-				Object[] keySet = attributeMap.keySet().toArray();
-
-				for (int j = 0; j < keySet.length; j++) {
-					System.out.println("Key: " + keySet[j]);
-					System.out.print("Values:");
-					Object[] valueSet = attributeMap.get(keySet[j]).keySet()
-							.toArray();
-					for (int k = 0; k < valueSet.length; k++) {
-						// System.out.println("Values: " + valueSet[k]);
-						System.out.print(" " + valueSet[k]);
-						int countSet = attributeMap.get(keySet[j]).get(
-								valueSet[k]);
-						System.out.print(", " + countSet + "; ");
 					}
 
-					System.out.println();
+				} // end for: or this particular attribute, all conditional
+					// probabilities calculated
 
+			} // end if 
+
+			
+			// get the 
+			
+			
+			
+			
+			// gets the keys
+			Object[] keySet = attributeMap.keySet().toArray();
+
+			for (int j = 0; j < keySet.length; j++) {
+				System.out.println("Key: " + keySet[j]);
+				System.out.print("Values:");
+				Object[] valueSet = attributeMap.get(keySet[j]).keySet().toArray();
+				for (int k = 0; k < valueSet.length; k++) {
+					// System.out.println("Values: " + valueSet[k]);
+					System.out.print(" " + valueSet[k]);
+					int countSet = attributeMap.get(keySet[j]).get(valueSet[k]);
+					System.out.print(", " + countSet + "; ");
 				}
 
-				// gets the value
+				System.out.println();
 
-				// System.out.println(attributeMap.get(key));
-				// // gets the count
-				// System.out.println(attributeMap.get(key).get(value));
+			} 
+			
+			
+		} 
 
-				// System.out.println("Key: " + attributeMap.get(key) +
-				// ", Value: " + attributeMap.get(key).get(value));
-				// System.out.println(attributeMap.get(key).get(value));
-			} // end for: for this particular missing value, all conditional
-				// probabilities calculated
-
-		} // end if: makes sure we are only looking at those attributes with
-			// missing values
-
-		// } // end for: have determined all fractions for missing variables
-
-		// go through all instances, collecting info to determine distribution
-		// for(String[] arr : data) {
-		// System.out.println(featureMap.containsValue(arr[i]));
-
-		// check key
-
-		// check value
-
-		// key = class, value = feature
-		// if (!featureMap.containsValue(arr[i])) {
-		// featureMap.put(arr[arr.length - 1], arr[i]);
-		// }
-	} // end for: counted all feature/class combinations
+	}
 
 	// System.out.println(missingFeatureVals[i]);
 	// }
