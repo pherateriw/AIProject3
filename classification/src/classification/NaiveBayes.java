@@ -1,19 +1,51 @@
 package classification;
 
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 
 public class NaiveBayes extends Algorithm {
 
-    public NaiveBayes(ArrayList data){
+    ArrayList trainData;
+    //create class into feature
+    Feature clas = new Feature();
+    //create arraylist of features
+    ArrayList<Feature> features = new ArrayList();
 
+    public NaiveBayes(ArrayList data){
+        trainData = data;
         super.get_logger().log(Level.INFO, "Naive Bayes Algorithm created.");
         train(data);
     }
 
     void train(ArrayList trainData){
         super.get_logger().log(Level.INFO, "Starting training:");
+
+        // get number of features from first data instance
+        Object o = trainData.get(0);
+        int numFeatures = ((String[]) o).length - 1;
+        for (int i = 0; i < numFeatures; i++){
+            features.add(new Feature());
+        }
+
+        count(numFeatures);
+
     }
+
+    //iterate through all instances and increment feature counts accordingly
+    public void count(int numFeatures){
+        for(Object obj: trainData){
+            String[] stringArray = (String[]) obj;
+            for (int i = 0; i < numFeatures; i++){
+                features.get(i).addInstance(stringArray[i]);
+            }
+            clas.addInstance(stringArray[stringArray.length - 1]);
+        }
+    }
+
+
     void test(ArrayList testData){
         super.get_logger().log(Level.INFO, "Starting testing:");
     }
@@ -24,24 +56,22 @@ public class NaiveBayes extends Algorithm {
 
     public static void main(String[] args){
 
-//        1. Class Name: 2 (democrat, republican)
-//        2. handicapped-infants: 2 (y,n)
-//        3. water-project-cost-sharing: 2 (y,n)
-//        4. adoption-of-the-budget-resolution: 2 (y,n)
-//        5. physician-fee-freeze: 2 (y,n)
-//        6. el-salvador-aid: 2 (y,n)
-//        7. religious-groups-in-schools: 2 (y,n)
-//        8. anti-satellite-test-ban: 2 (y,n)
-//        9. aid-to-nicaraguan-contras: 2 (y,n)
-//        10. mx-missile: 2 (y,n)
-//        11. immigration: 2 (y,n)
-//        12. synfuels-corporation-cutback: 2 (y,n)
-//        13. education-spending: 2 (y,n)
-//        14. superfund-right-to-sue: 2 (y,n)
-//        15. crime: 2 (y,n)
-//        16. duty-free-exports: 2 (y,n)
-//        17. export-administration-act-south-africa: 2 (y,n)
-
+        ArrayList testData = new ArrayList<Arrays>();
+        testData.add(new String[]{"Rainy", "Hot", "High", "False", "No"});
+        testData.add(new String[]{"Rainy", "Hot", "High", "True", "No"});
+        testData.add(new String[]{"Overcast", "Hot", "High", "False", "Yes"});
+        testData.add(new String[]{"Sunny", "Mild", "High", "False", "Yes"});
+        testData.add(new String[]{"Sunny", "Cool", "Normal", "True", "Yes"});
+        testData.add(new String[]{"Sunny", "Cool", "Normal", "True", "No"});
+        testData.add(new String[]{"Overcast", "Cool", "Normal", "True", "Yes"});
+        testData.add(new String[]{"Rainy", "Mild", "High", "False", "No"});
+        testData.add(new String[]{"Rainy", "Cool", "Normal", "False", "Yes"});
+        testData.add(new String[]{"Sunny", "Mild", "Normal", "False", "Yes"});
+        testData.add(new String[]{"Rainy", "Mild", "Normal", "True", "Yes"});
+        testData.add(new String[]{"Overcast", "Mild", "High", "True", "Yes"});
+        testData.add(new String[]{"Overcast", "Hot", "Normal", "False", "Yes"});
+        testData.add(new String[]{"Sunny", "Mild", "High", "True", "Yes"});
+        NaiveBayes b = new NaiveBayes(testData);
 
     }
 }
