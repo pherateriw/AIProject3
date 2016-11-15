@@ -19,9 +19,13 @@ public class DataImputer {
 		int numFeatures = data.get(0).length;
 		int[] missingFeatureVals = new int[numFeatures];
 
+		// used to store location of missing values, for quick retrieval
+		Map<Integer, Integer> missingValLocs = new HashMap<Integer, Integer>();
+		int arrayListLoc = 0;
+
 		// used to store attribute/class/count information
-		Map<String, Map<String, Integer>> attributeMap = new HashMap<String, Map<String, Integer>>();;
-		
+		Map<String, Map<String, Integer>> attributeMap = new HashMap<String, Map<String, Integer>>();
+
 		// loops through each of the instances in the dataset, looking for
 		// missing values
 		for (String[] arr : data) {
@@ -32,14 +36,15 @@ public class DataImputer {
 				if (arr[i].equalsIgnoreCase("?")) {
 					// adds to the number of missing values at that location
 					missingFeatureVals[i] += 1;
+					missingValLocs.put(arrayListLoc, i);
 				}
 			} // end for: finished with array corresponding to this instance
+			arrayListLoc++;
 		} // end for: looping through each instance in dataset
 
 		// for the features we know that we have missing data, determine the
 		// data distribution (given the class)
 		for (int i = 0; i < missingFeatureVals.length; i++) {
-			System.out.println(missingFeatureVals[i]);
 			// stores the feature/class combinations
 			// key is the class value, value is the value of the associated
 			// attribute, integer represents the count
@@ -84,37 +89,81 @@ public class DataImputer {
 						}
 					}
 
-				} // end for: or this particular attribute, all conditional
-					// probabilities calculated
+				} // end for: for this particular attribute, all missing value occurrences
+					// counted
 
-			} // end if 
+				// gets all possible keys (class values) for these attributes
+				Object[] keySet = attributeMap.keySet().toArray();
+				Object[] valueSet = null;
+				int countSet;
+				
+				// used to help determine the conditional probability of each feature
+				int totalCount; 
+				Map<String, Double> condProb = new HashMap<String, Double>();
+				
+				for (int j = 0; j < keySet.length; j++) {
+					condProb.clear();
+					countSet = 0; 
+					totalCount = 0; 
+					System.out.println("Key: " + keySet[j]);
+					valueSet = attributeMap.get(keySet[j]).keySet().toArray();
+					for (int k = 0; k < valueSet.length; k++) {
+						System.out.print(" " + valueSet[k]);
+						countSet = attributeMap.get(keySet[j]).get(valueSet[k]);
+						totalCount += countSet;
+						System.out.print(", " + countSet + "; ");
+					} // end for: have gone through all values for key
+					
+					// have calculated the total count, now figure out conditional probability of each feature
+					for (int k = 0; k < valueSet.length; k++) {
+						double featCount = attributeMap.get(keySet[j]).get(valueSet[k]).doubleValue();
+						Double prob = featCount/totalCount;
+						System.out.println(prob);
+						condProb.put(valueSet[k].toString(),prob);
+					} 
+					
+					
+					System.out.println(totalCount);
+					
+					
+					
+				} // end for : building key, value and object set
+			
+				// built keySet, valueSet, countSet
+				
+
+
+				//} // end for : building key, value and object set
+				
+				
+				
+			} // end if
 
 			
-			// get the 
 			
 			
 			
 			
-			// gets the keys
-			Object[] keySet = attributeMap.keySet().toArray();
+			
+			// check class associated with missing data, calc percent of each
+			// feature, assign features accordingly
+			
+		}
 
-			for (int j = 0; j < keySet.length; j++) {
-				System.out.println("Key: " + keySet[j]);
-				System.out.print("Values:");
-				Object[] valueSet = attributeMap.get(keySet[j]).keySet().toArray();
-				for (int k = 0; k < valueSet.length; k++) {
-					// System.out.println("Values: " + valueSet[k]);
-					System.out.print(" " + valueSet[k]);
-					int countSet = attributeMap.get(keySet[j]).get(valueSet[k]);
-					System.out.print(", " + countSet + "; ");
+		// loops through each of the instances in the dataset, looking for
+		// missing values
+		for (String[] arr : data) {
+
+			// loops through the features for this particular instance
+			for (int i = 0; i < arr.length; i++) {
+				// checks for a '?', which indicates a missing value
+				if (arr[i].equalsIgnoreCase("?")) {
+
+					// adds to the number of missing values at that location
+					// missingFeatureVals[i] += 1;
 				}
-
-				System.out.println();
-
-			} 
-			
-			
-		} 
+			} // end for: finished with array corresponding to this instance
+		} // end for: looping through each instance in dataset
 
 	}
 

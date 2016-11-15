@@ -78,9 +78,6 @@ public class Parser {
 		DataDiscretizer dd = new DataDiscretizer(data);
 	}	
 	
-	// TODO: split data into train/test set trying to keep distributions equal
-	// TODO: do we impute separately for test and train? Double check with Jani.
-	
     //for (String[] arr : data) {
     //    System.out.println(Arrays.toString(arr));
     //}
