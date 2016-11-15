@@ -11,9 +11,8 @@ import java.util.*;
  * 3. missing values are imputed
  * 4. continuous values are discretized
  * 
- * After preprocessing, the data is split into train and test sets (where the split is random, but we try
- * to keep as close as possible to the underlying class distribution), and the train and test sets are both
- * sent back to RunModels so the appropriate algorithm  
+ * After preprocessing, the data is sent back to RunModels where it is split into train and test sets 
+ * (where the split is random, but we try to keep as close as possible to the underlying class distribution).  
  */
 
 public class Parser {
@@ -64,11 +63,11 @@ public class Parser {
 		e.printStackTrace();
 	}
 
-	
-
 	// do data imputation (if necessary)
+	// TODO: REMINDER, for bc remember we need to also remove missing attribute values
 	if (dataImputation == true) {
 		// TODO: Data Imputer
+		// TODO: return dataset di.getImputed data or something?
 		DataImputer di = new DataImputer(data);
 	}
 	
@@ -80,14 +79,12 @@ public class Parser {
 	}	
 	
 	// TODO: split data into train/test set trying to keep distributions equal
+	// TODO: do we impute separately for test and train? Double check with Jani.
 	
     //for (String[] arr : data) {
     //    System.out.println(Arrays.toString(arr));
     //}
 	
-	
-	// TODO: what do we have to do for c.v.?
-	// 5 x 2 cross validation - what do we need to do here?
 	
 	// send data back to Run Models so that it can be used by the algo
 	
