@@ -2,6 +2,7 @@ package classification;
 // Logging examples obtained from https://examples.javacodegeeks.com/core-java/util/logging/java-util-logging-example/
 import java.io.IOException;
 import java.util.logging.*;
+import java.util.ArrayList;
 
 public abstract class Algorithm {
 
@@ -44,8 +45,8 @@ public abstract class Algorithm {
         return LOGGER;
     }
 
-    abstract void train();
-    abstract void test();
+    abstract void train(ArrayList data);
+    abstract void test(ArrayList data);
 
 }
 
