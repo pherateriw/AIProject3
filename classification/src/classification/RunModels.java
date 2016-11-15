@@ -41,6 +41,10 @@ public class RunModels {
     	Parser p = new Parser(dataFileLocation, classVariableLoc, dataImputation, dataDiscretization, idNumLoc);    	
     	
     	//TODO: get data for the algos from the parser
+    	//TODO: split into test/train here instead of parser?
+    	//note: only need to output classifications for one fold each to turn in
+    	//return measures and average over all folds 
+    	
     	
     	//gives the user a series of choices
     	System.out.println("Please pick from one of the following options");
@@ -55,10 +59,14 @@ public class RunModels {
     	
     	if (choice.equals("knn")) {
     		System.out.println("Classifying data using k-Nearest neighbor"); 
-    		Algorithm knn = new KNearestNeighbor();    		
+    		// Fold 1
+    		// split data, train on A and test on B
+    		Algorithm knn = new KNearestNeighbor();
+    		// split data, train on B and test on A
+    		
     	} else if (choice.equals("nb")) {	
     		System.out.println("Classifying data using naive Bayes"); 
-    		Algorithm nb = new NaiveBayes();                        
+    		//Algorithm nb = new NaiveBayes();                        
     	} else if (choice.equals("tan")){
     		System.out.println("Classifying data using tree-augmented naive Bayes"); 
     		Algorithm tan = new TreeAugNB(); 
@@ -76,7 +84,7 @@ public class RunModels {
 		in.close();
     }
 
-	
+
 	// will need to add param for bc, where we remove instances with '?'
 	public static void getParserArgs(String shortName, ArrayList<String> parserArgs) {
     	// variables for parser, because particulars of dataset vary
