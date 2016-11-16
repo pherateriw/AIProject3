@@ -3,7 +3,6 @@ package classification;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -14,7 +13,16 @@ import java.util.Random;
  */
 
 public class DataImputer {
+	ArrayList<String[]> data;
+	
 	public DataImputer(ArrayList<String[]> data) {
+		this.data = data;
+	}
+		
+	
+	public ArrayList<String[]> impute() {
+	
+	
 		// number of instances in the entire dataset
 		int numInstances = data.size();
 
@@ -49,9 +57,9 @@ public class DataImputer {
 					// adds to the number of missing values at that location
 					missingFeatureVals[featI] += 1;
 
-					if (!missingValLocs.containsKey(arrayListLoc)) {
-						missingValLocs.put(arrayListLoc, featI);
-					}
+					// if (!missingValLocs.containsKey(arrayListLoc)) {
+					missingValLocs.put(arrayListLoc, featI);
+					// }
 				}
 			} // end for: finished with array corresponding to this instance
 			arrayListLoc++;
@@ -258,41 +266,62 @@ public class DataImputer {
 
 						if (data.get(missingArrayList)[missingArray]
 								.equalsIgnoreCase("?")) {
+
 							for (int iter = 0; iter < imputeVals.size(); iter++) {
+
 								int count = Integer.parseInt(imputeVals
 										.get(iter)[1]);
 
-								if (count > 0) {
-									// gets the appropriate replacement value
-									data.get(missingArrayList)[missingArray] = imputeVals
-											.get(iter)[0];
-									count--;
-									iter--;
-									imputeVals.get(iter)[1] = Integer
-											.toString(count);
-								} // end if
+								int innerIter = iter;
+
+								// while(count > 0 && innerIter <
+								// imputeVals.size()) {
+								while (count > 0) {
+									if (innerIter < imputeVals.size() - 1) {
+										// gets the appropriate replacement
+										// value
+										data.get(missingArrayList)[missingArray] = imputeVals
+												.get(innerIter)[0];
+										count--;
+										imputeVals.get(innerIter)[1] = Integer
+												.toString(count);
+										innerIter++;
+									} else {
+										count--;
+									}
+
+								} // end while
 
 							} // end for
 
 						} // end if
 					} // end for
-
 				}
 
 			} // end if: checking only attributes with missing values
 
-			
-			
-			
-			
-			// loops through each of the instances in the dataset, looking for
-			// missing values
-			for (String[] arr : data) {
-				//System.out.println(data.size());
-				System.out.println(Arrays.toString(arr));
-
-			}
-
 		}
+
+		// set the values based on conditional probabilities, but some of edge
+		// cases were not working -
+		// for vote, therefore we use random y/n to take care of those few edge
+		// cases
+		for (String[] arr : data) {
+			Random rand = new Random();
+			int randomNumber = rand.nextInt((1) + 1);
+
+			for (int i = 0; i < arr.length; i++) {
+				if (arr[i].equalsIgnoreCase("?")) {
+					if (randomNumber == 0) {
+						arr[i] = "y";
+					} else {
+						arr[i] = "n";
+					}
+				}
+			}
+		}
+		
+		return data;
 	}
+
 }
