@@ -14,15 +14,13 @@ import java.util.Random;
 
 public class DataImputer {
 	ArrayList<String[]> data;
-	
+
 	public DataImputer(ArrayList<String[]> data) {
 		this.data = data;
 	}
-		
-	
+
 	public ArrayList<String[]> impute() {
-	
-	
+
 		// number of instances in the entire dataset
 		int numInstances = data.size();
 
@@ -261,6 +259,7 @@ public class DataImputer {
 
 					for (Map.Entry<Integer, Integer> entry : missingValLocs
 							.entrySet()) {
+
 						Integer missingArrayList = entry.getKey();
 						Integer missingArray = entry.getValue();
 
@@ -289,39 +288,41 @@ public class DataImputer {
 									} else {
 										count--;
 									}
-
 								} // end while
 
 							} // end for
 
 						} // end if
 					} // end for
-				}
+
+				} // end for: checking by class value
 
 			} // end if: checking only attributes with missing values
 
-		}
+			// set the values based on conditional probabilities, but some of
+			// edge
+			// cases were not working -
+			// for vote, therefore we use random y/n to take care of those few
+			// edge
+			// cases
+			for (String[] arr : data) {
+				Random rand = new Random();
+				int randomNumber = rand.nextInt((1) + 1);
 
-		// set the values based on conditional probabilities, but some of edge
-		// cases were not working -
-		// for vote, therefore we use random y/n to take care of those few edge
-		// cases
-		for (String[] arr : data) {
-			Random rand = new Random();
-			int randomNumber = rand.nextInt((1) + 1);
-
-			for (int i = 0; i < arr.length; i++) {
-				if (arr[i].equalsIgnoreCase("?")) {
-					if (randomNumber == 0) {
-						arr[i] = "y";
-					} else {
-						arr[i] = "n";
+				for (int i = 0; i < arr.length; i++) {
+					if (arr[i].equalsIgnoreCase("?")) {
+						if (randomNumber == 0) {
+							arr[i] = "y";
+						} else {
+							arr[i] = "n";
+						}
 					}
 				}
 			}
+
 		}
 		
+		// return imputed data
 		return data;
 	}
-
 }
