@@ -10,12 +10,13 @@ public class NaiveBayes extends Algorithm {
 
     ArrayList trainData;
     //create class into feature
-    Feature clas = new Feature();
+    Feature clas;
     //create arraylist of features
     ArrayList<Feature> features = new ArrayList();
 
     public NaiveBayes(ArrayList data){
         trainData = data;
+        clas = new Feature(data.size());
         super.get_logger().log(Level.INFO, "Naive Bayes Algorithm created.");
         train(data);
     }
@@ -27,10 +28,14 @@ public class NaiveBayes extends Algorithm {
         Object o = trainData.get(0);
         int numFeatures = ((String[]) o).length - 1;
         for (int i = 0; i < numFeatures; i++){
-            features.add(new Feature());
+            features.add(new Feature(trainData.size()));
         }
 
         count(numFeatures);
+        HashMap classPriors = new HashMap();
+        classPriors.put("No", 5);
+        classPriors.put("Yes", 9);
+        features.get(0).calculateProbabilities(classPriors);
 
     }
 
@@ -39,9 +44,9 @@ public class NaiveBayes extends Algorithm {
         for(Object obj: trainData){
             String[] stringArray = (String[]) obj;
             for (int i = 0; i < numFeatures; i++){
-                features.get(i).addInstance(stringArray[i]);
+                features.get(i).addInstance(stringArray[i], stringArray[stringArray.length - 1]);
             }
-            clas.addInstance(stringArray[stringArray.length - 1]);
+            clas.addInstance(stringArray[stringArray.length - 1], "None");
         }
     }
 
