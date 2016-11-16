@@ -2,12 +2,13 @@ package classification;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /*
  * Some of the datasets have missing attribute values (indicated with a '?'), and these values 
  * are sampled according to the conditional probability of the values occurring, given the underlying
- * class for that example.
+ * class for that example. Note that in the following, attribute and feature are used interchangeably. 
  */
 
 public class DataImputer {
@@ -28,126 +29,140 @@ public class DataImputer {
 
 		// loops through each of the instances in the dataset, looking for
 		// missing values
+
+		/*
+		 * The following for loop moves through each of the instances in the
+		 * dataset, looking for missing attributes and recording the number of
+		 * occurrences. This information is stored in an array, which tells us
+		 * the number of missing attributes at a given location.
+		 */
+
 		for (String[] arr : data) {
 
 			// loops through the features for this particular instance
-			for (int i = 0; i < arr.length; i++) {
+			for (int featI = 0; featI < arr.length; featI++) {
 				// checks for a '?', which indicates a missing value
-				if (arr[i].equalsIgnoreCase("?")) {
+				if (arr[featI].equalsIgnoreCase("?")) {
 					// adds to the number of missing values at that location
-					missingFeatureVals[i] += 1;
-					missingValLocs.put(arrayListLoc, i);
+					missingFeatureVals[featI] += 1;
+					missingValLocs.put(arrayListLoc, featI);
 				}
 			} // end for: finished with array corresponding to this instance
 			arrayListLoc++;
 		} // end for: looping through each instance in dataset
 
+		/*
+		 * Number of missing attribute values at each location in the dataset
+		 * has been determined. Now the conditional probability of the values
+		 * occurring (given the underlying class for that example) can be
+		 * calculated, and the values can be imputed according to the
+		 * conditional probabilities.
+		 */
+
 		// for the features we know that we have missing data, determine the
 		// data distribution (given the class)
-		for (int i = 0; i < missingFeatureVals.length; i++) {
+		for (int m = 0; m < missingFeatureVals.length; m++) {
 			// stores the feature/class combinations
-			// key is the class value, value is the value of the associated
-			// attribute, integer represents the count
+			// class value is key, secondary key is the value of the associated
+			// attribute, and the integer value represents the count
 			attributeMap = new HashMap<String, Map<String, Integer>>();
 
-			if (missingFeatureVals[i] != 0) {
+			if (missingFeatureVals[m] != 0) {
 				// there are some attributes here with missing values
-				// look through all instances
-				for (int j = 0; j < numInstances; j++) {
-					String key = data.get(j)[data.get(j).length - 1];
-					String value = data.get(j)[i];
+				// look through all instances to determine distribution of attribute values
+				for (int n = 0; n < numInstances; n++) {
+					String classVal = data.get(n)[data.get(n).length - 1];
+					String attVal = data.get(n)[m];
 
-					// builds a map of class/value combinations, as well as the
-					// count
-					if (!attributeMap.containsKey(key)) {
-						// if key is not in attributeMap, neither is the value,
+					// builds a map of class/value combinations, also counts occurrences
+					if (!attributeMap.containsKey(classVal)) {
+						// if key (class) is not in attributeMap, neither is the value (attribute),
 						// and the count should be 0
-						// checks that the value is not '?', bc we already
-						// counted those
-						if (!value.equalsIgnoreCase("?")) {
+						if (!attVal.equalsIgnoreCase("?")) {
+							// NOTE: checks that the value is not '?', bc we already counted those
 							int count = 1;
-							attributeMap.put(key,
+							attributeMap.put(classVal,
 									new HashMap<String, Integer>());
-							attributeMap.get(key).put(value, count);
+							attributeMap.get(classVal).put(attVal, count);
 						}
 
 					} else {
 						// if key is in attributeMap, but value is not
-						if (!attributeMap.get(key).containsKey(value)) {
-							if (!value.equalsIgnoreCase("?")) {
+						if (!attributeMap.get(classVal).containsKey(attVal)) {
+							if (!attVal.equalsIgnoreCase("?")) {
 								int count = 1;
-								attributeMap.get(key).put(value, count);
+								attributeMap.get(classVal).put(attVal, count);
 							}
 
 						} else {
 							// if both key and value are in attribute map,
 							// update count
-							if (!value.equalsIgnoreCase("?")) {
-								int count = attributeMap.get(key).get(value) + 1;
-								attributeMap.get(key).put(value, count);
+							if (!attVal.equalsIgnoreCase("?")) {
+								int count = attributeMap.get(classVal).get(attVal) + 1;
+								attributeMap.get(classVal).put(attVal, count);
 							}
 						}
 					}
 
-				} // end for: for this particular attribute, all missing value occurrences
-					// counted
+				} // end for: for this particular attribute, all missing value
+					// occurrences have been counted
 
 				// gets all possible keys (class values) for these attributes
-				Object[] keySet = attributeMap.keySet().toArray();
-				Object[] valueSet = null;
+				Object[] classSet = attributeMap.keySet().toArray();
+				Object[] valueByClassSet = null;
 				int countSet;
-				
-				// used to help determine the conditional probability of each feature
-				int totalCount; 
+
+				// the following are used to help determine the conditional probability of each
+				// feature (given the class)
+				int totalCount;
 				Map<String, Double> condProb = new HashMap<String, Double>();
-				
-				for (int j = 0; j < keySet.length; j++) {
+
+				// iterate through class values
+				for (int c = 0; c < classSet.length; c++) {
+					// for calculating on a per class value
 					condProb.clear();
-					countSet = 0; 
-					totalCount = 0; 
-					System.out.println("Key: " + keySet[j]);
-					valueSet = attributeMap.get(keySet[j]).keySet().toArray();
-					for (int k = 0; k < valueSet.length; k++) {
-						System.out.print(" " + valueSet[k]);
-						countSet = attributeMap.get(keySet[j]).get(valueSet[k]);
+					countSet = 0;
+					totalCount = 0;
+					
+					// gets all attribute values for the specified class
+					valueByClassSet = attributeMap.get(classSet[c]).keySet().toArray();
+					
+					// iterates through the values for the specified class
+					for (int a = 0; a < valueByClassSet.length; a++) {
+						countSet = attributeMap.get(classSet[c]).get(valueByClassSet[a]);
 						totalCount += countSet;
-						System.out.print(", " + countSet + "; ");
 					} // end for: have gone through all values for key
-					
-					// have calculated the total count, now figure out conditional probability of each feature
-					for (int k = 0; k < valueSet.length; k++) {
-						double featCount = attributeMap.get(keySet[j]).get(valueSet[k]).doubleValue();
-						Double prob = featCount/totalCount;
-						System.out.println(prob);
-						condProb.put(valueSet[k].toString(),prob);
-					} 
-					
-					
-					System.out.println(totalCount);
-					
-					
-					
+
+					// have calculated the total count, now figure out
+					// conditional probability of each feature
+					for (int k = 0; k < valueByClassSet.length; k++) {
+						double featCount = attributeMap.get(classSet[c])
+								.get(valueByClassSet[k]).doubleValue();
+						Double prob = featCount / totalCount;
+						// System.out.println(prob);
+						condProb.put(valueByClassSet[k].toString(), prob);
+					}
+
+					for (Map.Entry<String, Double> entry : condProb.entrySet()) {
+						Object key = entry.getKey();
+						Object value = entry.getValue();
+						// System.out.println(key);
+						// System.out.println(value);
+					}
+
+					// System.out.println(totalCount);
+
 				} // end for : building key, value and object set
-			
+
 				// built keySet, valueSet, countSet
-				
 
+				// } // end for : building key, value and object set
 
-				//} // end for : building key, value and object set
-				
-				
-				
 			} // end if
 
-			
-			
-			
-			
-			
-			
 			// check class associated with missing data, calc percent of each
 			// feature, assign features accordingly
-			
+
 		}
 
 		// loops through each of the instances in the dataset, looking for
