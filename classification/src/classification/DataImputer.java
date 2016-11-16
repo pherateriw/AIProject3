@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /*
  * Some of the datasets have missing attribute values (indicated with a '?'), and these values 
@@ -116,7 +117,10 @@ public class DataImputer {
 				// feature (given the class)
 				int totalCount;
 				Map<String, Double> condProb = new HashMap<String, Double>();
-
+				
+				// stores the number of attributes to be imputed for each value
+				Map<String, Integer> imputedAttributes = new HashMap<String, Integer>();
+				
 				// iterate through class values
 				for (int c = 0; c < classSet.length; c++) {
 					// for calculating on a per class value
@@ -132,6 +136,7 @@ public class DataImputer {
 						countSet = attributeMap.get(classSet[c]).get(valueByClassSet[a]);
 						totalCount += countSet;
 					} // end for: have gone through all attributes for key to calculate the total count
+					
 					// NOTE: we are intentionally not counting missing attributes, so adding all of the 
 					// attributes does not (necessarily) = the number of instances in te data set
 
@@ -144,8 +149,10 @@ public class DataImputer {
 						condProb.put(valueByClassSet[a].toString(), prob);
 					}
 
+					
 					int numMissingVals = missingFeatureVals[m];
-								
+					int numSoFar = 0;
+					
 					// go through the conditional probabilities, multiply by number of 
 					// missing values to determine the number that should be imputed for
 					// each attribute value
@@ -154,27 +161,74 @@ public class DataImputer {
 						double value = entry.getValue().doubleValue();
 						
 						// compute the number to impute for each attribute value
-						int num = (int) (value * numMissingVals);
-						Double numToImpute = (double) num;
-						condProb.put(attVal, numToImpute);
-												
+						int numToImpute = (int) (value * numMissingVals);
+											
+						imputedAttributes.put(attVal, numToImpute);
+						numSoFar += numToImpute;						
 					}
-
-					// NOTE: at the end of this, th
 					
 					
+					/*
+					 * NOTE: at the end of this process (because of rounding) we might have a 
+					 * mismatch between numToImpute and the actual number of values we need to impute.
+					 * To handle this, we will assign the remaining (in practice, has been less 
+					 * than 5 values) at random.
+					 */
+					
+					// generates a random number for the purpose of assigning remaining values
+					Random rand = new Random();
+					int randomNumber = 0;
+					int breakWhen = 0;
+					String randomKey = "";
+					
+					// while there are still unassigned values, pick a key at random
+					while(numSoFar < numMissingVals) {
+						randomNumber = rand.nextInt((imputedAttributes.size() - 1) + 1);
+						breakWhen = 0; 
+						randomKey = "";
+						
+						// get a key at random
+						for (String key : imputedAttributes.keySet()) {
+														
+							if (breakWhen < randomNumber) {
+								// keep going
+								breakWhen++;
+							} else {
+								randomKey = key;
+								break;
+							}
+						} // end for: have random key
+						
+																	
+						// given the random key, add to the number of entries to be  imputed
+						for (Map.Entry<String, Integer> entry : imputedAttributes.entrySet()) {
+							String attVal = entry.getKey();
+	
+							
+							if (randomKey.equalsIgnoreCase(attVal)) {
+								int numToImpute = entry.getValue() + 1;
+								imputedAttributes.put(randomKey, numToImpute);
+								numSoFar++;								
+							}
+													
+						} // end for: have dealt with one imputed value						
+					} // end while
+					
+					
+					
+									
 					// check with printing
-					for (Map.Entry<String, Double> entry : condProb.entrySet()) {
+					for (Map.Entry<String, Integer> entry : imputedAttributes.entrySet()) {
 						String attVal = entry.getKey();
-						double value = entry.getValue().doubleValue();
+						double value = entry.getValue();
 												
 						System.out.println(attVal);
 						System.out.println(value);
 					}					
-					
-					
-					
-					
+//					
+//					
+//					
+//					
 					
 					
 					// System.out.println(totalCount);
