@@ -75,10 +75,18 @@ public class Parser {
 	// do data discretization (if necessary)
 	if (dataDiscretization == true) {
 		
-		int r = 10;//TODO tune this!
+		int r = 3;//TODO tune this!
 		for(int i = 0; i < data.get(0).length-1; i++){
 			DataDiscretizer dd = new DataDiscretizer(data, i, r);
 			data = dd.discretize();
+			
+		}
+		System.out.println();
+		for(String[] line : data){
+			for(String attr : line){
+				System.out.print(attr + ", ");
+			}
+			System.out.println();
 		}
 	}	
 	

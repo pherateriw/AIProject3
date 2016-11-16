@@ -15,7 +15,7 @@ public class DataDiscretizer {
 		this.v = v;
 		this.r = r;
 		
-		System.out.println("in dd");
+		//System.out.println("in dd");
 	}
 
 	public ArrayList<String[]> discretize() {
