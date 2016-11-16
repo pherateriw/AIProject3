@@ -1,5 +1,9 @@
 package classification;
 
-public class Tree {
+import java.util.ArrayList;
 
+public class Tree {
+	public TreeNode root;
+	public ArrayList<TreeNode> tree;
+	
 }

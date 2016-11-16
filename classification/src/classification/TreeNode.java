@@ -1,5 +1,8 @@
 package classification;
 
-public abstract class TreeNode {
+import java.util.ArrayList;
 
+public abstract class TreeNode {
+	public ArrayList<TreeNode> children;
+	
 }

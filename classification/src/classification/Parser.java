@@ -75,10 +75,13 @@ public class Parser {
 		
 	// call the data discretizer to handle continuous variables (if necessary)
 	if (dataDiscretization == true) {
-		// TODO: DataDiscretizer
-		int v = 1;
-		int r = 12;
-		DataDiscretizer dd = new DataDiscretizer(data, v, r);
+		
+		int r = 3;//TODO tune this!
+		for(int i = 0; i < data.get(0).length-1; i++){
+			DataDiscretizer dd = new DataDiscretizer(data, i, r);
+			data = dd.discretize();
+			
+		}
 	}	
 	
 	// removes duplicate values (if necessary)

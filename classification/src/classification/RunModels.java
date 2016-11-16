@@ -26,8 +26,7 @@ public class RunModels {
     	// gets short name of dataset (from file location), for use in printing information
     	String shortName = "";
     	shortName = dataFileLocation.substring(dataFileLocation.lastIndexOf(File.separator) + 1, dataFileLocation.indexOf('.'));
-    	
-    	
+
     	// an array list to hold the necessary parser arguments
     	ArrayList<String> parserArgs = new ArrayList<String>();
     	    	
@@ -100,6 +99,7 @@ public class RunModels {
 	// will need to add param for bc, where we remove instances with '?'
 	public static void getParserArgs(String shortName, ArrayList<String> parserArgs) {
     	// variables for parser, because particulars of dataset vary
+		System.out.println(shortName);
     	int classVariableLoc = Integer.MAX_VALUE;
     	boolean dataImputation = false;
     	boolean dataDiscretization = false;
