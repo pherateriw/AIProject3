@@ -75,7 +75,9 @@ public class Parser {
 	// do data discretization (if necessary)
 	if (dataDiscretization == true) {
 		// TODO: DataDiscretizer
-		DataDiscretizer dd = new DataDiscretizer(data);
+		int v = 1;
+		int r = 12;
+		DataDiscretizer dd = new DataDiscretizer(data, v, r);
 	}	
 	
     //for (String[] arr : data) {

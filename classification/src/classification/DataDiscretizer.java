@@ -10,7 +10,7 @@ public class DataDiscretizer {
 	ArrayList<String[]> data;
 	private int v;
 
-	public DataDiscretizer(ArrayList<String[]> data) {
+	public DataDiscretizer(ArrayList<String[]> data, int v, int r) {
 		this.data = data;
 		this.v = v;
 		this.r = r;
