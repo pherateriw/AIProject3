@@ -1,6 +1,7 @@
 package classification;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,14 +43,14 @@ public class DataImputer {
 
 			// loops through the features for this particular instance
 			for (int featI = 0; featI < arr.length; featI++) {
-				
+
 				// checks for a '?', which indicates a missing value
 				if (arr[featI].equalsIgnoreCase("?")) {
 					// adds to the number of missing values at that location
 					missingFeatureVals[featI] += 1;
-					
+
 					if (!missingValLocs.containsKey(arrayListLoc)) {
-						missingValLocs.put(arrayListLoc, featI);						
+						missingValLocs.put(arrayListLoc, featI);
 					}
 				}
 			} // end for: finished with array corresponding to this instance
@@ -74,17 +75,21 @@ public class DataImputer {
 
 			if (missingFeatureVals[m] != 0) {
 				// there are some attributes here with missing values
-				// look through all instances to determine distribution of attribute values
+				// look through all instances to determine distribution of
+				// attribute values
 				for (int n = 0; n < numInstances; n++) {
 					String classVal = data.get(n)[data.get(n).length - 1];
 					String attVal = data.get(n)[m];
 
-					// builds a map of class/value combinations, also counts occurrences
+					// builds a map of class/value combinations, also counts
+					// occurrences
 					if (!attributeMap.containsKey(classVal)) {
-						// if key (class) is not in attributeMap, neither is the value (attribute),
+						// if key (class) is not in attributeMap, neither is the
+						// value (attribute),
 						// and the count should be 0
 						if (!attVal.equalsIgnoreCase("?")) {
-							// NOTE: checks that the value is not '?', bc we already counted those
+							// NOTE: checks that the value is not '?', bc we
+							// already counted those
 							int count = 1;
 							attributeMap.put(classVal,
 									new HashMap<String, Integer>());
@@ -103,7 +108,8 @@ public class DataImputer {
 							// if both key and value are in attribute map,
 							// update count
 							if (!attVal.equalsIgnoreCase("?")) {
-								int count = attributeMap.get(classVal).get(attVal) + 1;
+								int count = attributeMap.get(classVal).get(
+										attVal) + 1;
 								attributeMap.get(classVal).put(attVal, count);
 							}
 						}
@@ -117,34 +123,40 @@ public class DataImputer {
 				Object[] valueByClassSet = null;
 				int countSet;
 
-				// the following are used to help determine the conditional probability of each
+				// the following are used to help determine the conditional
+				// probability of each
 				// feature (given the class)
 				int totalCount;
 				Map<String, Double> condProb = new HashMap<String, Double>();
-				
+
 				// stores the number of attributes to be imputed for each value
 				Map<String, Integer> imputedAttributes = new HashMap<String, Integer>();
-				
+
 				// iterate through class values
 				for (int c = 0; c < classSet.length; c++) {
 					// for calculating on a per class value
 					condProb.clear();
 					countSet = 0;
 					totalCount = 0;
-					
+
 					// gets all attribute values for the specified class
-					valueByClassSet = attributeMap.get(classSet[c]).keySet().toArray();
-					
+					valueByClassSet = attributeMap.get(classSet[c]).keySet()
+							.toArray();
+
 					// iterates through the attributes for the specified class
 					for (int a = 0; a < valueByClassSet.length; a++) {
-						countSet = attributeMap.get(classSet[c]).get(valueByClassSet[a]);
+						countSet = attributeMap.get(classSet[c]).get(
+								valueByClassSet[a]);
 						totalCount += countSet;
-					} // end for: have gone through all attributes for key to calculate the total count
-					
-					// NOTE: we are intentionally not counting missing attributes, so adding all of the 
-					// attributes does not (necessarily) = the number of instances in te data set
+					} // end for: have gone through all attributes for key to
+						// calculate the total count
 
-					// having calculated the total count, calculate the 
+					// NOTE: we are intentionally not counting missing
+					// attributes, so adding all of the
+					// attributes does not (necessarily) = the number of
+					// instances in te data set
+
+					// having calculated the total count, calculate the
 					// conditional probability of each feature (given the class)
 					for (int a = 0; a < valueByClassSet.length; a++) {
 						double featCount = attributeMap.get(classSet[c])
@@ -153,47 +165,51 @@ public class DataImputer {
 						condProb.put(valueByClassSet[a].toString(), prob);
 					}
 
-					
 					int numMissingVals = missingFeatureVals[m];
 					int numSoFar = 0;
-					
-					// go through the conditional probabilities, multiply by number of 
-					// missing values to determine the number that should be imputed for
+
+					// go through the conditional probabilities, multiply by
+					// number of
+					// missing values to determine the number that should be
+					// imputed for
 					// each attribute value
 					for (Map.Entry<String, Double> entry : condProb.entrySet()) {
 						String attVal = entry.getKey();
 						double value = entry.getValue().doubleValue();
-						
+
 						// compute the number to impute for each attribute value
 						int numToImpute = (int) (value * numMissingVals);
-											
+
 						imputedAttributes.put(attVal, numToImpute);
-						numSoFar += numToImpute;						
+						numSoFar += numToImpute;
 					}
-					
-					
+
 					/*
-					 * NOTE: at the end of this process (because of rounding) we might have a 
-					 * mismatch between numToImpute and the actual number of values we need to impute.
-					 * To handle this, we will assign the remaining (in practice, has been less 
+					 * NOTE: at the end of this process (because of rounding) we
+					 * might have a mismatch between numToImpute and the actual
+					 * number of values we need to impute. To handle this, we
+					 * will assign the remaining (in practice, has been less
 					 * than 5 values) at random.
 					 */
-					
-					// generates a random number for the purpose of assigning remaining values
+
+					// generates a random number for the purpose of assigning
+					// remaining values
 					Random rand = new Random();
 					int randomNumber = 0;
 					int breakWhen = 0;
 					String randomKey = "";
-					
-					// while there are still unassigned values, pick a key at random
-					while(numSoFar < numMissingVals) {
-						randomNumber = rand.nextInt((imputedAttributes.size() - 1) + 1);
-						breakWhen = 0; 
+
+					// while there are still unassigned values, pick a key at
+					// random
+					while (numSoFar < numMissingVals) {
+						randomNumber = rand
+								.nextInt((imputedAttributes.size() - 1) + 1);
+						breakWhen = 0;
 						randomKey = "";
-						
+
 						// get a key at random
 						for (String key : imputedAttributes.keySet()) {
-														
+
 							if (breakWhen < randomNumber) {
 								// keep going
 								breakWhen++;
@@ -202,123 +218,81 @@ public class DataImputer {
 								break;
 							}
 						} // end for: have random key
-						
-																	
-						// given the random key, add to the number of entries to be  imputed
-						for (Map.Entry<String, Integer> entry : imputedAttributes.entrySet()) {
+
+						// given the random key, add to the number of entries to
+						// be imputed
+						for (Map.Entry<String, Integer> entry : imputedAttributes
+								.entrySet()) {
 							String attVal = entry.getKey();
-	
-							
+
 							if (randomKey.equalsIgnoreCase(attVal)) {
 								int numToImpute = entry.getValue() + 1;
 								imputedAttributes.put(randomKey, numToImpute);
-								numSoFar++;								
+								numSoFar++;
 							}
-													
-						} // end for: have dealt with one imputed value						
+
+						} // end for: have dealt with one imputed value
 					} // end while: have distribution for imputing all values
-					
-					
-					// hold the values to be imputed in a separate data structure, 
+
+					// hold the values to be imputed in a separate data
+					// structure,
 					// so we can easily modify the count as they are handled
 					ArrayList<String[]> imputeVals = new ArrayList<String[]>();
-					
-					// construct a tuple consisting of the value and the number of times to impute  
-					for (Map.Entry<String, Integer> entry : imputedAttributes.entrySet()) {
+
+					// construct a tuple consisting of the value and the number
+					// of times to impute
+					for (Map.Entry<String, Integer> entry : imputedAttributes
+							.entrySet()) {
 						String iVal = entry.getKey();
 						Integer iCount = entry.getValue();
-						
-						String[] imputeTuple = {iVal, iCount.toString()};
-						
+
+						String[] imputeTuple = { iVal, iCount.toString() };
+
 						imputeVals.add(imputeTuple);
 					}
-														
-					// missingValLocs is unordered, as is imputedAttributes - so replacing the '?'  
-					// entries in this order works well
-					for (Map.Entry<Integer, Integer> entry : missingValLocs.entrySet()) {
+
+					for (Map.Entry<Integer, Integer> entry : missingValLocs
+							.entrySet()) {
 						Integer missingArrayList = entry.getKey();
 						Integer missingArray = entry.getValue();
-												
-						
-						
-						
-						
-						
-						
-						
-						
-						if(data.get(missingArrayList)[missingArray].equalsIgnoreCase("?")) {
-							
-						}
-						
-						
-						System.out.println(data.get(missingArrayList)[missingArray]);
-						
-						
-						
-						
-					}					
-				
-					
-					
 
-					// testing
-					for (String[] kv : imputeVals) {
-						for (int it = 0; it < kv.length; it++) {
-							System.out.println(kv[it]);							
-						}
+						if (data.get(missingArrayList)[missingArray]
+								.equalsIgnoreCase("?")) {
+							for (int iter = 0; iter < imputeVals.size(); iter++) {
+								int count = Integer.parseInt(imputeVals
+										.get(iter)[1]);
 
-					}
-					
-					
+								if (count > 0) {
+									// gets the appropriate replacement value
+									data.get(missingArrayList)[missingArray] = imputeVals
+											.get(iter)[0];
+									count--;
+									iter--;
+									imputeVals.get(iter)[1] = Integer
+											.toString(count);
+								} // end if
 
-			} // end if
+							} // end for
 
+						} // end if
+					} // end for
 
+				}
+
+			} // end if: checking only attributes with missing values
+
+			
+			
+			
+			
+			// loops through each of the instances in the dataset, looking for
+			// missing values
+			for (String[] arr : data) {
+				//System.out.println(data.size());
+				System.out.println(Arrays.toString(arr));
+
+			}
 
 		}
-
-		// loops through each of the instances in the dataset, looking for
-		// missing values
-		for (String[] arr : data) {
-
-			// loops through the features for this particular instance
-			for (int i = 0; i < arr.length; i++) {
-				// checks for a '?', which indicates a missing value
-				if (arr[i].equalsIgnoreCase("?")) {
-
-					// adds to the number of missing values at that location
-					// missingFeatureVals[i] += 1;
-				}
-			} // end for: finished with array corresponding to this instance
-		} // end for: looping through each instance in dataset
-
 	}
-
-	// System.out.println(missingFeatureVals[i]);
-	// }
-	//
-	//
-	// for (int j = 0; j < featureMap.size(); j++) {
-	// System.out.println(featureMap.get(j));
-	// }
-
-	// when values are missing, look at the distribution of remaining examples
-	// for each class
-
-	// }
-
-	// where we have missing values, record the associated class
-	// get feature distribution, given the class (how many examples for the
-	// determine fraction of each feature (numInstance - missingFeatureVals[i])
-
-	// get frequency of other data at that loc
-	// add in data according to distribution (considering ties, and what to if
-	// calculations don't work out exactly
-	// as integers and )
-	// consider the class as well
-	// book 260
-	// cite paper handling missing attribute values starting page 5
-
-	 }
 }
