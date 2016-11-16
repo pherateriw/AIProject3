@@ -127,29 +127,56 @@ public class DataImputer {
 					// gets all attribute values for the specified class
 					valueByClassSet = attributeMap.get(classSet[c]).keySet().toArray();
 					
-					// iterates through the values for the specified class
+					// iterates through the attributes for the specified class
 					for (int a = 0; a < valueByClassSet.length; a++) {
 						countSet = attributeMap.get(classSet[c]).get(valueByClassSet[a]);
 						totalCount += countSet;
-					} // end for: have gone through all values for key
+					} // end for: have gone through all attributes for key to calculate the total count
+					// NOTE: we are intentionally not counting missing attributes, so adding all of the 
+					// attributes does not (necessarily) = the number of instances in te data set
 
-					// have calculated the total count, now figure out
-					// conditional probability of each feature
-					for (int k = 0; k < valueByClassSet.length; k++) {
+					// having calculated the total count, calculate the 
+					// conditional probability of each feature (given the class)
+					for (int a = 0; a < valueByClassSet.length; a++) {
 						double featCount = attributeMap.get(classSet[c])
-								.get(valueByClassSet[k]).doubleValue();
+								.get(valueByClassSet[a]).doubleValue();
 						Double prob = featCount / totalCount;
-						// System.out.println(prob);
-						condProb.put(valueByClassSet[k].toString(), prob);
+						condProb.put(valueByClassSet[a].toString(), prob);
 					}
 
+					int numMissingVals = missingFeatureVals[m];
+								
+					// go through the conditional probabilities, multiply by number of 
+					// missing values to determine the number that should be imputed for
+					// each attribute value
 					for (Map.Entry<String, Double> entry : condProb.entrySet()) {
-						Object key = entry.getKey();
-						Object value = entry.getValue();
-						// System.out.println(key);
-						// System.out.println(value);
+						String attVal = entry.getKey();
+						double value = entry.getValue().doubleValue();
+						
+						// compute the number to impute for each attribute value
+						int num = (int) (value * numMissingVals);
+						Double numToImpute = (double) num;
+						condProb.put(attVal, numToImpute);
+												
 					}
 
+					// NOTE: at the end of this, th
+					
+					
+					// check with printing
+					for (Map.Entry<String, Double> entry : condProb.entrySet()) {
+						String attVal = entry.getKey();
+						double value = entry.getValue().doubleValue();
+												
+						System.out.println(attVal);
+						System.out.println(value);
+					}					
+					
+					
+					
+					
+					
+					
 					// System.out.println(totalCount);
 
 				} // end for : building key, value and object set
