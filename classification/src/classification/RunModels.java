@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -12,7 +13,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 public class RunModels {
-
+	private static ArrayList<String[]> data = new ArrayList<String[]>();
+	
 	public static void main(String[] args) throws IOException {
 		// Scanner for reading in the user's choice
 		Scanner in = new Scanner(System.in);
@@ -41,6 +43,14 @@ public class RunModels {
     	
     	// parse file, doing data imputation and discretization as necessary 
     	Parser p = new Parser(dataFileLocation, classVariableLoc, dataImputation, dataDiscretization, idNumLoc, dataRemoval);    	
+    	data = p.getData();
+    	
+    	for (String[] arr : data) {
+			//System.out.println(data.size());
+			System.out.println(Arrays.toString(arr));
+	}
+    	
+    	
     	
     	//TODO: get data for the algos from the parser
     	//TODO: split into test/train here instead of parser?
@@ -100,7 +110,7 @@ public class RunModels {
     	// note, a value of -1 for idNumLoc means that there is no id value in that dataset
     	if (shortName.equals("breast-cancer-wisconsin")){
     		classVariableLoc = 10;
-    		dataImputation = true;
+    		dataImputation = false;
     		// NOTE: will need to also do one without discretization, where we just remove missing vals (complete
     		// case analysis) - when we do that, leave data imputation as true but set removeMissingVals to true
     		dataDiscretization = false;

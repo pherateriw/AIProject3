@@ -66,14 +66,14 @@ public class Parser {
 		e.printStackTrace();
 	}
 
-	// do data imputation (if necessary)
+	// call the data imputer to replace missing attributes (if necessary)
 	if (dataImputation == true) {
 		DataImputer di = new DataImputer(data);
 		data = di.impute();
 	}
 	
 		
-	// do data discretization (if necessary)
+	// call the data discretizer to handle continuous variables (if necessary)
 	if (dataDiscretization == true) {
 		// TODO: DataDiscretizer
 		int v = 1;
@@ -82,60 +82,33 @@ public class Parser {
 	}	
 	
 	// removes duplicate values (if necessary)
+	// NOTE: We are testing Breast Cancer with imputation, and with removing values
 	if (dataRemoval == true) {
-		ArrayList<Integer> indicesToRemove = new ArrayList<Integer>();
-
-		int arrPos = 0; 
+		// keeps track of the entries that have at least one missing value		
+		List<String[]> axeTheseEntries = new ArrayList<String[]>();
 		
 		// loop through entire dataset, looking for indices to remove
 		for (String[] arr : data) {
 			
+			// missing values are indicated with '?'
 			for (int i = 0; i < arr.length; i++) {
 				if (arr[i].equalsIgnoreCase("?")) {
-					indicesToRemove.add(arrPos);
+					axeTheseEntries.add(arr);
 				}
 			}
 			
-			
-			
 		}
+		// remove all missing values from the data set
+		data.removeAll(axeTheseEntries);
 		
-//		for (String[] arr : data) {			
-//			for (int i = 0; i < arr.length; i++) {
-////				if (arr[i].equalsIgnoreCase("?")) {
-////					data.remove(arrLoc);
-////				}								
-////		}
-////				
-//		}
 	}
-	
-	
-	
-	for (String[] arr : data) {
-		for (int i = 0; i < arr.length; i++) {
-			System.out.println(data.size());
-			//System.out.println(Arrays.toString(arr));
-		}
-	}
-	
-	
-	// send data back to Run Models so that it can be used by the algo
 	
 	
 	}
 
+	// this is used to send parsed/imputed/discretized/removed data back to RunModels
 	public ArrayList<String[]> getData(){
 		return this.data;
 	}
-	
-	
-	
-	//store data in 2d array, where last item in array corresponds to the class
-	
-	
-
-	
-
 	
 }
