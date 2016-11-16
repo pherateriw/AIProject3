@@ -12,7 +12,7 @@ public class Feature {
     HashMap<String, HashMap> vars; //All vars across all classes
     HashMap<String, Integer> varTotals; //individual total for a var across all classes
     HashMap<String, Double> likelihoods; //p(x|c) or p(sunny|yes)
-
+    HashMap<String, Double> predictorPriors;
     int classestotal;  //Total of all instances
 
     public Feature(int classestotal){
@@ -41,23 +41,39 @@ public class Feature {
         }
     }
 
-    public void calculateProbabilities(HashMap classInfo){
-        this.likelihoods = new HashMap();
+    public void calculateProbabilities(HashMap classFrequencies){
         int allVarTotal = getVarTotal();
 
+        calculateLikelihoods(classFrequencies); //p(x|c)
+        calculatePredictorPriors(); //p(x)
+        calculateClassPriors(classFrequencies);
 
-        //probability for each class ie P(Var|Class) or P(Sunny|Yes) and P(Sunny|No)
-            for (String key : this.vars.keySet()){  //for each var in feature, ie Sunny in OutLook
-                HashMap classFrequencies = this.vars.get(key);
-                for (Object keytwo : classFrequencies.keySet()){
-                    String keythree = key + "|" + keytwo;
-                    double likelihood = (double)  (Integer) classFrequencies.get(keytwo) /  (Integer) classInfo.get(keytwo); //p(x|c) = # of sunny in Yes
-                    this.likelihoods.put(keythree, likelihood);
-                }
-            }
         }
 
 
+    public void calculateClassPriors(HashMap classFrequencies){
+
+    }
+
+    public  void calculatePredictorPriors(){
+        predictorPriors = new HashMap<>();
+        for (String varKey : this.varTotals.keySet()){
+            double value = (double) this.varTotals.get(varKey) / this.classestotal;
+            predictorPriors.put(varKey, value);
+        }
+    }
+
+    public void calculateLikelihoods(HashMap classFrequencies){
+        this.likelihoods = new HashMap();
+        for (String varKey : this.vars.keySet()){
+            HashMap varFreqsInClasses = this.vars.get(varKey);
+            for (Object classKey :varFreqsInClasses.keySet()){
+                String likelihoodKey = varKey + "|" + classKey;
+                double likelihood = (double)  (Integer) varFreqsInClasses.get(classKey) /  (Integer) classFrequencies.get(classKey);
+                this.likelihoods.put(likelihoodKey, likelihood);
+            }
+        }
+    }
 
     //return total number of all vars across all classes
     // and init individuals total for a var across all classes
@@ -74,6 +90,11 @@ public class Feature {
         return total;
     }
 
+
+    public double BayesAlgo (double likelihood,double classPrior,double predictorPrior){
+        double posterior = 0.0;
+        return posterior;
+    }
 
 }
 
