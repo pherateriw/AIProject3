@@ -22,14 +22,17 @@ public class Parser {
 	private boolean dataImputation;
 	private boolean dataDiscretization;
 	private int idNumLoc;
+	private boolean dataRemoval; 
+	
 	private ArrayList<String[]> data = new ArrayList<String[]>();
 	
-	public Parser(String dataFileLocation, int classVariableLoc, boolean dataImputation, boolean dataDiscretization, int idNumLoc) throws IOException {
+	public Parser(String dataFileLocation, int classVariableLoc, boolean dataImputation, boolean dataDiscretization, int idNumLoc, boolean dataRemoval) throws IOException {
 		this.dataFileLocation = dataFileLocation;	
 		this.classVariableLoc = classVariableLoc;
 		this.dataImputation = dataImputation;
 		this.dataDiscretization = dataDiscretization;
 		this.idNumLoc = idNumLoc;
+		this.dataRemoval = dataRemoval;
 		
 	// read in data
 	String currentLine = null;
@@ -64,14 +67,12 @@ public class Parser {
 	}
 
 	// do data imputation (if necessary)
-	// TODO: REMINDER, for bc remember we need to also remove missing attribute values
 	if (dataImputation == true) {
-		// TODO: Data Imputer
-		// TODO: return dataset di.getImputed data or something?
 		DataImputer di = new DataImputer(data);
+		data = di.impute();
 	}
 	
-	
+		
 	// do data discretization (if necessary)
 	if (dataDiscretization == true) {
 		
@@ -81,18 +82,45 @@ public class Parser {
 			data = dd.discretize();
 			
 		}
-		System.out.println();
-		for(String[] line : data){
-			for(String attr : line){
-				System.out.print(attr + ", ");
-			}
-			System.out.println();
-		}
 	}	
 	
-    //for (String[] arr : data) {
-    //    System.out.println(Arrays.toString(arr));
-    //}
+	// removes duplicate values (if necessary)
+	if (dataRemoval == true) {
+		ArrayList<Integer> indicesToRemove = new ArrayList<Integer>();
+
+		int arrPos = 0; 
+		
+		// loop through entire dataset, looking for indices to remove
+		for (String[] arr : data) {
+			
+			for (int i = 0; i < arr.length; i++) {
+				if (arr[i].equalsIgnoreCase("?")) {
+					indicesToRemove.add(arrPos);
+				}
+			}
+			
+			
+			
+		}
+		
+//		for (String[] arr : data) {			
+//			for (int i = 0; i < arr.length; i++) {
+////				if (arr[i].equalsIgnoreCase("?")) {
+////					data.remove(arrLoc);
+////				}								
+////		}
+////				
+//		}
+	}
+	
+	
+	
+	for (String[] arr : data) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.println(data.size());
+			//System.out.println(Arrays.toString(arr));
+		}
+	}
 	
 	
 	// send data back to Run Models so that it can be used by the algo
@@ -100,7 +128,7 @@ public class Parser {
 	
 	}
 
-	public ArrayList getData(){
+	public ArrayList<String[]> getData(){
 		return this.data;
 	}
 	
