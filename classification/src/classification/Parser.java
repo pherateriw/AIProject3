@@ -75,11 +75,10 @@ public class Parser {
 	// do data discretization (if necessary)
 	if (dataDiscretization == true) {
 		// TODO: DataDiscretizer
-		DataDiscretizer dd = new DataDiscretizer(data);
+		int v = 1;
+		int r = 12;
+		DataDiscretizer dd = new DataDiscretizer(data, v, r);
 	}	
-	
-	// TODO: split data into train/test set trying to keep distributions equal
-	// TODO: do we impute separately for test and train? Double check with Jani.
 	
     //for (String[] arr : data) {
     //    System.out.println(Arrays.toString(arr));
