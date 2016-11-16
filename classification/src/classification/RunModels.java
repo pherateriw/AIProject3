@@ -23,8 +23,9 @@ public class RunModels {
     	
     	// gets short name of dataset (from file location), for use in printing information
     	String shortName = "";
-    	shortName = dataFileLocation.substring(dataFileLocation.lastIndexOf('/') + 1, dataFileLocation.indexOf('.'));
-
+    	shortName = dataFileLocation.substring(dataFileLocation.lastIndexOf(File.separator) + 1, dataFileLocation.indexOf('.'));
+    	
+    	
     	// an array list to hold the necessary parser arguments
     	ArrayList<String> parserArgs = new ArrayList<String>();
     	    	
@@ -36,9 +37,10 @@ public class RunModels {
     	boolean dataImputation = Boolean.parseBoolean(parserArgs.get(1));
     	boolean dataDiscretization = Boolean.parseBoolean(parserArgs.get(2));
     	int idNumLoc = Integer.parseInt(parserArgs.get(3)); 
+    	boolean dataRemoval = Boolean.parseBoolean(parserArgs.get(4));
     	
     	// parse file, doing data imputation and discretization as necessary 
-    	Parser p = new Parser(dataFileLocation, classVariableLoc, dataImputation, dataDiscretization, idNumLoc);    	
+    	Parser p = new Parser(dataFileLocation, classVariableLoc, dataImputation, dataDiscretization, idNumLoc, dataRemoval);    	
     	
     	//TODO: get data for the algos from the parser
     	//TODO: split into test/train here instead of parser?
@@ -92,6 +94,7 @@ public class RunModels {
     	boolean dataImputation = false;
     	boolean dataDiscretization = false;
     	int idNumLoc = Integer.MAX_VALUE;
+    	boolean removeMissingVals = false;
     	
     	// the following series of if statements picks the appropriate parser arguments, based on the dataset
     	// note, a value of -1 for idNumLoc means that there is no id value in that dataset
@@ -99,30 +102,35 @@ public class RunModels {
     		classVariableLoc = 10;
     		dataImputation = true;
     		// NOTE: will need to also do one without discretization, where we just remove missing vals (complete
-    		// case analysis)
+    		// case analysis) - when we do that, leave data imputation as true but set removeMissingVals to true
     		dataDiscretization = false;
     		idNumLoc = 0;
+    		removeMissingVals = true;
     	} else if (shortName.equals("glass")) {
     		classVariableLoc = 10;
     		dataImputation = false;
     		dataDiscretization = true;
     		idNumLoc = 0;
+    		removeMissingVals = false;
     	} else if (shortName.equals("house-votes-84")) {
     		classVariableLoc = 0;
     		dataImputation = true;
     		// NOTE: will need to also do one without discretization, where we just treat '?' as a third value
     		dataDiscretization = false;
+    		removeMissingVals = false;
     		idNumLoc = Integer.MAX_VALUE;
     	} else if (shortName.equals("iris")) {
     		classVariableLoc = 4;
     		dataImputation = false;
     		dataDiscretization = true;    
     		idNumLoc = Integer.MAX_VALUE;
+    		removeMissingVals = false;
     	} else if (shortName.equals("soybean-small")) {
     		classVariableLoc = 35;
     		dataImputation = false;
     		dataDiscretization = false;    
-    		idNumLoc = Integer.MAX_VALUE;    		
+    		idNumLoc = Integer.MAX_VALUE;
+    		removeMissingVals = false;
     	} else {
     		System.out.println("You have not picked a valid dataset. Please re-pick or add the appropriate dataset.");
     	}
@@ -131,7 +139,8 @@ public class RunModels {
     	parserArgs.add(Integer.toString(classVariableLoc));
     	parserArgs.add(String.valueOf(dataImputation));
     	parserArgs.add(String.valueOf(dataDiscretization));
-    	parserArgs.add(Integer.toString(idNumLoc));    	
+    	parserArgs.add(Integer.toString(idNumLoc));
+    	parserArgs.add(String.valueOf(removeMissingVals));
     }
 	
 	
