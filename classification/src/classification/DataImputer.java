@@ -42,11 +42,15 @@ public class DataImputer {
 
 			// loops through the features for this particular instance
 			for (int featI = 0; featI < arr.length; featI++) {
+				
 				// checks for a '?', which indicates a missing value
 				if (arr[featI].equalsIgnoreCase("?")) {
 					// adds to the number of missing values at that location
 					missingFeatureVals[featI] += 1;
-					missingValLocs.put(arrayListLoc, featI);
+					
+					if (!missingValLocs.containsKey(arrayListLoc)) {
+						missingValLocs.put(arrayListLoc, featI);						
+					}
 				}
 			} // end for: finished with array corresponding to this instance
 			arrayListLoc++;
@@ -212,37 +216,65 @@ public class DataImputer {
 							}
 													
 						} // end for: have dealt with one imputed value						
-					} // end while
+					} // end while: have distribution for imputing all values
 					
 					
+					// hold the values to be imputed in a separate data structure, 
+					// so we can easily modify the count as they are handled
+					ArrayList<String[]> imputeVals = new ArrayList<String[]>();
 					
-									
-					// check with printing
+					// construct a tuple consisting of the value and the number of times to impute  
 					for (Map.Entry<String, Integer> entry : imputedAttributes.entrySet()) {
-						String attVal = entry.getKey();
-						double value = entry.getValue();
+						String iVal = entry.getKey();
+						Integer iCount = entry.getValue();
+						
+						String[] imputeTuple = {iVal, iCount.toString()};
+						
+						imputeVals.add(imputeTuple);
+					}
+														
+					// missingValLocs is unordered, as is imputedAttributes - so replacing the '?'  
+					// entries in this order works well
+					for (Map.Entry<Integer, Integer> entry : missingValLocs.entrySet()) {
+						Integer missingArrayList = entry.getKey();
+						Integer missingArray = entry.getValue();
 												
-						System.out.println(attVal);
-						System.out.println(value);
+						
+						
+						
+						
+						
+						
+						
+						
+						if(data.get(missingArrayList)[missingArray].equalsIgnoreCase("?")) {
+							
+						}
+						
+						
+						System.out.println(data.get(missingArrayList)[missingArray]);
+						
+						
+						
+						
 					}					
-//					
-//					
-//					
-//					
+				
 					
 					
-					// System.out.println(totalCount);
 
-				} // end for : building key, value and object set
+					// testing
+					for (String[] kv : imputeVals) {
+						for (int it = 0; it < kv.length; it++) {
+							System.out.println(kv[it]);							
+						}
 
-				// built keySet, valueSet, countSet
-
-				// } // end for : building key, value and object set
+					}
+					
+					
 
 			} // end if
 
-			// check class associated with missing data, calc percent of each
-			// feature, assign features accordingly
+
 
 		}
 
@@ -288,5 +320,5 @@ public class DataImputer {
 	// book 260
 	// cite paper handling missing attribute values starting page 5
 
-	// }
+	 }
 }
