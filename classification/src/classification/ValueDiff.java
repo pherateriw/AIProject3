@@ -41,10 +41,6 @@ public class ValueDiff {
 			}
 		}
 
-		// key is index of neighbor val, value is the distances between the
-		// neighbor and the query point
-
-
 		// go through each training example in the training data
 		for (int te = 0; te < trainData.size(); te++) {
 

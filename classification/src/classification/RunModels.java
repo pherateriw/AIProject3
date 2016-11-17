@@ -100,7 +100,7 @@ public class RunModels {
     		// test on S1, train on S2
     		// repeat 5 times, averaging over all folds
     		//TODO: tune k
-    		int k = 3; 
+    		int k = 7; 
     		
     		Algorithm knn = new KNearestNeighbor(shortName, train1, test1, k);
     		
