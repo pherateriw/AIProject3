@@ -2,6 +2,7 @@ package classification;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -15,7 +16,7 @@ import java.util.Set;
  * Algorithms" (1998). Although the majority of the 5 x 2 cross validation process (switching train and test sets, 
  * repeating the process 5 times) will take place in RunModels (where we call the algorithms), this will randomly
  * split the data into train and test sets. The data will be randomly split into two sets that are 
- * (roughly) equal in size, with the class distribution as close as possible to the original data.  
+ * (roughly) equivalent in size, with a class distribution that reflects (again, roughly) to the original data.  
  */
 
 public class DataSplitter {
@@ -33,10 +34,11 @@ public class DataSplitter {
 	public void splitData(int seed) {
 		ArrayList<String> classVals = new ArrayList<String>();
 		
-		// Random number generator, seeded for consistency
+		// Random number generator, seeded for consistency across algos
 		Random rand = new Random(seed);
 		int randomNumber;
 
+		// holds the train and test set
 		train = new ArrayList<String[]>();
 		test = new ArrayList<String[]>();
 
@@ -55,6 +57,7 @@ public class DataSplitter {
 		for (int c = 0; c < numClasses; c++) {
 			// move through all data, checking for this class
 			for (String[] arr : data) {
+				// if the correct class, randomly assign to either test or train
 				if (arr[arr.length - 1].equalsIgnoreCase(classVals.get(c))) {
 					randomNumber = rand.nextInt((numClasses - 1) + 1);
 					
@@ -62,50 +65,26 @@ public class DataSplitter {
 						train.add(arr);
 					} else {
 						test.add(arr);
-					}
-					
-				}
+					} // end if: assigned to train or test
+				} // end if : checked class value
 				
-
-			}
-
-		}
-		
-		
-		 for (String[] arr : train) {
-			//System.out.println(train.size());
-			System.out.println(Arrays.toString(arr));
-		 }
-		//
-		 for (String[] arr : test) {
-			//System.out.println(test.size());
-			 //System.out.println(Arrays.toString(arr));
-		 }
-
-		//for (Map.Entry<String, Integer> entry : classMap.entrySet()) {
-			// randomNumber = rand.nextInt((classMap.size() - 1) + 1);
-			// System.out.println(randomNumber);
-
-			// if (randomNumber % 2 == 0) {
-
-			// }
-
-			// String key = entry.getKey();
-			// int value = entry.getValue();
-			// System.out.println(key + " : " + Integer.toString(value));
-		//}
-
+			} // end for: move through all data
+		} // end for: finished splitting data
 	}
 
 	// return the test set
 	public ArrayList<String[]> trainData() {
-
+		// shuffles array because we imposed an ordering when splitting
+		long seed = System.nanoTime();
+		Collections.shuffle(train, new Random(seed));
 		return train;
 	}
 
 	// return the training set
 	public ArrayList<String[]> testData() {
-
+		// shuffles array because we imposed an ordering when splitting
+		long seed = System.nanoTime();
+		Collections.shuffle(test, new Random(seed));
 		return test;
 	}
 
