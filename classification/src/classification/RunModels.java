@@ -5,7 +5,6 @@ import java.awt.FlowLayout;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -45,7 +44,10 @@ public class RunModels {
     	data = p.getData();
     	
     	DataSplitter ds = new DataSplitter(data);
-    	ds.splitData();
+    	ds.splitData(1);
+    	
+    	//TODO: split the data 5 times out here, and get all so algos train/test on same splits
+    	// TODO: remove seed
     	
     	
 //    	for (String[] arr : data) {
