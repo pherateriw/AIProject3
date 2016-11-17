@@ -73,7 +73,7 @@ public class DataSplitter {
 	}
 
 	// return the test set
-	public ArrayList<String[]> trainData() {
+	public ArrayList<String[]> getTrainingData() {
 		// shuffles array because we imposed an ordering when splitting
 		long seed = System.nanoTime();
 		Collections.shuffle(train, new Random(seed));
@@ -81,7 +81,7 @@ public class DataSplitter {
 	}
 
 	// return the training set
-	public ArrayList<String[]> testData() {
+	public ArrayList<String[]> getTestingData() {
 		// shuffles array because we imposed an ordering when splitting
 		long seed = System.nanoTime();
 		Collections.shuffle(test, new Random(seed));
