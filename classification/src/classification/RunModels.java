@@ -44,13 +44,16 @@ public class RunModels {
     	Parser p = new Parser(dataFileLocation, classVariableLoc, dataImputation, dataDiscretization, idNumLoc, dataRemoval);    	
     	data = p.getData();
     	
-    	for (String[] arr : data) {
-			//System.out.println(data.size());
-			System.out.println(Arrays.toString(arr));
-	}
+    	DataSplitter ds = new DataSplitter(data);
+    	ds.splitData();
     	
     	
+//    	for (String[] arr : data) {
+//			//System.out.println(data.size());
+//			System.out.println(Arrays.toString(arr));
+//    	}
     	
+    		
     	//TODO: get data for the algos from the parser
     	//TODO: split into test/train here instead of parser?
     	//note: only need to output classifications for one fold each to turn in
@@ -110,12 +113,12 @@ public class RunModels {
     	// note, a value of -1 for idNumLoc means that there is no id value in that dataset
     	if (shortName.equals("breast-cancer-wisconsin")){
     		classVariableLoc = 10;
-    		dataImputation = false;
+    		dataImputation = true;
     		// NOTE: will need to also do one without discretization, where we just remove missing vals (complete
     		// case analysis) - when we do that, leave data imputation as true but set removeMissingVals to true
     		dataDiscretization = false;
     		idNumLoc = 0;
-    		removeMissingVals = true;
+    		removeMissingVals = false;
     	} else if (shortName.equals("glass")) {
     		classVariableLoc = 10;
     		dataImputation = false;
