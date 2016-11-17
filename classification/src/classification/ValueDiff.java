@@ -18,7 +18,9 @@ public class ValueDiff {
 
 	private String[] queryPoint;
 	private ArrayList<String[]> trainData;
-
+	Map<Integer, Double> qpNeighbors = new HashMap<Integer, Double>();
+	
+	
 	// hold the classes, as gathered from the training data
 	ArrayList<String> classVals = new ArrayList<String>();
 
@@ -39,9 +41,9 @@ public class ValueDiff {
 			}
 		}
 
-		// key is index of neighbor val, value is the sitances between the
+		// key is index of neighbor val, value is the distances between the
 		// neighbor and the query point
-		Map<Integer, Double> qpNeighbors = new HashMap<Integer, Double>();
+
 
 		// go through each training example in the training data
 		for (int te = 0; te < trainData.size(); te++) {
@@ -66,14 +68,6 @@ public class ValueDiff {
 
 			qpNeighbors.put(te, totalForNeighbor);
 
-		}
-
-		for (Map.Entry<Integer, Double> entry : qpNeighbors.entrySet()) {
-			int key = entry.getKey();
-			double value = entry.getValue();
-
-			System.out.println(key + " : " + value);
-			// do stuff
 		}
 
 		return qpNeighbors;
