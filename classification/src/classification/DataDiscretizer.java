@@ -24,7 +24,6 @@ public class DataDiscretizer {
 		ArrayList<String[]> binnedData = new ArrayList<String[]>();
 		// sort array
 		Collections.sort(data, new Comparator<String[]>() {
-			@Override
 			public int compare(String[] st1, String[] st2) {
 				// Parse values for to sort by
 				double s1 = Double.parseDouble(st1[v]);
