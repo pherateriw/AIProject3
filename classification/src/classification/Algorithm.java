@@ -45,8 +45,8 @@ public abstract class Algorithm {
         return LOGGER;
     }
 
-    abstract void train(ArrayList data);
-    abstract void test(ArrayList data);
+    abstract void train(ArrayList<String[]> data);
+    abstract void test(ArrayList<String[]> data);
 
 }
 
