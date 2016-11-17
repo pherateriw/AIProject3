@@ -33,6 +33,11 @@ public class Tree {
 		return tree;
 	}
 	
-	
+	public int getTreeSize(){
+		return tree.size();
+	}
+	public void addNode(TreeNode child){
+		tree.add(child);
+	}
 	
 }
