@@ -1,5 +1,8 @@
 package classification;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /*
  * Calculates the value difference metric (VDM), as described by Stanfill and Walz in "Toward Memory
  * Based Reasoning" (1986). VDM was designed as a distance function specifically for nominal attributes, 
@@ -9,11 +12,148 @@ package classification;
  * Using VDM, two values are "closer" if they have more similar classifications. Note: this does not depend
  * on order in which values were given. 
  */
-
 public class ValueDiff {
+	
+	private String[] queryPoint;
+	private ArrayList<String[]> trainData;
+	
+	// hold the classes, as gathered from the training data
+	ArrayList<String> classVals = new ArrayList<String>(); 
+	
+	private ArrayList<Double> vdmCalc = new ArrayList<Double>();
+	double[] distances; 
 
+	public ValueDiff(String[] queryPoint, ArrayList<String[]> trainData) {
+		this.queryPoint = queryPoint;
+		this.trainData = trainData;
+		calcVD();
+	}
+	
+	public void calcVD() {
+		// get the number of attributes in the data
+		int numAttributes = trainData.get(0).length - 1;
+				
+		// get number of classes in problem domain
+		for (int inst = 0; inst < trainData.size(); inst++) {
+			if(!classVals.contains(trainData.get(inst)[numAttributes])) {
+				classVals.add(trainData.get(inst)[numAttributes]);
+			}
+		}
+
+
+
+				
+		// go through each training example in the training data
+		for (int te = 0; te < trainData.size(); te++) {
+			
+			// gives us the neighbor to compare the query point against
+			String[] neighbor = Arrays.copyOfRange(trainData.get(te), 0, numAttributes);
+						
+			// compare each of the attributes in the query point and the neighbor
+			for (int attribute = 0; attribute < neighbor.length; attribute++) {
+				String trainAtt = neighbor[attribute];
+				String queryAtt = queryPoint[attribute];
+				
+				double distThisAtt =  calcThisAtt(trainAtt, queryAtt, numAttributes, classVals, attribute);
+				
+				//vdmCalc.add(attribute, distThisAtt);
+			}
+			
+		}
+		
+		
+		
+		// return array of distances
+	}
+
+	public double calcThisAtt(String x, String y, int numAttributes, ArrayList classVals, int attLoc) {
+		double distance = 0.0;
+		
+		// number of instances in the data set
+		int numDSInst = trainData.size();
+		
+		int classValLoc = trainData.get(0).length - 1;
+		
+		// get the number of classes in the data
+		int numClasses = classVals.size();
+		
+		/*
+		 * holds the intermediate values used to calculate VDM, where each int[] corresponds to vals for that
+		 * class size. order of array is as follows 
+		 * [0]: xinDSCount, [1]:yinDSCount, 
+		 * [2]: xByClassCount, [3]: yByClassCount
+		 */
+		
+		ArrayList<int[]> vdmCompByClass = new ArrayList<int[]>();
+		
+		// records the number of entries in the training data that have an attribute value that matches x
+		int xinDSCount = 0;
+		// records the number of entries in the training data that have attribute value x and class c
+		int xByClassCount = 0;
+
+		// records the number of entries in the training data that have an attribute value that matches y		
+		int yinDSCount = 0;
+		// records the number of entries in the training data that have attribute value y and class c
+		int yByClassCount = 0;
+		
+		// goes through each of the classes in the training data
+		for (int c = 0; c < numClasses; c++) {
+
+			
+			for (int i = 0; i < numDSInst; i++) {
+				// calculate the number of times attribute x occurs 
+				if (x.equalsIgnoreCase(trainData.get(i)[attLoc])) {
+					xinDSCount++;
+					// calculate number of times x occurs with the given class
+					if (trainData.get(i)[classValLoc].equalsIgnoreCase(classVals.get(c).toString())) {
+						xByClassCount++;
+					}
+
+				} // end if: x val counting
+				
+				// calculate the number of times attribute y occurs 
+				if (y.equalsIgnoreCase(trainData.get(i)[attLoc])) {
+					yinDSCount++;
+					// calculate number of times y occurs with the given class
+					if (trainData.get(i)[classValLoc].equalsIgnoreCase(classVals.get(c).toString())) {
+						yByClassCount++;
+					}					
+				} // end if: y val counting			
+			} // end for: have looped through entire training data
+			
+			
+			
+			
+			// write out, and reset
+			
+		} // end for: have looped through all classes
+			
+		
+			
+			
+			
+			
+
+		
+		System.out.println(x);
+		System.out.println("x " + xinDSCount);
+		System.out.println("x " + xByClassCount);		
+		
+		System.out.println(y);		
+		System.out.println("y " + yinDSCount);
+		System.out.println("y " + yByClassCount);	
+		
+		
+		return 0.0;
+	}
 	
 	
+	// for each of the attributes in the 
 	
 	
+
+
+
 }
+
+
