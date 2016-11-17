@@ -55,7 +55,7 @@ public class ValueDiff {
 				String queryAtt = queryPoint[attribute];
 				
 				double distThisAtt =  calcThisAtt(trainAtt, queryAtt, numAttributes, classVals, attribute);
-				
+				System.out.println(distThisAtt);
 				//vdmCalc.add(attribute, distThisAtt);
 			}
 			
@@ -78,12 +78,11 @@ public class ValueDiff {
 		int numClasses = classVals.size();
 		
 		/*
-		 * holds the intermediate values used to calculate VDM, where each int[] corresponds to vals for that
-		 * class size. order of array is as follows 
+		 * vdmCompByClass holds the intermediate values used to calculate VDM, where each int[] corresponds to 
+		 * vals for that class size. order of array is as follows: 
 		 * [0]: xinDSCount, [1]:yinDSCount, 
 		 * [2]: xByClassCount, [3]: yByClassCount
 		 */
-		
 		ArrayList<int[]> vdmCompByClass = new ArrayList<int[]>();
 		
 		// records the number of entries in the training data that have an attribute value that matches x
@@ -98,7 +97,8 @@ public class ValueDiff {
 		
 		// goes through each of the classes in the training data
 		for (int c = 0; c < numClasses; c++) {
-
+			xByClassCount = 0; 
+			yByClassCount = 0; 
 			
 			for (int i = 0; i < numDSInst; i++) {
 				// calculate the number of times attribute x occurs 
@@ -118,37 +118,48 @@ public class ValueDiff {
 					if (trainData.get(i)[classValLoc].equalsIgnoreCase(classVals.get(c).toString())) {
 						yByClassCount++;
 					}					
-				} // end if: y val counting			
+				} // end if: y val counting	
+				
 			} // end for: have looped through entire training data
 			
 			
-			
-			
-			// write out, and reset
-			
+			// add to array, reset everything
+			int[] calcsForClass = {xinDSCount, yinDSCount, xByClassCount, yByClassCount};
+			vdmCompByClass.add(calcsForClass);
+			xinDSCount = 0; 
+			yinDSCount = 0; 							
 		} // end for: have looped through all classes
 			
+		// now calculate the value difference metric 
+		// per Wilson "Value Difference Metrics for Continuously Valued Attributes" 1996, this is usually 1 or 2
+		int q = 1;
+		double vdm = 0.0;
 		
+		// goes through each class
+		for (int thisClass = 0; thisClass < vdmCompByClass.size(); thisClass++) {
+			// gets values, as counted earlier
+			int countX = vdmCompByClass.get(thisClass)[0]; 
+			int countY = vdmCompByClass.get(thisClass)[1]; 
+			int countXClass = vdmCompByClass.get(thisClass)[2]; 
+			int countYClass = vdmCompByClass.get(thisClass)[3];
 			
+			// calculates N_a,x,c/N_a,x
+			double xRatio = (double) countXClass / countX;
+			// calculates N_a,y,c/N_a,y
+			double yRatio = (double) countYClass / countY;			
 			
+			// takes the absolute value of the difference between x and y for this attribute
+			double diffXandY = Math.abs(xRatio - yRatio);
 			
-			
-
+			diffXandY = Math.pow(diffXandY, q);
+			vdm += diffXandY;
+		}
 		
-		System.out.println(x);
-		System.out.println("x " + xinDSCount);
-		System.out.println("x " + xByClassCount);		
-		
-		System.out.println(y);		
-		System.out.println("y " + yinDSCount);
-		System.out.println("y " + yByClassCount);	
-		
-		
-		return 0.0;
+		//returns the vdm for this pair of attributes
+		return vdm;
 	}
 	
-	
-	// for each of the attributes in the 
+
 	
 	
 
