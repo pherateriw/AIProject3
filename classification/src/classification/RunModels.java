@@ -99,8 +99,11 @@ public class RunModels {
     		// train on S1, test on S2
     		// test on S1, train on S2
     		// repeat 5 times, averaging over all folds
+    		//TODO: tune k
+    		int k = 3; 
     		
-    		Algorithm knn = new KNearestNeighbor();
+    		Algorithm knn = new KNearestNeighbor(shortName, train1, test1, k);
+    		
     		// split data, train on B and test on A
     		
     	} else if (choice.equals("nb")) {	
