@@ -3,7 +3,36 @@ package classification;
 import java.util.ArrayList;
 
 public class Tree {
-	public TreeNode root;
-	public ArrayList<TreeNode> tree;
+	private TreeNode root;
+	private ArrayList<TreeNode> tree;
+	public Tree(TreeNode root){
+		this.root = root;
+		tree = new ArrayList<TreeNode>();
+		tree.add(root);
+	}
+	public ArrayList<TreeNode> findLeaves(TreeNode root){
+		//TODO finish this
+		return tree;
+	}
+	public ArrayList<TreeNode> findBranches(TreeNode root){
+		//TODO finish this
+		return tree;
+	}
+	public Tree removeNode(int index){
+		//TODO finish this
+		return this;
+	}
+	public TreeNode getNode(int index){
+		return tree.get(index);
+	}
+	public TreeNode getRoot() {
+		return root;
+	}
+	
+	public ArrayList<TreeNode> getTree() {
+		return tree;
+	}
+	
+	
 	
 }
