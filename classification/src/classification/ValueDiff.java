@@ -19,7 +19,7 @@ public class ValueDiff {
 	private String[] queryPoint;
 	private ArrayList<String[]> trainData;
 	Map<Integer, Double> qpNeighbors = new HashMap<Integer, Double>();
-	
+	int numClasses; 
 	
 	// hold the classes, as gathered from the training data
 	ArrayList<String> classVals = new ArrayList<String>();
@@ -83,7 +83,7 @@ public class ValueDiff {
 		int classValLoc = trainData.get(0).length - 1;
 
 		// get the number of classes in the data
-		int numClasses = classVals.size();
+		numClasses = classVals.size();
 
 		/*
 		 * vdmCompByClass holds the intermediate values used to calculate VDM,

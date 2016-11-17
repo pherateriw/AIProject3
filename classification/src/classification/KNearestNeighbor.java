@@ -3,10 +3,10 @@ package classification;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.logging.Level;
 
 public class KNearestNeighbor extends Algorithm {
@@ -18,13 +18,14 @@ public class KNearestNeighbor extends Algorithm {
 	String shortName;
 
 	// stores the output of the k-NN algorithm, a class label given the feature data 
-	ArrayList<String> knnClass; 
+	ArrayList<String> knnClass = new ArrayList<String>(); 
 	
 	// used to navigate the data sets and print information
 	int numAttributes;
 	int numInstancesTrain; 
 	int numInstancesTest; 
 	int classLoc;
+	int numClasses;
 
 	int k;
 
@@ -67,7 +68,6 @@ public class KNearestNeighbor extends Algorithm {
 	
 	
 	
-	
 	void test(ArrayList<String[]> testData) {
 		super.get_logger().log(Level.INFO, "Starting testing:");		
 		
@@ -96,7 +96,9 @@ public class KNearestNeighbor extends Algorithm {
 			int [] indicesOfkNearest = findKClosest(qpNeighbors);
 			
 			// take the majority vote (with respect to class) of k-nearest neighbors, breaking ties randomly			
-			String classPrediction = majorityVote(indicesOfKNearest);
+			String classPrediction = majorityVote(indicesOfkNearest);
+			
+			knnClass.add(classPrediction);
 			
 //			// for testing
 //			for (int i = 0; i < queryPoint.length; i++) {
@@ -149,17 +151,21 @@ public class KNearestNeighbor extends Algorithm {
 		// calculate distance from qp to all points in training set
 		ValueDiff vd = new ValueDiff(qp, trainData);
 		qpNeighbors = vd.qpNeighbors; 
+		numClasses = vd.numClasses;
 		
 		return qpNeighbors;
 	}
 	
 	// find the k closest neighbors of the query point (where closest is defined as lowest VDM values
 	public int[] findKClosest(Map<Integer, Double> qpNeighbors) {
-		// leave in just for testing now
+		// array to hold the k smallest distances
 		double[] kSmallestDist = new double[k];
 		
+		// array to hold the indices of the instances with the k smallest distances
 		int[] kClosestIndices = new int[k];
 		
+		// because hash maps are not sortable
+		// NOTE: this is not efficient, think about changing if time allows
 		ArrayList<Double> distances = new ArrayList<Double>();
 				
 		// add all distances to an array list (to sort)
@@ -184,6 +190,44 @@ public class KNearestNeighbor extends Algorithm {
 		
 		return kClosestIndices;
 	}
+	
+	// take a majority vote among the k nearest neighbors (breaking ties randomly) to determine 
+	// the most popular class assignment
+	public String majorityVote(int[] kNearestIndices) {
+		String mostPop = "";
+		
+		Random rand = new Random(System.currentTimeMillis());
+		int tieBreaker = rand.nextInt();
+		
+		// holds the associated class value for each of the k nearest neighbors
+		ArrayList<String> ballotBox = new ArrayList<String>();
+		
+		// gets the classes associated with the k nearest neighbors
+		for (int i = 0; i < kNearestIndices.length; i++) {
+			ballotBox.add(trainData.get(i)[classLoc]);
+		}
+		
+		// determine the most popular class, breaking ties randomly
+		int mostPopFreq = Integer.MIN_VALUE;
+		
+		for (int i = 0; i < ballotBox.size() - 1; i++) {
+			int thisFreq = Collections.frequency(ballotBox, ballotBox.get(i));
+			
+			if (thisFreq > mostPopFreq) {
+				mostPopFreq = thisFreq;
+				mostPop = ballotBox.get(i);
+			} else if (thisFreq == mostPopFreq) {
+				if ((tieBreaker % 2 == 0) || mostPop.equals("")) {
+					mostPopFreq = thisFreq;
+					mostPop = ballotBox.get(i);
+				} 
+			}
+			
+		} // end for: have determined the most popular class
+		
+		return mostPop;
+	}
+	
 	
 	
 }
