@@ -280,7 +280,9 @@ public class TreeAugNB extends Algorithm {
 	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex){
 		//p(y|z)p(y)p(x|z)  / p(y|z)
 		HashMap<String, Double> xlikelihoods = likelihoods.get(xfeatureIndex);
-		HashMap<String, Double> xprior = predictorPriors.get(xfeatureIndex);
+		HashMap<String, Double> classprior = classPriors.get();
+		
+		
 		
 		return 0.0;
 	}
