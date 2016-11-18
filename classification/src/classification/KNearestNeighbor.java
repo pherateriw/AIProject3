@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Random;
 import java.util.logging.Level;
 
@@ -111,6 +110,7 @@ public class KNearestNeighbor extends Algorithm {
 	/*
 	 * Evaluate the classification accuracy of k-NN algorithm for this dataset.
 	 */
+	
 	public void evaluate() {
 		for (String s : knnClass) {
 			System.out.println(s);
