@@ -299,6 +299,10 @@ public class TreeAugNB extends Algorithm {
 				}
 			}
 		}
+
+		for (String f : featureLikelihoods.keySet()){
+			super.get_logger().log(Level.INFO, String.format("Likelihood of %s is %s", f, featureLikelihoods.get(f)));
+		}
 	}
 
 	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex){
