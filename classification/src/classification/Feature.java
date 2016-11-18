@@ -54,11 +54,6 @@ public class Feature {
         return allProbs;
         }
 
-    public String predict(String[] test){
-        return "hi";
-    }
-
-
 
 
     public  void calculatePredictorPriors(){

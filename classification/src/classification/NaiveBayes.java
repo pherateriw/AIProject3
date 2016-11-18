@@ -10,21 +10,19 @@ import java.util.HashMap;
 public class NaiveBayes extends Algorithm {
 
     ArrayList trainData;
-    //create class into feature
-    Feature clas;
-    //create arraylist of features
     ArrayList<Feature> features = new ArrayList();
     HashMap<String, Double> classPriors;
     ArrayList<HashMap> likelihoods;
     ArrayList<HashMap> predictorPriors;
+    HashMap<String, Integer> classFrequencies;
     HashMap<String, Double> posteriors = new HashMap<>();
     int classesTotal;
 
     public NaiveBayes(ArrayList<String[]> data){
         trainData = data;
-        clas = new Feature(data.size());
         super.get_logger().log(Level.INFO, "Naive Bayes Algorithm created.");
         this.classesTotal = trainData.size();
+        this.classFrequencies = new HashMap<>();
         train(data);
     }
 
@@ -39,11 +37,8 @@ public class NaiveBayes extends Algorithm {
         }
 
         count(numFeatures);
-        HashMap classFrequencies = new HashMap();
 
-        //TODO
-        classFrequencies.put("No", 5);
-        classFrequencies.put("Yes", 9);
+
 
         likelihoods = new ArrayList();
         predictorPriors = new ArrayList();
@@ -54,12 +49,22 @@ public class NaiveBayes extends Algorithm {
         }
         calculateClassPriors(classFrequencies);  //p(c)
 
-        String[] test = new String[] {"Sunny", "Cool", "High", "Strong"};
-        predict(test);
+
     }
 
-    public void predict(String[] testEx){
+
+
+    public String predictSingle(String[] testEx){
         calculatePosteriors(testEx);
+        String maxKey = "";
+        double maxVal = 0.0;
+        for (String classKey : this.posteriors.keySet()){
+            if (this.posteriors.get(classKey) > maxVal){
+                maxKey = classKey;
+                maxVal = this.posteriors.get(classKey);
+            }
+        }
+        return maxKey;
     }
 
     private void calculatePosteriors(String[] testEx){
@@ -96,7 +101,6 @@ public class NaiveBayes extends Algorithm {
             //multiple all predictors
             allPredPrior *= predictorPrior.get(featureKey);
         }
-        System.out.println();
 
         //multiply by classPriors then divide by all predictor priors
         for (String classKey : this.classPriors.keySet()) {
@@ -125,7 +129,13 @@ public class NaiveBayes extends Algorithm {
             for (int i = 0; i < numFeatures; i++){
                 features.get(i).addInstance(stringArray[i], stringArray[stringArray.length - 1]);
             }
-            clas.addInstance(stringArray[stringArray.length - 1], "None");
+            try {
+                int value = this.classFrequencies.get(stringArray[stringArray.length - 1]);
+                this.classFrequencies.put(stringArray[stringArray.length - 1], value + 1);
+            }
+            catch (Exception e){
+                this.classFrequencies.put(stringArray[stringArray.length - 1], 1);
+            }
         }
     }
 
