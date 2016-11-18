@@ -21,6 +21,8 @@ public class TreeAugNB extends Algorithm {
 	private HashMap<String, Double> classPriors;
 	private ArrayList<HashMap> predictorPriors;
 	private ArrayList<HashMap> likelihoods;
+	private HashMap<String, Double> valOccurences;
+	private HashMap<String, Double> togetherness; 
 
 
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
@@ -197,6 +199,8 @@ public class TreeAugNB extends Algorithm {
 		this.classPriors = nb.classPriors;
 		this.likelihoods = nb.likelihoods;
 		this.predictorPriors = nb.predictorPriors;
+		this.togetherness = nb.togetherness;
+		this.valOccurences = nb.valOccurances;
 	}
 
 	private void probOfXGivenYandZ(double x, double y, double z){
