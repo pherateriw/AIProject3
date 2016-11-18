@@ -1,5 +1,6 @@
 package classification;
 
+import java.lang.reflect.Array;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.ArrayList;
@@ -13,12 +14,15 @@ public class NaiveBayes extends Algorithm {
     Feature clas;
     //create arraylist of features
     ArrayList<Feature> features = new ArrayList();
+    HashMap<String, Double> classPriors;
+    int classesTotal;
 
     public NaiveBayes(ArrayList data){
         trainData = data;
         clas = new Feature(data.size());
         super.get_logger().log(Level.INFO, "Naive Bayes Algorithm created.");
         train(data);
+        classesTotal = trainData.size();
     }
 
     void train(ArrayList trainData){
@@ -32,10 +36,32 @@ public class NaiveBayes extends Algorithm {
         }
 
         count(numFeatures);
-        HashMap classPriors = new HashMap();
-        classPriors.put("No", 5);
-        classPriors.put("Yes", 9);
-        features.get(0).calculateProbabilities(classPriors);
+        HashMap classFrequencies = new HashMap();
+
+        //TODO
+        classFrequencies.put("No", 5);
+        classFrequencies.put("Yes", 9);
+
+        ArrayList featureProbs = new ArrayList();
+        for (Feature f : features) {
+            featureProbs.add(f.calculateProbabilities(classFrequencies));
+        }
+        calculateClassPriors(classFrequencies);  //p(c)
+
+        String[] test = new String[] {"Sunny", "Cool", "High", "Strong"};
+        predict(test);
+    }
+
+    public void predict(String[] x){
+
+    }
+    public void calculateClassPriors(HashMap classFrequencies){
+        this.classPriors = new HashMap<>();
+
+        for (Object classKey : classFrequencies.keySet()) {
+            double value = (double) (Integer) classFrequencies.get(classKey) /  classesTotal;
+            this.classPriors.put((String)classKey, value);
+        }
 
     }
 
@@ -52,7 +78,9 @@ public class NaiveBayes extends Algorithm {
 
 
     void test(ArrayList testData){
+
         super.get_logger().log(Level.INFO, "Starting testing:");
+
     }
 
 
