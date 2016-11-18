@@ -1,7 +1,11 @@
 package classification;
 import java.util.ArrayList;
 public class TreeAugNB extends Algorithm {
-
+	public TreeAugNB(){
+		
+	}
+	
+	
 	// TODO: update these comments, or discard them if not needed
 	// TAN learning algo strategy, from ML notes starting at p 112:
 	/*
@@ -28,10 +32,17 @@ public class TreeAugNB extends Algorithm {
 	
 	
 	
-    void test(ArrayList data){
+    void test(ArrayList<String[]> data){
 
     }
-    void train(ArrayList data){
+    void train(ArrayList<String[]> data){
 
     }
+    private Tree createFullGraph(ArrayList<String[]> data){
+    	TreeNode root = new BayesTreeNode();
+    	Tree tree = new Tree(root);
+    	//TODo finish this
+    	return tree;
+    }
+    
 }
