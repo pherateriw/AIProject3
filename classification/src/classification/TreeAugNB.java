@@ -104,6 +104,9 @@ public class TreeAugNB extends Algorithm {
 	}
 
 	private Tree maxSpanTree(BayesTree tree) {
+		//new arraylist of edges edges
+		//sort edges in tree
+		//for each edge in tree
 		return tree;
 	}
 
