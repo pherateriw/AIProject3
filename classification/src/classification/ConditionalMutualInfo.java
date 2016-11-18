@@ -53,15 +53,19 @@ public class ConditionalMutualInfo {
 			}
 		}
 
+		double cmi = 0.0; 
+		
 		// iterate through all class values
 		for (int v = 0; v < classVals.size(); v++) {
-
+			
 			// holds P(v)
 			double probV = 0.0;
 
 			// number of times the class v appears in the training data
 			int numV = 0;
 
+			double cmiAILevel = 0.0;
+			
 			for (int ai = 0; ai < aiVals.size(); ai++) {
 				// holds P(ai | v)
 				double probAIandV = 0.0;
@@ -69,7 +73,10 @@ public class ConditionalMutualInfo {
 				// number of times ai and v appear together in the training data
 				int numAIandV = 0;
 
+				double cmiAJlevel = 0.0;
+				
 				for (int aj = 0; aj < ajVals.size(); aj++) {
+					
 					// holds P( aj | v )
 					double probAJandV = 0.0;
 
@@ -103,32 +110,60 @@ public class ConditionalMutualInfo {
 									numAIAJandV++;
 								}
 								
-							}
+							} // end ifs: checking for ai
 							
+							// checks for number of times we find aj and 
+							// v in the training data
 							if (arr[ajLoc].equals(ajVals)) {
 								numAJandV++;
 							}
 							
-						} // end if: v in training data
+						} // end if: checking for this class
 
-						probAIAJandV = (double) numAIAJandV / ajVals.size();
-						//System.out.println(probAIAJandV);
+
+					} // end for: have gone through all training data getting counts
+
+					probAIAJandV = (double) numAIAJandV / ajVals.size();
+					//System.out.println(probAIAJandV);
+					
+					probAJandV = (double) numAJandV / ajVals.size();
+					//System.out.println(probAIandV);	
+
+					System.out.println(probAIandV);
+					System.out.println(probAJandV);
+					
+					
+					double numer = probAIAJandV;
+					double denom = probAIandV * probAJandV;
+					
+					// to avoid NaN, if denom = 0, make some small non zero value
+					if (denom == 0) {
 						
-						probAJandV = (double) numAJandV / ajVals.size();
-						//System.out.println(probAIandV);						
-
 					}
-
-					probAIandV = (double) numAIandV / aiVals.size();
-					//System.out.println(probAIandV);
-
+					
+					
+					double ratio = numer/denom;
+					
+					double log = Math.log(ratio);
+					
+					double product = probAIAJandV * probAJandV * probV * log;
+					
+					cmiAJlevel += product;
+					System.out.println(cmiAJlevel);
 				}
 
-				probV = (double) numV / trainData.size();
-				//System.out.println(probV);
+				probAIandV = (double) numAIandV / aiVals.size();
+				//System.out.println(probAIandV);
+				
+				cmiAILevel += cmiAJlevel;
 				
 			} // end for: have counted all occurrences of class
 
+			probV = (double) numV / trainData.size();
+			//System.out.println(probV);
+			
+			cmi += cmiAILevel;
+			
 		}
 
 		// sum over all classes v in the data set
@@ -140,7 +175,7 @@ public class ConditionalMutualInfo {
 
 		// get P(Ai,Aj,V) with chain rule?
 
-		double cmi = 0.0;
+		System.out.println(cmi);
 
 		return cmi;
 	}
