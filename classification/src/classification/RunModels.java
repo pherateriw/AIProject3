@@ -111,7 +111,7 @@ public class RunModels {
     		Algorithm tan = new TreeAugNB(); 
     	} else if (choice.equals("id3")) {	
     		System.out.println("Classifying data using the Iterative Dichotomiser 3"); 
-    		Algorithm id3 = new DecisionTree();    		
+    		Algorithm id3 = new DecisionTree(train1, test1, 0);    		
     	} else {
     		// user chose to exit the program or typed their choice incorrectly
     		System.out.println("Exiting program.");
