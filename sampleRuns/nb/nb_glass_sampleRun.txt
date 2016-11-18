@@ -1,0 +1,335 @@
+Naive Bayes Algorithm created.
+Working with glass dataset
+Starting training:
+Counting all frequencies.
+Calculating likelihoods and predictorPriors.
+Calculating classPriors.
+Done training
+
+Training Results.
+Size of testing set: 103 instances, 9 attributes
+
+Feature 0 with values of: 1.517665 1.5140099999999999 1.526195 
+PredictorPrior of 1.517665: 0.40
+Likelihood of 1.517665 given 1: 0.59
+Likelihood of 1.517665 given 2: 0.30
+Likelihood of 1.517665 given 3: 0.33
+Likelihood of 1.517665 given 5: 0.20
+Likelihood of 1.517665 given 6: 0.67
+Likelihood of 1.517665 given 7: 0.20
+PredictorPrior of 1.5140099999999999: 0.45
+Likelihood of 1.5140099999999999 given 1: 0.16
+Likelihood of 1.5140099999999999 given 2: 0.49
+Likelihood of 1.5140099999999999 given 3: 0.50
+Likelihood of 1.5140099999999999 given 5: 0.80
+Likelihood of 1.5140099999999999 given 6: 0.67
+Likelihood of 1.5140099999999999 given 7: 0.87
+PredictorPrior of 1.526195: 0.33
+Likelihood of 1.526195 given 1: 0.32
+Likelihood of 1.526195 given 2: 0.30
+Likelihood of 1.526195 given 3: 0.67
+Likelihood of 1.526195 given 5: 0.60
+Likelihood of 1.526195 given 6: 0.67
+Likelihood of 1.526195 given 7: 0.13
+
+Feature 1 with values of: 13.33 11.875 15.51 
+PredictorPrior of 13.33: 0.34
+Likelihood of 13.33 given 1: 0.38
+Likelihood of 13.33 given 2: 0.38
+Likelihood of 13.33 given 3: 0.50
+Likelihood of 13.33 given 5: 0.40
+Likelihood of 13.33 given 6: 0.33
+Likelihood of 13.33 given 7: 0.07
+PredictorPrior of 11.875: 0.46
+Likelihood of 11.875 given 1: 0.49
+Likelihood of 11.875 given 2: 0.54
+Likelihood of 11.875 given 3: 0.33
+Likelihood of 11.875 given 5: 0.80
+Likelihood of 11.875 given 6: 0.33
+Likelihood of 11.875 given 7: 0.13
+PredictorPrior of 15.51: 0.38
+Likelihood of 15.51 given 1: 0.22
+Likelihood of 15.51 given 2: 0.16
+Likelihood of 15.51 given 3: 0.67
+Likelihood of 15.51 given 5: 0.40
+Likelihood of 15.51 given 6: 1.33
+Likelihood of 15.51 given 7: 1.00
+
+Feature 2 with values of: 1.48 4.025 3.325 
+PredictorPrior of 1.48: 0.37
+Likelihood of 1.48 given 1: 0.11
+Likelihood of 1.48 given 2: 0.24
+Likelihood of 1.48 given 3: 0.17
+Likelihood of 1.48 given 5: 1.20
+Likelihood of 1.48 given 6: 1.33
+Likelihood of 1.48 given 7: 0.93
+PredictorPrior of 4.025: 0.38
+Likelihood of 4.025 given 1: 0.41
+Likelihood of 4.025 given 2: 0.49
+Likelihood of 4.025 given 3: 0.50
+Likelihood of 4.025 given 5: 0.20
+Likelihood of 4.025 given 6: 0.33
+Likelihood of 4.025 given 7: 0.07
+PredictorPrior of 3.325: 0.43
+Likelihood of 3.325 given 1: 0.57
+Likelihood of 3.325 given 2: 0.35
+Likelihood of 3.325 given 3: 0.83
+Likelihood of 3.325 given 5: 0.20
+Likelihood of 3.325 given 6: 0.33
+Likelihood of 3.325 given 7: 0.20
+
+Feature 3 with values of: 0.77 1.395 2.52 
+PredictorPrior of 0.77: 0.42
+Likelihood of 0.77 given 1: 0.57
+Likelihood of 0.77 given 2: 0.35
+Likelihood of 0.77 given 3: 0.67
+Likelihood of 0.77 given 5: 0.20
+Likelihood of 0.77 given 6: 0.67
+Likelihood of 0.77 given 7: 0.13
+PredictorPrior of 1.395: 0.39
+Likelihood of 1.395 given 1: 0.41
+Likelihood of 1.395 given 2: 0.49
+Likelihood of 1.395 given 3: 0.67
+Likelihood of 1.395 given 5: 0.20
+Likelihood of 1.395 given 6: 0.33
+Likelihood of 1.395 given 7: 0.07
+PredictorPrior of 2.52: 0.37
+Likelihood of 2.52 given 1: 0.11
+Likelihood of 2.52 given 2: 0.24
+Likelihood of 2.52 given 3: 0.17
+Likelihood of 2.52 given 5: 1.20
+Likelihood of 2.52 given 6: 1.00
+Likelihood of 2.52 given 7: 1.00
+
+Feature 4 with values of: 72.755 71.16 74.205 
+PredictorPrior of 72.755: 0.38
+Likelihood of 72.755 given 1: 0.46
+Likelihood of 72.755 given 2: 0.32
+Likelihood of 72.755 given 3: 0.50
+Likelihood of 72.755 given 5: 0.40
+Likelihood of 72.755 given 6: 0.67
+Likelihood of 72.755 given 7: 0.20
+PredictorPrior of 71.16: 0.34
+Likelihood of 71.16 given 1: 0.30
+Likelihood of 71.16 given 2: 0.35
+Likelihood of 71.16 given 3: 0.67
+Likelihood of 71.16 given 5: 0.60
+Likelihood of 71.16 given 6: 0.67
+Likelihood of 71.16 given 7: 0.13
+PredictorPrior of 74.205: 0.46
+Likelihood of 74.205 given 1: 0.32
+Likelihood of 74.205 given 2: 0.41
+Likelihood of 74.205 given 3: 0.33
+Likelihood of 74.205 given 5: 0.60
+Likelihood of 74.205 given 6: 0.67
+Likelihood of 74.205 given 7: 0.87
+
+Feature 5 with values of: 0.16 3.4 0.45999999999999996 
+PredictorPrior of 0.16: 0.38
+Likelihood of 0.16 given 1: 0.30
+Likelihood of 0.16 given 2: 0.16
+Likelihood of 0.16 given 3: 0.67
+Likelihood of 0.16 given 5: 0.20
+Likelihood of 0.16 given 6: 1.33
+Likelihood of 0.16 given 7: 0.87
+PredictorPrior of 3.4: 0.43
+Likelihood of 3.4 given 1: 0.35
+Likelihood of 3.4 given 2: 0.54
+Likelihood of 3.4 given 3: 0.17
+Likelihood of 3.4 given 5: 1.00
+Likelihood of 3.4 given 6: 0.33
+Likelihood of 3.4 given 7: 0.27
+PredictorPrior of 0.45999999999999996: 0.37
+Likelihood of 0.45999999999999996 given 1: 0.43
+Likelihood of 0.45999999999999996 given 2: 0.38
+Likelihood of 0.45999999999999996 given 3: 0.67
+Likelihood of 0.45999999999999996 given 5: 0.40
+Likelihood of 0.45999999999999996 given 6: 0.33
+Likelihood of 0.45999999999999996 given 7: 0.07
+
+Feature 6 with values of: 12.56 6.91 8.66 
+PredictorPrior of 12.56: 0.35
+Likelihood of 12.56 given 1: 0.35
+Likelihood of 12.56 given 2: 0.24
+Likelihood of 12.56 given 3: 0.50
+Likelihood of 12.56 given 5: 0.80
+Likelihood of 12.56 given 6: 1.00
+Likelihood of 12.56 given 7: 0.27
+PredictorPrior of 6.91: 0.40
+Likelihood of 6.91 given 1: 0.19
+Likelihood of 6.91 given 2: 0.59
+Likelihood of 6.91 given 3: 0.17
+Likelihood of 6.91 given 5: 0.60
+Likelihood of 6.91 given 6: 0.67
+Likelihood of 6.91 given 7: 0.40
+PredictorPrior of 8.66: 0.43
+Likelihood of 8.66 given 1: 0.54
+Likelihood of 8.66 given 2: 0.24
+Likelihood of 8.66 given 3: 0.83
+Likelihood of 8.66 given 5: 0.20
+Likelihood of 8.66 given 6: 0.33
+Likelihood of 8.66 given 7: 0.53
+
+Feature 7 with values of: 0.0 1.575 
+PredictorPrior of 0.0: 0.73
+Likelihood of 0.0 given 1: 0.86
+Likelihood of 0.0 given 2: 0.78
+Likelihood of 0.0 given 3: 1.00
+Likelihood of 0.0 given 5: 0.40
+Likelihood of 0.0 given 6: 1.33
+Likelihood of 0.0 given 7: 0.13
+PredictorPrior of 1.575: 0.39
+Likelihood of 1.575 given 1: 0.19
+Likelihood of 1.575 given 2: 0.27
+Likelihood of 1.575 given 3: 0.33
+Likelihood of 1.575 given 5: 1.00
+Likelihood of 1.575 given 6: 0.33
+Likelihood of 1.575 given 7: 1.00
+
+Feature 8 with values of: 0.0 0.255 
+PredictorPrior of 0.0: 0.69
+Likelihood of 0.0 given 1: 0.57
+Likelihood of 0.0 given 2: 0.57
+Likelihood of 0.0 given 3: 1.00
+Likelihood of 0.0 given 5: 1.20
+Likelihood of 0.0 given 6: 1.33
+Likelihood of 0.0 given 7: 0.87
+PredictorPrior of 0.255: 0.43
+Likelihood of 0.255 given 1: 0.49
+Likelihood of 0.255 given 2: 0.49
+Likelihood of 0.255 given 3: 0.33
+Likelihood of 0.255 given 5: 0.20
+Likelihood of 0.255 given 6: 0.33
+Likelihood of 0.255 given 7: 0.27
+
+
+ClassPrior of 1: 0.36
+ClassPrior of 2: 0.36
+ClassPrior of 3: 0.06
+ClassPrior of 5: 0.05
+ClassPrior of 6: 0.03
+ClassPrior of 7: 0.15
+
+Starting testing:
+Given features [1.517665, 11.875, 3.325, 1.395, 72.755, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 11.875, 1.48, 2.52, 72.755, 3.4, 12.56, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 15.51, 3.325, 1.395, 71.16, 0.45999999999999996, 8.66, 1.575, 0.0]: predicted class is 3
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 6
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.5140099999999999, 11.875, 1.48, 2.52, 71.16, 3.4, 6.91, 0.0, 0.0]: predicted class is 5
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.255]: predicted class is 7
+Given features [1.517665, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 12.56, 0.0, 0.0]: predicted class is 3
+Given features [1.526195, 15.51, 3.325, 0.77, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.517665, 13.33, 4.025, 0.77, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]: predicted class is 6
+Given features [1.517665, 11.875, 4.025, 1.395, 74.205, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.5140099999999999, 15.51, 1.48, 1.395, 74.205, 0.16, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 15.51, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.526195, 11.875, 1.48, 2.52, 71.16, 3.4, 12.56, 1.575, 0.255]: predicted class is 5
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.526195, 15.51, 1.48, 1.395, 71.16, 0.16, 8.66, 1.575, 0.0]: predicted class is 6
+Given features [1.526195, 11.875, 1.48, 1.395, 74.205, 0.16, 12.56, 1.575, 0.255]: predicted class is 6
+Given features [1.526195, 13.33, 1.48, 1.395, 71.16, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 5
+Given features [1.517665, 11.875, 1.48, 0.77, 74.205, 0.45999999999999996, 12.56, 0.0, 0.255]: predicted class is 6
+Given features [1.517665, 15.51, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.526195, 15.51, 4.025, 1.395, 71.16, 0.16, 8.66, 1.575, 0.0]: predicted class is 3
+Given features [1.526195, 13.33, 1.48, 2.52, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.517665, 15.51, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 13.33, 1.48, 1.395, 72.755, 0.45999999999999996, 12.56, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]: predicted class is 7
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 11.875, 3.325, 0.77, 72.755, 3.4, 8.66, 0.0, 0.255]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.255]: predicted class is 7
+Given features [1.526195, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.517665, 11.875, 4.025, 1.395, 72.755, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 0.77, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 11.875, 1.48, 1.395, 72.755, 3.4, 8.66, 1.575, 0.0]: predicted class is 5
+Given features [1.526195, 11.875, 1.48, 0.77, 71.16, 0.16, 12.56, 1.575, 0.255]: predicted class is 6
+Given features [1.526195, 13.33, 3.325, 0.77, 71.16, 3.4, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.517665, 15.51, 1.48, 2.52, 72.755, 3.4, 6.91, 1.575, 0.255]: predicted class is 6
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 7
+Given features [1.526195, 15.51, 1.48, 0.77, 72.755, 0.16, 12.56, 1.575, 0.255]: predicted class is 6
+Given features [1.517665, 13.33, 3.325, 2.52, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 3
+Given features [1.526195, 13.33, 3.325, 1.395, 71.16, 3.4, 12.56, 0.0, 0.255]: predicted class is 3
+Given features [1.517665, 15.51, 4.025, 0.77, 72.755, 0.16, 8.66, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 11.875, 4.025, 0.77, 74.205, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.5140099999999999, 13.33, 4.025, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 11.875, 3.325, 1.395, 74.205, 3.4, 8.66, 0.0, 0.255]: predicted class is 1
+Given features [1.517665, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 11.875, 4.025, 1.395, 74.205, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]: predicted class is 7
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 3
+Given features [1.526195, 11.875, 1.48, 2.52, 72.755, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 5
+Given features [1.517665, 11.875, 4.025, 1.395, 74.205, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 3
+Given features [1.526195, 13.33, 4.025, 0.77, 72.755, 0.16, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.526195, 13.33, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]: predicted class is 5
+Given features [1.5140099999999999, 15.51, 4.025, 2.52, 71.16, 0.16, 6.91, 0.0, 0.255]: predicted class is 6
+Given features [1.5140099999999999, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 5
+Given features [1.517665, 11.875, 3.325, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 3.325, 0.77, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.526195, 15.51, 1.48, 0.77, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.5140099999999999, 11.875, 3.325, 2.52, 74.205, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.5140099999999999, 11.875, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.5140099999999999, 13.33, 3.325, 2.52, 71.16, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]: predicted class is 6
+Given features [1.517665, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 11.875, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.526195, 11.875, 1.48, 2.52, 74.205, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 5
+Given features [1.5140099999999999, 13.33, 3.325, 0.77, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.5140099999999999, 15.51, 3.325, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 6
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]: predicted class is 6
+Given features [1.526195, 15.51, 1.48, 1.395, 71.16, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.517665, 13.33, 4.025, 0.77, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.517665, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.5140099999999999, 11.875, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.517665, 15.51, 4.025, 2.52, 71.16, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 6
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 3.4, 12.56, 0.0, 0.0]: predicted class is 6
+Given features [1.5140099999999999, 11.875, 4.025, 1.395, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 71.16, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]: predicted class is 7
+Given features [1.517665, 13.33, 4.025, 0.77, 74.205, 0.16, 8.66, 0.0, 0.0]: predicted class is 6
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 3
+Given features [1.526195, 13.33, 3.325, 0.77, 71.16, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.5140099999999999, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Given features [1.517665, 13.33, 4.025, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 1
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.526195, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 3
+Given features [1.526195, 11.875, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]: predicted class is 5
+Given features [1.526195, 13.33, 4.025, 0.77, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 3
+Given features [1.5140099999999999, 13.33, 3.325, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 3
+Given features [1.517665, 11.875, 3.325, 0.77, 74.205, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 1.575, 0.255]: predicted class is 3
+Given features [1.526195, 11.875, 4.025, 2.52, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 3
+Given features [1.5140099999999999, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 5
+Given features [1.5140099999999999, 15.51, 3.325, 2.52, 71.16, 3.4, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 12.56, 0.0, 0.0]: predicted class is 3
+Given features [1.526195, 15.51, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 6
+Given features [1.526195, 11.875, 1.48, 2.52, 74.205, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 5
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]: predicted class is 6
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.255]: predicted class is 7
+Given features [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 6
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+6 class classification problem
+Results for this fold:
+Average Accuracy: 4.818181818181818
+Macro Precision: 0.6061916806597657
+Macro Precision: 0.5602737905369485
+Macro Score: 0.5602737905369485
+######################################

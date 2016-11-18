@@ -1,10 +1,6 @@
 package classification;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.logging.Level;
 
 public class DecisionTree extends Algorithm {
@@ -16,15 +12,18 @@ public class DecisionTree extends Algorithm {
 	ArrayList<String> classlabels;
 	EvaluationMeasures error;
 
-	public DecisionTree(ArrayList<String[]> trainset, ArrayList<String[]> testset, double valratio) {
+	public DecisionTree(String dataName, ArrayList<String[]> trainset, ArrayList<String[]> testset, double valratio) {
+		super.get_logger().log(Level.INFO, "Decision Tree Algorithm created.");
+		super.get_logger().log(Level.INFO, String.format("Working with %s dataset", dataName));
 		this.trainset = trainset;
 		this.testset = testset;
 		this.valratio = valratio;
 		train(trainset);
-
+		test(testset);
 	}
 	
 	void test(ArrayList<String[]> data) {
+		super.get_logger().log(Level.INFO, "Starting testing:");
 		// testset = data;
 		// create list of predicted class labels
 		ArrayList<String> predictedClass = new ArrayList<String>();
@@ -35,31 +34,59 @@ public class DecisionTree extends Algorithm {
 			DecisionTreeNode root = (DecisionTreeNode) tree.getRoot();
 			// start at root:
 			// while root.children is not empty
-			while (!root.children.isEmpty()) {
+			int nodeCount = 0;
+			String label = null;
+			while (!root.children.isEmpty() && nodeCount < 2*tree.getTreeSize()) {
 				// find root.attribute in element
 				int att = root.attribute;
 				// for each root.child
 
 				for (TreeNode c : root.children) {
+					nodeCount++;
 					DecisionTreeNode child = (DecisionTreeNode) c;
 					// if featValue = attribute value for element
 					if (child.featValue.equals(instance[att])) {
 						// root = child
 						root = child;
+						//label = root.label;
 						break;
 					}
 				}
 			}
 			// store root.label in predicted class labels
-			predictedClass.add(root.label);
+
+			if(root.label == null){
+				HashMap<String, Integer> countmap = countAllClasses(root.examples);
+				HashMap.Entry<String, Integer> maxEntry = null;
+
+				for (HashMap.Entry<String, Integer> entry : countmap.entrySet()) {
+					if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+						maxEntry = entry;
+					}
+					
+				}
+				label = maxEntry.getKey();
+				predictedClass.add(maxEntry.getKey());
+			}else{
+				label = root.label;
+				predictedClass.add(root.label);
+			}
+
+			String[] newArray = Arrays.copyOfRange(instance, 0, instance.length -1);
+			super.get_logger().log(Level.INFO, String.format("Given features %s: predicted class is %s", Arrays.toString(newArray), label));
+
 		}
-		HashMap<String, Integer> map = countAllClasses(data);
-		System.out.println(map.toString());
+		//System.out.println(data);
+		//HashMap<String, Integer> map = countAllClasses(data);
+		//System.out.println(map.toString());
+		System.out.println(predictedClass);
 		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
+		ArrayList<Double> results = error.evaluateData();
+		System.out.println("F-measure: " + results.get(3));
 	}
 
 	void train(ArrayList<String[]> data) {
-		//super.get_logger().log(Level.INFO, "ID3 Training started");
+		super.get_logger().log(Level.INFO, "Training started:");
 		//trainset = data;
 		classlabels = new ArrayList<String>();
 		// generate class label array
@@ -82,43 +109,52 @@ public class DecisionTree extends Algorithm {
 		for (int i = 0; i < trainset.get(0).length - 2; i++) {
 			attributes.add(i);
 		}
-		//super.get_logger().log(Level.INFO, "Attribute set created");
+		super.get_logger().log(Level.INFO, "Attribute set created");
 		// call treeBuilder on data, attribute array, root
 		treeBuilder(trainset, attributes, root);
 		super.get_logger().log(Level.INFO, "Tree Built");
 		ArrayList<TreeNode> t = tree.getTree();
-//		for (TreeNode i : t) {
-//			DecisionTreeNode j = (DecisionTreeNode) i;
-//			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
-//					+ " and splits on attribute " + j.attribute);
-//			if (j.getRootindex() > -1) {
-//				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
-//						+ " and this node has feature value " + j.featValue);
-//			}
-//			
-//		}
-		
-		pruneTree(tree);
-		// call pruning
-		
+
 		for (TreeNode i : t) {
 			DecisionTreeNode j = (DecisionTreeNode) i;
-			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
-					+ " and splits on attribute " + j.attribute);
+			super.get_logger().log(Level.INFO, String.format("Node %s has parent %s and splits on attribute %s", j.getLocindex(), j.getRootindex(), j.attribute));
+//			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
+//					+ " and splits on attribute " + j.attribute);
 			if (j.getRootindex() > -1) {
-				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
-						+ " and this node has feature value " + j.featValue);
+				super.get_logger().log(Level.INFO, String.format("\t and parents splits on %s and this node has feature value %s", ((DecisionTreeNode) t.get(j.getRootindex())).attribute, j.featValue));
+//				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
+//						+ " and this node has feature value " + j.featValue);
+			}
+
+		}
+
+		// call pruning
+		super.get_logger().log(Level.INFO, "Pruning:");
+		pruneTree(tree);
+		super.get_logger().log(Level.INFO, "Done pruning");
+
+		for (TreeNode i : t) {
+			DecisionTreeNode j = (DecisionTreeNode) i;
+			super.get_logger().log(Level.INFO, String.format("Node %s has parent %s and splits on attribute %s",
+					j.getLocindex(), j.getRootindex(), j.attribute));
+//			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
+//					+ " and splits on attribute " + j.attribute);
+			if (j.getRootindex() > -1) {
+				super.get_logger().log(Level.INFO, String.format("\t and parents splits on %s and this node has feature value %s",
+						((DecisionTreeNode) t.get(j.getRootindex())).attribute, j.featValue));
+//				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
+//						+ " and this node has feature value " + j.featValue);
 			}
 			
 		}
-
+		super.get_logger().log(Level.INFO, "Done training");
 	}
 
 	public void treeBuilder(ArrayList<String[]> subset, ArrayList<Integer> attributes, DecisionTreeNode parent) {
-		//super.get_logger().log(Level.INFO, "Selecting attribute/label for Node number " + tree.getTreeSize());
+		super.get_logger().log(Level.INFO, "Selecting attribute/label for Node number " + tree.getTreeSize());
 		// count the numbers of examples for each class
 		HashMap<String, Integer> countmap = countAllClasses(subset);
-		//super.get_logger().log(Level.INFO, "Hashmap of class numbers created");
+		super.get_logger().log(Level.INFO, "Hashmap of class numbers created");
 		// if all examples have the same class
 		System.out.println(subset.size());
 		System.out.println(countmap.toString());
@@ -272,6 +308,7 @@ public class DecisionTree extends Algorithm {
 		Collections.reverse(internalnodes);
 		tree = clip(subtree, internalnodes);
 	}
+
 	private EvaluationMeasures validate(ArrayList<String[]> data, Tree minitree) {
 		// testset = data;
 		// create list of predicted class labels
@@ -306,6 +343,7 @@ public class DecisionTree extends Algorithm {
 		EvaluationMeasures err = new EvaluationMeasures(classlabels.size(), predictedClass, data);
 		return err;
 	}
+
 	public Tree clip(Tree subtree, ArrayList<DecisionTreeNode> internalnodes) {
 		// create a copy of the list
 		if (internalnodes.isEmpty()) {
@@ -344,13 +382,11 @@ public class DecisionTree extends Algorithm {
 		double newerror = results2.get(0);
 		super.get_logger().log(Level.INFO, "Validation Error before node removed: " + besterror + ", validation error after node removed: " + newerror);
 		if(besterror > newerror){
-			super.get_logger().log(Level.INFO, "node removed");
+			super.get_logger().log(Level.INFO, "Node removed");
 			return temptree;
-			
 		}
-		super.get_logger().log(Level.INFO, "node not removed");
+		super.get_logger().log(Level.INFO, "Node not removed");
 		return subtree;
-
 	}
 
 	public ArrayList<DecisionTreeNode> findInternalNodes(ArrayList<DecisionTreeNode> internalnodes,

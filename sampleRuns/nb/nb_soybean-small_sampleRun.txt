@@ -1,0 +1,484 @@
+Naive Bayes Algorithm created.
+Working with soybean-small dataset
+Starting training:
+Counting all frequencies.
+Calculating likelihoods and predictorPriors.
+Calculating classPriors.
+Done training
+
+Training Results.
+Size of testing set: 23 instances, 35 attributes
+
+Feature 0 with values of: 0 1 2 3 4 5 6 
+PredictorPrior of 0: 0.39
+Likelihood of 0 given D4: 0.43
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 0.17
+Likelihood of 0 given D3: 0.67
+PredictorPrior of 1: 0.30
+Likelihood of 1 given D4: 0.57
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 0.17
+PredictorPrior of 2: 0.30
+Likelihood of 2 given D4: 0.29
+Likelihood of 2 given D1: 0.25
+Likelihood of 2 given D2: 0.17
+Likelihood of 2 given D3: 0.50
+PredictorPrior of 3: 0.39
+Likelihood of 3 given D4: 0.29
+Likelihood of 3 given D1: 0.75
+Likelihood of 3 given D2: 0.50
+Likelihood of 3 given D3: 0.17
+PredictorPrior of 4: 0.22
+Likelihood of 4 given D4: 0.14
+Likelihood of 4 given D1: 0.25
+Likelihood of 4 given D2: 0.17
+Likelihood of 4 given D3: 0.33
+PredictorPrior of 5: 0.30
+Likelihood of 5 given D4: 0.14
+Likelihood of 5 given D1: 0.25
+Likelihood of 5 given D2: 0.67
+Likelihood of 5 given D3: 0.17
+PredictorPrior of 6: 0.30
+Likelihood of 6 given D4: 0.14
+Likelihood of 6 given D1: 0.75
+Likelihood of 6 given D2: 0.33
+Likelihood of 6 given D3: 0.17
+
+Feature 1 with values of: 0 1 
+PredictorPrior of 0: 0.65
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 0.33
+PredictorPrior of 1: 0.70
+Likelihood of 1 given D4: 1.14
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 1.00
+
+Feature 2 with values of: 0 1 2 
+PredictorPrior of 0: 0.43
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 0.17
+PredictorPrior of 1: 0.26
+Likelihood of 1 given D4: 0.43
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 0.17
+PredictorPrior of 2: 0.83
+Likelihood of 2 given D4: 0.86
+Likelihood of 2 given D1: 1.25
+Likelihood of 2 given D2: 0.17
+Likelihood of 2 given D3: 1.17
+
+Feature 3 with values of: 0 1 2 
+PredictorPrior of 0: 0.52
+Likelihood of 0 given D4: 0.43
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 0.17
+Likelihood of 0 given D3: 1.17
+PredictorPrior of 1: 0.61
+Likelihood of 1 given D4: 0.86
+Likelihood of 1 given D1: 1.25
+Likelihood of 1 given D2: 0.33
+Likelihood of 1 given D3: 0.17
+PredictorPrior of 2: 0.39
+Likelihood of 2 given D4: 0.14
+Likelihood of 2 given D1: 0.25
+Likelihood of 2 given D2: 1.00
+Likelihood of 2 given D3: 0.17
+
+Feature 4 with values of: 0 1 
+PredictorPrior of 0: 0.87
+Likelihood of 0 given D4: 0.71
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 0.67
+Likelihood of 0 given D3: 1.00
+PredictorPrior of 1: 0.48
+Likelihood of 1 given D4: 0.57
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 0.67
+Likelihood of 1 given D3: 0.33
+
+Feature 5 with values of: 0 1 2 3 
+PredictorPrior of 0: 0.39
+Likelihood of 0 given D4: 0.43
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 0.33
+Likelihood of 0 given D3: 0.50
+PredictorPrior of 1: 0.35
+Likelihood of 1 given D4: 0.14
+Likelihood of 1 given D1: 0.50
+Likelihood of 1 given D2: 0.50
+Likelihood of 1 given D3: 0.33
+PredictorPrior of 2: 0.48
+Likelihood of 2 given D4: 0.43
+Likelihood of 2 given D1: 0.75
+Likelihood of 2 given D2: 0.33
+Likelihood of 2 given D3: 0.50
+PredictorPrior of 3: 0.48
+Likelihood of 3 given D4: 0.57
+Likelihood of 3 given D1: 0.50
+Likelihood of 3 given D2: 0.50
+Likelihood of 3 given D3: 0.33
+
+Feature 6 with values of: 0 1 2 3 
+PredictorPrior of 0: 0.26
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 0.75
+Likelihood of 0 given D2: 0.17
+Likelihood of 0 given D3: 0.17
+PredictorPrior of 1: 0.83
+Likelihood of 1 given D4: 1.14
+Likelihood of 1 given D1: 0.75
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 1.17
+PredictorPrior of 2: 0.35
+Likelihood of 2 given D4: 0.14
+Likelihood of 2 given D1: 0.25
+Likelihood of 2 given D2: 0.83
+Likelihood of 2 given D3: 0.17
+PredictorPrior of 3: 0.26
+Likelihood of 3 given D4: 0.14
+Likelihood of 3 given D1: 0.25
+Likelihood of 3 given D2: 0.50
+Likelihood of 3 given D3: 0.17
+
+Feature 7 with values of: 1 2 
+PredictorPrior of 1: 0.78
+Likelihood of 1 given D4: 0.29
+Likelihood of 1 given D1: 1.00
+Likelihood of 1 given D2: 1.17
+Likelihood of 1 given D3: 0.83
+PredictorPrior of 2: 0.57
+Likelihood of 2 given D4: 1.00
+Likelihood of 2 given D1: 0.50
+Likelihood of 2 given D2: 0.17
+Likelihood of 2 given D3: 0.50
+
+Feature 8 with values of: 0 1 
+PredictorPrior of 0: 0.70
+Likelihood of 0 given D4: 0.43
+Likelihood of 0 given D1: 0.75
+Likelihood of 0 given D2: 0.83
+Likelihood of 0 given D3: 0.83
+PredictorPrior of 1: 0.65
+Likelihood of 1 given D4: 0.86
+Likelihood of 1 given D1: 0.75
+Likelihood of 1 given D2: 0.50
+Likelihood of 1 given D3: 0.50
+
+Feature 9 with values of: 0 1 2 
+PredictorPrior of 0: 0.43
+Likelihood of 0 given D4: 0.57
+Likelihood of 0 given D1: 0.50
+Likelihood of 0 given D2: 0.50
+Likelihood of 0 given D3: 0.17
+PredictorPrior of 1: 0.61
+Likelihood of 1 given D4: 0.43
+Likelihood of 1 given D1: 1.00
+Likelihood of 1 given D2: 0.33
+Likelihood of 1 given D3: 0.83
+PredictorPrior of 2: 0.48
+Likelihood of 2 given D4: 0.43
+Likelihood of 2 given D1: 0.25
+Likelihood of 2 given D2: 0.67
+Likelihood of 2 given D3: 0.50
+
+Feature 10 with values of: 1 
+PredictorPrior of 1: 1.17
+Likelihood of 1 given D4: 1.14
+Likelihood of 1 given D1: 1.25
+Likelihood of 1 given D2: 1.17
+Likelihood of 1 given D3: 1.17
+
+Feature 11 with values of: 0 1 
+PredictorPrior of 0: 0.39
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 0.17
+Likelihood of 0 given D3: 1.00
+PredictorPrior of 1: 0.96
+Likelihood of 1 given D4: 1.14
+Likelihood of 1 given D1: 1.25
+Likelihood of 1 given D2: 1.17
+Likelihood of 1 given D3: 0.33
+
+Feature 12 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 13 with values of: 2 
+PredictorPrior of 2: 1.17
+Likelihood of 2 given D4: 1.14
+Likelihood of 2 given D1: 1.25
+Likelihood of 2 given D2: 1.17
+Likelihood of 2 given D3: 1.17
+
+Feature 14 with values of: 2 
+PredictorPrior of 2: 1.17
+Likelihood of 2 given D4: 1.14
+Likelihood of 2 given D1: 1.25
+Likelihood of 2 given D2: 1.17
+Likelihood of 2 given D3: 1.17
+
+Feature 15 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 16 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 17 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 18 with values of: 1 
+PredictorPrior of 1: 1.17
+Likelihood of 1 given D4: 1.14
+Likelihood of 1 given D1: 1.25
+Likelihood of 1 given D2: 1.17
+Likelihood of 1 given D3: 1.17
+
+Feature 19 with values of: 0 1 
+PredictorPrior of 0: 0.91
+Likelihood of 0 given D4: 0.86
+Likelihood of 0 given D1: 0.75
+Likelihood of 0 given D2: 1.00
+Likelihood of 0 given D3: 1.00
+PredictorPrior of 1: 0.43
+Likelihood of 1 given D4: 0.43
+Likelihood of 1 given D1: 0.75
+Likelihood of 1 given D2: 0.33
+Likelihood of 1 given D3: 0.33
+
+Feature 20 with values of: 0 1 2 3 
+PredictorPrior of 0: 0.43
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 0.17
+PredictorPrior of 1: 0.52
+Likelihood of 1 given D4: 0.43
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 1.17
+PredictorPrior of 2: 0.39
+Likelihood of 2 given D4: 0.86
+Likelihood of 2 given D1: 0.25
+Likelihood of 2 given D2: 0.17
+Likelihood of 2 given D3: 0.17
+PredictorPrior of 3: 0.35
+Likelihood of 3 given D4: 0.14
+Likelihood of 3 given D1: 1.25
+Likelihood of 3 given D2: 0.17
+Likelihood of 3 given D3: 0.17
+
+Feature 21 with values of: 0 1 2 3 
+PredictorPrior of 0: 0.26
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 0.75
+Likelihood of 0 given D2: 0.17
+Likelihood of 0 given D3: 0.17
+PredictorPrior of 1: 0.52
+Likelihood of 1 given D4: 0.14
+Likelihood of 1 given D1: 0.75
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 1.17
+PredictorPrior of 2: 0.48
+Likelihood of 2 given D4: 1.14
+Likelihood of 2 given D1: 0.25
+Likelihood of 2 given D2: 0.17
+Likelihood of 2 given D3: 0.17
+PredictorPrior of 3: 0.43
+Likelihood of 3 given D4: 0.14
+Likelihood of 3 given D1: 0.25
+Likelihood of 3 given D2: 1.17
+Likelihood of 3 given D3: 0.17
+
+Feature 22 with values of: 0 1 
+PredictorPrior of 0: 1.00
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+PredictorPrior of 1: 0.35
+Likelihood of 1 given D4: 0.14
+Likelihood of 1 given D1: 1.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 0.17
+
+Feature 23 with values of: 0 1 
+PredictorPrior of 0: 0.61
+Likelihood of 0 given D4: 0.71
+Likelihood of 0 given D1: 0.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 0.17
+PredictorPrior of 1: 0.74
+Likelihood of 1 given D4: 0.57
+Likelihood of 1 given D1: 1.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 1.17
+
+Feature 24 with values of: 0 1 
+PredictorPrior of 0: 1.04
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 0.67
+PredictorPrior of 1: 0.30
+Likelihood of 1 given D4: 0.14
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 0.67
+
+Feature 25 with values of: 0 2 
+PredictorPrior of 0: 0.91
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 0.17
+Likelihood of 0 given D3: 1.17
+PredictorPrior of 2: 0.43
+Likelihood of 2 given D4: 0.14
+Likelihood of 2 given D1: 0.25
+Likelihood of 2 given D2: 1.17
+Likelihood of 2 given D3: 0.17
+
+Feature 26 with values of: 0 1 
+PredictorPrior of 0: 0.91
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 0.17
+Likelihood of 0 given D3: 1.17
+PredictorPrior of 1: 0.43
+Likelihood of 1 given D4: 0.14
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 1.17
+Likelihood of 1 given D3: 0.17
+
+Feature 27 with values of: 0 3 
+PredictorPrior of 0: 0.61
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 0.17
+PredictorPrior of 3: 0.74
+Likelihood of 3 given D4: 1.14
+Likelihood of 3 given D1: 0.25
+Likelihood of 3 given D2: 0.17
+Likelihood of 3 given D3: 1.17
+
+Feature 28 with values of: 4 
+PredictorPrior of 4: 1.17
+Likelihood of 4 given D4: 1.14
+Likelihood of 4 given D1: 1.25
+Likelihood of 4 given D2: 1.17
+Likelihood of 4 given D3: 1.17
+
+Feature 29 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 30 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 31 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 32 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 33 with values of: 0 
+PredictorPrior of 0: 1.17
+Likelihood of 0 given D4: 1.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.17
+
+Feature 34 with values of: 0 1 
+PredictorPrior of 0: 0.83
+Likelihood of 0 given D4: 0.14
+Likelihood of 0 given D1: 1.25
+Likelihood of 0 given D2: 1.17
+Likelihood of 0 given D3: 1.00
+PredictorPrior of 1: 0.52
+Likelihood of 1 given D4: 1.14
+Likelihood of 1 given D1: 0.25
+Likelihood of 1 given D2: 0.17
+Likelihood of 1 given D3: 0.33
+
+
+ClassPrior of D4: 0.30
+ClassPrior of D1: 0.17
+ClassPrior of D2: 0.26
+ClassPrior of D3: 0.26
+
+Starting testing:
+Given features [5, 0, 2, 1, 0, 3, 1, 1, 1, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 3, 0, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D1
+Given features [2, 1, 2, 0, 0, 1, 1, 2, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [3, 1, 2, 0, 0, 1, 1, 2, 1, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [1, 1, 2, 1, 1, 2, 3, 1, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [6, 0, 0, 2, 1, 0, 2, 1, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D2
+Given features [2, 1, 2, 1, 1, 1, 1, 2, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [4, 0, 2, 1, 0, 3, 0, 2, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D1
+Given features [0, 1, 2, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [3, 1, 2, 0, 0, 2, 1, 2, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [3, 0, 2, 1, 0, 1, 0, 2, 1, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 0, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D1
+Given features [0, 1, 2, 0, 0, 1, 1, 2, 1, 2, 1, 0, 0, 2, 2, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]: predicted class is D3
+Given features [6, 0, 2, 1, 0, 1, 0, 1, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D1
+Given features [5, 0, 2, 1, 0, 2, 0, 1, 1, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D1
+Given features [6, 0, 0, 1, 1, 3, 3, 1, 1, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D2
+Given features [4, 0, 2, 1, 1, 1, 0, 1, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D1
+Given features [0, 1, 2, 1, 0, 3, 1, 1, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [2, 1, 2, 0, 0, 3, 1, 2, 0, 2, 1, 0, 0, 2, 2, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]: predicted class is D3
+Given features [4, 0, 0, 1, 1, 1, 3, 1, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D2
+Given features [2, 1, 1, 0, 0, 3, 1, 2, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [3, 0, 2, 0, 1, 3, 1, 2, 0, 1, 1, 0, 0, 2, 2, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]: predicted class is D3
+Given features [1, 1, 2, 0, 0, 3, 1, 1, 1, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]: predicted class is D4
+Given features [4, 0, 0, 1, 0, 2, 3, 1, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]: predicted class is D2
+Given features [0, 1, 2, 0, 0, 0, 1, 1, 1, 2, 1, 0, 0, 2, 2, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]: predicted class is D3
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+4 class classification problem
+Results for this fold:
+Average Accuracy: 4.0
+Macro Precision: 1.0
+Macro Precision: 1.0
+Macro Score: 1.0
+######################################
