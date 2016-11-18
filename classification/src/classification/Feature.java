@@ -1,9 +1,7 @@
 package classification;
 
-import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * Created by lisapeters on 11/15/16.
@@ -14,8 +12,7 @@ public class Feature {
     HashMap<String, Integer> varTotals; //individual total for a var across all classes
     HashMap<String, Double> likelihoods; //p(x|c) or p(sunny|yes)
     HashMap<String, Double> predictorPriors; // p(x)
-    HashMap<String, Double> posteriors; // p(c|x)
-    int classestotal;  //Total of all instances
+    int classestotal;  //Total of all instances in training set
 
     public Feature(int classestotal) {
         vars = new HashMap<String, HashMap>();
@@ -23,11 +20,10 @@ public class Feature {
         this.classestotal = classestotal;
     }
 
+    //Add an instance of a feature and update the count of its value across classes as well as it's total count
     public void addInstance(String name, String clas) {
-
         HashMap<String, Integer> value = vars.get(name);
         if (value != null) {
-            System.out.println();
             Integer num = value.get(clas);
             if (num != null) {
                 value.put(clas, num + 1);
@@ -35,26 +31,26 @@ public class Feature {
                 value.put(clas, 1);
             }
         } else {
-            HashMap m = new HashMap<String, Integer>();
-            m.put(clas, 1);
-            vars.put(name, m);
-
+            HashMap clasFreqsForVal = new HashMap<String, Integer>();
+            clasFreqsForVal.put(clas, 1);
+            vars.put(name, clasFreqsForVal);
         }
     }
 
+    // Calculate likelihoods and predictorPriors for all values of feature
     public ArrayList calculateProbabilities(HashMap classFrequencies) {
         ArrayList allProbs = new ArrayList();
-        getVarTotal();
+        calculateValTotals();
 
-        calculateLikelihoods(classFrequencies); //p(x|c)
+        calculateLikelihoods(classFrequencies);
         allProbs.add(this.likelihoods);
-        calculatePredictorPriors(); //p(x)
+        calculatePredictorPriors();
         allProbs.add(this.predictorPriors);
 
         return allProbs;
     }
 
-
+    //p(x)
     public void calculatePredictorPriors() {
         predictorPriors = new HashMap<>();
         for (String varKey : this.varTotals.keySet()) {
@@ -63,6 +59,7 @@ public class Feature {
         }
     }
 
+    //p(x|c)
     public void calculateLikelihoods(HashMap classFrequencies) {
         this.likelihoods = new HashMap();
         for (String varKey : this.vars.keySet()) {
@@ -75,9 +72,9 @@ public class Feature {
         }
     }
 
-    //return total number of all vars across all classes
-    // and init individuals total for a var across all classes
-    public void getVarTotal() {
+    // return total number of all vals across all classes
+    // and init individuals total for a val across all classes
+    public void calculateValTotals() {
         int total = 0;
         for (String key : this.vars.keySet()) {
             int temp = 0;
@@ -87,12 +84,6 @@ public class Feature {
             this.varTotals.put(key, temp);
             total += temp;
         }
-    }
-
-
-    public double BayesAlgo(double likelihood, double classPrior, double predictorPrior) {
-        double posterior = 0.0;
-        return posterior;
     }
 
 }

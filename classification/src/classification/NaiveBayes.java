@@ -1,7 +1,6 @@
 package classification;
 
-import java.lang.reflect.Array;
-import java.util.Objects;
+import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,14 +8,14 @@ import java.util.HashMap;
 
 public class NaiveBayes extends Algorithm {
 
-    ArrayList trainData;
-    ArrayList<Feature> features = new ArrayList();
-    HashMap<String, Double> classPriors;
-    ArrayList<HashMap> likelihoods;
-    ArrayList<HashMap> predictorPriors;
-    HashMap<String, Integer> classFrequencies;
-    HashMap<String, Double> posteriors = new HashMap<>();
-    int classesTotal;
+    ArrayList trainData;  //Examples used to train the algorithm
+    ArrayList<Feature> features = new ArrayList();  //Features used to classify. Each feature has different values.
+    HashMap<String, Double> classPriors;    //All P(Class)
+    ArrayList<HashMap> likelihoods;         //All P(Features|Class)
+    ArrayList<HashMap> predictorPriors;     //All P(Features)
+    HashMap<String, Integer> classFrequencies;  // Number of occurrences for each class
+    HashMap<String, Double> posteriors = new HashMap<>();  // All Features and their value's posteriors
+    int classesTotal;  //Total number of occurrences of all classes
 
     public NaiveBayes(ArrayList<String[]> data) {
         trainData = data;
@@ -24,8 +23,13 @@ public class NaiveBayes extends Algorithm {
         this.classesTotal = trainData.size();
         this.classFrequencies = new HashMap<>();
         train(data);
+        //TODO: test data!! Other than manually I mean.
     }
 
+    /*
+    Counts frequencies of all instances, calculate probabilities of all elements of Bayes Theorem, p(x)=predictorPrior
+     likelihoods=P(x|c) and classPriors=p(c)
+     */
     void train(ArrayList trainData) {
         super.get_logger().log(Level.INFO, "Starting training:");
 
@@ -36,8 +40,12 @@ public class NaiveBayes extends Algorithm {
             features.add(new Feature(trainData.size()));
         }
 
+        // count up all frequencies
+        super.get_logger().log(Level.INFO, "Counting all frequencies.");
         count(numFeatures);
 
+        // get likelihoods and predictorPriors for all features
+        super.get_logger().log(Level.INFO, "Calculating likelihoods and predictorPriors.");
         likelihoods = new ArrayList();
         predictorPriors = new ArrayList();
         for (Feature f : features) {
@@ -45,13 +53,22 @@ public class NaiveBayes extends Algorithm {
             likelihoods.add(featureProbs.get(0));
             predictorPriors.add(featureProbs.get(1));
         }
+
+        super.get_logger().log(Level.INFO, "Calculating classPriors.");
+        //get classPriors
         calculateClassPriors(classFrequencies);  //p(c)
+        //log results
+        printTrainResults();
 
     }
 
 
+    // Predict a class given single data instance using Baye's Theorem for each class and choosing the highest
+    // posterior
     public String predictSingle(String[] testEx) {
         calculatePosteriors(testEx);
+
+        // Take the max
         String maxKey = "";
         double maxVal = 0.0;
         for (String classKey : this.posteriors.keySet()) {
@@ -63,40 +80,41 @@ public class NaiveBayes extends Algorithm {
         return maxKey;
     }
 
+
+    // Calculate according to Bayes Theorem
+    // p(c|X) = p(x1|c)*p(x2|c)...p(xn|c)*p(c) / p(x1)...p(xn)
     private void calculatePosteriors(String[] testEx) {
-        // bayes thoerem
-        // p(c|X) = p(x1|c)*p(x2|c)...p(xn|c)*p(c) / p(x1)...p(xn)
+
         this.posteriors = new HashMap<>();
+        double allPredPrior = 1.0; //p(X) = p(x1)*p(x2)...*p(xn)
 
-
-        double allPredPrior = 1.0;
         for (int i = 0; i < testEx.length; i++) {
             String featureKey = testEx[i];
-            HashMap<String, Double> featureLikelihood = this.likelihoods.get(i);
-            HashMap<String, Double> predictorPrior = this.predictorPriors.get(i);
+            HashMap<String, Double> thisFeatureLikelihood = this.likelihoods.get(i);
+            HashMap<String, Double> thisPredictorPrior = this.predictorPriors.get(i);
 
-            // multiple all likelihoods
+            // multiple all likelihoods, p(x1|c)*p(x2|c)...p(xn|c)
             for (String classKey : this.classPriors.keySet()) {
                 String likelihoodKey = featureKey + "|" + classKey;
                 String postKey = classKey;
                 if (this.posteriors.get(postKey) == null) {
-                    this.posteriors.put(postKey, featureLikelihood.get(likelihoodKey));
+                    this.posteriors.put(postKey, thisFeatureLikelihood.get(likelihoodKey));
                 } else {
                     try {
-                        double likelihood = featureLikelihood.get(likelihoodKey);
+                        double likelihood = thisFeatureLikelihood.get(likelihoodKey);
                         this.posteriors.put(postKey, likelihood * this.posteriors.get(postKey));
 
                     } catch (Exception e) {
-                        //zero frequency problem
+                        //No likelihood for this class
                     }
                 }
             }
 
             //multiple all predictors
-            allPredPrior *= predictorPrior.get(featureKey);
+            allPredPrior *= thisPredictorPrior.get(featureKey);
         }
 
-        //multiply by classPriors then divide by all predictor priors
+        //multiply by classPriors then divide by all predictorPriors
         for (String classKey : this.classPriors.keySet()) {
             this.posteriors.put(classKey, this.posteriors.get(classKey) * this.classPriors.get(classKey));
             this.posteriors.put(classKey, this.posteriors.get(classKey) / allPredPrior);
@@ -105,6 +123,7 @@ public class NaiveBayes extends Algorithm {
 
     }
 
+    // Use frequencies to calculate classPrior p(c)
     public void calculateClassPriors(HashMap classFrequencies) {
         this.classPriors = new HashMap<>();
 
@@ -115,7 +134,7 @@ public class NaiveBayes extends Algorithm {
 
     }
 
-    //iterate through all instances and increment feature counts accordingly
+    //iterate through all instances and increment feature and class counts accordingly
     public void count(int numFeatures) {
         for (Object obj : trainData) {
             String[] stringArray = (String[]) obj;
@@ -131,11 +150,44 @@ public class NaiveBayes extends Algorithm {
         }
     }
 
+    //Log results of calculations and countings
+    public void printTrainResults() {
+        String s;
+        super.get_logger().log(Level.INFO, "Training Results.");
+        s = String.format("Total occurrences:%d", this.classesTotal);
+        super.get_logger().log(Level.INFO, s);
+        int i = 0;
+        for (Feature f : this.features) {
+            s = String.format("Feature %s with values of: ", i);
+            ArrayList<String> vals = new ArrayList();
+            for (String varKey : f.vars.keySet()) {
+                s += varKey + " ";
+                vals.add(varKey);
+            }
+            super.get_logger().log(Level.INFO, s);
+
+            for (String valKey : vals) {
+                s = String.format("PredictorPrior of %s: %.2f", valKey, this.predictorPriors.get(i).get(valKey));
+                super.get_logger().log(Level.INFO, s);
+
+                for (String classKey : this.classFrequencies.keySet()) {
+                    s = String.format("Likelihood of %s given %s: %.2f", valKey, classKey, this.likelihoods.get(i).get(valKey + "|" + classKey));
+                    super.get_logger().log(Level.INFO, s);
+                }
+
+            }
+            i++;
+        }
+
+        for (String classKey : this.classFrequencies.keySet()) {
+            s = String.format("ClassPrior of %s: %.2f", classKey, this.classPriors.get(classKey));
+            super.get_logger().log(Level.INFO, s);
+        }
+
+    }
 
     void test(ArrayList testData) {
-
         super.get_logger().log(Level.INFO, "Starting testing:");
-
     }
 
 
