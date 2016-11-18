@@ -100,7 +100,17 @@ public class RunModels {
     		int k = 7; 
     		
     		Algorithm knn = new KNearestNeighbor(shortName, train1, test1, k);
+    		Algorithm knn2 = new KNearestNeighbor(shortName, test1, train1, k);
+    		Algorithm knn3 = new KNearestNeighbor(shortName, train2, test2, k);
+    		Algorithm knn4 = new KNearestNeighbor(shortName, test2, train2, k);    		
+    		Algorithm knn5 = new KNearestNeighbor(shortName, train3, test3, k);
+    		Algorithm knn6 = new KNearestNeighbor(shortName, test3, train3, k);   
+    		Algorithm knn7 = new KNearestNeighbor(shortName, train4, test4, k);
+    		Algorithm knn8 = new KNearestNeighbor(shortName, test4, train4, k);      		
+    		Algorithm knn9 = new KNearestNeighbor(shortName, train5, test5, k);
+    		Algorithm knn10 = new KNearestNeighbor(shortName, test5, train5, k);      		
     		
+    		System.out.println("k-NN has finished running.");
     		// split data, train on B and test on A
     		
     	} else if (choice.equals("nb")) {	

@@ -181,8 +181,8 @@ public class KNearestNeighbor extends Algorithm {
 		// get the k minimum values in distances (and the associated index)
 		int iter = 0; 
 		while (iter < k) {
-			double min = Integer.MAX_VALUE;
-			int loc = -1; 
+			double min = Double.MAX_VALUE;
+			int loc = 0; 
 			
 			for (int i = 0; i < distances.size(); i++) {
 				double thisDist = distances.get(i); 
