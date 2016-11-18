@@ -97,8 +97,8 @@ public class KNearestNeighbor extends Algorithm {
 			// take the majority vote (with respect to class) of k-nearest neighbors, breaking ties randomly			
 			String classPrediction = majorityVote(indicesOfkNearest);
 			
-			//knnClass.add(classPrediction);
-			System.out.println(classPrediction);
+			knnClass.add(classPrediction);
+			//System.out.println(classPrediction);
 		}
 		
 
@@ -147,45 +147,50 @@ public class KNearestNeighbor extends Algorithm {
 		return qpNeighbors;
 	}
 	
-	// find the k closest neighbors of the query point (where closest is defined as lowest VDM values
+	// find the k closest neighbors of the query point (where closest is defined as lowest VDM values)
 	public ArrayList<Integer> findKClosest(Map<Integer, Double> qpNeighbors) {
+		// keeps track of the kClosest Indices and smallest distances
+		ArrayList<Integer> kClosestIndices = new ArrayList<Integer>();
+		ArrayList<Double> kSmallestDist = new ArrayList<Double>();		
 		
-		// array to hold the k smallest distances
-		ArrayList<Double> kSmallestDist = new ArrayList <Double>();
-		
-		// array to hold the indices of the instances with the k smallest distances
-		ArrayList<Integer> kClosestIndices = new ArrayList <Integer>();
-		
-		// because hash maps are not sortable
-		// NOTE: this is not efficient, think about changing if time allows
+		// get the index and distances from qpNeighbor
 		ArrayList<Double> distances = new ArrayList<Double>();
-				
-		// add all distances to an array list (to sort)
+		ArrayList<Integer> indices = new ArrayList<Integer>();
+		
+		// store the distances from qpNeighbors in an array, store the keys in an array
 		for (Map.Entry<Integer,Double> entry : qpNeighbors.entrySet()) {
+		  indices.add(entry.getKey());
 		  distances.add(entry.getValue());
 		} 
-		
-		// sort the arraylist based on distance
-		Collections.sort(distances);
-		
-		// gets the key associated with the smallest k distance values
-		for (int i = 0; i < k; i++) {
-			kSmallestDist.add(distances.get(i));
-		}
-	    
-		
-		for (int i = 0; i < kSmallestDist.size(); k++) {
-			for (Entry<Integer, Double> entry : qpNeighbors.entrySet()) {			
-		        if (entry.getValue().equals(kSmallestDist.get(i))) {
-		        	if(!kClosestIndices.contains(entry.getKey()))
-		        		kClosestIndices.add(entry.getKey());
-		        		break;
-		        }
-		    }			
-		}
+	
+		// get the k minimum values in distances (and the associated index)
+		int iter = 0; 
+		while (iter < k) {
+			double min = Integer.MAX_VALUE;
+			int loc = -1; 
 			
-		super.get_logger().log(Level.INFO, "k-Nearest Neighbors are " +  Arrays.toString(kClosestIndices.toArray()));
-		super.get_logger().log(Level.INFO, "k closest distances are " +  Arrays.toString(kSmallestDist.toArray()));
+			for (int i = 0; i < distances.size(); i++) {
+				double thisDist = distances.get(i); 
+				
+				if (thisDist <= min) {
+					min = thisDist;
+					loc = i;
+				}
+			} // end for
+			
+			// add the minimum
+			kClosestIndices.add(indices.get(loc));
+			kSmallestDist.add(distances.get(loc));			
+			
+			// remove the minimum distance and associated index
+			distances.remove(loc);
+			indices.remove(loc);			
+			
+			iter++;
+		}
+				
+		super.get_logger().log(Level.INFO, "Indices of k-nearest neighbors are " +  Arrays.toString(kClosestIndices.toArray()));
+		//super.get_logger().log(Level.INFO, "k closest distances are " +  Arrays.toString(kSmallestDist.toArray()));
 		
 		return kClosestIndices;
 	}
@@ -203,9 +208,9 @@ public class KNearestNeighbor extends Algorithm {
 		
 		// gets the classes associated with the k nearest neighbors
 		for (int i = 0; i < kNearestIndices.size(); i++) {
-			ballotBox.add(trainData.get(i)[classLoc]);
+			ballotBox.add(trainData.get(kNearestIndices.get(i))[classLoc]);
 		}
-			
+				
 		// determine the most popular class, breaking ties randomly
 		int mostPopFreq = Integer.MIN_VALUE;
 		
@@ -224,9 +229,10 @@ public class KNearestNeighbor extends Algorithm {
 			
 		} // end for: have determined the most popular class
 		
+		super.get_logger().log(Level.INFO, "According to majority vote among k-nearest neighbors, instance classified as: " +  mostPop);
+		
 		return mostPop;
 	}
-	
 	
 	
 }

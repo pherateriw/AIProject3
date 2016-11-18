@@ -75,9 +75,6 @@ public class RunModels {
     	train5 = ds.getTrainingData();
     	test5 = ds.getTestingData();
     	
-    	    		
-
-
     
     	//gives the user a series of choices
     	System.out.println("Please pick from one of the following options");
