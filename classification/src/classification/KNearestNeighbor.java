@@ -104,6 +104,8 @@ public class KNearestNeighbor extends Algorithm {
 			// add the class prediction to the list of predicted classes (will compare against true values)
 			knnClass.add(classPrediction);
 		}
+		
+		super.get_logger().log(Level.INFO, "All test data classified.");
 	}
 
 
@@ -114,9 +116,12 @@ public class KNearestNeighbor extends Algorithm {
 	 */
 	
 	public void evaluate() {
+
 		// determine classification accuracy, required information - the number of classes for this
 		// dataset, the list of class labels (ArrayList String) as determined by the classifier, and the 
 		// testData set (ArrayList String[]) that includes the true class labels.
+		super.get_logger().log(Level.INFO, "Begin evaluation.");
+		
 		EvaluationMeasures e = new EvaluationMeasures(numClasses, knnClass, testData);
 		ArrayList<Double> evaluationResults = e.evaluateData();
 		
@@ -126,11 +131,15 @@ public class KNearestNeighbor extends Algorithm {
 		double fScore = evaluationResults.get(3);	
 		
 		System.out.println(accuracy + "," + precision + "," + recall + "," + fScore);
-		
-//		for (String s : knnClass) {
-//			System.out.println(s);
-//		}
-		
+
+		super.get_logger().log(Level.INFO, "######################################");
+		super.get_logger().log(Level.INFO, numClasses + " class classification problem");		
+		super.get_logger().log(Level.INFO, "Results for this fold:");
+		super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);		
+		super.get_logger().log(Level.INFO, "Macro Precision: " + precision);	
+		super.get_logger().log(Level.INFO, "Macro Precision: " + recall);
+		super.get_logger().log(Level.INFO, "Macro Score: " + recall);
+		super.get_logger().log(Level.INFO, "######################################");	
 		
 		// after all test set instances have been classified, evaluate the performance of classifier
 	}
