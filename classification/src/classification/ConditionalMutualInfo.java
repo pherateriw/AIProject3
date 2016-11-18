@@ -53,131 +53,175 @@ public class ConditionalMutualInfo {
 			}
 		}
 
-		double cmi = 0.0; 
 		
-		// iterate through all class values
+		int vCount = 0; 
+		double vProb = 0.0;
+		double vCim = 0.0;
+		
+		// goes through each class value
 		for (int v = 0; v < classVals.size(); v++) {
 			
-			// holds P(v)
-			double probV = 0.0;
-
-			// number of times the class v appears in the training data
-			int numV = 0;
-
-			double cmiAILevel = 0.0;
+			// get number of times class V occurs in the data
+			vCount = countPofV(classLoc, v);						
+			vProb = (double) vCount / trainData.size();
 			
-			for (int ai = 0; ai < aiVals.size(); ai++) {
-				// holds P(ai | v)
-				double probAIandV = 0.0;
-
-				// number of times ai and v appear together in the training data
-				int numAIandV = 0;
-
-				double cmiAJlevel = 0.0;
+			int aiVCount = 0; 
+			double aiVProb = 0.0;
+			double aiCim = 0.0;
+			
+			for (int i = 0; i < aiVals.size(); i++) {								
 				
-				for (int aj = 0; aj < ajVals.size(); aj++) {
+				int ajVCount = 0; 
+				double ajVProb = 0.0;
+				double ajCim = 0.0;
+				
+				for (int j = 0; j < ajVals.size(); j++) {
 					
-					// holds P( aj | v )
-					double probAJandV = 0.0;
-
-					// holds P( ai | aj, v )
-					double probAIAJandV = 0.0;
-
-					// number of times aj and v appear together in the training
-					// data
-					int numAJandV = 0;
-
-					// number of times ai, aj and v appear together in the
-					// training data
-					int numAIAJandV = 0;
-
-					for (String[] arr : trainData) {
-
-						// checks for number of times we find class v in the
-						// training data
-						if (arr[classLoc].equalsIgnoreCase(classVals.get(v))) {
-							numV++;
-
-							// checks for number of times we find ai given v in
-							// the
-							// training data
-							if (arr[aiLoc].equals(aiVals.get(ai))) {
-								numAIandV++;
-								
-								// checks for number of times we find ai given aj and 
-								// v in the training data
-								if (arr[ajLoc].equals(ajVals.get(aj))) {
-									numAIAJandV++;
-								}
-								
-							} // end ifs: checking for ai
-							
-							// checks for number of times we find aj and 
-							// v in the training data
-							if (arr[ajLoc].equals(ajVals)) {
-								numAJandV++;
-							}
-							
-						} // end if: checking for this class
-
-
-					} // end for: have gone through all training data getting counts
-
-					probAIAJandV = (double) numAIAJandV / ajVals.size();
-					//System.out.println(probAIAJandV);
+					ajVCount = countPofAJV(classLoc, aiLoc, v , j);
+					ajVProb = (double) ajVCount / trainData.size();
+					//System.out.println("P(aj | v) = " +  ajVProb);
 					
-					probAJandV = (double) numAJandV / ajVals.size();
-					//System.out.println(probAIandV);	
-
-					System.out.println(probAIandV);
-					System.out.println(probAJandV);
+					int aiajVCount = 0; 
+					double aiajVProb = 0.0;
 					
+					aiajVCount = countPofAIAJV(classLoc, ajLoc, aiLoc, v, j, i);
+					aiajVProb = (double) aiajVCount / trainData.size();
+					//System.out.println("P(ai | aj, v) = " +  aiajVProb);
 					
-					double numer = probAIAJandV;
-					double denom = probAIandV * probAJandV;
+					double numer = aiajVProb;
+					// adds a small number, in case either is 0
+					double denom = aiVProb * ajVProb + 0.00001;
 					
-					// to avoid NaN, if denom = 0, make some small non zero value
-					if (denom == 0) {
-						
-					}
-					
-					
-					double ratio = numer/denom;
+					// adds a small number, in case the ratio is 0
+					double ratio = (numer / denom) + 0.00001;
 					
 					double log = Math.log(ratio);
+					//System.out.println(log);
 					
-					double product = probAIAJandV * probAJandV * probV * log;
+					double product = aiajVProb * ajVProb * vProb * log;
 					
-					cmiAJlevel += product;
-					System.out.println(cmiAJlevel);
+					//System.out.println(product);
+					ajCim += product;
 				}
-
-				probAIandV = (double) numAIandV / aiVals.size();
-				//System.out.println(probAIandV);
 				
-				cmiAILevel += cmiAJlevel;
+				aiCim += ajCim;
 				
-			} // end for: have counted all occurrences of class
-
-			probV = (double) numV / trainData.size();
-			//System.out.println(probV);
+			} 
 			
-			cmi += cmiAILevel;
+			vCim += aiCim;
 			
-		}
-
-		// sum over all classes v in the data set
-
-		// iterate over all aj in data set
-		// sum over all values of
-
-		// iterate over all ai in data set
-
-		// get P(Ai,Aj,V) with chain rule?
-
-		System.out.println(cmi);
-
-		return cmi;
+		} // end for: calculated all necessary probabilities
+		
+		double cim = vCim;
+				
+		return cim;
 	}
+	
+	// gets the number of times p is found in the training data
+	public int countPofV(int classLoc, int vIt) {
+		int numV = 0; 
+		
+		for (String[] arr : trainData) {
+			// checks for number of times we find class v in the
+			// training data
+			if (arr[classLoc].equalsIgnoreCase(classVals.get(vIt))) {
+				numV++;
 
+			} // end if: checking for this class
+		} // end for
+
+		
+		return numV;
+	}
+	
+	// gets the number of times is found in the training data
+	public int countPofAIV(int classLoc, int aiLoc, int vIt, int aiIt) {
+		int numAIandV = 0; 
+		
+		for (String[] arr : trainData) {
+
+			// checks for number of times we find class v in the
+			// training data
+			if (arr[classLoc].equalsIgnoreCase(classVals.get(vIt))) {
+
+				// checks for number of times we find ai given v in
+				// the
+				// training data
+				if (arr[aiLoc].equals(aiVals.get(aiIt))) {
+					numAIandV++;
+					
+					
+				} // end ifs: checking for ai
+						
+			} // end if: checking for this class
+
+
+		} // end for
+
+		
+		return numAIandV;
+	}
+	
+	// gets the number of times is found in the training data
+	public int countPofAJV(int classLoc, int ajLoc, int vIt, int ajIt) {
+		int numAJandV = 0; 
+		
+		for (String[] arr : trainData) {
+
+			// checks for number of times we find class v in the
+			// training data
+			if (arr[classLoc].equalsIgnoreCase(classVals.get(vIt))) {
+
+				// checks for number of times we find ai given v in
+				// the
+				// training data
+				if (arr[ajLoc].equals(ajVals.get(ajIt))) {
+					numAJandV++;
+					
+			
+				} // end ifs: checking for ai
+						
+			} // end if: checking for this class
+
+
+		} // end for
+
+		
+		return numAJandV;
+	}
+	
+	// gets the number of times is found in the training data
+	public int countPofAIAJV(int classLoc, int ajLoc, int aiLoc, int vIt, int ajIt, int aiIt) {
+		int numAIAJandV = 0; 
+		
+		for (String[] arr : trainData) {
+
+			// checks for number of times we find class v in the
+			// training data
+			if (arr[classLoc].equalsIgnoreCase(classVals.get(vIt))) {
+
+				// checks for number of times we find ai given v in
+				// the
+				// training data
+				if (arr[aiLoc].equals(aiVals.get(aiIt))) {
+					
+					// checks for number of times we find ai given aj and 
+					// v in the training data
+					if (arr[ajLoc].equals(ajVals.get(ajIt))) {
+						numAIAJandV++;
+					}
+					
+				} // end ifs: checking for ai
+				
+				
+			} // end if: checking for this class
+
+
+		} // end for: have gone through all training data getting counts
+
+		
+		return numAIAJandV;
+	}
+	
 }
+	
