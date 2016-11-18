@@ -20,6 +20,8 @@ public class TreeAugNB extends Algorithm {
 	private HashMap<String, Double> valOccurences;
 	private HashMap<String, Double> togetherness;
 	private HashMap<String, Double> featureLikelihoods;
+	private ArrayList<String> predictedClasses;
+	private HashMap<String, Double> posteriors;
 	Set<String> valNames = new HashSet<String>();
 
 
@@ -68,6 +70,28 @@ public class TreeAugNB extends Algorithm {
 		createFullGraph(trainData);
 		associateWeights();
 		createCondProbTables();
+//		maxSpanTree();
+//		tree = directEdges((BayesTree) tree, (BayesTreeNode) tree.getRoot());
+		BayesTreeNode clas = new BayesTreeNode();
+		Tree testTree = new BayesTree(clas);
+		BayesTreeNode f1 = new BayesTreeNode();
+		f1.setFeatureIndex(0);
+		testTree.addNode(f1);
+		BayesTreeNode f2 = new BayesTreeNode();
+		f2.setFeatureIndex(1);
+		testTree.addNode(f2);
+		BayesTreeNode f3 = new BayesTreeNode();
+		f3.setFeatureIndex(2);
+		testTree.addNode(f3);
+		BayesTreeNode f4 = new BayesTreeNode();
+		f4.setFeatureIndex(3);
+		testTree.addNode(f4);
+
+		testTree.addEdge(new Edge(f1, f2));
+		testTree.addEdge(new Edge(f2, f3));
+		testTree.addEdge(new Edge(f3, f4));
+
+		tree = testTree;
 
     	
     	
@@ -75,12 +99,62 @@ public class TreeAugNB extends Algorithm {
 
     
     void test(ArrayList<String[]> testData){
-    	
-    	
-    	
-    	
-    	
-    }
+		super.get_logger().log(Level.INFO, "Starting testing:");
+		predictedClasses = new ArrayList<>();
+		for (Object obj : testData) {
+			String[] oldArray = (String[]) obj;
+			String[] newArray = Arrays.copyOfRange(oldArray, 0, oldArray.length - 1);
+			String clas = predictSingle(newArray);
+			predictedClasses.add(clas);
+			super.get_logger().log(Level.INFO, String.format("Given features %s: predicted class is %s", Arrays.toString(newArray), clas));
+		}
+
+		super.get_logger().log(Level.INFO, "Done testing");
+
+	}
+
+	private String predictSingle(String[] features){
+		posteriors = new HashMap<>();
+		for (String classKey : this.classPriors.keySet()){
+			String posteriorKey = classKey;
+			double posterior = 1.0;
+			posterior *= classPriors.get(classKey); //p(c)
+			String firstLikely = features[0] + "|" + classKey;
+			posterior *= (Double) likelihoods.get(0).get(firstLikely); //p(root|c)
+			ArrayList<Edge> edges = tree.getEdges();
+			for (int i = 1; i< edges.size(); i++){
+				Edge e = edges.get(i);
+				System.out.println();
+				String f1 = features[e.x.featureIndex];
+				String f2 = features[e.y.featureIndex];
+				posterior *= probOfXGivenYandZ(f1, e.x.featureIndex, classKey, f2, e.y.featureIndex);
+			}
+			try {
+				posteriors.put(posteriorKey, posterior);
+			}
+			catch (Exception e){
+				//Why?
+			}
+		}
+
+		// Take the max
+		String maxKey = "NoClassValueHigherThan0.0";
+		double maxVal = 0.0;
+
+		try {
+			for (String classKey : this.posteriors.keySet()) {
+				if (this.posteriors.get(classKey) > maxVal) {
+					maxKey = classKey;
+					maxVal = this.posteriors.get(classKey);
+				}
+			}
+		}
+		catch(Exception e){
+
+		}
+		return maxKey;
+
+	}
     
     void evaluate(){
     	
@@ -117,7 +191,7 @@ public class TreeAugNB extends Algorithm {
 		}
 	}
 
-	private Tree maxSpanTree(BayesTree tree) {
+	private void maxSpanTree() {
 		super.get_logger().log(Level.INFO, "Creating Max Spanning Tree");
 		//new arraylist of edges 
 		ArrayList<Edge> newedges = new ArrayList<Edge>();
@@ -169,7 +243,6 @@ public class TreeAugNB extends Algorithm {
 			e.x.edges.add(e);
 			e.y.edges.add(e);
 		}
-		return tree;
 	}
 
 	private Tree directEdges(BayesTree tree, BayesTreeNode root) {
@@ -202,7 +275,6 @@ public class TreeAugNB extends Algorithm {
 		this.valOccurences = nb.valOccurances;
 		this.valNames = nb.valNames;
 		calculateFeatureLikelihoods();
-		System.out.println();
 	}
 
 	private void calculateFeatureLikelihoods(){
@@ -227,10 +299,28 @@ public class TreeAugNB extends Algorithm {
 				}
 			}
 		}
+
+		for (String f : featureLikelihoods.keySet()){
+			super.get_logger().log(Level.INFO, String.format("Likelihood of %s is %s", f, featureLikelihoods.get(f)));
+		}
 	}
 
-	private void probOfXGivenYandZ(double x, double y, double z){
+	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex){
 		//p(y|z)p(y)p(x|z)  / p(y|z)
+		try{
+		HashMap<String, Double> xlikelihoods = likelihoods.get(xfeatureIndex);
+		Double classprior = classPriors.get(clas);
+		HashMap<String, Double> ylikelihoods = likelihoods.get(yfeatureIndex);
+		String xgivenclass = x+"|"+clas;
+		String ygivenx = y+"|"+x;
+		double mult = xlikelihoods.get(xgivenclass);
+		mult = mult*ylikelihoods.get(ygivenx);
+		mult = mult*classprior;
+		return mult;
+		}
+		catch(Exception e){
+			return 1.0;
+		}
 	}
 
 
@@ -251,6 +341,10 @@ public class TreeAugNB extends Algorithm {
 		testData.add(new String[]{"Overcast", "Mild", "High", "Strong", "Yes"});
 		testData.add(new String[]{"Overcast", "Hot", "Normal", "Weak", "Yes"});
 		testData.add(new String[]{"Sunny", "Mild", "Normal", "Strong", "Yes"});
-		TreeAugNB tan = new TreeAugNB("Dummy data", testData, null);
+
+		String[] test = new String[]{"Sunny", "Mild", "Normal", "Strong", "Yes"};
+		ArrayList<String[]> testit = new ArrayList<>();
+		testit.add(test);
+		TreeAugNB tan = new TreeAugNB("Dummy data", testData, testit);
 	}
 }
