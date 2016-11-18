@@ -16,6 +16,8 @@ public class NaiveBayes extends Algorithm {
     ArrayList<HashMap> predictorPriors;     //All P(Features)
     HashMap<String, Integer> classFrequencies;  // Number of occurrences for each class
     HashMap<String, Double> posteriors = new HashMap<>();  // All Features and their value's posteriors
+    HashMap<String, Double> featureProbs = new HashMap<>(); // p(x1|x2)
+    HashMap<String, Double> togetherness = new HashMap<>(); // occurrences of x1 and x2
     int classesTotal;  // Total number of occurrences of all classes
     int numFeatures; // Total number of features
 

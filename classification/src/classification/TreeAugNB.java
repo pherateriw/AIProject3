@@ -2,6 +2,7 @@ package classification;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.logging.Level;
 
@@ -140,5 +141,29 @@ public class TreeAugNB extends Algorithm {
 		this.classPriors = nb.classPriors;
 		this.likelihoods = nb.likelihoods;
 		this.predictorPriors = nb.predictorPriors;
+	}
+
+	private void probOfXGivenYandZ(double x, double y, double z){
+		//p(y|z)p(y)p(x|z)  / p(y|z)
+	}
+
+	public static void main(String[] args) {
+
+		ArrayList testData = new ArrayList<Arrays>();
+		testData.add(new String[]{"Rainy", "Mild", "High", "Weak", "Yes"});
+		testData.add(new String[]{"Rainy", "Cool", "Normal", "Weak", "Yes"});
+		testData.add(new String[]{"Overcast", "Hot", "High", "Weak", "Yes"});
+		testData.add(new String[]{"Sunny", "Hot", "High", "Weak", "No"});
+		testData.add(new String[]{"Sunny", "Hot", "High", "Strong", "No"});
+		testData.add(new String[]{"Sunny", "Mild", "High", "Weak", "No"});
+		testData.add(new String[]{"Overcast", "Cool", "Normal", "Strong", "Yes"});
+		testData.add(new String[]{"Rainy", "Cool", "Normal", "Strong", "No"});
+		testData.add(new String[]{"Rainy", "Mild", "Normal", "Weak", "Yes"});
+		testData.add(new String[]{"Sunny", "Cool", "Normal", "Weak", "Yes"});
+		testData.add(new String[]{"Rainy", "Mild", "High", "Strong", "No"});
+		testData.add(new String[]{"Overcast", "Mild", "High", "Strong", "Yes"});
+		testData.add(new String[]{"Overcast", "Hot", "Normal", "Weak", "Yes"});
+		testData.add(new String[]{"Sunny", "Mild", "Normal", "Strong", "Yes"});
+		TreeAugNB tan = new TreeAugNB("Dummy data", testData, null);
 	}
 }
