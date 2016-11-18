@@ -87,6 +87,7 @@ public class Feature {
         }
     }
 
+    //Add one to every possible pair to avoid zero frequency problems
     public void zeroFreqPrevent(HashMap<String, Integer> classFrequencies){
         for (String varKey : this.vars.keySet()) {
             for (String classKey: classFrequencies.keySet()){

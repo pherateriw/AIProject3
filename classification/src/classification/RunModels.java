@@ -30,8 +30,8 @@ public class RunModels {
     	String choice = "";
 
 		// get file location for training/test data    	
-//    	String dataFileLocation = getData();
-		String dataFileLocation = "/Users/lisapeters/Workspace/School/AIProject3/data/soybean-small.data.txt";
+    	String dataFileLocation = getData();
+//		String dataFileLocation = "/Users/lisapeters/Workspace/School/AIProject3/data/soybean-small.data.txt";
     	
     	// gets short name of dataset (from file location), for use in printing information
     	String shortName = "";
