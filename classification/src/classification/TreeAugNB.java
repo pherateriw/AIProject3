@@ -78,13 +78,13 @@ public class TreeAugNB extends Algorithm {
 		f1.setFeatureIndex(0);
 		testTree.addNode(f1);
 		BayesTreeNode f2 = new BayesTreeNode();
-		f1.setFeatureIndex(1);
+		f2.setFeatureIndex(1);
 		testTree.addNode(f2);
 		BayesTreeNode f3 = new BayesTreeNode();
-		f1.setFeatureIndex(2);
+		f3.setFeatureIndex(2);
 		testTree.addNode(f3);
 		BayesTreeNode f4 = new BayesTreeNode();
-		f1.setFeatureIndex(3);
+		f4.setFeatureIndex(3);
 		testTree.addNode(f4);
 
 		testTree.addEdge(new Edge(f1, f2));
@@ -114,21 +114,40 @@ public class TreeAugNB extends Algorithm {
 	}
 
 	private String predictSingle(String[] features){
-		String clas = "";
 		for (String classKey : this.classPriors.keySet()){
 			String posteriorKey = classKey + "|";
 			double posterior = 1.0;
-			for (Edge e : tree.getEdges()){
+			posterior *= classPriors.get(classKey); //p(c)
+			String firstLikely = features[0] + "|" + classKey;
+			posterior *= (Double) likelihoods.get(0).get(firstLikely); //p(root|c)
+			ArrayList<Edge> edges = tree.getEdges();
+			for (int i = 1; i< edges.size(); i++){
+				Edge e = edges.get(i);
 				System.out.println();
 				String f1 = features[e.x.featureIndex];
-				posteriorKey += f1 + " ";
 				String f2 = features[e.y.featureIndex];
+				posteriorKey += f1 + " ";
 				posteriorKey += f2 + " ";
 				posterior *= probOfXGivenYandZ(f1, e.x.featureIndex, classKey, f2, e.y.featureIndex);
 			}
+			try {
+				posteriors.put(posteriorKey, posterior);
+			}
+			catch (Exception e){
+				//Why?
+			}
 		}
 
-		return clas;
+		// Take the max
+		String maxKey = "";
+		double maxVal = 0.0;
+		for (String classKey : this.posteriors.keySet()) {
+			if (this.posteriors.get(classKey) > maxVal) {
+				maxKey = classKey;
+				maxVal = this.posteriors.get(classKey);
+			}
+		}
+		return maxKey;
 
 	}
     
