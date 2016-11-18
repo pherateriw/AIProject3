@@ -4,6 +4,8 @@ import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;
 
 public class NaiveBayes extends Algorithm {
 
@@ -19,6 +21,7 @@ public class NaiveBayes extends Algorithm {
     HashMap<String, Double> featureProbs = new HashMap<>(); // p(x1|x2)
     HashMap<String, Double> togetherness = new HashMap<>(); // occurrences of x1 and x2
     HashMap<String, Double> valOccurances = new HashMap<>();
+    Set<String> valNames = new HashSet<String>();
     int classesTotal;  // Total number of occurrences of all classes
     int numFeatures; // Total number of features
 
@@ -156,6 +159,7 @@ public class NaiveBayes extends Algorithm {
             String[] stringArray = (String[]) obj;
             for (int i = 0; i < numFeatures; i++) {
                 String val = stringArray[i];
+                valNames.add(val);
                 features.get(i).addInstance(val, stringArray[stringArray.length - 1]);
 
                 //All occurances of this value

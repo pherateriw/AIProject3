@@ -1,13 +1,9 @@
 package classification;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 //import java.util.HashSet;
-import java.util.Set;
-
-import java.util.HashMap;
 
 import java.util.logging.Level;
 
@@ -22,7 +18,10 @@ public class TreeAugNB extends Algorithm {
 	private ArrayList<HashMap> predictorPriors;
 	private ArrayList<HashMap> likelihoods;
 	private HashMap<String, Double> valOccurences;
-	private HashMap<String, Double> togetherness; 
+	private HashMap<String, Double> togetherness;
+	private HashMap<String, Double> featureLikelihoods;
+	Set<String> valNames = new HashSet<String>();
+
 
 
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
@@ -201,11 +200,39 @@ public class TreeAugNB extends Algorithm {
 		this.predictorPriors = nb.predictorPriors;
 		this.togetherness = nb.togetherness;
 		this.valOccurences = nb.valOccurances;
+		this.valNames = nb.valNames;
+		calculateFeatureLikelihoods();
+		System.out.println();
+	}
+
+	private void calculateFeatureLikelihoods(){
+		super.get_logger().log(Level.INFO, "Calculating FeatureLikelihoods");
+		featureLikelihoods = new HashMap<>();
+		for (String f1 : valNames){
+			for (String f2 : valNames){
+				if (f1 == f2){
+					continue;
+				}
+				String fKey = f1 + "|" + f2;
+				if (!featureLikelihoods.containsKey(fKey)){
+					double possibleNull;
+					try {
+						possibleNull = togetherness.get(f1 + "," + f2);
+					}
+					catch(Exception e){
+						possibleNull = .0001;
+					}
+					double likelihood = possibleNull / valOccurences.get(f2);
+					featureLikelihoods.put(fKey, likelihood);
+				}
+			}
+		}
 	}
 
 	private void probOfXGivenYandZ(double x, double y, double z){
 		//p(y|z)p(y)p(x|z)  / p(y|z)
 	}
+
 
 	public static void main(String[] args) {
 
