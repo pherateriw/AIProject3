@@ -38,6 +38,7 @@ public class KNearestNeighbor extends Algorithm {
 				Level.INFO,
 				"Running k-Nearest Neighbor (k = " + k + ") to classify "
 						+ shortName + " data.");
+		super.get_logger().log(Level.INFO,"");
 		train(trainData);
 		test(testData);
 		evaluate();
@@ -64,6 +65,7 @@ public class KNearestNeighbor extends Algorithm {
 				
 		super.get_logger().log(Level.INFO, "Size of training set: " + numInstancesTrain + " instances, " + numAttributes + " attributes");
 		super.get_logger().log(Level.INFO, "Training set stored.");
+		super.get_logger().log(Level.INFO,"");
 	}
 
 	
@@ -106,6 +108,7 @@ public class KNearestNeighbor extends Algorithm {
 		}
 		
 		super.get_logger().log(Level.INFO, "All test data classified.");
+		super.get_logger().log(Level.INFO,"");
 	}
 
 
@@ -121,7 +124,8 @@ public class KNearestNeighbor extends Algorithm {
 		// dataset, the list of class labels (ArrayList String) as determined by the classifier, and the 
 		// testData set (ArrayList String[]) that includes the true class labels.
 		super.get_logger().log(Level.INFO, "Begin evaluation.");
-		
+
+		// after all test set instances have been classified, evaluate the performance of classifier
 		EvaluationMeasures e = new EvaluationMeasures(numClasses, knnClass, testData);
 		ArrayList<Double> evaluationResults = e.evaluateData();
 		
@@ -133,6 +137,7 @@ public class KNearestNeighbor extends Algorithm {
 		System.out.println(accuracy + "," + precision + "," + recall + "," + fScore);
 
 		super.get_logger().log(Level.INFO, "######################################");
+		super.get_logger().log(Level.INFO, "RESULTS");		
 		super.get_logger().log(Level.INFO, numClasses + " class classification problem");		
 		super.get_logger().log(Level.INFO, "Results for this fold:");
 		super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);		
@@ -141,7 +146,7 @@ public class KNearestNeighbor extends Algorithm {
 		super.get_logger().log(Level.INFO, "Macro Score: " + recall);
 		super.get_logger().log(Level.INFO, "######################################");	
 		
-		// after all test set instances have been classified, evaluate the performance of classifier
+
 	}
 	
 	// calculate the Value Difference Metric (VDM) to compare the query point with all points in training data
