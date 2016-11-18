@@ -30,8 +30,8 @@ public class RunModels {
     	String choice = "";
 
 		// get file location for training/test data    	
-//    	String dataFileLocation = getData();
-		String dataFileLocation = "/Users/lisapeters/Workspace/School/AIProject3/data/breast-cancer-wisconsin.data.txt";
+    	String dataFileLocation = getData();
+//		String dataFileLocation = "/Users/lisapeters/Workspace/School/AIProject3/data/breast-cancer-wisconsin.data.txt";
     	
     	// gets short name of dataset (from file location), for use in printing information
     	String shortName = "";
@@ -89,8 +89,7 @@ public class RunModels {
     	choice = in.nextLine();
 
     	
-    	//TODO: return measures and average over all folds 
-    	
+    	//TODO: return measures and average over all folds - will update when we do our experiments
     	if (choice.equals("knn")) {
     		System.out.println("Classifying data using k-Nearest neighbor"); 
     		// Fold 1
@@ -100,16 +99,17 @@ public class RunModels {
     		//TODO: tune k
     		int k = 7; 
     		
+    		// TODO: for experiments set up 5 x 2 cross val, average across fold for all
     		Algorithm knn = new KNearestNeighbor(shortName, train1, test1, k);
-    		Algorithm knn2 = new KNearestNeighbor(shortName, test1, train1, k);
-    		Algorithm knn3 = new KNearestNeighbor(shortName, train2, test2, k);
-    		Algorithm knn4 = new KNearestNeighbor(shortName, test2, train2, k);    		
-    		Algorithm knn5 = new KNearestNeighbor(shortName, train3, test3, k);
-    		Algorithm knn6 = new KNearestNeighbor(shortName, test3, train3, k);   
-    		Algorithm knn7 = new KNearestNeighbor(shortName, train4, test4, k);
-    		Algorithm knn8 = new KNearestNeighbor(shortName, test4, train4, k);      		
-    		Algorithm knn9 = new KNearestNeighbor(shortName, train5, test5, k);
-    		Algorithm knn10 = new KNearestNeighbor(shortName, test5, train5, k);      		
+//    		Algorithm knn2 = new KNearestNeighbor(shortName, test1, train1, k);
+//    		Algorithm knn3 = new KNearestNeighbor(shortName, train2, test2, k);
+//    		Algorithm knn4 = new KNearestNeighbor(shortName, test2, train2, k);    		
+//    		Algorithm knn5 = new KNearestNeighbor(shortName, train3, test3, k);
+//    		Algorithm knn6 = new KNearestNeighbor(shortName, test3, train3, k);   
+//    		Algorithm knn7 = new KNearestNeighbor(shortName, train4, test4, k);
+//    		Algorithm knn8 = new KNearestNeighbor(shortName, test4, train4, k);      		
+//    		Algorithm knn9 = new KNearestNeighbor(shortName, train5, test5, k);
+//    		Algorithm knn10 = new KNearestNeighbor(shortName, test5, train5, k);      		
     		
     		System.out.println("k-NN has finished running.");
     		// split data, train on B and test on A
