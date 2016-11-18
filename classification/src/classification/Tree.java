@@ -10,6 +10,10 @@ public class Tree {
 		tree = new ArrayList<TreeNode>();
 		tree.add(root);
 	}
+	public Tree(ArrayList<TreeNode>tree){
+		this.tree = tree;
+		this.root = this.tree.get(0);
+	}
 	public ArrayList<TreeNode> findLeaves(TreeNode root){
 		//TODO finish this
 		return tree;
@@ -19,7 +23,7 @@ public class Tree {
 		return tree;
 	}
 	public Tree removeNode(int index){
-		//TODO finish this
+		tree.remove(index);
 		return this;
 	}
 	public TreeNode getNode(int index){

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class DecisionTreeNode extends TreeNode {
 	public ArrayList<String[]> examples;//examples associated with this node
 	public String label; //
+	public String featValue;
 	public int attribute = -1; //if is not leaf node, attribute will correspond to a data column.
 	//The data will be split into the values for the attribute
 	public ArrayList<String> splitvalues;//for example, if parent node has attribute 2 and this node has split values [true]

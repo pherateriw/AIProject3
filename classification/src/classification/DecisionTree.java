@@ -1,6 +1,7 @@
 package classification;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -12,6 +13,7 @@ public class DecisionTree extends Algorithm {
 	double valratio;
 	Tree tree;
 	ArrayList<String> classlabels;
+	EvaluationMeasures error;
 
 	public DecisionTree(ArrayList<String[]> trainset, ArrayList<String[]> testset, double valratio) {
 		this.trainset = trainset;
@@ -20,14 +22,42 @@ public class DecisionTree extends Algorithm {
 		train(trainset);
 
 	}
+	
+	void test(ArrayList<String[]> data) {
+		// testset = data;
+		// create list of predicted class labels
+		ArrayList<String> predictedClass = new ArrayList<String>();
 
-	void test(ArrayList data) {
+		// for element in data
+		for (String[] instance : data) {
+			// run the element through the tree:
+			DecisionTreeNode root = (DecisionTreeNode) tree.getRoot();
+			// start at root:
+			// while root.children is not empty
+			while (!root.children.isEmpty()) {
+				// find root.attribute in element
+				int att = root.attribute;
+				// for each root.child
 
+				for (TreeNode c : root.children) {
+					DecisionTreeNode child = (DecisionTreeNode) c;
+					// if featValue = attribute value for element
+					if (child.featValue.equals(instance[att])) {
+						// root = child
+						root = child;
+						break;
+					}
+				}
+			}
+			// store root.label in predicted class labels
+			predictedClass.add(root.label);
+		}
+		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
 	}
 
-	void train(ArrayList data) {
+	void train(ArrayList<String[]> data) {
 		super.get_logger().log(Level.INFO, "ID3 Training started");
-		trainset = (ArrayList<String[]>) (ArrayList<?>) (data);
+		trainset = data;
 		classlabels = new ArrayList<String>();
 		// generate class label array
 		for (int i = 0; i < trainset.size(); i++) {
@@ -57,8 +87,26 @@ public class DecisionTree extends Algorithm {
 			DecisionTreeNode j = (DecisionTreeNode) i;
 			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
 					+ " and splits on attribute " + j.attribute);
+			if (j.getRootindex() > -1) {
+				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
+						+ " and this node has feature value " + j.featValue);
+			}
+			
 		}
+		
+		pruneTree(tree);
 		// call pruning
+		
+		for (TreeNode i : t) {
+			DecisionTreeNode j = (DecisionTreeNode) i;
+			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
+					+ " and splits on attribute " + j.attribute);
+			if (j.getRootindex() > -1) {
+				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
+						+ " and this node has feature value " + j.featValue);
+			}
+			
+		}
 
 	}
 
@@ -100,14 +148,15 @@ public class DecisionTree extends Algorithm {
 			parent.children = new ArrayList<TreeNode>();
 		}
 		// else if subset.size == 1
-		else if (subset.size() == 1) {
-			super.get_logger().log(Level.INFO, "Only one example for Node Number " + tree.getTreeSize());
-
-			// parent.label = class label of example
-			parent.label = subset.get(0)[subset.get(0).length - 1];
-			// remove all children for parent
-			parent.children = new ArrayList<TreeNode>();
-		}
+		// else if (subset.size() == 1) {//unnecessary
+		// super.get_logger().log(Level.INFO, "Only one example for Node Number
+		// " + tree.getTreeSize());
+		//
+		// // parent.label = class label of example
+		// parent.label = subset.get(0)[subset.get(0).length - 1];
+		// // remove all children for parent
+		// parent.children = new ArrayList<TreeNode>();
+		// }
 		// else if subset is empty and parent is not root
 		// else if(subset.isEmpty()){ //trying to handle this without this if
 		// statement at creation time for children
@@ -192,11 +241,13 @@ public class DecisionTree extends Algorithm {
 			// create children
 			for (String v : parent.splitvalues) {
 				if (!russiandoll.get(v).isEmpty()) {
-					TreeNode child = new DecisionTreeNode(russiandoll.get(v), parent.locindex, tree.getTreeSize());
+					DecisionTreeNode child = new DecisionTreeNode(russiandoll.get(v), parent.locindex,
+							tree.getTreeSize());
+					child.featValue = v;
 					// add children to tree and parent's children set
 					parent.children.add(child);
 					tree.addNode(child);
-					treeBuilder(russiandoll.get(v), attributes, (DecisionTreeNode) child);
+					treeBuilder(russiandoll.get(v), attributes, child);
 				}
 			}
 
@@ -204,13 +255,92 @@ public class DecisionTree extends Algorithm {
 
 	}
 
-	public void pruneTree() {
+	public void pruneTree(Tree subtree) {
+		// create a copy of the list
+		Tree realtree = new Tree(tree.getTree());
+		Tree temptree = new Tree(subtree.getTree());
+		ArrayList<TreeNode> tlist = temptree.getTree();
+		DecisionTreeNode root = (DecisionTreeNode) temptree.getRoot();
+		ArrayList<DecisionTreeNode> internalnodes = new ArrayList<DecisionTreeNode>();
+		// find internal nodes
+		internalnodes = findInternalNodes(internalnodes, root);
+		// ensure that nodes closest to the branches are test before root
+		Collections.reverse(internalnodes);
+		tree = clip(subtree, internalnodes);
+	}
+
+	public Tree clip(Tree subtree, ArrayList<DecisionTreeNode> internalnodes) {
+		// create a copy of the list
+		if (internalnodes.isEmpty()) {
+			return subtree;
+		}
+		tree = subtree;
+		test(valset);
+		double besterror = error.avgAccuracy();
+		Tree temptree = new Tree(subtree.getTree());
+		ArrayList<TreeNode> tlist = temptree.getTree();
+		DecisionTreeNode node = internalnodes.get(0);
+		internalnodes.remove(0);
+		for (TreeNode c : node.children) {
+			DecisionTreeNode child = (DecisionTreeNode) c;
+			temptree.removeNode(child.locindex);
+		}
+		node.children.clear();
+		HashMap<String, Integer> countmap = countAllClasses(node.examples);
+		HashMap.Entry<String, Integer> maxEntry = null;
+
+		for (HashMap.Entry<String, Integer> entry : countmap.entrySet()) {
+			if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+				maxEntry = entry;
+			}
+		}
+		node.label = maxEntry.getKey();
+		// parent.label = class label with the highest count
+		tree = temptree;
+		test(valset);
+		double newerror = error.avgAccuracy();
+		super.get_logger().log(Level.INFO, "Validation Error before node removed: " + besterror + ", validation error after node removed: " + newerror);
+		if(besterror >= newerror){
+			super.get_logger().log(Level.INFO, "node removed");
+			return temptree;
+			
+		}
+		super.get_logger().log(Level.INFO, "node not removed");
+		return subtree;
 
 	}
 
+	public ArrayList<DecisionTreeNode> findInternalNodes(ArrayList<DecisionTreeNode> internalnodes,
+			DecisionTreeNode root) {
+		
+		if (root.children.isEmpty()) {
+			return internalnodes;
+		} else {
+			internalnodes.add(root);
+			for (TreeNode child : root.children) {
+				ArrayList<DecisionTreeNode> list = findInternalNodes(internalnodes, (DecisionTreeNode) child);
+				for (DecisionTreeNode l : list) {
+					if (!internalnodes.contains(l)) {
+						internalnodes.add(l);
+					}
+				}
+			}
+		}
+		return internalnodes;
+	}
+
 	public ArrayList<String[]> createValSet(ArrayList<String[]> data, double ratio) {
-		// TODO finish this
-		return data;
+		ArrayList<String[]> tempdata = new ArrayList<String[]>(data);
+		trainset.clear();
+		while(tempdata.size() > Math.ceil(ratio*data.size())){
+			DataSplitter splitter = new DataSplitter(tempdata);
+			splitter.splitData(1);
+			tempdata = splitter.getTestingData();
+			trainset.addAll(splitter.getTrainingData());
+		}
+		
+		
+		return tempdata;
 	}
 
 	protected double calcGainRatio(ArrayList<String[]> subset, int attribute) {
