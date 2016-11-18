@@ -39,7 +39,8 @@ public class EvaluationMeasures {
 	private ArrayList<String> trueCLs = new ArrayList<String>();
 	
 	// holds the number of true pos, false pos, false neg and true neg examples for each of the classes
-	private ArrayList<Integer> results = new ArrayList<Integer>();
+	// order -- 0: tpi, 1: fpi, 2: fni, 3: tni  
+	private ArrayList<Integer[]> results = new ArrayList<Integer[]>();
 	
 	public EvaluationMeasures(int numClasses, ArrayList<String> classLabels, ArrayList<String[]> testData) {
 		this.numClasses = numClasses;
@@ -85,12 +86,12 @@ public class EvaluationMeasures {
 						// number of true positive examples for class i (tpi)
 						// predicted class i, true class is i
 						tpi++;
-						System.out.println("tp " + classPredict + " = " + thisClass + " = " + trueClass);
+						//System.out.println("tp " + classPredict + " = " + thisClass + " = " + trueClass);
 					} else {
 						// number of false positive examples for class i (fpi)
 						// predicted class i, true class is not i
 						fpi++;
-						System.out.println("fp " + classPredict + " = " + thisClass + " != " + thisClass);						
+						//System.out.println("fp " + classPredict + " = " + thisClass + " != " + thisClass);						
 					}
 				} // end if: checked for tpi and fpi cases
 				
@@ -101,27 +102,25 @@ public class EvaluationMeasures {
 						// number of false negative examples for class i (fni)
 						// did not predict i, true class is i
 						fni++;
-						System.out.println("fn " + classPredict + " != " + thisClass + " = " + trueClass);
+						//System.out.println("fn " + classPredict + " != " + thisClass + " = " + trueClass);
 					} else {
 						// number of true negative examples (tni)
 						// did not predict i, class is not i
 						tni++;
-						System.out.println("tn " + classPredict + " != " + thisClass + " != " + thisClass);						
+						//System.out.println("tn " + classPredict + " != " + thisClass + " != " + thisClass);						
 					}
 				} // end if: checked for fni and tni cases				
 				
 			} // end for: all values calculated for this class
 			
-			// put in array
+			// put calculated values (for this class) in array
+			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);
+			Integer[] resultsArray = {tpi, fpi, fni, tni};
+			
+			results.add(resultsArray);
 		}
 		
-		
-
-		
-
-		
-		
-		avgAccuracy();
+		double accuracy = avgAccuracy();
 		
 		macroPrecision(); 
 		
@@ -131,18 +130,47 @@ public class EvaluationMeasures {
 	}
 	
 	// calculates the average per-class effectiveness of a classifier
+	// got equation from Sokolova and Lapalme Table 3, pg 430
 	public double avgAccuracy() {
+		double accuracy;
+		double intermedSum = 0;
 		
-		return 0.0;
+		// sum over all classes in data set
+		for (int i = 0; i < numClasses; i++) {
+			int tpi = results.get(i)[0];
+			int fpi = results.get(i)[1];
+			int fni = results.get(i)[2];
+			int tni = results.get(i)[3];
+			
+			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);	
+			
+			int numer = tpi + tni;
+			int denom = tpi + fni + fpi + tni;
+			
+			System.out.println(numer);
+			System.out.println(denom);			
+			
+			double acc = (double) numer / denom;
+			
+			System.out.println(acc);
+			intermedSum += acc;
+		}
+		
+		accuracy = intermedSum;
+		System.out.println(accuracy);
+		
+		return accuracy;
 	}
 	
 	// calculates an average per-class agreement of the data class labels with those of a classifier 
+	// got equation from Sokolova and Lapalme Table 3, pg 430
 	public double macroPrecision() {
 		
 		return 0.0;
 	}
 
 	// calculates an average per-class effectiveness of a classifier to identify class labels
+	// got equation from Sokolova and Lapalme Table 3, pg 430
 	public double macroRecall() {
 		
 		return 0.0;
@@ -150,6 +178,7 @@ public class EvaluationMeasures {
 	
 	// calculates the relations between data’s positive labels and those given by a classifier 
 	// based on a per-class average
+	// got equation from Sokolova and Lapalme Table 3, pg 430
 	public double macroFmeasure() {
 		
 		return 0.0;
