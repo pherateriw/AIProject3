@@ -1,0 +1,350 @@
+Running k-Nearest Neighbor (k = 7) to classify glass data.
+
+Starting training
+Size of training set: 103 instances, 9 attributes
+Training set stored.
+
+Starting testing:
+Size of testing set: 110 instances, 9 attributes
+Query point: [1.517665, 13.33, 3.325, 2.52, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]
+Indices of k-nearest neighbors are [1, 14, 44, 86, 12, 31, 77]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [53, 82, 49, 47, 42, 22, 24]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 1.48, 2.52, 71.16, 3.4, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [91, 16, 95, 51, 99, 32, 75]
+According to majority vote among k-nearest neighbors, instance classified as: 5
+Query point: [1.526195, 15.51, 1.48, 1.395, 71.16, 0.16, 8.66, 1.575, 0.0]
+Indices of k-nearest neighbors are [45, 37, 56, 18, 92, 73, 29]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 13.33, 1.48, 1.395, 71.16, 0.45999999999999996, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [92, 18, 33, 29, 66, 51, 43]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [45, 29, 37, 92, 56, 100, 69]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 11.875, 4.025, 1.395, 74.205, 3.4, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [0, 98, 87, 2, 76, 58, 64]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [97, 90, 52, 92, 101, 85, 29]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 13.33, 4.025, 0.77, 74.205, 0.16, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [15, 98, 87, 2, 76, 58, 70]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]
+Indices of k-nearest neighbors are [97, 90, 52, 80, 41, 81, 54]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 13.33, 4.025, 0.77, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [11, 55, 70, 34, 0, 80, 89]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 11.875, 4.025, 2.52, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]
+Indices of k-nearest neighbors are [1, 86, 12, 65, 82, 89, 14]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 15.51, 4.025, 0.77, 72.755, 0.16, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [28, 81, 54, 50, 26, 23, 20]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 11.875, 1.48, 2.52, 72.755, 0.45999999999999996, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [51, 33, 25, 94, 92, 29, 66]
+According to majority vote among k-nearest neighbors, instance classified as: 5
+Query point: [1.526195, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [55, 11, 27, 70, 8, 5, 40]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 3.4, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [22, 24, 93, 59, 13, 27, 60]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 11.875, 1.48, 2.52, 74.205, 0.45999999999999996, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [33, 51, 94, 25, 29, 32, 56]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]
+Indices of k-nearest neighbors are [100, 69, 61, 39, 38, 56, 96]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.5140099999999999, 11.875, 4.025, 1.395, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [13, 60, 93, 59, 48, 8, 5]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 4.025, 1.395, 71.16, 0.16, 8.66, 1.575, 0.0]
+Indices of k-nearest neighbors are [28, 101, 85, 62, 81, 54, 50]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 11.875, 1.48, 2.52, 71.16, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [75, 42, 47, 53, 95, 82, 94]
+According to majority vote among k-nearest neighbors, instance classified as: 5
+Query point: [1.517665, 13.33, 1.48, 1.395, 72.755, 0.45999999999999996, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [66, 102, 4, 31, 44, 55, 88]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 15.51, 4.025, 2.52, 71.16, 0.16, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [46, 82, 99, 42, 53, 84, 49]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 13.33, 4.025, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [42, 82, 47, 34, 53, 49, 75]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [97, 90, 52, 101, 85, 19, 92]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [100, 69, 61, 39, 79, 17, 96]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.517665, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [55, 11, 70, 27, 31, 8, 5]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 11.875, 1.48, 2.52, 72.755, 3.4, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [32, 51, 66, 75, 34, 25, 16]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 1.48, 0.77, 72.755, 0.16, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [37, 45, 18, 101, 85, 62, 92]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [34, 47, 53, 42, 99, 82, 49]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 11.875, 3.325, 1.395, 72.755, 3.4, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [64, 88, 30, 0, 31, 98, 87]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 11.875, 1.48, 2.52, 74.205, 0.45999999999999996, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [33, 51, 94, 25, 29, 32, 56]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 11.875, 3.325, 0.77, 74.205, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [15, 76, 58, 98, 87, 2, 44]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 13.33, 1.48, 2.52, 71.16, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [92, 51, 33, 25, 29, 56, 94]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 11.875, 4.025, 1.395, 74.205, 3.4, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [0, 98, 87, 2, 76, 58, 64]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 13.33, 3.325, 0.77, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [13, 24, 8, 5, 22, 48, 93]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [81, 54, 50, 26, 23, 20, 28]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 11.875, 1.48, 0.77, 71.16, 0.16, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [92, 29, 97, 90, 52, 37, 45]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 13.33, 4.025, 0.77, 72.755, 0.16, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [65, 28, 81, 54, 50, 26, 23]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [44, 31, 76, 58, 88, 30, 64]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 11.875, 3.325, 0.77, 72.755, 3.4, 8.66, 0.0, 0.255]
+Indices of k-nearest neighbors are [89, 77, 14, 63, 64, 57, 98]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 11.875, 4.025, 0.77, 74.205, 3.4, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [98, 87, 2, 0, 15, 77, 89]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.255]
+Indices of k-nearest neighbors are [38, 56, 73, 79, 17, 100, 69]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.5140099999999999, 13.33, 3.325, 2.52, 71.16, 3.4, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [53, 49, 82, 42, 47, 46, 22]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 15.51, 3.325, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [24, 84, 22, 8, 5, 74, 27]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 15.51, 1.48, 2.52, 72.755, 3.4, 6.91, 1.575, 0.255]
+Indices of k-nearest neighbors are [95, 83, 73, 25, 71, 51, 96]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.517665, 11.875, 3.325, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [31, 44, 64, 76, 58, 14, 88]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 13.33, 3.325, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [8, 5, 40, 35, 13, 78, 24]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 13.33, 3.325, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [21, 35, 6, 3, 8, 5, 31]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 13.33, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [25, 33, 51, 18, 94, 92, 43]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 13.33, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [48, 93, 59, 40, 60, 78, 13]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [79, 17, 38, 100, 69, 61, 39]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.5140099999999999, 13.33, 3.325, 1.395, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [40, 78, 8, 5, 48, 93, 59]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [18, 25, 79, 17, 33, 37, 56]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [8, 5, 40, 55, 93, 59, 13]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 11.875, 3.325, 2.52, 74.205, 3.4, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [49, 53, 47, 82, 46, 42, 24]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 11.875, 1.48, 0.77, 74.205, 0.45999999999999996, 12.56, 0.0, 0.255]
+Indices of k-nearest neighbors are [4, 102, 66, 68, 10, 77, 15]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [81, 54, 50, 26, 23, 20, 28]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 15.51, 1.48, 0.77, 72.755, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [45, 37, 92, 29, 73, 18, 56]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 1.48, 1.395, 71.16, 0.45999999999999996, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [18, 45, 37, 92, 33, 29, 101]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 15.51, 1.48, 1.395, 74.205, 0.16, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [7, 96, 36, 9, 68, 40, 78]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.517665, 15.51, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [55, 84, 11, 70, 27, 99, 31]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [47, 53, 42, 82, 49, 13, 34]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [44, 31, 76, 58, 21, 6, 86]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.255]
+Indices of k-nearest neighbors are [3, 74, 12, 21, 35, 86, 6]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [81, 54, 50, 26, 23, 20, 28]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [34, 47, 53, 42, 99, 1, 82]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 13.33, 3.325, 0.77, 71.16, 3.4, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [65, 98, 87, 2, 88, 30, 64]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]
+Indices of k-nearest neighbors are [56, 73, 100, 69, 61, 39, 38]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.5140099999999999, 11.875, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [48, 60, 78, 13, 93, 59, 40]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [28, 81, 54, 50, 26, 23, 20]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 13.33, 4.025, 0.77, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [70, 11, 10, 55, 72, 15, 40]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 13.33, 3.325, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [8, 5, 40, 13, 78, 22, 21]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 13.33, 4.025, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [10, 27, 11, 55, 70, 72, 12]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [27, 55, 11, 10, 72, 12, 70]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 13.33, 4.025, 0.77, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [70, 11, 10, 55, 72, 15, 40]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 15.51, 4.025, 2.52, 71.16, 0.45999999999999996, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [99, 84, 83, 34, 1, 10, 11]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [56, 73, 100, 69, 61, 39, 79]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.526195, 15.51, 3.325, 0.77, 71.16, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [101, 85, 45, 62, 81, 54, 50]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 15.51, 1.48, 2.52, 71.16, 0.16, 12.56, 0.0, 0.0]
+Indices of k-nearest neighbors are [91, 16, 56, 45, 73, 81, 54]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.517665, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]
+Indices of k-nearest neighbors are [12, 14, 44, 31, 80, 89, 41]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 13.33, 4.025, 1.395, 71.16, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [93, 59, 60, 13, 48, 8, 5]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [100, 69, 61, 39, 79, 17, 96]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.526195, 11.875, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [29, 92, 45, 33, 97, 90, 52]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 11.875, 3.325, 1.395, 74.205, 3.4, 8.66, 0.0, 0.255]
+Indices of k-nearest neighbors are [63, 77, 98, 87, 2, 14, 76]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]
+Indices of k-nearest neighbors are [81, 54, 50, 26, 23, 20, 101]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [44, 31, 76, 58, 21, 6, 86]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 11.875, 1.48, 1.395, 72.755, 3.4, 8.66, 1.575, 0.0]
+Indices of k-nearest neighbors are [57, 64, 51, 0, 88, 30, 66]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 11.875, 4.025, 1.395, 72.755, 3.4, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [0, 64, 88, 30, 89, 31, 12]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 11.875, 1.48, 2.52, 71.16, 3.4, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [25, 51, 33, 94, 92, 18, 32]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.517665, 13.33, 3.325, 0.77, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [31, 15, 44, 88, 30, 35, 64]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]
+Indices of k-nearest neighbors are [100, 69, 61, 39, 38, 56, 96]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.526195, 13.33, 3.325, 1.395, 71.16, 3.4, 12.56, 0.0, 0.255]
+Indices of k-nearest neighbors are [80, 41, 63, 86, 22, 65, 88]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [100, 69, 61, 39, 79, 17, 96]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.526195, 11.875, 1.48, 1.395, 74.205, 0.16, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [29, 92, 37, 43, 97, 90, 52]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 15.51, 3.325, 2.52, 71.16, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [71, 99, 42, 47, 83, 53, 49]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [73, 56, 91, 45, 100, 69, 61]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.526195, 13.33, 3.325, 0.77, 71.16, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [44, 86, 65, 35, 15, 31, 76]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 11.875, 4.025, 1.395, 74.205, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [76, 58, 15, 0, 44, 31, 12]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 13.33, 4.025, 0.77, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]
+Indices of k-nearest neighbors are [65, 86, 35, 3, 31, 0, 15]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.517665, 15.51, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [45, 29, 37, 92, 56, 73, 100]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 3.325, 1.395, 71.16, 0.45999999999999996, 8.66, 1.575, 0.0]
+Indices of k-nearest neighbors are [62, 18, 44, 28, 101, 85, 19]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]
+Indices of k-nearest neighbors are [97, 90, 52, 80, 41, 81, 54]
+According to majority vote among k-nearest neighbors, instance classified as: 1
+Query point: [1.526195, 15.51, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [84, 55, 11, 27, 81, 54, 50]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 11.875, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]
+Indices of k-nearest neighbors are [25, 33, 51, 94, 18, 92, 43]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 11.875, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.255]
+Indices of k-nearest neighbors are [48, 22, 24, 60, 67, 78, 13]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.5140099999999999, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [47, 53, 42, 82, 49, 13, 34]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+Query point: [1.526195, 15.51, 1.48, 2.52, 71.16, 0.16, 12.56, 1.575, 0.0]
+Indices of k-nearest neighbors are [56, 45, 73, 91, 16, 100, 69]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.255]
+Indices of k-nearest neighbors are [38, 79, 17, 100, 69, 61, 39]
+According to majority vote among k-nearest neighbors, instance classified as: 7
+Query point: [1.517665, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]
+Indices of k-nearest neighbors are [34, 47, 53, 42, 99, 1, 82]
+According to majority vote among k-nearest neighbors, instance classified as: 2
+All test data classified.
+
+Begin evaluation.
+######################################
+RESULTS
+6 class classification problem
+Results for this fold:
+Average Accuracy: 5.236363636363636
+Macro Precision: 0.4326923076923077
+Macro Precision: 0.4297960811118706
+Macro Score: 0.4297960811118706
+######################################
