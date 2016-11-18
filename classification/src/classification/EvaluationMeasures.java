@@ -122,9 +122,9 @@ public class EvaluationMeasures {
 		
 		double accuracy = avgAccuracy();
 		
-		macroPrecision(); 
+		double precision = macroPrecision(); 
 		
-		macroRecall(); 
+		double recall = macroRecall(); 
 		
 		macroFmeasure(); 
 	}
@@ -175,7 +175,7 @@ public class EvaluationMeasures {
 			int tpi = results.get(i)[0];
 			int fpi = results.get(i)[1];
 			
-			System.out.println(tpi + "," + fpi);		
+//			System.out.println(tpi + "," + fpi);		
 			
 			int numer = tpi;
 			double denom = tpi + fpi;
@@ -192,16 +192,42 @@ public class EvaluationMeasures {
 		}
 		
 		precision = itermedSum/numClasses;
-		System.out.println(precision);
+		//System.out.println(precision);
 		
-		return 0.0;
+		return precision;
 	}
 
 	// calculates an average per-class effectiveness of a classifier to identify class labels
 	// got equation from Sokolova and Lapalme Table 3, pg 430
 	public double macroRecall() {
+		double recall; 
+		double itermedSum = 0.0; 
 		
-		return 0.0;
+		// sum over all classes in data set
+		for (int i = 0; i < numClasses; i++) {
+			int tpi = results.get(i)[0];
+			int fni = results.get(i)[2];
+			
+			//System.out.println(tpi + "," + fni);		
+			
+			int numer = tpi;
+			double denom = tpi + fni;
+			
+			// no true positives or false negatives (only true negatives or false positives)
+			if (denom == 0) {
+				// small non-zero value to prevent NaN
+				denom = 0.00001;
+			}
+			
+			double ratio = numer / denom;
+			
+			itermedSum += ratio;
+		}
+		
+		recall = itermedSum/numClasses;
+		//System.out.println(recall);
+		
+		return recall;
 	}	
 	
 	// calculates the relations between data’s positive labels and those given by a classifier 
