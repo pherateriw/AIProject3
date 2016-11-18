@@ -58,6 +58,9 @@ public class Tree {
 	public void addEdge(Edge e){
 		edges.add(e);
 	}
+	public void addEdges(ArrayList<Edge> e){
+		this.edges = e;
+	}
 
 	public ArrayList<Edge> getEdges(){
 		return edges;
