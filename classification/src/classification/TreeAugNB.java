@@ -1,8 +1,11 @@
 package classification;
 import java.util.ArrayList;
 public class TreeAugNB extends Algorithm {
-	public TreeAugNB(){
+	public TreeAugNB(String shortName, ArrayList<String[]> trainData,
+			ArrayList<String[]> testData){
 		
+	
+	
 	}
 	
 	
@@ -32,12 +35,19 @@ public class TreeAugNB extends Algorithm {
 	
 	
 	
-    void test(ArrayList<String[]> data){
+    void test(ArrayList<String[]> trainData){
+
+    	
+    }
+
+    
+    void train(ArrayList<String[]> testData){
 
     }
-    void train(ArrayList<String[]> data){
+    
+    
+    
 
-    }
     private Tree createFullGraph(ArrayList<String[]> data){
     	TreeNode root = new BayesTreeNode();
     	Tree tree = new Tree(root);

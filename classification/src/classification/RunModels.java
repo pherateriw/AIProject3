@@ -120,7 +120,7 @@ public class RunModels {
 			System.out.println("Naive Bayes has finished running.");
     	} else if (choice.equals("tan")){
     		System.out.println("Classifying data using tree-augmented naive Bayes"); 
-    		Algorithm tan = new TreeAugNB(); 
+    		Algorithm tan = new TreeAugNB(shortName, train1, test1); 
     	} else if (choice.equals("id3")) {	
     		System.out.println("Classifying data using the Iterative Dichotomiser 3"); 
     		Algorithm id3 = new DecisionTree(train1, test1, 0.1);    		
