@@ -58,6 +58,7 @@ public class TreeAugNB extends Algorithm {
     	ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
     	
     	// TODO: these values just for testing, change to loop through all edges in graph
+    	// make sure max location of ai and aj are such that we are not getting class vals
     	int aiLoc = 0;
     	int ajLoc = 1;
     	
@@ -102,4 +103,16 @@ public class TreeAugNB extends Algorithm {
     	return tree;
     }
     
+    private Tree associateWeights(Tree completeTree){
+    	return completeTree;
+    }
+    private Tree maxSpanTree(BayesTree tree){
+    	return tree;
+    }
+    private Tree directEdges(BayesTree tree){
+    	return tree;
+    }
+    private void createCondProbTables(Tree tree){
+    	
+    }
 }
