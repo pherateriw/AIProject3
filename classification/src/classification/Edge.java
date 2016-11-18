@@ -1,17 +1,17 @@
 package classification;
 
 public class Edge {
-	public TreeNode x;
-	public TreeNode y;
+	public BayesTreeNode x;
+	public BayesTreeNode y;
 	public double weight;
 	boolean directed = false;
 
-	public Edge(TreeNode x, TreeNode y) {
+	public Edge(BayesTreeNode x, BayesTreeNode y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	public TreeNode traverseEdge(TreeNode left) {
+	public TreeNode traverseEdge(BayesTreeNode left) {
 		if (!directed) {
 			if (left.equals(x)) {
 				return y;

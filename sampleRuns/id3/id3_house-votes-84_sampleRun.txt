@@ -1,0 +1,542 @@
+Decision Tree Algorithm created.
+Working with house-votes-84 dataset
+
+Training started:
+Class labels set created
+Validation set created
+Tree created
+Attribute set created
+Selecting attribute/label for Node number 1
+Expanding tree at 1
+Calculating gain ratio for attribute 0 : -0.060602376706517316
+Calculating gain ratio for attribute 1 : -0.05999972054218677
+Calculating gain ratio for attribute 2 : -0.06306667347853619
+Calculating gain ratio for attribute 3 : -0.062402440756376375
+Calculating gain ratio for attribute 4 : -0.06004555521566523
+Calculating gain ratio for attribute 5 : -0.06201041661137622
+Calculating gain ratio for attribute 6 : -0.06220149962768794
+Calculating gain ratio for attribute 7 : -0.061657014613609645
+Calculating gain ratio for attribute 8 : -0.060423125027555515
+Calculating gain ratio for attribute 9 : -0.06000735367217934
+Calculating gain ratio for attribute 10 : -0.06500976559670389
+Calculating gain ratio for attribute 11 : -0.061340737440407765
+Calculating gain ratio for attribute 12 : -0.05999972054218677
+Calculating gain ratio for attribute 13 : -0.06093310807774252
+Calculating gain ratio for attribute 14 : -0.06093310807774252
+Selecting attribute/label for Node number 2
+Expanding tree at 2
+Calculating gain ratio for attribute 1 : -0.34462751242491135
+Calculating gain ratio for attribute 2 : -0.589565625937387
+Calculating gain ratio for attribute 3 : -0.48512635734611576
+Calculating gain ratio for attribute 4 : -0.38343146207086076
+Calculating gain ratio for attribute 5 : -0.3560067598791461
+Calculating gain ratio for attribute 6 : -0.5397344408180055
+Calculating gain ratio for attribute 7 : -0.48512635734611576
+Calculating gain ratio for attribute 8 : -0.4170431343724509
+Calculating gain ratio for attribute 9 : -0.3422559230041708
+Calculating gain ratio for attribute 10 : -0.37833570106271697
+Calculating gain ratio for attribute 11 : -0.4577366781827847
+Calculating gain ratio for attribute 12 : -0.3694329628843204
+Calculating gain ratio for attribute 13 : -0.34738799550754573
+Calculating gain ratio for attribute 14 : -0.34462751242491135
+Selecting attribute/label for Node number 3
+Expanding tree at 3
+Calculating gain ratio for attribute 2 : -0.5384084713018946
+Calculating gain ratio for attribute 3 : -0.46688873090147853
+Calculating gain ratio for attribute 4 : -0.3594423922217594
+Calculating gain ratio for attribute 5 : -0.35055119487909814
+Calculating gain ratio for attribute 6 : -0.4218594284557814
+Calculating gain ratio for attribute 7 : -0.4419699270922575
+Calculating gain ratio for attribute 8 : -0.3650497970932044
+Calculating gain ratio for attribute 9 : -0.3499775783516459
+Calculating gain ratio for attribute 10 : -0.3499775783516459
+Calculating gain ratio for attribute 11 : -0.4982124454306862
+Calculating gain ratio for attribute 12 : -0.35055119487909814
+Calculating gain ratio for attribute 13 : -0.3499775783516459
+Calculating gain ratio for attribute 14 : -0.35055119487909814
+Selecting attribute/label for Node number 4
+Expanding tree at 4
+Calculating gain ratio for attribute 3 : -1.1273438207622946
+Calculating gain ratio for attribute 4 : -0.6696625062205624
+Calculating gain ratio for attribute 5 : -0.6072937066284071
+Calculating gain ratio for attribute 6 : -0.9768904435687538
+Calculating gain ratio for attribute 7 : -1.369665343980818
+Calculating gain ratio for attribute 8 : -0.6696625062205624
+Calculating gain ratio for attribute 9 : -0.5783400879876542
+Calculating gain ratio for attribute 10 : -0.5783400879876542
+Calculating gain ratio for attribute 11 : -0.9768904435687538
+Calculating gain ratio for attribute 12 : -0.5952923726685379
+Calculating gain ratio for attribute 13 : -0.5952923726685379
+Calculating gain ratio for attribute 14 : -0.5866656279665491
+Selecting attribute/label for Node number 5
+Expanding tree at 5
+Calculating gain ratio for attribute 4 : -0.23262290680731132
+Calculating gain ratio for attribute 5 : -0.23262290680731132
+Calculating gain ratio for attribute 6 : -Infinity
+Calculating gain ratio for attribute 7 : -0.23262290680731132
+Calculating gain ratio for attribute 8 : -0.18872187554086717
+Calculating gain ratio for attribute 9 : -0.23262290680731132
+Calculating gain ratio for attribute 10 : -0.18872187554086717
+Calculating gain ratio for attribute 11 : -0.18872187554086717
+Calculating gain ratio for attribute 12 : -Infinity
+Calculating gain ratio for attribute 13 : -Infinity
+Calculating gain ratio for attribute 14 : -0.23262290680731132
+Selecting attribute/label for Node number 6
+All examples of Node Number 6 are the same class
+Selecting attribute/label for Node number 7
+All examples of Node Number 7 are the same class
+Selecting attribute/label for Node number 8
+All examples of Node Number 8 are the same class
+Selecting attribute/label for Node number 9
+Expanding tree at 9
+Calculating gain ratio for attribute 5 : -Infinity
+Calculating gain ratio for attribute 6 : -0.024966272744780256
+Calculating gain ratio for attribute 7 : -Infinity
+Calculating gain ratio for attribute 8 : -0.024966272744780256
+Calculating gain ratio for attribute 9 : -0.014993343597766294
+Calculating gain ratio for attribute 10 : -0.014993343597766294
+Calculating gain ratio for attribute 11 : -0.014993343597766294
+Calculating gain ratio for attribute 12 : -0.024966272744780256
+Calculating gain ratio for attribute 13 : -Infinity
+Calculating gain ratio for attribute 14 : -Infinity
+Selecting attribute/label for Node number 10
+Expanding tree at 10
+Calculating gain ratio for attribute 6 : -0.024966272744780256
+Calculating gain ratio for attribute 7 : -Infinity
+Calculating gain ratio for attribute 8 : -0.024966272744780256
+Calculating gain ratio for attribute 9 : -0.014993343597766294
+Calculating gain ratio for attribute 10 : -0.014993343597766294
+Calculating gain ratio for attribute 11 : -0.014993343597766294
+Calculating gain ratio for attribute 12 : -0.024966272744780256
+Calculating gain ratio for attribute 13 : -Infinity
+Calculating gain ratio for attribute 14 : -Infinity
+Selecting attribute/label for Node number 11
+All examples of Node Number 11 are the same class
+Selecting attribute/label for Node number 12
+Expanding tree at 12
+Calculating gain ratio for attribute 7 : -Infinity
+Calculating gain ratio for attribute 8 : -0.12569438103122904
+Calculating gain ratio for attribute 9 : -0.08170416594551044
+Calculating gain ratio for attribute 10 : -0.08897368681807862
+Calculating gain ratio for attribute 11 : -0.08897368681807862
+Calculating gain ratio for attribute 12 : -Infinity
+Calculating gain ratio for attribute 13 : -Infinity
+Calculating gain ratio for attribute 14 : -Infinity
+Selecting attribute/label for Node number 13
+Expanding tree at 13
+Calculating gain ratio for attribute 8 : -0.12569438103122904
+Calculating gain ratio for attribute 9 : -0.08170416594551044
+Calculating gain ratio for attribute 10 : -0.08897368681807862
+Calculating gain ratio for attribute 11 : -0.08897368681807862
+Calculating gain ratio for attribute 12 : -Infinity
+Calculating gain ratio for attribute 13 : -Infinity
+Calculating gain ratio for attribute 14 : -Infinity
+Selecting attribute/label for Node number 14
+All examples of Node Number 14 are the same class
+Selecting attribute/label for Node number 15
+Expanding tree at 15
+Calculating gain ratio for attribute 9 : -0.28639140518660056
+Calculating gain ratio for attribute 10 : -0.3851795034462863
+Calculating gain ratio for attribute 11 : -0.28639140518660056
+Calculating gain ratio for attribute 12 : -Infinity
+Calculating gain ratio for attribute 13 : -Infinity
+Calculating gain ratio for attribute 14 : -Infinity
+Selecting attribute/label for Node number 16
+All examples of Node Number 16 are the same class
+Selecting attribute/label for Node number 17
+Expanding tree at 17
+Calculating gain ratio for attribute 10 : 0.0
+Calculating gain ratio for attribute 11 : NaN
+Calculating gain ratio for attribute 12 : NaN
+Calculating gain ratio for attribute 13 : NaN
+Calculating gain ratio for attribute 14 : NaN
+Selecting attribute/label for Node number 18
+All examples of Node Number 18 are the same class
+Selecting attribute/label for Node number 19
+All examples of Node Number 19 are the same class
+Selecting attribute/label for Node number 20
+Expanding tree at 20
+Calculating gain ratio for attribute 11 : -0.43023643376343257
+Calculating gain ratio for attribute 12 : -0.43023643376343257
+Calculating gain ratio for attribute 13 : -0.35404715692124117
+Calculating gain ratio for attribute 14 : -0.34882638988485704
+Selecting attribute/label for Node number 21
+Expanding tree at 21
+Calculating gain ratio for attribute 12 : -0.02054483645100475
+Calculating gain ratio for attribute 13 : -0.021922394289826175
+Calculating gain ratio for attribute 14 : -0.021922394289826175
+Selecting attribute/label for Node number 22
+Expanding tree at 22
+Calculating gain ratio for attribute 13 : -0.040238641148691974
+Calculating gain ratio for attribute 14 : -0.040238641148691974
+Selecting attribute/label for Node number 23
+Expanding tree at 23
+Calculating gain ratio for attribute 14 : -0.23262290680731132
+Selecting attribute/label for Node number 24
+All examples of Node Number 24 are the same class
+Selecting attribute/label for Node number 25
+All examples of Node Number 25 are the same class
+Selecting attribute/label for Node number 26
+All examples of Node Number 26 are the same class
+Selecting attribute/label for Node number 27
+Attributes for Node Number 27 are empty
+Selecting attribute/label for Node number 28
+Attributes for Node Number 28 are empty
+Selecting attribute/label for Node number 29
+Attributes for Node Number 29 are empty
+Tree Built
+Node 0 has parent -1 and splits on attribute 0
+Node 1 has parent 0 and splits on attribute 1
+	 and parents splits on 0 and this node has feature value y
+Node 2 has parent 1 and splits on attribute 2
+	 and parents splits on 1 and this node has feature value y
+Node 3 has parent 2 and splits on attribute 3
+	 and parents splits on 2 and this node has feature value y
+Node 4 has parent 3 and splits on attribute 4
+	 and parents splits on 3 and this node has feature value y
+Node 5 has parent 4 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value y
+Node 6 has parent 4 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value n
+Node 7 has parent 3 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value n
+Node 8 has parent 2 and splits on attribute 5
+	 and parents splits on 2 and this node has feature value n
+Node 9 has parent 8 and splits on attribute 6
+	 and parents splits on 5 and this node has feature value y
+Node 10 has parent 9 and splits on attribute -1
+	 and parents splits on 6 and this node has feature value y
+Node 11 has parent 9 and splits on attribute 7
+	 and parents splits on 6 and this node has feature value n
+Node 12 has parent 11 and splits on attribute 8
+	 and parents splits on 7 and this node has feature value n
+Node 13 has parent 12 and splits on attribute -1
+	 and parents splits on 8 and this node has feature value y
+Node 14 has parent 12 and splits on attribute 9
+	 and parents splits on 8 and this node has feature value n
+Node 15 has parent 14 and splits on attribute -1
+	 and parents splits on 9 and this node has feature value y
+Node 16 has parent 14 and splits on attribute 10
+	 and parents splits on 9 and this node has feature value n
+Node 17 has parent 16 and splits on attribute -1
+	 and parents splits on 10 and this node has feature value y
+Node 18 has parent 16 and splits on attribute -1
+	 and parents splits on 10 and this node has feature value n
+Node 19 has parent 1 and splits on attribute 11
+	 and parents splits on 1 and this node has feature value n
+Node 20 has parent 19 and splits on attribute 12
+	 and parents splits on 11 and this node has feature value y
+Node 21 has parent 20 and splits on attribute 13
+	 and parents splits on 12 and this node has feature value y
+Node 22 has parent 21 and splits on attribute 14
+	 and parents splits on 13 and this node has feature value y
+Node 23 has parent 22 and splits on attribute -1
+	 and parents splits on 14 and this node has feature value y
+Node 24 has parent 22 and splits on attribute -1
+	 and parents splits on 14 and this node has feature value n
+Node 25 has parent 21 and splits on attribute -1
+	 and parents splits on 13 and this node has feature value n
+Node 26 has parent 20 and splits on attribute -1
+	 and parents splits on 12 and this node has feature value n
+Node 27 has parent 19 and splits on attribute -1
+	 and parents splits on 11 and this node has feature value n
+Node 28 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value n
+Pruning:
+Validation Error before node removed: 2.0, validation error after node removed: 1.5
+Node removed
+Done pruning
+Node 0 has parent -1 and splits on attribute 0
+Node 1 has parent 0 and splits on attribute 1
+	 and parents splits on 0 and this node has feature value y
+Node 2 has parent 1 and splits on attribute 2
+	 and parents splits on 1 and this node has feature value y
+Node 3 has parent 2 and splits on attribute 3
+	 and parents splits on 2 and this node has feature value y
+Node 4 has parent 3 and splits on attribute 4
+	 and parents splits on 3 and this node has feature value y
+Node 5 has parent 4 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value y
+Node 6 has parent 4 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value n
+Node 7 has parent 3 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value n
+Node 8 has parent 2 and splits on attribute 5
+	 and parents splits on 2 and this node has feature value n
+Node 9 has parent 8 and splits on attribute 6
+	 and parents splits on 5 and this node has feature value y
+Node 10 has parent 9 and splits on attribute -1
+	 and parents splits on 6 and this node has feature value y
+Node 11 has parent 9 and splits on attribute 7
+	 and parents splits on 6 and this node has feature value n
+Node 12 has parent 11 and splits on attribute 8
+	 and parents splits on 7 and this node has feature value n
+Node 13 has parent 12 and splits on attribute -1
+	 and parents splits on 8 and this node has feature value y
+Node 14 has parent 12 and splits on attribute 9
+	 and parents splits on 8 and this node has feature value n
+Node 15 has parent 14 and splits on attribute -1
+	 and parents splits on 9 and this node has feature value y
+Node 16 has parent 14 and splits on attribute 10
+	 and parents splits on 9 and this node has feature value n
+Node 17 has parent 16 and splits on attribute -1
+	 and parents splits on 10 and this node has feature value y
+Node 18 has parent 16 and splits on attribute -1
+	 and parents splits on 10 and this node has feature value n
+Node 19 has parent 1 and splits on attribute 11
+	 and parents splits on 1 and this node has feature value n
+Node 20 has parent 19 and splits on attribute 12
+	 and parents splits on 11 and this node has feature value y
+Node 21 has parent 20 and splits on attribute 13
+	 and parents splits on 12 and this node has feature value y
+Node 22 has parent 21 and splits on attribute 14
+	 and parents splits on 13 and this node has feature value y
+Node 23 has parent 22 and splits on attribute -1
+	 and parents splits on 14 and this node has feature value y
+Node 24 has parent 22 and splits on attribute -1
+	 and parents splits on 14 and this node has feature value n
+Node 25 has parent 21 and splits on attribute -1
+	 and parents splits on 13 and this node has feature value n
+Node 26 has parent 20 and splits on attribute -1
+	 and parents splits on 12 and this node has feature value n
+Node 27 has parent 19 and splits on attribute -1
+	 and parents splits on 11 and this node has feature value n
+Node 28 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value n
+Done training
+
+Starting testing:
+Given features [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, y, y, n, y, y, y, n, y, y, y, n, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, y, n, n, y, y, y, y, y, n, n, y, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, y, n, y, y, y, y, n, y, n, y, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, y, n, n, y, n, y, n, y, y, y, n, y, y, n]: predicted class is republican
+Given features [y, n, n, n, y, y, n, n, n, n, y, y, n, y, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, y, y, n, n, n, n, y, y, n, y, n, n, y, y, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, n, y, y, n, y, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, y, y, n, n, n, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, y, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, y, y, n, y, n, n, y, n, y, y, n, y]: predicted class is democrat
+Given features [n, y, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is republican
+Given features [y, y, y, n, n, y, y, y, y, y, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, y, y, n, n, n, n, n, n, y, n, y, n, n]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, y, n, n, n, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, y, n, n, y, n, y]: predicted class is democrat
+Given features [y, n, n, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, y, n, n, y, n, y, y, y, n, n, y, y, n, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, y, y, y, y, y, n, n, n, y, n, y, y, y, y, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, n, n, y, n, y, y, n, y, y, y, y, y, n]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, y, n, n, y, n, y, n, y, y, y]: predicted class is republican
+Given features [y, y, y, n, y, y, n, y, y, n, y, n, n, y, n, n]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, y, y, y, n, n, y, y]: predicted class is democrat
+Given features [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, n, n, y, y, n, n, n, n, y, y, y, y, y, n]: predicted class is democrat
+Given features [y, y, n, n, n, n, n, y, y, n, y, n, n, n, y, n]: predicted class is republican
+Given features [n, n, n, y, y, n, y, n, y, y, n, n, n, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [y, y, y, y, y, y, n, n, n, n, y, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, n, n, y, y, y, y, n, y, n, n, y, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, y, n]: predicted class is republican
+Given features [y, n, y, n, n, y, y, y, y, n, n, y, n, y, y, y]: predicted class is democrat
+Given features [y, y, y, n, y, y, n, y, n, y, y, n, y, y, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is republican
+Given features [n, n, y, y, y, y, y, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, y, n, n, n, n, n, y, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, n, n, n, y, n, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, y, n, y, y, n, y, n, n, y, n, n, n, n, y]: predicted class is republican
+Given features [n, y, y, y, y, y, n, n, n, y, y, n, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, y, y, n, n, n, y, n, n, n, y, y, n]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, y, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, y, n, y, y, y, y, n, n, y, n, y, n, y, y]: predicted class is republican
+Given features [y, y, y, n, n, n, n, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, n, y, y, y, y, n, n, n, n, y, y, y, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, y, y, y, y, y, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, n, y, y, y, y, n, n]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, n, n, y, y, n, y, n, y]: predicted class is democrat
+Given features [y, n, y, y, y, y, y, y, n, y, n, y, n, y, y, y]: predicted class is democrat
+Given features [y, y, n, n, y, y, n, n, n, y, y, y, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, n]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, y, y, y, y, n, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, n]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, y, n]: predicted class is republican
+Given features [n, n, y, y, y, y, n, n, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, y, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, n, n, y, y, y, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, y, n, y, y, y, y, y, y, n, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, n, y, y, n, n, n, y, n]: predicted class is republican
+Given features [y, n, n, n, y, y, y, n, n, y, y, n, n, y, n, y]: predicted class is democrat
+Given features [y, y, n, n, n, n, y, y, n, n, y, n, n, n, y, n]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, y, n, n, y, y, y, y, n, y, y, n, n, y, y]: predicted class is republican
+Given features [n, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]: predicted class is republican
+Given features [y, y, y, y, y, y, y, y, n, y, n, n, n, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, n, n, n, n, n, n, y, n, y, n, y]: predicted class is republican
+Given features [n, n, y, y, y, y, y, y, y, y, n, y, y, y, y, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, n, y, n, n, y, n]: predicted class is democrat
+Given features [y, n, y, n, n, y, y, y, y, y, y, n, n, y, y, y]: predicted class is democrat
+Given features [y, n, y, y, y, y, y, y, n, y, y, y, n, y, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, y, n, n, n, n, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, n, y, n, y, y, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, n, y, y, y, n, n, n, n, y, n, y, y, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, y, y, n, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [y, n, y, n, y, y, y, n, n, n, y, n, n, y, n, y]: predicted class is democrat
+Given features [n, y, y, n, n, y, y, y, n, y, n, n, n, n, y, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, n, y, y, n, n, n, n, n, y, y, y, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, y, n, y, y, n, y, n, n, n, n, n, n, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, n, y, n, n, n, n, n, y]: predicted class is democrat
+Given features [y, n, n, n, n, n, y, y, y, y, n, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, n, y, y, y, y, n, y, n, y, n, y, y]: predicted class is republican
+Given features [y, y, n, n, n, y, n, n, n, n, y, n, y, n, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, y, y, y, n, y, y, n, y, y, y, y]: predicted class is democrat
+Given features [n, y, y, y, y, y, y, n, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, y, y, n, y, n, n, y, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is republican
+Given features [n, n, y, y, y, y, y, y, n, y, n, n, n, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, y, y, y, y, n, n, y, n, n, n, y, y, y, y]: predicted class is republican
+Given features [n, y, y, n, y, y, n, n, n, n, n, n, y, y, y, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, y, y, y, y, y, y]: predicted class is republican
+Given features [n, n, y, n, y, y, n, n, n, n, n, n, y, y, n, n]: predicted class is republican
+Given features [n, n, n, n, y, y, n, n, n, y, y, y, y, y, n, y]: predicted class is republican
+Given features [n, y, y, n, n, n, y, y, n, y, n, n, y, n, y, y]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, y, y, y, n, n, y, y]: predicted class is republican
+Given features [y, n, y, n, n, y, y, y, y, y, n, n, y, n, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, n]: predicted class is democrat
+Given features [n, y, y, y, y, y, n, n, n, y, y, y, y, y, y, n]: predicted class is republican
+Given features [n, y, y, n, n, y, y, y, n, y, n, n, n, n, y, y]: predicted class is republican
+Given features [n, n, n, n, n, n, y, y, y, y, n, n, y, n, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]: predicted class is republican
+Given features [y, y, n, y, y, y, y, n, n, n, n, y, y, y, n, n]: predicted class is democrat
+Given features [n, y, y, n, n, y, y, y, n, y, y, n, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, y, y, y, y, n, n, n, n, y, y, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, n, n, n, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, n, y, y, y, y, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, n, y, n, n, n, y, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, n, n, y, y, y, n, n, n, n, n, n, y, y, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, y, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, y, n, y, y, n, y, n, y, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, y, y, n, n, y, y, n, n, y, y, n, y]: predicted class is democrat
+Given features [y, y, n, y, n, n, y, y, y, n, y, n, n, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, n, y, y, y, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, y, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, y, y, n, y, n, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, n, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, n, y, y, n, n, n, n, n]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, n, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, n, n, n, y, y, y, y, n, y, y, y, y, y]: predicted class is republican
+Given features [n, y, y, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, y, y, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, y, y, y, y, n, n, n, y, n, n, n, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, y, n, n, y, y, y, y, n, n, n, y, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is republican
+Given features [n, n, n, y, y, n, y, y, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, y, n, y, y, n, n, n, n, y, n, n, n, y, n]: predicted class is republican
+Given features [y, n, n, y, y, y, n, n, n, n, y, y, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, y, n, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, y, y, n, n, y, y, y, y, y, y]: predicted class is republican
+Given features [n, y, n, n, n, y, y, y, y, y, n, n, n, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, n, y, y, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, n, n, y, y, n, n, n, n, n, n, n, y, n, n]: predicted class is democrat
+Given features [n, y, n, y, y, n, n, n, n, n, y, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, n, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, y, y, n, y, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, n, n]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, y, y, n, y, n, y, y, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, y, y, y, y, y, y, n, n, n, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, n, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+2 class classification problem
+Results for this fold:
+Average Accuracy: 1.4414414414414414
+Macro Precision: 0.7528214774281806
+Macro Precision: 0.7472408026755852
+Macro Score: 0.7472408026755852
+######################################
