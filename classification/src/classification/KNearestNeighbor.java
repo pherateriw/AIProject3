@@ -118,8 +118,14 @@ public class KNearestNeighbor extends Algorithm {
 		// dataset, the list of class labels (ArrayList String) as determined by the classifier, and the 
 		// testData set (ArrayList String[]) that includes the true class labels.
 		EvaluationMeasures e = new EvaluationMeasures(numClasses, knnClass, testData);
+		ArrayList<Double> evaluationResults = e.evaluateData();
 		
+		double accuracy = evaluationResults.get(0);
+		double precision = evaluationResults.get(1);		
+		double recall = evaluationResults.get(2);			
+		double fScore = evaluationResults.get(3);	
 		
+		System.out.println(accuracy + "," + precision + "," + recall + "," + fScore);
 		
 //		for (String s : knnClass) {
 //			System.out.println(s);
