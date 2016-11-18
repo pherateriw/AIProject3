@@ -1,0 +1,302 @@
+Running TAN to classify iris data.
+
+Creating full graph
+Associating weights between features
+Starting training:
+Counting all frequencies.
+Calculating likelihoods and predictorPriors.
+Calculating classPriors.
+Done training
+
+Training Results.
+Size of testing set: 56 instances, 4 attributes
+
+Feature 0 with values of: 7.1 5.85 4.85 
+PredictorPrior of 7.1: 0.41
+Likelihood of 7.1 given Iris-versicolor: 0.19
+Likelihood of 7.1 given Iris-virginica: 0.86
+Likelihood of 7.1 given Iris-setosa: 0.06
+PredictorPrior of 5.85: 0.41
+Likelihood of 5.85 given Iris-versicolor: 0.81
+Likelihood of 5.85 given Iris-virginica: 0.23
+Likelihood of 5.85 given Iris-setosa: 0.28
+PredictorPrior of 4.85: 0.34
+Likelihood of 4.85 given Iris-versicolor: 0.19
+Likelihood of 4.85 given Iris-virginica: 0.05
+Likelihood of 4.85 given Iris-setosa: 0.83
+
+Feature 1 with values of: 3.05 2.45 3.8000000000000003 
+PredictorPrior of 3.05: 0.39
+Likelihood of 3.05 given Iris-versicolor: 0.38
+Likelihood of 3.05 given Iris-virginica: 0.36
+Likelihood of 3.05 given Iris-setosa: 0.44
+PredictorPrior of 2.45: 0.34
+Likelihood of 2.45 given Iris-versicolor: 0.69
+Likelihood of 2.45 given Iris-virginica: 0.32
+Likelihood of 2.45 given Iris-setosa: 0.06
+PredictorPrior of 3.8000000000000003: 0.43
+Likelihood of 3.8000000000000003 given Iris-versicolor: 0.13
+Likelihood of 3.8000000000000003 given Iris-virginica: 0.45
+Likelihood of 3.8000000000000003 given Iris-setosa: 0.67
+
+Feature 2 with values of: 5.9 3.95 1.45 
+PredictorPrior of 5.9: 0.46
+Likelihood of 5.9 given Iris-versicolor: 0.13
+Likelihood of 5.9 given Iris-virginica: 1.05
+Likelihood of 5.9 given Iris-setosa: 0.06
+PredictorPrior of 3.95: 0.32
+Likelihood of 3.95 given Iris-versicolor: 1.00
+Likelihood of 3.95 given Iris-virginica: 0.05
+Likelihood of 3.95 given Iris-setosa: 0.06
+PredictorPrior of 1.45: 0.38
+Likelihood of 1.45 given Iris-versicolor: 0.06
+Likelihood of 1.45 given Iris-virginica: 0.05
+Likelihood of 1.45 given Iris-setosa: 1.06
+
+Feature 3 with values of: 2.05 0.35 1.3 
+PredictorPrior of 2.05: 0.45
+Likelihood of 2.05 given Iris-versicolor: 0.13
+Likelihood of 2.05 given Iris-virginica: 1.00
+Likelihood of 2.05 given Iris-setosa: 0.06
+PredictorPrior of 0.35: 0.38
+Likelihood of 0.35 given Iris-versicolor: 0.06
+Likelihood of 0.35 given Iris-virginica: 0.05
+Likelihood of 0.35 given Iris-setosa: 1.06
+PredictorPrior of 1.3: 0.34
+Likelihood of 1.3 given Iris-versicolor: 1.00
+Likelihood of 1.3 given Iris-virginica: 0.09
+Likelihood of 1.3 given Iris-setosa: 0.06
+
+
+ClassPrior of Iris-versicolor: 0.29
+ClassPrior of Iris-virginica: 0.39
+ClassPrior of Iris-setosa: 0.32
+Calculating FeatureLikelihoods
+Likelihood of 3.8000000000000003|2.45 is 6.25E-6
+Likelihood of 3.05|2.45 is 6.25E-6
+Likelihood of 3.05|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 7.1|3.8000000000000003 is 0.38095238095238093
+Likelihood of 3.05|3.95 is 0.3333333333333333
+Likelihood of 1.3|0.35 is 5.555555555555556E-6
+Likelihood of 1.45|0.35 is 1.0
+Likelihood of 7.1|1.3 is 0.125
+Likelihood of 0.35|4.85 is 6.25E-6
+Likelihood of 1.3|4.85 is 6.25E-6
+Likelihood of 2.05|1.3 is 6.25E-6
+Likelihood of 3.05|1.3 is 0.3125
+Likelihood of 5.85|1.45 is 0.2222222222222222
+Likelihood of 7.1|5.9 is 0.782608695652174
+Likelihood of 3.95|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 2.05|3.05 is 5.263157894736842E-6
+Likelihood of 3.05|0.35 is 0.3888888888888889
+Likelihood of 2.45|4.85 is 6.25E-6
+Likelihood of 3.05|5.9 is 0.30434782608695654
+Likelihood of 7.1|0.35 is 5.555555555555556E-6
+Likelihood of 3.8000000000000003|3.05 is 5.263157894736842E-6
+Likelihood of 5.85|7.1 is 5.0E-6
+Likelihood of 1.3|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 1.3|2.45 is 6.25E-6
+Likelihood of 4.85|5.85 is 5.0E-6
+Likelihood of 5.9|1.45 is 5.555555555555556E-6
+Likelihood of 7.1|4.85 is 6.25E-6
+Likelihood of 4.85|2.05 is 4.5454545454545455E-6
+Likelihood of 1.45|2.45 is 6.25E-6
+Likelihood of 3.95|1.45 is 5.555555555555556E-6
+Likelihood of 2.45|5.9 is 0.30434782608695654
+Likelihood of 1.45|3.95 is 6.666666666666667E-6
+Likelihood of 5.9|5.85 is 5.0E-6
+Likelihood of 3.8000000000000003|3.95 is 0.06666666666666667
+Likelihood of 1.45|1.3 is 6.25E-6
+Likelihood of 2.45|7.1 is 5.0E-6
+Likelihood of 5.9|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 1.3|3.05 is 5.263157894736842E-6
+Likelihood of 3.05|4.85 is 6.25E-6
+Likelihood of 2.45|0.35 is 5.555555555555556E-6
+Likelihood of 4.85|3.8000000000000003 is 0.3333333333333333
+Likelihood of 5.9|2.45 is 6.25E-6
+Likelihood of 3.95|1.3 is 0.9375
+Likelihood of 3.95|2.45 is 6.25E-6
+Likelihood of 1.3|3.95 is 6.666666666666667E-6
+Likelihood of 4.85|1.45 is 0.7777777777777778
+Likelihood of 0.35|1.3 is 6.25E-6
+Likelihood of 3.95|5.9 is 4.347826086956522E-6
+Likelihood of 0.35|2.05 is 4.5454545454545455E-6
+Likelihood of 5.9|3.95 is 6.666666666666667E-6
+Likelihood of 3.8000000000000003|1.3 is 0.0625
+Likelihood of 2.05|1.45 is 5.555555555555556E-6
+Likelihood of 2.45|3.95 is 0.6
+Likelihood of 0.35|5.9 is 4.347826086956522E-6
+Likelihood of 3.8000000000000003|0.35 is 0.6111111111111112
+Likelihood of 2.05|5.85 is 5.0E-6
+Likelihood of 7.1|3.05 is 0.3684210526315789
+Likelihood of 3.8000000000000003|5.9 is 0.391304347826087
+Likelihood of 1.3|7.1 is 5.0E-6
+Likelihood of 5.9|3.05 is 5.263157894736842E-6
+Likelihood of 7.1|3.95 is 0.13333333333333333
+Likelihood of 3.95|3.05 is 5.263157894736842E-6
+Likelihood of 0.35|5.85 is 5.0E-6
+Likelihood of 7.1|2.45 is 0.3125
+Likelihood of 0.35|1.45 is 5.555555555555556E-6
+Likelihood of 1.45|5.9 is 4.347826086956522E-6
+Likelihood of 1.45|4.85 is 6.25E-6
+Likelihood of 4.85|7.1 is 5.0E-6
+Likelihood of 5.9|7.1 is 5.0E-6
+Likelihood of 5.85|2.05 is 0.18181818181818182
+Likelihood of 3.8000000000000003|4.85 is 6.25E-6
+Likelihood of 0.35|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 3.05|2.05 is 0.3181818181818182
+Likelihood of 1.45|5.85 is 5.0E-6
+Likelihood of 7.1|2.05 is 0.8181818181818182
+Likelihood of 3.8000000000000003|2.05 is 0.4090909090909091
+Likelihood of 5.85|4.85 is 6.25E-6
+Likelihood of 2.05|4.85 is 6.25E-6
+Likelihood of 4.85|3.95 is 0.13333333333333333
+Likelihood of 2.45|3.05 is 5.263157894736842E-6
+Likelihood of 1.3|1.45 is 5.555555555555556E-6
+Likelihood of 1.45|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 7.1|5.85 is 5.0E-6
+Likelihood of 4.85|3.05 is 0.3684210526315789
+Likelihood of 3.05|5.85 is 5.0E-6
+Likelihood of 2.45|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 2.05|7.1 is 5.0E-6
+Likelihood of 3.05|7.1 is 5.0E-6
+Likelihood of 5.85|0.35 is 0.2222222222222222
+Likelihood of 5.9|4.85 is 6.25E-6
+Likelihood of 3.8000000000000003|5.85 is 5.0E-6
+Likelihood of 5.85|1.3 is 0.75
+Likelihood of 3.05|1.45 is 0.3888888888888889
+Likelihood of 7.1|1.45 is 5.555555555555556E-6
+Likelihood of 5.85|5.9 is 0.21739130434782608
+Likelihood of 3.95|4.85 is 6.25E-6
+Likelihood of 1.3|2.05 is 4.5454545454545455E-6
+Likelihood of 1.45|2.05 is 4.5454545454545455E-6
+Likelihood of 3.95|0.35 is 5.555555555555556E-6
+Likelihood of 5.9|0.35 is 5.555555555555556E-6
+Likelihood of 1.3|5.85 is 5.0E-6
+Likelihood of 4.85|2.45 is 0.125
+Likelihood of 0.35|3.05 is 5.263157894736842E-6
+Likelihood of 2.45|5.85 is 5.0E-6
+Likelihood of 2.05|2.45 is 6.25E-6
+Likelihood of 3.95|5.85 is 5.0E-6
+Likelihood of 1.45|7.1 is 5.0E-6
+Likelihood of 5.85|3.95 is 0.7333333333333333
+Likelihood of 2.05|3.95 is 6.666666666666667E-6
+Likelihood of 2.45|1.3 is 0.625
+Likelihood of 2.45|1.45 is 5.555555555555556E-6
+Likelihood of 3.95|2.05 is 4.5454545454545455E-6
+Likelihood of 1.45|3.05 is 5.263157894736842E-6
+Likelihood of 4.85|0.35 is 0.7777777777777778
+Likelihood of 2.45|2.05 is 0.2727272727272727
+Likelihood of 5.9|2.05 is 1.0
+Likelihood of 3.95|7.1 is 5.0E-6
+Likelihood of 0.35|3.95 is 6.666666666666667E-6
+Likelihood of 5.85|3.8000000000000003 is 0.2857142857142857
+Likelihood of 0.35|7.1 is 5.0E-6
+Likelihood of 5.85|3.05 is 0.2631578947368421
+Likelihood of 0.35|2.45 is 6.25E-6
+Likelihood of 2.05|0.35 is 5.555555555555556E-6
+Likelihood of 1.3|5.9 is 4.347826086956522E-6
+Likelihood of 2.05|5.9 is 4.347826086956522E-6
+Likelihood of 3.8000000000000003|7.1 is 5.0E-6
+Likelihood of 3.8000000000000003|1.45 is 0.6111111111111112
+Likelihood of 4.85|5.9 is 4.347826086956522E-6
+Likelihood of 2.05|3.8000000000000003 is 4.761904761904762E-6
+Likelihood of 5.85|2.45 is 0.5625
+Likelihood of 4.85|1.3 is 0.125
+Likelihood of 5.9|1.3 is 0.0625
+Starting testing:
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 3.95, 1.3]: predicted class is Iris-setosa
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 3.05, 5.9, 2.05]: predicted class is Iris-versicolor
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 3.95, 1.3]: predicted class is Iris-setosa
+Given features [4.85, 2.45, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 2.45, 5.9, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 2.45, 3.95, 1.3]: predicted class is Iris-setosa
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-versicolor
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.8000000000000003, 3.95, 2.05]: predicted class is Iris-versicolor
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 3.8000000000000003, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 3.8000000000000003, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 5.9, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 2.05]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 3.95, 2.05]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 2.45, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 2.05]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-versicolor
+Given features [7.1, 3.8000000000000003, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 2.45, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 2.45, 3.95, 1.3]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Done testing
