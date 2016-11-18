@@ -1,0 +1,654 @@
+Decision Tree Algorithm created.
+Working with breast-cancer-wisconsin dataset
+
+Training started:
+Class labels set created
+Validation set created
+Tree created
+Attribute set created
+Selecting attribute/label for Node number 1
+Expanding tree at 1
+Calculating gain ratio for attribute 0 : -0.024135401867855698
+Calculating gain ratio for attribute 1 : -0.03144639798977368
+Calculating gain ratio for attribute 2 : -0.029570181462222272
+Calculating gain ratio for attribute 3 : -0.03207321261554052
+Calculating gain ratio for attribute 4 : -0.030594155079062664
+Calculating gain ratio for attribute 5 : -0.0335567432887088
+Calculating gain ratio for attribute 6 : -0.026537242168298218
+Calculating gain ratio for attribute 7 : -0.034055953244809
+Selecting attribute/label for Node number 2
+Expanding tree at 2
+Calculating gain ratio for attribute 1 : -1.3134055799039444
+Calculating gain ratio for attribute 2 : -1.0371242087580985
+Calculating gain ratio for attribute 3 : -1.07109919973281
+Calculating gain ratio for attribute 4 : -0.718909228052344
+Calculating gain ratio for attribute 5 : -0.713744154700743
+Calculating gain ratio for attribute 6 : -0.4505942920944504
+Calculating gain ratio for attribute 7 : -1.2778746921556994
+Selecting attribute/label for Node number 3
+All examples of Node Number 3 are the same class
+Selecting attribute/label for Node number 4
+All examples of Node Number 4 are the same class
+Selecting attribute/label for Node number 5
+All examples of Node Number 5 are the same class
+Selecting attribute/label for Node number 6
+All examples of Node Number 6 are the same class
+Selecting attribute/label for Node number 7
+All examples of Node Number 7 are the same class
+Selecting attribute/label for Node number 8
+Expanding tree at 8
+Calculating gain ratio for attribute 2 : -0.8560136966604683
+Calculating gain ratio for attribute 3 : -0.8560136966604683
+Calculating gain ratio for attribute 4 : -0.4867783300912717
+Calculating gain ratio for attribute 5 : -1.6937309286844093
+Calculating gain ratio for attribute 6 : -0.3478938562013576
+Calculating gain ratio for attribute 7 : -1.6937309286844093
+Selecting attribute/label for Node number 9
+All examples of Node Number 9 are the same class
+Selecting attribute/label for Node number 10
+All examples of Node Number 10 are the same class
+Selecting attribute/label for Node number 11
+All examples of Node Number 11 are the same class
+Selecting attribute/label for Node number 12
+Expanding tree at 12
+Calculating gain ratio for attribute 3 : -0.33925440190699363
+Calculating gain ratio for attribute 4 : -0.3117641569786032
+Calculating gain ratio for attribute 5 : -0.3747614902902637
+Calculating gain ratio for attribute 6 : -0.2464152249146069
+Calculating gain ratio for attribute 7 : -0.4378938785920948
+Selecting attribute/label for Node number 13
+All examples of Node Number 13 are the same class
+Selecting attribute/label for Node number 14
+Expanding tree at 14
+Calculating gain ratio for attribute 4 : -0.28639140518660056
+Calculating gain ratio for attribute 5 : -0.3851795034462863
+Calculating gain ratio for attribute 6 : -0.2028314559528296
+Calculating gain ratio for attribute 7 : -0.28639140518660056
+Selecting attribute/label for Node number 15
+All examples of Node Number 15 are the same class
+Selecting attribute/label for Node number 16
+Expanding tree at 16
+Calculating gain ratio for attribute 5 : 0.0
+Calculating gain ratio for attribute 6 : 0.0
+Calculating gain ratio for attribute 7 : 0.0
+Selecting attribute/label for Node number 17
+All examples of Node Number 17 are the same class
+Selecting attribute/label for Node number 18
+All examples of Node Number 18 are the same class
+Selecting attribute/label for Node number 19
+All examples of Node Number 19 are the same class
+Selecting attribute/label for Node number 20
+Expanding tree at 20
+Calculating gain ratio for attribute 6 : 0.0
+Calculating gain ratio for attribute 7 : 0.0
+Selecting attribute/label for Node number 21
+All examples of Node Number 21 are the same class
+Selecting attribute/label for Node number 22
+All examples of Node Number 22 are the same class
+Selecting attribute/label for Node number 23
+All examples of Node Number 23 are the same class
+Selecting attribute/label for Node number 24
+All examples of Node Number 24 are the same class
+Selecting attribute/label for Node number 25
+All examples of Node Number 25 are the same class
+Selecting attribute/label for Node number 26
+Expanding tree at 26
+Calculating gain ratio for attribute 7 : -0.34261747418807614
+Selecting attribute/label for Node number 27
+Attributes for Node Number 27 are empty
+Selecting attribute/label for Node number 28
+All examples of Node Number 28 are the same class
+Selecting attribute/label for Node number 29
+All examples of Node Number 29 are the same class
+Selecting attribute/label for Node number 30
+All examples of Node Number 30 are the same class
+Selecting attribute/label for Node number 31
+Attributes for Node Number 31 are empty
+Selecting attribute/label for Node number 32
+All examples of Node Number 32 are the same class
+Selecting attribute/label for Node number 33
+All examples of Node Number 33 are the same class
+Selecting attribute/label for Node number 34
+Attributes for Node Number 34 are empty
+Selecting attribute/label for Node number 35
+Attributes for Node Number 35 are empty
+Selecting attribute/label for Node number 36
+All examples of Node Number 36 are the same class
+Selecting attribute/label for Node number 37
+Attributes for Node Number 37 are empty
+Selecting attribute/label for Node number 38
+All examples of Node Number 38 are the same class
+Selecting attribute/label for Node number 39
+All examples of Node Number 39 are the same class
+Tree Built
+Node 0 has parent -1 and splits on attribute 0
+Node 1 has parent 0 and splits on attribute 1
+	 and parents splits on 0 and this node has feature value 1
+Node 2 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 1
+Node 3 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 2
+Node 4 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 3
+Node 5 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 5
+Node 6 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 6
+Node 7 has parent 0 and splits on attribute 2
+	 and parents splits on 0 and this node has feature value 2
+Node 8 has parent 7 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 1
+Node 9 has parent 7 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 2
+Node 10 has parent 7 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 10
+Node 11 has parent 0 and splits on attribute 3
+	 and parents splits on 0 and this node has feature value 3
+Node 12 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 1
+Node 13 has parent 11 and splits on attribute 4
+	 and parents splits on 3 and this node has feature value 2
+Node 14 has parent 13 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value 2
+Node 15 has parent 13 and splits on attribute 5
+	 and parents splits on 4 and this node has feature value 3
+Node 16 has parent 15 and splits on attribute -1
+	 and parents splits on 5 and this node has feature value 1
+Node 17 has parent 15 and splits on attribute -1
+	 and parents splits on 5 and this node has feature value 10
+Node 18 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 3
+Node 19 has parent 11 and splits on attribute 6
+	 and parents splits on 3 and this node has feature value 4
+Node 20 has parent 19 and splits on attribute -1
+	 and parents splits on 6 and this node has feature value 2
+Node 21 has parent 19 and splits on attribute -1
+	 and parents splits on 6 and this node has feature value 4
+Node 22 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 6
+Node 23 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 7
+Node 24 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 10
+Node 25 has parent 0 and splits on attribute 7
+	 and parents splits on 0 and this node has feature value 4
+Node 26 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 1
+Node 27 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 2
+Node 28 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 3
+Node 29 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 4
+Node 30 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 6
+Node 31 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 7
+Node 32 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 9
+Node 33 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 5
+Node 34 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 6
+Node 35 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 7
+Node 36 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 8
+Node 37 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 9
+Node 38 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 10
+Pruning:
+Validation Error before node removed: 1.5, validation error after node removed: 1.5
+Node not removed
+Done pruning
+Node 0 has parent -1 and splits on attribute 0
+Node 1 has parent 0 and splits on attribute 1
+	 and parents splits on 0 and this node has feature value 1
+Node 2 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 1
+Node 3 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 2
+Node 4 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 3
+Node 5 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 5
+Node 6 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 6
+Node 7 has parent 0 and splits on attribute 2
+	 and parents splits on 0 and this node has feature value 2
+Node 8 has parent 7 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 1
+Node 9 has parent 7 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 2
+Node 10 has parent 7 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 10
+Node 11 has parent 0 and splits on attribute 3
+	 and parents splits on 0 and this node has feature value 3
+Node 12 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 1
+Node 13 has parent 11 and splits on attribute 4
+	 and parents splits on 3 and this node has feature value 2
+Node 14 has parent 13 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value 2
+Node 15 has parent 13 and splits on attribute 5
+	 and parents splits on 4 and this node has feature value 3
+Node 16 has parent 15 and splits on attribute -1
+	 and parents splits on 5 and this node has feature value 1
+Node 17 has parent 15 and splits on attribute -1
+	 and parents splits on 5 and this node has feature value 10
+Node 18 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 3
+Node 19 has parent 11 and splits on attribute 6
+	 and parents splits on 3 and this node has feature value 4
+Node 20 has parent 19 and splits on attribute -1
+	 and parents splits on 6 and this node has feature value 2
+Node 21 has parent 19 and splits on attribute -1
+	 and parents splits on 6 and this node has feature value 4
+Node 22 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 6
+Node 23 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 7
+Node 24 has parent 11 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 10
+Node 25 has parent 0 and splits on attribute 7
+	 and parents splits on 0 and this node has feature value 4
+Node 26 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 1
+Node 27 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 2
+Node 28 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 3
+Node 29 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 4
+Node 30 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 6
+Node 31 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 7
+Node 32 has parent 25 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 9
+Node 33 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 5
+Node 34 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 6
+Node 35 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 7
+Node 36 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 8
+Node 37 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 9
+Node 38 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 10
+Done training
+
+Starting testing:
+Given features [6, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 6, 5, 8, 5, 10, 8, 6, 1]: predicted class is 4
+Given features [8, 4, 7, 1, 3, 10, 3, 9, 2]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 1, 3, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 6, 7, 10, 3, 10, 8, 10, 2]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 4, 5, 1, 8, 1, 3, 6, 1]: predicted class is 2
+Given features [4, 1, 4, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 2, 8, 10, 7, 3, 3]: predicted class is 2
+Given features [2, 5, 3, 3, 6, 7, 7, 5, 1]: predicted class is 2
+Given features [7, 2, 4, 1, 6, 10, 5, 4, 3]: predicted class is 4
+Given features [8, 10, 5, 3, 8, 4, 4, 10, 3]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [10, 4, 3, 2, 3, 10, 5, 3, 2]: predicted class is 4
+Given features [5, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [8, 10, 4, 4, 8, 10, 8, 2, 1]: predicted class is 4
+Given features [1, 1, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 2, 3, 3, 1]: predicted class is 2
+Given features [1, 1, 3, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 2, 3, 1, 6, 10, 5, 1, 1]: predicted class is 2
+Given features [10, 6, 3, 6, 4, 10, 7, 8, 4]: predicted class is 4
+Given features [5, 4, 6, 8, 4, 1, 8, 10, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 2, 1, 1, 2, 2, 3, 1, 1]: predicted class is 2
+Given features [9, 10, 10, 10, 10, 10, 10, 10, 1]: predicted class is 4
+Given features [10, 10, 7, 8, 7, 1, 10, 10, 3]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [8, 3, 3, 1, 2, 2, 3, 2, 1]: predicted class is 4
+Given features [4, 10, 4, 7, 3, 10, 9, 10, 1]: predicted class is 2
+Given features [5, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [9, 8, 8, 9, 6, 3, 4, 1, 1]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 3, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 10, 1, 1, 1, 1]: predicted class is 2
+Given features [9, 7, 7, 5, 5, 10, 7, 8, 3]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 2, 10, 10, 5, 3, 3]: predicted class is 4
+Given features [1, 3, 3, 2, 2, 1, 7, 2, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 3, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 7, 10, 6, 5, 10, 7, 5, 1]: predicted class is 2
+Given features [4, 2, 4, 3, 2, 2, 2, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 10, 8, 10, 10, 10, 7]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 5, 5, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 3, 5, 2, 3, 10, 7, 1, 1]: predicted class is 4
+Given features [5, 3, 2, 1, 3, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 4, 3, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 5, 1, 3, 1, 1]: predicted class is 2
+Given features [9, 10, 10, 1, 10, 8, 3, 3, 1]: predicted class is 4
+Given features [10, 10, 10, 3, 10, 8, 8, 1, 1]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [6, 3, 2, 1, 3, 4, 4, 1, 1]: predicted class is 2
+Given features [5, 5, 5, 8, 10, 8, 7, 3, 7]: predicted class is 2
+Given features [5, 2, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 3, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 3, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 8, 7, 10, 4, 10, 7, 5, 1]: predicted class is 2
+Given features [6, 9, 7, 5, 5, 8, 4, 2, 1]: predicted class is 2
+Given features [5, 10, 10, 10, 6, 10, 6, 5, 2]: predicted class is 2
+Given features [3, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [7, 8, 8, 7, 3, 10, 7, 2, 3]: predicted class is 4
+Given features [7, 5, 10, 10, 10, 10, 4, 10, 3]: predicted class is 4
+Given features [10, 10, 10, 10, 7, 10, 7, 10, 4]: predicted class is 4
+Given features [7, 5, 6, 10, 5, 10, 7, 9, 4]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 6, 6, 3, 4, 5, 3, 6, 1]: predicted class is 4
+Given features [6, 3, 3, 5, 3, 10, 3, 5, 3]: predicted class is 2
+Given features [3, 1, 1, 1, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, y, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 4, 1, 1, 1]: predicted class is 2
+Given features [5, 10, 10, 10, 10, 2, 10, 10, 10]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 4, 4, 9, 2, 10, 5, 6, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 3, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 3, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 4, 5, 2, 6, 8, 4, 1, 1]: predicted class is 2
+Given features [10, 8, 8, 2, 8, 10, 4, 8, 10]: predicted class is 4
+Given features [4, 8, 6, 3, 4, 10, 7, 1, 1]: predicted class is 2
+Given features [5, 10, 10, 10, 5, 2, 8, 5, 1]: predicted class is 2
+Given features [1, 3, 1, 2, 2, 2, 5, 3, 2]: predicted class is 2
+Given features [5, 2, 4, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 5, 4, 4, 3, 9, 7, 8, 3]: predicted class is 2
+Given features [1, 1, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 4, 6, 4, 5, 10, 7, 1, 1]: predicted class is 4
+Given features [2, 3, 2, 2, 2, 2, 3, 1, 1]: predicted class is 2
+Given features [10, 6, 4, 3, 10, 10, 9, 10, 1]: predicted class is 4
+Given features [2, 3, 4, 4, 2, 5, 2, 5, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 5, 5, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [7, 2, 4, 1, 3, 4, 3, 3, 1]: predicted class is 4
+Given features [4, 7, 8, 3, 4, 10, 9, 1, 1]: predicted class is 2
+Given features [10, 6, 4, 1, 3, 4, 3, 2, 3]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 1, 1, 1, 2, 10, 5, 4, 1]: predicted class is 4
+Given features [1, 2, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 6, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 2, 2, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [8, 6, 4, 3, 5, 9, 3, 1, 1]: predicted class is 4
+Given features [6, 10, 10, 10, 4, 10, 7, 10, 1]: predicted class is 2
+Given features [6, 2, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [8, 4, 6, 3, 3, 1, 4, 3, 1]: predicted class is 4
+Given features [10, 10, 10, 4, 8, 1, 8, 10, 1]: predicted class is 4
+Given features [9, 5, 8, 1, 2, 3, 2, 1, 5]: predicted class is 4
+Given features [3, 5, 7, 8, 8, 9, 7, 10, 7]: predicted class is 2
+Given features [8, 6, 5, 4, 3, 10, 6, 1, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 10, 8, 10, 7, 10, 7]: predicted class is 2
+Given features [10, 4, 4, 10, 2, 10, 5, 3, 3]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 2, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 3, 1, 2, y, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 2, 3, 1, 1]: predicted class is 2
+Given features [8, 2, 3, 1, 6, 3, 7, 1, 1]: predicted class is 4
+Given features [6, 8, 8, 1, 3, 4, 3, 7, 1]: predicted class is 2
+Given features [4, 4, 4, 2, 2, 3, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 8, 4, 4, 4, 10, 3, 10, 4]: predicted class is 4
+Given features [6, 8, 7, 5, 6, 8, 8, 9, 2]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [6, 3, 3, 3, 3, 2, 6, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 10, 10, 10, 8, 10, 10]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [1, 4, 3, 10, 4, 10, 5, 6, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 10, 10, 5, 4, 5, 4, 4, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 3, 6, 2, 3, 5, 4, 10, 2]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 3, 1, 1, 2, 1, 4, 8, 1]: predicted class is 2
+Given features [5, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 4, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [6, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [8, 4, 5, 1, 2, y, 7, 3, 1]: predicted class is 4
+Given features [2, 1, 2, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 2, 3, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 3, 3, 3, 6, 10, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 5, 7, 6, 4, 10, 7, 6, 1]: predicted class is 2
+Given features [5, 2, 3, 4, 2, 7, 3, 6, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 3, 2, 1, 2, 3, 3, 1, 1]: predicted class is 2
+Given features [3, 4, 5, 3, 7, 3, 4, 6, 1]: predicted class is 2
+Given features [4, 1, 1, 3, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 3, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 3, 1, 1, 5, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 8, 8, 10, 5, 10, 8, 10, 3]: predicted class is 2
+Given features [5, 3, 4, 1, 4, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 2, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [7, 1, 2, 3, 2, 1, 2, 1, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 3, 5, 1, 10, 5, 3, 10, 2]: predicted class is 4
+Given features [5, 5, 7, 8, 6, 10, 7, 4, 1]: predicted class is 2
+Given features [1, 1, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 10, 8, 10, 8, 10, 3, 6, 3]: predicted class is 2
+Given features [10, 7, 7, 3, 8, 5, 7, 4, 3]: predicted class is 4
+Given features [5, 3, 4, 3, 4, 5, 4, 7, 1]: predicted class is 2
+Given features [5, 5, 5, 6, 3, 10, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 2, 1, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 3, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 2, 3, 4, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 5, 1, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 1, 6, 1, 2, 8, 1]: predicted class is 4
+Given features [8, 5, 5, 5, 2, 10, 4, 3, 1]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 4, 1, 1, 1]: predicted class is 2
+Given features [10, 8, 8, 4, 10, 10, 8, 1, 1]: predicted class is 4
+Given features [6, 10, 5, 5, 4, 10, 6, 10, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [8, 7, 8, 2, 4, 2, 5, 10, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [1, 2, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 4, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 3, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 2, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 10, 3, 1, 1]: predicted class is 2
+Given features [7, 6, 10, 5, 3, 10, 9, 10, 2]: predicted class is 4
+Given features [5, 2, 2, 4, 2, 4, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 5, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 2, 2, 1, 4, 3, 2, 1, 1]: predicted class is 2
+Given features [8, 10, 10, 8, 7, 10, 9, 7, 1]: predicted class is 4
+Given features [4, 8, 6, 4, 3, 4, 10, 6, 1]: predicted class is 2
+Given features [5, 3, 3, 4, 2, 4, 3, 4, 1]: predicted class is 2
+Given features [4, 3, 2, 1, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 4, 7, 2, 2, 8, 6, 1, 1]: predicted class is 4
+Given features [5, 4, 4, 5, 7, 10, 3, 2, 1]: predicted class is 2
+Given features [10, 7, 7, 4, 5, 10, 5, 7, 2]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 5, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [9, 9, 10, 3, 6, 10, 7, 10, 6]: predicted class is 4
+Given features [3, 3, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [5, 1, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 5, 5, 6, 8, 8, 7, 1, 1]: predicted class is 4
+Given features [1, 2, 1, 3, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 3, 2, 1, 3, 1, 3, 6, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 8, 7, 8, 6, 8, 8, 9, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [8, 6, 4, 10, 10, 1, 3, 5, 1]: predicted class is 4
+Given features [5, 2, 2, 2, 3, 1, 1, 3, 1]: predicted class is 2
+Given features [8, 7, 8, 5, 5, 10, 9, 10, 1]: predicted class is 4
+Given features [4, 10, 8, 5, 4, 1, 10, 1, 1]: predicted class is 2
+Given features [5, 1, 3, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 2, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 2]: predicted class is 2
+Given features [9, 6, 9, 2, 10, 6, 2, 9, 10]: predicted class is 4
+Given features [5, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 3, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 5, 5, 2, 5, 10, 4, 3, 1]: predicted class is 2
+Given features [10, 4, 5, 5, 5, 10, 4, 1, 1]: predicted class is 4
+Given features [6, 1, 3, 2, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 2, 2, 2, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 5, 8, 10, 3, 10, 5, 1, 3]: predicted class is 4
+Given features [8, 3, 8, 3, 4, 9, 8, 9, 8]: predicted class is 4
+Given features [4, 5, 5, 10, 4, 10, 7, 5, 8]: predicted class is 2
+Given features [10, 9, 7, 3, 4, 2, 7, 7, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 10, 7, 8, 5, 8, 7, 4, 1]: predicted class is 2
+Given features [8, 8, 8, 1, 2, y, 6, 10, 1]: predicted class is 4
+Given features [8, 9, 9, 5, 3, 5, 7, 7, 1]: predicted class is 4
+Given features [3, 1, 4, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 10, 5, 10, 10, 10, 7]: predicted class is 4
+Given features [8, 3, 5, 4, 5, 10, 1, 6, 2]: predicted class is 4
+Given features [10, 8, 8, 2, 3, 4, 8, 7, 8]: predicted class is 4
+Given features [8, 10, 10, 10, 6, 10, 10, 10, 10]: predicted class is 4
+Given features [3, 6, 6, 6, 5, 10, 6, 8, 3]: predicted class is 2
+Given features [5, 3, 3, 3, 2, 3, 4, 4, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 3, 3, 1, 2, 10, 7, 6, 1]: predicted class is 4
+Given features [1, 1, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, y, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 3, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 5, 5, 8, 6, 10, 10, 7, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [7, 6, 4, 8, 10, 10, 9, 5, 3]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 8, 9, 4, 3, 10, 7, 1, 1]: predicted class is 2
+Given features [10, 4, 3, 10, 3, 10, 7, 1, 2]: predicted class is 4
+Given features [10, 4, 6, 1, 2, 10, 5, 3, 1]: predicted class is 4
+Given features [10, 10, 10, 7, 9, 10, 7, 10, 10]: predicted class is 4
+Given features [10, 10, 10, 10, 10, 10, 4, 10, 10]: predicted class is 4
+Given features [3, 3, 6, 4, 5, 8, 4, 4, 1]: predicted class is 4
+Given features [4, 1, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [8, 5, 6, 2, 3, 10, 6, 6, 1]: predicted class is 4
+Given features [3, 1, 4, 1, 2, n, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 2, 2, 1, 2, 6, 1, 1, 2]: predicted class is 4
+Given features [10, 5, 5, 3, 6, 7, 7, 10, 1]: predicted class is 4
+Given features [10, 8, 10, 1, 3, 10, 5, 1, 1]: predicted class is 4
+Given features [5, 3, 3, 1, 3, 3, 3, 3, 3]: predicted class is 2
+Given features [4, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 2, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 10, 8, 6, 4, 5, 8, 10, 1]: predicted class is 4
+Given features [10, 5, 5, 6, 3, 10, 7, 9, 2]: predicted class is 4
+Given features [1, 1, 1, 1, 2, y, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [7, 4, 7, 4, 3, 7, 7, 6, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 8, 8, 8, 5, 10, 7, 8, 1]: predicted class is 2
+Given features [8, 10, 10, 10, 7, 5, 4, 8, 7]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 3, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 10, 10, 1, 8, 8, 8]: predicted class is 4
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+2 class classification problem
+Results for this fold:
+Average Accuracy: 1.7150837988826815
+Macro Precision: 0.894991152851504
+Macro Precision: 0.8000413564929694
+Macro Score: 0.8000413564929694
+######################################
