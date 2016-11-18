@@ -1,2 +1,3 @@
-Naive Bayes Algorithm created.
-Starting training:
+Running TAN to classify breast-cancer-wisconsin data.
+
+Creating full graph
