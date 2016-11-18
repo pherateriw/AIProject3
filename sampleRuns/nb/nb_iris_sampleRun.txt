@@ -1,0 +1,179 @@
+Naive Bayes Algorithm created.
+Working with iris dataset
+Starting training:
+Counting all frequencies.
+Calculating likelihoods and predictorPriors.
+Calculating classPriors.
+Done training
+
+Training Results.
+Size of testing set: 56 instances, 4 attributes
+
+Feature 0 with values of: 7.1 5.85 4.85 
+PredictorPrior of 7.1: 0.41
+Likelihood of 7.1 given Iris-versicolor: 0.19
+Likelihood of 7.1 given Iris-virginica: 0.86
+Likelihood of 7.1 given Iris-setosa: 0.06
+PredictorPrior of 5.85: 0.41
+Likelihood of 5.85 given Iris-versicolor: 0.81
+Likelihood of 5.85 given Iris-virginica: 0.23
+Likelihood of 5.85 given Iris-setosa: 0.28
+PredictorPrior of 4.85: 0.34
+Likelihood of 4.85 given Iris-versicolor: 0.19
+Likelihood of 4.85 given Iris-virginica: 0.05
+Likelihood of 4.85 given Iris-setosa: 0.83
+
+Feature 1 with values of: 3.05 2.45 3.8000000000000003 
+PredictorPrior of 3.05: 0.39
+Likelihood of 3.05 given Iris-versicolor: 0.38
+Likelihood of 3.05 given Iris-virginica: 0.36
+Likelihood of 3.05 given Iris-setosa: 0.44
+PredictorPrior of 2.45: 0.34
+Likelihood of 2.45 given Iris-versicolor: 0.69
+Likelihood of 2.45 given Iris-virginica: 0.32
+Likelihood of 2.45 given Iris-setosa: 0.06
+PredictorPrior of 3.8000000000000003: 0.43
+Likelihood of 3.8000000000000003 given Iris-versicolor: 0.13
+Likelihood of 3.8000000000000003 given Iris-virginica: 0.45
+Likelihood of 3.8000000000000003 given Iris-setosa: 0.67
+
+Feature 2 with values of: 5.9 3.95 1.45 
+PredictorPrior of 5.9: 0.46
+Likelihood of 5.9 given Iris-versicolor: 0.13
+Likelihood of 5.9 given Iris-virginica: 1.05
+Likelihood of 5.9 given Iris-setosa: 0.06
+PredictorPrior of 3.95: 0.32
+Likelihood of 3.95 given Iris-versicolor: 1.00
+Likelihood of 3.95 given Iris-virginica: 0.05
+Likelihood of 3.95 given Iris-setosa: 0.06
+PredictorPrior of 1.45: 0.38
+Likelihood of 1.45 given Iris-versicolor: 0.06
+Likelihood of 1.45 given Iris-virginica: 0.05
+Likelihood of 1.45 given Iris-setosa: 1.06
+
+Feature 3 with values of: 2.05 0.35 1.3 
+PredictorPrior of 2.05: 0.45
+Likelihood of 2.05 given Iris-versicolor: 0.13
+Likelihood of 2.05 given Iris-virginica: 1.00
+Likelihood of 2.05 given Iris-setosa: 0.06
+PredictorPrior of 0.35: 0.38
+Likelihood of 0.35 given Iris-versicolor: 0.06
+Likelihood of 0.35 given Iris-virginica: 0.05
+Likelihood of 0.35 given Iris-setosa: 1.06
+PredictorPrior of 1.3: 0.34
+Likelihood of 1.3 given Iris-versicolor: 1.00
+Likelihood of 1.3 given Iris-virginica: 0.09
+Likelihood of 1.3 given Iris-setosa: 0.06
+
+
+ClassPrior of Iris-versicolor: 0.29
+ClassPrior of Iris-virginica: 0.39
+ClassPrior of Iris-setosa: 0.32
+
+Starting testing:
+Given features [7.1, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 2.45, 5.9, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.8000000000000003, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.8000000000000003, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.8000000000000003, 3.95, 2.05]: predicted class is Iris-versicolor
+Given features [7.1, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 2.45, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 3.05, 5.9, 1.3]: predicted class is Iris-virginica
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.8000000000000003, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 3.05, 3.95, 2.05]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.8000000000000003, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 2.45, 3.95, 2.05]: predicted class is Iris-versicolor
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.8000000000000003, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [5.85, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [7.1, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 2.05]: predicted class is Iris-versicolor
+Given features [4.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [4.85, 3.05, 1.45, 0.35]: predicted class is Iris-setosa
+Given features [7.1, 3.05, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [7.1, 3.05, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 3.95, 1.3]: predicted class is Iris-versicolor
+Given features [5.85, 2.45, 5.9, 2.05]: predicted class is Iris-virginica
+Given features [5.85, 2.45, 5.9, 1.3]: predicted class is Iris-versicolor
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+3 class classification problem
+Results for this fold:
+Average Accuracy: 2.872340425531915
+Macro Precision: 0.9373219373219372
+Macro Precision: 0.9327731092436974
+Macro Score: 0.9327731092436974
+######################################

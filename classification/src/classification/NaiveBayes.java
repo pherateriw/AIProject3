@@ -202,7 +202,7 @@ public class NaiveBayes extends Algorithm {
         predictedClasses = new ArrayList<>();
         for (Object obj : testData){
             String[] oldArray = (String[]) obj;
-            String[] newArray = Arrays.copyOfRange(oldArray, 0, 9);
+            String[] newArray = Arrays.copyOfRange(oldArray, 0, oldArray.length -1);
             String clas = predictSingle(newArray);
             predictedClasses.add(clas);
             super.get_logger().log(Level.INFO, String.format("Given features %s: predicted class is %s", Arrays.toString(newArray), clas));

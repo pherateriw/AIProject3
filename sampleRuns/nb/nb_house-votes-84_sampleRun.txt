@@ -1,0 +1,378 @@
+Naive Bayes Algorithm created.
+Working with house-votes-84 dataset
+Starting training:
+Counting all frequencies.
+Calculating likelihoods and predictorPriors.
+Calculating classPriors.
+Done training
+
+Training Results.
+Size of testing set: 213 instances, 16 attributes
+
+Feature 0 with values of: y n 
+PredictorPrior of y: 0.45
+Likelihood of y given democrat: 0.58
+Likelihood of y given republican: 0.21
+PredictorPrior of n: 0.57
+Likelihood of n given democrat: 0.43
+Likelihood of n given republican: 0.82
+
+Feature 1 with values of: y n 
+PredictorPrior of y: 0.52
+Likelihood of y given democrat: 0.52
+Likelihood of y given republican: 0.53
+PredictorPrior of n: 0.50
+Likelihood of n given democrat: 0.50
+Likelihood of n given republican: 0.50
+
+Feature 2 with values of: y n 
+PredictorPrior of y: 0.65
+Likelihood of y given democrat: 0.92
+Likelihood of y given republican: 0.16
+PredictorPrior of n: 0.37
+Likelihood of n given democrat: 0.09
+Likelihood of n given republican: 0.87
+
+Feature 3 with values of: y n 
+PredictorPrior of y: 0.40
+Likelihood of y given democrat: 0.08
+Likelihood of y given republican: 0.99
+PredictorPrior of n: 0.62
+Likelihood of n given democrat: 0.93
+Likelihood of n given republican: 0.04
+
+Feature 4 with values of: y n 
+PredictorPrior of y: 0.50
+Likelihood of y given democrat: 0.25
+Likelihood of y given republican: 0.95
+PredictorPrior of n: 0.52
+Likelihood of n given democrat: 0.77
+Likelihood of n given republican: 0.08
+
+Feature 5 with values of: y n 
+PredictorPrior of y: 0.63
+Likelihood of y given democrat: 0.49
+Likelihood of y given republican: 0.89
+PredictorPrior of n: 0.38
+Likelihood of n given democrat: 0.53
+Likelihood of n given republican: 0.13
+
+Feature 6 with values of: y n 
+PredictorPrior of y: 0.62
+Likelihood of y given democrat: 0.80
+Likelihood of y given republican: 0.30
+PredictorPrior of n: 0.40
+Likelihood of n given democrat: 0.22
+Likelihood of n given republican: 0.72
+
+Feature 7 with values of: y n 
+PredictorPrior of y: 0.62
+Likelihood of y given democrat: 0.83
+Likelihood of y given republican: 0.24
+PredictorPrior of n: 0.40
+Likelihood of n given democrat: 0.18
+Likelihood of n given republican: 0.79
+
+Feature 8 with values of: y n 
+PredictorPrior of y: 0.57
+Likelihood of y given democrat: 0.80
+Likelihood of y given republican: 0.16
+PredictorPrior of n: 0.45
+Likelihood of n given democrat: 0.22
+Likelihood of n given republican: 0.87
+
+Feature 9 with values of: y n 
+PredictorPrior of y: 0.53
+Likelihood of y given democrat: 0.50
+Likelihood of y given republican: 0.57
+PredictorPrior of n: 0.49
+Likelihood of n given democrat: 0.51
+Likelihood of n given republican: 0.46
+
+Feature 10 with values of: y n 
+PredictorPrior of y: 0.38
+Likelihood of y given democrat: 0.49
+Likelihood of y given republican: 0.17
+PredictorPrior of n: 0.64
+Likelihood of n given democrat: 0.53
+Likelihood of n given republican: 0.86
+
+Feature 11 with values of: y n 
+PredictorPrior of y: 0.41
+Likelihood of y given democrat: 0.18
+Likelihood of y given republican: 0.83
+PredictorPrior of n: 0.61
+Likelihood of n given democrat: 0.83
+Likelihood of n given republican: 0.20
+
+Feature 12 with values of: y n 
+PredictorPrior of y: 0.54
+Likelihood of y given democrat: 0.33
+Likelihood of y given republican: 0.91
+PredictorPrior of n: 0.48
+Likelihood of n given democrat: 0.69
+Likelihood of n given republican: 0.12
+
+Feature 13 with values of: y n 
+PredictorPrior of y: 0.60
+Likelihood of y given democrat: 0.40
+Likelihood of y given republican: 0.96
+PredictorPrior of n: 0.42
+Likelihood of n given democrat: 0.61
+Likelihood of n given republican: 0.07
+
+Feature 14 with values of: y n 
+PredictorPrior of y: 0.45
+Likelihood of y given democrat: 0.64
+Likelihood of y given republican: 0.11
+PredictorPrior of n: 0.57
+Likelihood of n given democrat: 0.37
+Likelihood of n given republican: 0.92
+
+Feature 15 with values of: y n 
+PredictorPrior of y: 0.80
+Likelihood of y given democrat: 0.88
+Likelihood of y given republican: 0.66
+PredictorPrior of n: 0.22
+Likelihood of n given democrat: 0.14
+Likelihood of n given republican: 0.37
+
+
+ClassPrior of democrat: 0.64
+ClassPrior of republican: 0.36
+
+Starting testing:
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, y, y, n, n, y, n, y, y, y, n, n, y, y, n, y]: predicted class is democrat
+Given features [y, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]: predicted class is republican
+Given features [y, y, y, n, y, y, n, n, y, y, n, n, n, y, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, y, y, n, y, y, n, y, n, n, y, n, n, n, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, n, y, y, y, y, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, n, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, n, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, y, y, y, y, y, y, n, n, y, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, y, y, y, y, n, y, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, n, n, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, y, y, y, y, y, n, y, n, y, n, y, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, y, y, y, y, y, y, n, n, n, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, y, y, y, y, y, n, n, y, n, n, y]: predicted class is democrat
+Given features [y, n, n, n, y, y, n, n, n, n, y, y, n, y, n, y]: predicted class is republican
+Given features [y, y, y, n, y, y, n, y, y, n, y, n, n, y, n, y]: predicted class is democrat
+Given features [y, n, y, n, y, y, n, n, y, y, n, n, y, y, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, n, y, n, y, y, n, n]: predicted class is republican
+Given features [n, y, y, y, y, y, y, n, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, n, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, y]: predicted class is republican
+Given features [n, y, y, n, y, y, y, y, n, n, y, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, n, n, n, y, y, y, y, n, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, y, y, y, y, y, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, y, n, y, y]: predicted class is democrat
+Given features [n, y, y, n, n, n, n, y, y, n, y, n, n, y, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, y, y, y, y, n, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, n, y, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, y, y, y, y, n, n, n, n, y, y, n, y, n, n]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, n, y, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, n, n, n, n, y, y, y, y, n, y, y, y, y, y]: predicted class is democrat
+Given features [n, y, y, n, n, y, y, y, n, y, y, n, y, y, n, n]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]: predicted class is republican
+Given features [n, y, y, n, y, y, y, n, y, y, y, n, y, y, n, y]: predicted class is democrat
+Given features [n, n, y, y, n, n, y, y, y, y, n, n, n, y, y, y]: predicted class is democrat
+Given features [y, y, y, y, n, n, y, y, y, y, y, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, y, n, n, y, y, y, n, n, y, y, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, n, y, n, y, y, n]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, y, y, y]: predicted class is democrat
+Given features [n, y, y, n, y, y, n, y, n, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, y, y, n, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, y, n, y, n, y, y, y, n, n, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, y, y, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, y, y, y, y, n, n, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, n, y, y, n, n]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, n, y, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, n, y, y, y, n, n, n, n, n, n, y, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, n, y, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, y, y, y, n, n, n, n, y, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, n, n, n, n, n, y, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, n, n, y, n, y, y, n, y, y, y, y, y, n]: predicted class is democrat
+Given features [n, y, y, n, n, n, y, y, n, y, n, n, y, n, y, y]: predicted class is democrat
+Given features [y, y, n, y, y, y, n, n, n, n, y, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, y, y, y, n, y, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, y, y, n, y, n, n, n]: predicted class is republican
+Given features [y, n, n, n, y, y, y, n, y, n, n, n, n, y, y, n]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, n, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, y, n]: predicted class is republican
+Given features [y, n, n, n, n, n, y, y, y, y, n, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, y, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, y, y, y, y, y, y, n, y, n, n, n, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, n, y, y, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, y, y, y, y, n, n, y, y, y, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, n, y]: predicted class is democrat
+Given features [y, y, y, y, y, y, n, n, n, n, y, n, y, n, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, n, y, n, y, n, y, y]: predicted class is democrat
+Given features [y, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, y, n, n, n, y, n, y]: predicted class is democrat
+Given features [n, y, n, n, y, y, n, n, n, n, n, y, y, y, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, n, y, y, y, y, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, n, y, y, y, y]: predicted class is republican
+Given features [y, y, n, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, y, n, y, y, n, n, n, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, y, y, y, y, y, n, y, n, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, n, n, y, y, y, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, y, y, y, n, n, n, y, n, n, y, n, y]: predicted class is democrat
+Given features [n, y, y, y, y, y, n, n, n, y, n, y, y, y, y, y]: predicted class is republican
+Given features [n, y, y, y, y, y, n, n, n, y, y, n, y, y, n, n]: predicted class is republican
+Given features [n, n, n, y, n, y, y, y, y, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, y, n, n, y, n, y, n, y, y, y]: predicted class is republican
+Given features [n, y, y, n, n, n, y, y, y, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, n, n, n, n, y, y, y, y, n, y, n, n, y, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, y, y, n, n, n, n, n, n, y, n, y, y, y]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, y, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, n, y, y, n, n, n, y, y, y, y, y, n, y]: predicted class is republican
+Given features [n, y, y, y, y, y, n, n, n, y, y, y, y, y, y, n]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, y, n, n, y, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, n, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, n, n, y, y, n, n, n, n, y, y, y, y, y, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, y, n, n, n, y, y, y, y, y, n, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, y, y, n, n, n, n, n, n, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, n, y, y, y, n, n, y, y, n, y, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, n]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, y, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, y, y, n, y, y, n, n, n, n, n, n, y, y, y, y]: predicted class is democrat
+Given features [y, y, y, n, y, y, n, y, n, n, y, n, y, y, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, n, n, n, n, n, n, y, n, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, n, n, n, n, n, y, y, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, n, y, y, n, n, n, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, y, n, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, y, y, y, y, y, y, y, y, n, y, y, y, y, y]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, n, y, y, n, y, n, y, y, y, y, y]: predicted class is republican
+Given features [n, y, y, n, n, y, y, y, n, y, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, n, y, y, y, n, n, n, n, y, n, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, n, y, n, n, y, y, y, n, y, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, y, y, y, n, y, y, n, y, y, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, n]: predicted class is democrat
+Given features [y, y, n, y, y, y, n, y, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [y, y, n, n, y, y, n, n, n, y, y, y, y, y, n, n]: predicted class is republican
+Given features [y, n, y, n, n, n, y, y, y, y, n, n, n, n, n, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, n, y, y, y, n, y, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, y, y, n, n, y, y, y, y, y, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, y, n, n, n, y]: predicted class is democrat
+Given features [y, y, y, n, y, y, n, y, n, y, y, n, y, y, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, n, n, n, n]: predicted class is republican
+Given features [y, y, y, n, n, y, y, y, y, y, y, y, y, y, n, y]: predicted class is democrat
+Given features [y, y, y, n, n, n, y, y, n, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, n, y, y, y, y, n, y, n, y, n, n, y]: predicted class is democrat
+Given features [n, y, n, y, y, y, n, n, n, n, y, y, y, y, y, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, n, n, y, y, y, n, n, n, n, y, y, y, y, n, n]: predicted class is republican
+Given features [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, y, y, n, n, y, y, y, y, y, n, n, n, n, y, n]: predicted class is democrat
+Given features [y, y, y, n, y, y, n, y, n, n, y, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, y, y, n, y, y, y, n, y]: predicted class is republican
+Given features [n, y, n, y, n, y, y, y, y, n, y, n, y, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, y, y, y, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, y, n]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, y, y, n, y, n, y, y, n, n, n, y, n, y]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [y, y, y, n, y, y, y, y, n, y, y, y, n, n, y, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, y, y, y, y, n, n, y, n, n, n, y, y, y, n]: predicted class is republican
+Given features [y, n, n, n, y, y, y, n, n, y, y, n, n, y, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]: predicted class is republican
+Given features [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]: predicted class is democrat
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, n, n, n, y]: predicted class is democrat
+Given features [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]: predicted class is republican
+Given features [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]: predicted class is republican
+Given features [n, n, y, n, n, y, y, y, y, y, y, n, y, y, n, y]: predicted class is democrat
+Given features [n, n, y, n, n, n, y, y, y, y, y, y, n, n, y, y]: predicted class is democrat
+Given features [n, y, y, y, y, y, n, n, n, y, n, n, n, y, n, y]: predicted class is republican
+Given features [y, y, y, y, n, n, n, y, n, n, y, y, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]: predicted class is democrat
+Given features [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]: predicted class is democrat
+Given features [y, n, y, y, y, y, y, y, n, y, y, y, n, y, y, y]: predicted class is democrat
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+2 class classification problem
+Results for this fold:
+Average Accuracy: 1.8108108108108107
+Macro Precision: 0.9008376447400838
+Macro Precision: 0.9081103678929766
+Macro Score: 0.9081103678929766
+######################################
