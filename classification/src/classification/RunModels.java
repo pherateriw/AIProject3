@@ -12,7 +12,18 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 
 public class RunModels {
-
+	private static ArrayList<String[]> data = new ArrayList<String[]>();
+	private static ArrayList<String[]> test1 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> train1 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> test2 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> train2 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> test3 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> train3 = new ArrayList<String[]>();
+	private static ArrayList<String[]> test4 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> train4 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> test5 = new ArrayList<String[]>();	
+	private static ArrayList<String[]> train5 = new ArrayList<String[]>();	
+	
 	public static void main(String[] args) throws IOException {
 		// Scanner for reading in the user's choice
 		Scanner in = new Scanner(System.in);
@@ -23,7 +34,7 @@ public class RunModels {
     	
     	// gets short name of dataset (from file location), for use in printing information
     	String shortName = "";
-    	shortName = dataFileLocation.substring(dataFileLocation.lastIndexOf('/') + 1, dataFileLocation.indexOf('.'));
+    	shortName = dataFileLocation.substring(dataFileLocation.lastIndexOf(File.separator) + 1, dataFileLocation.indexOf('.'));
 
     	// an array list to hold the necessary parser arguments
     	ArrayList<String> parserArgs = new ArrayList<String>();
@@ -36,16 +47,35 @@ public class RunModels {
     	boolean dataImputation = Boolean.parseBoolean(parserArgs.get(1));
     	boolean dataDiscretization = Boolean.parseBoolean(parserArgs.get(2));
     	int idNumLoc = Integer.parseInt(parserArgs.get(3)); 
+    	boolean dataRemoval = Boolean.parseBoolean(parserArgs.get(4));
     	
     	// parse file, doing data imputation and discretization as necessary 
-    	Parser p = new Parser(dataFileLocation, classVariableLoc, dataImputation, dataDiscretization, idNumLoc);    	
+    	Parser p = new Parser(dataFileLocation, classVariableLoc, dataImputation, dataDiscretization, idNumLoc, dataRemoval);    	
+    	data = p.getData();
     	
-    	//TODO: get data for the algos from the parser
-    	//TODO: split into test/train here instead of parser?
-    	//note: only need to output classifications for one fold each to turn in
-    	//return measures and average over all folds 
+    	// splits the data into 5 repetitions of 2 folds, for 5 x 2 cross validation
+    	DataSplitter ds = new DataSplitter(data);
+    	ds.splitData(1);
+    	train1 = ds.getTrainingData();
+    	test1 = ds.getTestingData();
     	
+    	ds.splitData(2);     	
+    	train2 = ds.getTrainingData();
+    	test2 = ds.getTestingData();
     	
+    	ds.splitData(3);
+    	train3 = ds.getTrainingData();
+    	test3 = ds.getTestingData();
+    	
+    	ds.splitData(4);
+    	train4 = ds.getTrainingData();
+    	test4 = ds.getTestingData();    	
+    	
+    	ds.splitData(5);
+    	train5 = ds.getTrainingData();
+    	test5 = ds.getTestingData();
+    	
+    
     	//gives the user a series of choices
     	System.out.println("Please pick from one of the following options");
     	System.out.println("To classify " + shortName + " data using k-Nearest Neighbor type 'knn'");
@@ -56,12 +86,21 @@ public class RunModels {
 
     	// holds the user's choice of algorithm
     	choice = in.nextLine();
+
+    	
+    	//TODO: return measures and average over all folds 
     	
     	if (choice.equals("knn")) {
     		System.out.println("Classifying data using k-Nearest neighbor"); 
     		// Fold 1
-    		// split data, train on A and test on B
-    		Algorithm knn = new KNearestNeighbor();
+    		// train on S1, test on S2
+    		// test on S1, train on S2
+    		// repeat 5 times, averaging over all folds
+    		//TODO: tune k
+    		int k = 7; 
+    		
+    		Algorithm knn = new KNearestNeighbor(shortName, train1, test1, k);
+    		
     		// split data, train on B and test on A
     		
     	} else if (choice.equals("nb")) {	
@@ -88,10 +127,12 @@ public class RunModels {
 	// will need to add param for bc, where we remove instances with '?'
 	public static void getParserArgs(String shortName, ArrayList<String> parserArgs) {
     	// variables for parser, because particulars of dataset vary
+		System.out.println(shortName);
     	int classVariableLoc = Integer.MAX_VALUE;
     	boolean dataImputation = false;
     	boolean dataDiscretization = false;
     	int idNumLoc = Integer.MAX_VALUE;
+    	boolean removeMissingVals = false;
     	
     	// the following series of if statements picks the appropriate parser arguments, based on the dataset
     	// note, a value of -1 for idNumLoc means that there is no id value in that dataset
@@ -99,30 +140,35 @@ public class RunModels {
     		classVariableLoc = 10;
     		dataImputation = true;
     		// NOTE: will need to also do one without discretization, where we just remove missing vals (complete
-    		// case analysis)
+    		// case analysis) - when we do that, leave data imputation as true but set removeMissingVals to true
     		dataDiscretization = false;
     		idNumLoc = 0;
+    		removeMissingVals = false;
     	} else if (shortName.equals("glass")) {
     		classVariableLoc = 10;
     		dataImputation = false;
     		dataDiscretization = true;
     		idNumLoc = 0;
+    		removeMissingVals = false;
     	} else if (shortName.equals("house-votes-84")) {
     		classVariableLoc = 0;
     		dataImputation = true;
     		// NOTE: will need to also do one without discretization, where we just treat '?' as a third value
     		dataDiscretization = false;
+    		removeMissingVals = false;
     		idNumLoc = Integer.MAX_VALUE;
     	} else if (shortName.equals("iris")) {
     		classVariableLoc = 4;
     		dataImputation = false;
     		dataDiscretization = true;    
     		idNumLoc = Integer.MAX_VALUE;
+    		removeMissingVals = false;
     	} else if (shortName.equals("soybean-small")) {
     		classVariableLoc = 35;
     		dataImputation = false;
     		dataDiscretization = false;    
-    		idNumLoc = Integer.MAX_VALUE;    		
+    		idNumLoc = Integer.MAX_VALUE;
+    		removeMissingVals = false;
     	} else {
     		System.out.println("You have not picked a valid dataset. Please re-pick or add the appropriate dataset.");
     	}
@@ -131,7 +177,8 @@ public class RunModels {
     	parserArgs.add(Integer.toString(classVariableLoc));
     	parserArgs.add(String.valueOf(dataImputation));
     	parserArgs.add(String.valueOf(dataDiscretization));
-    	parserArgs.add(Integer.toString(idNumLoc));    	
+    	parserArgs.add(Integer.toString(idNumLoc));
+    	parserArgs.add(String.valueOf(removeMissingVals));
     }
 	
 	
