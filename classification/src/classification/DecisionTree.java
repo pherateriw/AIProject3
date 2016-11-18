@@ -21,7 +21,7 @@ public class DecisionTree extends Algorithm {
 		this.testset = testset;
 		this.valratio = valratio;
 		train(trainset);
-
+		test(testset);
 	}
 	
 	void test(ArrayList<String[]> data) {
@@ -35,27 +35,48 @@ public class DecisionTree extends Algorithm {
 			DecisionTreeNode root = (DecisionTreeNode) tree.getRoot();
 			// start at root:
 			// while root.children is not empty
-			while (!root.children.isEmpty()) {
+			int nodeCount = 0;
+			//String label = null;
+			while (!root.children.isEmpty() && nodeCount < 2*tree.getTreeSize()) {
 				// find root.attribute in element
 				int att = root.attribute;
 				// for each root.child
 
 				for (TreeNode c : root.children) {
+					nodeCount++;
 					DecisionTreeNode child = (DecisionTreeNode) c;
 					// if featValue = attribute value for element
 					if (child.featValue.equals(instance[att])) {
 						// root = child
 						root = child;
+						//label = root.label;
 						break;
 					}
 				}
 			}
 			// store root.label in predicted class labels
-			predictedClass.add(root.label);
+			if(root.label == null){
+				HashMap<String, Integer> countmap = countAllClasses(root.examples);
+				HashMap.Entry<String, Integer> maxEntry = null;
+
+				for (HashMap.Entry<String, Integer> entry : countmap.entrySet()) {
+					if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0) {
+						maxEntry = entry;
+					}
+					
+				}
+				predictedClass.add(maxEntry.getKey());
+			}else{
+				predictedClass.add(root.label);
+			}
 		}
-		HashMap<String, Integer> map = countAllClasses(data);
-		System.out.println(map.toString());
+		//System.out.println(data);
+		//HashMap<String, Integer> map = countAllClasses(data);
+		//System.out.println(map.toString());
+		System.out.println(predictedClass);
 		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
+		ArrayList<Double> results = error.evaluateData();
+		System.out.println("F-measure: " + results.get(3));
 	}
 
 	void train(ArrayList<String[]> data) {
