@@ -1,6 +1,8 @@
 package classification;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.logging.Level;
 
 public class TreeAugNB extends Algorithm {
@@ -9,6 +11,11 @@ public class TreeAugNB extends Algorithm {
 	private ArrayList<String[]> trainData;
 	private ArrayList<String[]> testData;
 	private Tree tree;
+	private NaiveBayes nb;
+	private HashMap<String, Double> classPriors;
+	private ArrayList<HashMap> predictorPriors;
+	private ArrayList<HashMap> likelihoods;
+
 
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
 
@@ -53,6 +60,7 @@ public class TreeAugNB extends Algorithm {
     void train(ArrayList<String[]> trainData){
 		createFullGraph(trainData);
 		associateWeights();
+		createCondProbTables();
 
     	
     	
@@ -93,7 +101,7 @@ public class TreeAugNB extends Algorithm {
     }
     
     private void associateWeights() {
-		super.get_logger().log(Level.INFO, "Associating weights");
+		super.get_logger().log(Level.INFO, "Associating weights between features");
 		ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
 		// This depends on class node not being connected in graph!!
 		for (Edge e : tree.getEdges()){
@@ -127,7 +135,10 @@ public class TreeAugNB extends Algorithm {
 		return tree;
 	}
 
-	private void createCondProbTables(Tree tree) {
-
+	private void createCondProbTables() {
+		nb = new NaiveBayes(trainData);
+		this.classPriors = nb.classPriors;
+		this.likelihoods = nb.likelihoods;
+		this.predictorPriors = nb.predictorPriors;
 	}
 }

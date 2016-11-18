@@ -31,6 +31,13 @@ public class NaiveBayes extends Algorithm {
         evaluate();
     }
 
+    public NaiveBayes(ArrayList trainData){
+        this.classesTotal = trainData.size();
+        this.classFrequencies = new HashMap<>();
+        this.trainData = trainData;
+        train(trainData);
+    }
+
     /*
     Counts frequencies of all instances, calculate probabilities of all elements of Bayes Theorem, p(x)=predictorPrior
      likelihoods=P(x|c) and classPriors=p(c)
