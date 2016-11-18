@@ -114,7 +114,7 @@ public class EvaluationMeasures {
 			} // end for: all values calculated for this class
 			
 			// put calculated values (for this class) in array
-			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);
+//			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);
 			Integer[] resultsArray = {tpi, fpi, fni, tni};
 			
 			results.add(resultsArray);
@@ -131,9 +131,10 @@ public class EvaluationMeasures {
 	
 	// calculates the average per-class effectiveness of a classifier
 	// got equation from Sokolova and Lapalme Table 3, pg 430
+	// closer number is to number of classes, more effective classifier is
 	public double avgAccuracy() {
 		double accuracy;
-		double intermedSum = 0;
+		double intermedSum = 0.0;
 		
 		// sum over all classes in data set
 		for (int i = 0; i < numClasses; i++) {
@@ -142,29 +143,56 @@ public class EvaluationMeasures {
 			int fni = results.get(i)[2];
 			int tni = results.get(i)[3];
 			
-			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);	
+			//System.out.println(tpi + "," + fpi + "," + fni + "," + tni);	
 			
 			int numer = tpi + tni;
 			int denom = tpi + fni + fpi + tni;
 			
-			System.out.println(numer);
-			System.out.println(denom);			
+//			System.out.println(numer);
+//			System.out.println(denom);			
 			
-			double acc = (double) numer / denom;
+			double ratio = (double) numer / denom;
 			
-			System.out.println(acc);
-			intermedSum += acc;
+//			System.out.println(acc);
+			intermedSum += ratio;
 		}
 		
 		accuracy = intermedSum;
-		System.out.println(accuracy);
+		//System.out.println(accuracy);
 		
 		return accuracy;
 	}
 	
 	// calculates an average per-class agreement of the data class labels with those of a classifier 
 	// got equation from Sokolova and Lapalme Table 3, pg 430
+	// a value closer to one indicates a higher per-class agreement between labels and classifier
 	public double macroPrecision() {
+		double precision; 
+		double itermedSum = 0.0; 
+		
+		// sum over all classes in data set
+		for (int i = 0; i < numClasses; i++) {
+			int tpi = results.get(i)[0];
+			int fpi = results.get(i)[1];
+			
+			System.out.println(tpi + "," + fpi);		
+			
+			int numer = tpi;
+			double denom = tpi + fpi;
+			
+			// no true positives or false positives (only true negatives or false negatives)
+			if (denom == 0) {
+				// small non-zero value to prevent NaN
+				denom = 0.00001;
+			}
+			
+			double ratio = numer / denom;
+			
+			itermedSum += ratio;
+		}
+		
+		precision = itermedSum/numClasses;
+		System.out.println(precision);
 		
 		return 0.0;
 	}
