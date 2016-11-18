@@ -45,9 +45,10 @@ public class KNearestNeighbor extends Algorithm {
 	}
 
 	/*
-	 * For k-NN, the training step of the algorithm equates to storing the vectors of 
-	 * attributes and their associated class labels. 
-	 * 
+	 * For testing our k-NN classifier, we find the k points in our dataset that is nearest to our 
+	 * query point, and return the class label that occurs most frequently among those k points. 
+	 * The k nearest points are determined via a distance calculation, and for this implementation of 
+	 * k-NN, distance is measured using the Value Difference Metric (VDM). 
 	 */
 	
 	void train(ArrayList<String[]> trainData) {
@@ -67,7 +68,11 @@ public class KNearestNeighbor extends Algorithm {
 	}
 
 	
-	
+	/*
+	 * For k-NN, the training step of the algorithm equates to storing the vectors of 
+	 * attributes and their associated class labels. 
+	 * 
+	 */
 	
 	void test(ArrayList<String[]> testData) {
 		super.get_logger().log(Level.INFO, "Starting testing:");		
@@ -97,34 +102,15 @@ public class KNearestNeighbor extends Algorithm {
 			// take the majority vote (with respect to class) of k-nearest neighbors, breaking ties randomly			
 			String classPrediction = majorityVote(indicesOfkNearest);
 			
+			// add the class prediction to the list of predicted classes (will compare against true values)
 			knnClass.add(classPrediction);
-			//System.out.println(classPrediction);
 		}
-		
-
-		
-		
-		
-
-
-		
-		
-		
-
-//		for (Map.Entry<Integer,Double> entry : qpNeighbors.entrySet()) {
-//		  int key = entry.getKey();
-//		  double value = entry.getValue();
-//		  System.out.println(key + " : " + value );
-//		} 
-		
-		
-		
-		
-
-
 	}
 
-	
+
+	/*
+	 * Evaluate the classification accuracy of k-NN algorithm for this dataset.
+	 */
 	public void evaluate() {
 		for (String s : knnClass) {
 			System.out.println(s);
