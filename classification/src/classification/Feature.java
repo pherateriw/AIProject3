@@ -44,6 +44,7 @@ public class Feature {
 
     public ArrayList calculateProbabilities(HashMap classFrequencies){
         ArrayList allProbs = new ArrayList();
+        getVarTotal();
 
         calculateLikelihoods(classFrequencies); //p(x|c)
         allProbs.add(this.likelihoods);
@@ -54,21 +55,7 @@ public class Feature {
         }
 
     public String predict(String[] test){
-        calculatePosteriors();
         return "hi";
-    }
-
-    private void calculatePosteriors(){
-        // bayes thoerem
-        // p(c|x) = p(x|c)*p(c) / p(x)
-        this.posteriors = new HashMap<>();
-
-        for (String key : this.likelihoods.keySet()){
-            String[] newKeyParts = key.split("\\|");
-            String newKey = newKeyParts[1] + "|" + newKeyParts[0];
-            double post = this.likelihoods.get(key) * this.classPriors.get(newKeyParts[1]) / this.predictorPriors.get(newKeyParts[0]);
-            this.posteriors.put(newKey, post);
-        }
     }
 
 
@@ -96,7 +83,7 @@ public class Feature {
 
     //return total number of all vars across all classes
     // and init individuals total for a var across all classes
-    public int getVarTotal(){
+    public void getVarTotal(){
         int total = 0;
         for (String key : this.vars.keySet()){
             int temp = 0;
@@ -106,7 +93,6 @@ public class Feature {
             this.varTotals.put(key, temp);
             total += temp;
         }
-        return total;
     }
 
 
