@@ -48,38 +48,58 @@ public class TreeAugNB extends Algorithm {
 	 * just one. This is likely to increase the possibility of zero
 	 * probabilities, so the m-estimate (or similar) is important to use.
 	 */
+	
+    void test(ArrayList<String[]> trainData){
+		createFullGraph(trainData);
+    	ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
+    	
+    	// TODO: these values just for testing, change to loop through all edges in graph
+    	// make sure max location of ai and aj are such that we are not getting class vals
+    	int aiLoc = 0;
+    	int ajLoc = 1;
+    	
+    	cm.calculate(aiLoc, ajLoc);
+    	
+    	
+    }
 
-	void test(ArrayList<String[]> trainData) {
+    
+    void train(ArrayList<String[]> testData){
+    	
+    	
+    	
+    	
+    	
+    }
+    
+    void evaluate(){
+    	
+    	
+    	
+    	
+    	
+    }
+    
+    
 
-		ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
+    private Tree createFullGraph(ArrayList<String[]> data){
+		super.get_logger().log(Level.INFO, "Creating full graph");
 
-		// TODO: these values just for testing, change to loop through all edges
-		// in graph
-		// make sure max location of ai and aj are such that we are not getting
-		// class vals
-		int aiLoc = 0;
-		int ajLoc = 1;
-
-		cm.calculate(aiLoc, ajLoc);
-
-	}
-
-	void train(ArrayList<String[]> testData) {
-
-	}
-
-	void evaluate() {
-
-	}
-
-	private Tree createFullGraph(ArrayList<String[]> data) {
-		TreeNode root = new BayesTreeNode();
-		Tree tree = new Tree(root);
-		// TODo finish this
-		return tree;
-	}
-
-	private Tree associateWeights(Tree completeTree) {
+		TreeNode root = new BayesTreeNode();  //class node
+    	Tree tree = new BayesTree(root);
+		for (int i = 0; i < data.get(0).length -2; i++){  //-2 because root is already created
+			TreeNode newNode = new BayesTreeNode();
+			tree.addNode(newNode);
+			for (TreeNode node : tree.getNodes()){
+				if (node != newNode && node != root){
+					tree.addEdge(new Edge(newNode, node));
+				}
+			}
+		}
+    	return tree;
+    }
+    
+    private Tree associateWeights(Tree completeTree) {
 		return completeTree;
 	}
 
