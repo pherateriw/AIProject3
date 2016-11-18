@@ -108,13 +108,22 @@ public class KNearestNeighbor extends Algorithm {
 
 
 	/*
-	 * Evaluate the classification accuracy of k-NN algorithm for this dataset.
+	 * Evaluate the classification accuracy of k-NN algorithm for this dataset. We will be 
+	 * calculating multi-class versions of accuracy, precision, recall and f-measure (with macro
+	 * averaging). 
 	 */
 	
 	public void evaluate() {
-		for (String s : knnClass) {
-			System.out.println(s);
-		}
+		// determine classification accuracy, required information - the number of classes for this
+		// dataset, the list of class labels (ArrayList String) as determined by the classifier, and the 
+		// testData set (ArrayList String[]) that includes the true class labels.
+		EvaluationMeasures e = new EvaluationMeasures(numClasses, knnClass, testData);
+		
+		
+		
+//		for (String s : knnClass) {
+//			System.out.println(s);
+//		}
 		
 		
 		// after all test set instances have been classified, evaluate the performance of classifier
