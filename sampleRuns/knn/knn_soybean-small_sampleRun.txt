@@ -1,0 +1,92 @@
+Running k-Nearest Neighbor (k = 7) to classify soybean-small data.
+
+Starting training
+Size of training set: 23 instances, 35 attributes
+Training set stored.
+
+Starting testing:
+Size of testing set: 24 instances, 35 attributes
+Query point: [5, 0, 2, 1, 0, 2, 0, 1, 1, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [13, 2, 16, 4, 21, 19, 1]
+According to majority vote among k-nearest neighbors, instance classified as: D1
+Query point: [1, 1, 2, 1, 1, 2, 3, 1, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [14, 15, 12, 7, 20, 22, 17]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [3, 1, 2, 0, 0, 2, 1, 2, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [17, 20, 15, 14, 22, 7, 12]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [2, 1, 2, 0, 0, 1, 1, 2, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [22, 20, 17, 15, 14, 12, 7]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [0, 1, 2, 1, 0, 3, 1, 1, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [22, 14, 15, 12, 20, 3, 17]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [6, 0, 0, 1, 1, 3, 3, 1, 1, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [9, 0, 11, 18, 6, 8, 13]
+According to majority vote among k-nearest neighbors, instance classified as: D2
+Query point: [0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [22, 7, 17, 15, 20, 12, 14]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [0, 1, 2, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [22, 12, 14, 7, 3, 15, 20]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [3, 1, 2, 0, 0, 1, 1, 2, 1, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [20, 17, 15, 14, 22, 7, 12]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [2, 1, 2, 1, 1, 1, 1, 2, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [14, 12, 22, 7, 15, 20, 3]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [2, 1, 1, 0, 0, 3, 1, 2, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 1, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [17, 22, 20, 14, 15, 12, 7]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [6, 0, 2, 1, 0, 1, 0, 1, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [13, 2, 16, 4, 19, 9, 21]
+According to majority vote among k-nearest neighbors, instance classified as: D1
+Query point: [4, 0, 2, 1, 0, 3, 0, 2, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [13, 16, 2, 4, 19, 5, 14]
+According to majority vote among k-nearest neighbors, instance classified as: D1
+Query point: [3, 0, 2, 0, 1, 3, 1, 2, 0, 1, 1, 0, 0, 2, 2, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [19, 5, 1, 10, 21, 3, 12]
+According to majority vote among k-nearest neighbors, instance classified as: D3
+Query point: [4, 0, 0, 1, 0, 2, 3, 1, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [9, 0, 6, 18, 11, 8, 13]
+According to majority vote among k-nearest neighbors, instance classified as: D2
+Query point: [1, 1, 2, 0, 0, 3, 1, 1, 1, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 2, 2, 0, 0, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 1]
+Indices of k-nearest neighbors are [20, 15, 17, 22, 14, 12, 7]
+According to majority vote among k-nearest neighbors, instance classified as: D4
+Query point: [4, 0, 0, 1, 1, 1, 3, 1, 1, 1, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [9, 8, 11, 18, 0, 6, 4]
+According to majority vote among k-nearest neighbors, instance classified as: D2
+Query point: [0, 1, 2, 0, 0, 1, 1, 2, 1, 2, 1, 0, 0, 2, 2, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [5, 21, 10, 1, 3, 19, 14]
+According to majority vote among k-nearest neighbors, instance classified as: D3
+Query point: [2, 1, 2, 0, 0, 3, 1, 2, 0, 2, 1, 0, 0, 2, 2, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [1, 5, 10, 21, 3, 19, 14]
+According to majority vote among k-nearest neighbors, instance classified as: D3
+Query point: [6, 0, 0, 2, 1, 0, 2, 1, 0, 0, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 0, 3, 0, 0, 0, 2, 1, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [18, 8, 0, 11, 6, 9, 2]
+According to majority vote among k-nearest neighbors, instance classified as: D2
+Query point: [3, 0, 2, 1, 0, 1, 0, 2, 1, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 0, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [16, 13, 4, 2, 14, 19, 9]
+According to majority vote among k-nearest neighbors, instance classified as: D1
+Query point: [4, 0, 2, 1, 1, 1, 0, 1, 0, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 0, 3, 1, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [13, 2, 16, 4, 19, 14, 21]
+According to majority vote among k-nearest neighbors, instance classified as: D1
+Query point: [5, 0, 2, 1, 0, 3, 1, 1, 1, 2, 1, 1, 0, 2, 2, 0, 0, 0, 1, 1, 3, 0, 1, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [4, 2, 13, 16, 19, 14, 21]
+According to majority vote among k-nearest neighbors, instance classified as: D1
+Query point: [0, 1, 2, 0, 0, 0, 1, 1, 1, 2, 1, 0, 0, 2, 2, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 3, 4, 0, 0, 0, 0, 0, 0]
+Indices of k-nearest neighbors are [21, 1, 3, 5, 10, 19, 22]
+According to majority vote among k-nearest neighbors, instance classified as: D3
+All test data classified.
+
+Begin evaluation.
+######################################
+RESULTS
+4 class classification problem
+Results for this fold:
+Average Accuracy: 4.0
+Macro Precision: 1.0
+Macro Precision: 1.0
+Macro Score: 1.0
+######################################

@@ -1,0 +1,686 @@
+Running k-Nearest Neighbor (k = 7) to classify house-votes-84 data.
+
+Starting training
+Size of training set: 213 instances, 16 attributes
+Training set stored.
+
+Starting testing:
+Size of testing set: 222 instances, 16 attributes
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [152, 132, 90, 7, 171, 137, 71]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, y, y, y, n, n, n, y, y, y, y, y, y, y]
+Indices of k-nearest neighbors are [85, 121, 84, 120, 105, 109, 158]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, n, y, y, n, n, n, n, n, y, y, y, y, y]
+Indices of k-nearest neighbors are [147, 108, 103, 87, 158, 198, 183]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, y, n]
+Indices of k-nearest neighbors are [199, 136, 125, 123, 66, 162, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [199, 136, 125, 123, 66, 162, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, n, y, y, n, y, n, n, n, n, n, n, n, y]
+Indices of k-nearest neighbors are [191, 153, 59, 195, 185, 97, 129]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, n, n, n, n, n, y, y, y, y, n, n]
+Indices of k-nearest neighbors are [53, 5, 155, 140, 152, 132, 90]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, y, y, n, y, n, n, y, n, y, n, y, y]
+Indices of k-nearest neighbors are [138, 97, 127, 195, 63, 167, 35]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, n, n, n, n, y, y, y, y, n, n, n, y, n, y]
+Indices of k-nearest neighbors are [204, 16, 119, 45, 141, 130, 188]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, n, y, y, y, n, y, y, y, n, y, y, n, y]
+Indices of k-nearest neighbors are [186, 2, 3, 143, 78, 63, 195]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 206, 175, 98, 62, 27, 20]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, y, y, y, n, n, n, n, y, y, n, y, n, n]
+Indices of k-nearest neighbors are [75, 122, 121, 53, 155, 140, 84]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, y, y, n, y, n, y, y, n, y, y, y, y]
+Indices of k-nearest neighbors are [138, 78, 180, 105, 158, 97, 3]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [124, 113, 30, 23, 206, 175, 98]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, y, y, y, y, n, y, n, y, n, n, y]
+Indices of k-nearest neighbors are [24, 157, 156, 9, 114, 79, 15]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]
+Indices of k-nearest neighbors are [36, 122, 184, 166, 55, 54, 89]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [171, 137, 71, 32, 152, 132, 90]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [209, 64, 151, 206, 175, 98, 62]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, y, y, n, n, n, y, n, n, n, y, y, n]
+Indices of k-nearest neighbors are [127, 191, 180, 78, 158, 26, 97]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [199, 136, 125, 123, 66, 162, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 203, 96, 70, 149, 112, 74]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, y, y, n, y, n, n, y, n, n, n, n, n]
+Indices of k-nearest neighbors are [59, 195, 185, 191, 97, 127, 180]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]
+Indices of k-nearest neighbors are [190, 188, 40, 29, 141, 130, 114]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, n, n, n, n, y, y, y, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [76, 124, 113, 30, 23, 206, 175]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [199, 136, 125, 123, 66, 162, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, y, y, y, y, y, y, n, n, n, n, y]
+Indices of k-nearest neighbors are [159, 129, 86, 6, 15, 102, 114]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, n, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [172, 149, 112, 74, 203, 96, 70]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, n, n, y, y, y, n, y, n, n, n, n, y, y, n]
+Indices of k-nearest neighbors are [16, 2, 186, 110, 41, 43, 37]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, y, n, y, n, y, y, y, n, y, y, n]
+Indices of k-nearest neighbors are [193, 185, 117, 88, 50, 1, 182]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, y, y, y, y, n, y, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [47, 84, 121, 142, 13, 65, 48]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, n, n, y, y, y, n, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [153, 212, 185, 139, 25, 22, 86]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, y]
+Indices of k-nearest neighbors are [190, 188, 40, 29, 141, 130, 114]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [203, 96, 70, 74, 149, 112, 124]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, n, y, y, y, y, n, y, n, y, n, y, n]
+Indices of k-nearest neighbors are [9, 92, 8, 76, 41, 167, 208]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, n, n, y, y, y, n, n, y, y, n, n, y, n, y]
+Indices of k-nearest neighbors are [81, 60, 78, 110, 43, 191, 186]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, y, y, y, n, n, y, n, n, n, y, y, y, n]
+Indices of k-nearest neighbors are [85, 116, 26, 200, 161, 165, 105]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [149, 112, 74, 203, 96, 70, 192]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, n, y, y, y, n, n, n, y, n, n, y, y, n, n]
+Indices of k-nearest neighbors are [170, 200, 161, 160, 101, 135, 162]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [196, 49, 197, 151, 209, 64, 203]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [152, 132, 90, 7, 171, 137, 71]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, n, n, n, y, y, y, y]
+Indices of k-nearest neighbors are [116, 160, 200, 161, 170, 110, 108]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [149, 112, 74, 203, 96, 70, 192]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, y, y, y, n, n, n, y, n, n, y, n, y]
+Indices of k-nearest neighbors are [78, 191, 186, 127, 143, 2, 50]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [76, 204, 149, 112, 74, 203, 96]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, y, y, y, y, y, y, n, n, y, y, y]
+Indices of k-nearest neighbors are [1, 72, 182, 154, 117, 150, 45]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [209, 64, 151, 206, 175, 98, 62]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, n, n, n, y, y, y, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [151, 209, 64, 197, 115, 192, 145]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, y, y, y, y, y, n, n, y, n, n, y]
+Indices of k-nearest neighbors are [157, 156, 24, 141, 130, 129, 188]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, y, n, n, y, y, y, y, n, n, n, y, y, y]
+Indices of k-nearest neighbors are [17, 163, 57, 45, 187, 150, 151]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, n, n, n, n, n, n, y]
+Indices of k-nearest neighbors are [188, 40, 29, 141, 130, 190, 6]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, y, y, y, y, y, n, y, n, n, n, y, n, y]
+Indices of k-nearest neighbors are [18, 83, 104, 14, 208, 47, 105]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 203, 96, 70, 149, 112, 74]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [203, 96, 70, 149, 112, 74, 206]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, y, n, n, n, y, n, n, y, y, n, n, y, y]
+Indices of k-nearest neighbors are [107, 134, 17, 128, 28, 212, 173]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, n, y, y, y, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [147, 65, 142, 143, 82, 177, 89]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, y, y, y, y, y, y, n, y, y, n, y]
+Indices of k-nearest neighbors are [157, 102, 69, 154, 1, 3, 4]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, y, y, y, y, y, n, y, n, y, y, n]
+Indices of k-nearest neighbors are [193, 144, 95, 150, 117, 31, 11]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, y, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, y, y, y, y, n, y, n, y]
+Indices of k-nearest neighbors are [31, 117, 134, 144, 72, 15, 114]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, n, y, y, y, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [169, 205, 111, 47, 8, 19, 65]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, y, n, n, y, n, y, y]
+Indices of k-nearest neighbors are [106, 133, 194, 178, 10, 156, 115]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [209, 64, 151, 206, 175, 98, 62]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [184, 166, 55, 54, 89, 51, 46]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, n, y, y, y, y, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [205, 111, 8, 169, 47, 104, 19]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, y, n, n, y, y, y, y, y, n, n, y, n, y]
+Indices of k-nearest neighbors are [208, 17, 15, 104, 72, 114, 79]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, y, n, n, y, n, y, n, y, y, y]
+Indices of k-nearest neighbors are [110, 36, 65, 142, 122, 43, 177]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [149, 112, 74, 203, 96, 70, 192]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, n, n, y, y, y, y, y, n, n, n, y, n, n]
+Indices of k-nearest neighbors are [102, 16, 92, 119, 58, 150, 159]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [149, 112, 52, 74, 203, 96, 70]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, n, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 203, 96, 70, 149, 112, 74]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, n, n, n, y, y, y]
+Indices of k-nearest neighbors are [45, 72, 163, 124, 113, 30, 23]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, y, y, y, n, n, n, y, y, n, y, y, n, n]
+Indices of k-nearest neighbors are [26, 200, 161, 121, 155, 105, 53]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [124, 113, 30, 23, 206, 175, 98]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, y, y, y, n, n, n, n, y, n, y, y, n, n]
+Indices of k-nearest neighbors are [165, 200, 161, 160, 170, 26, 53]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, n, y, y, y, y, n, n, y, n, y, n, y, y]
+Indices of k-nearest neighbors are [63, 97, 9, 195, 212, 167, 179]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, y, n, n, y, y, n, n]
+Indices of k-nearest neighbors are [200, 161, 171, 137, 71, 32, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, n, y, y, y, n, n, n, n, y, y, y, y, n, y]
+Indices of k-nearest neighbors are [109, 189, 120, 34, 108, 103, 87]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [189, 198, 183, 61, 44, 0, 135]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, n, n, y, n, y, y, y, n, n, y, y, n, y]
+Indices of k-nearest neighbors are [146, 58, 4, 69, 157, 102, 35]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [124, 113, 30, 23, 206, 175, 98]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, y, y, y, y, y, n, n, n, n, y, n]
+Indices of k-nearest neighbors are [139, 25, 22, 100, 52, 115, 192]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, y, y, y, n, n, y, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [121, 48, 85, 47, 184, 166, 55]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, y, y, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [19, 205, 111, 65, 142, 211, 99]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, y, y, y, n, y, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [201, 107, 97, 212, 185, 139, 25]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [206, 175, 98, 62, 27, 20, 124]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, y, n, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 115, 192, 145, 126, 118, 94]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, n, n, y, n, y, y, n, y, y, y, y, y, n]
+Indices of k-nearest neighbors are [193, 4, 88, 167, 35, 117, 69]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, n, y, y, n, y, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [212, 201, 107, 56, 196, 49, 197]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 206, 175, 98, 62, 27, 20]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [171, 137, 71, 32, 152, 132, 90]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, n, y, n, y, y, n, n, n, y, n, y]
+Indices of k-nearest neighbors are [43, 110, 73, 8, 36, 169, 65]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [152, 132, 90, 7, 171, 137, 71]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, y, y, y, n, n, n, y, n, n, n, y, n, y]
+Indices of k-nearest neighbors are [121, 36, 26, 85, 170, 110, 160]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [198, 183, 61, 44, 0, 108, 103]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, y, n, y, n, y, y, y, n, n, n, y]
+Indices of k-nearest neighbors are [93, 185, 11, 153, 31, 134, 59]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [198, 183, 61, 44, 0, 108, 103]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, y, n, n, n, y, n, y, y]
+Indices of k-nearest neighbors are [106, 10, 194, 178, 133, 206, 175]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, n, y, y, n, n, n, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [127, 195, 63, 191, 185, 97, 78]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, y, y, n, y, n, y]
+Indices of k-nearest neighbors are [36, 75, 34, 120, 109, 122, 184]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, y, y, n, n, y, y, y, y, y, y]
+Indices of k-nearest neighbors are [99, 207, 211, 82, 19, 21, 142]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [171, 137, 71, 32, 152, 132, 90]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, n, n]
+Indices of k-nearest neighbors are [190, 188, 40, 29, 141, 130, 52]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [189, 198, 183, 61, 44, 0, 135]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, n, y, y, y, y, n, n, n, y, n, y]
+Indices of k-nearest neighbors are [102, 163, 6, 119, 57, 45, 141]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]
+Indices of k-nearest neighbors are [36, 122, 184, 166, 55, 54, 89]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [121, 85, 198, 183, 61, 44, 0]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, n, y, y, n, n, n, y, y, y, y, y, n, y]
+Indices of k-nearest neighbors are [147, 67, 42, 38, 34, 120, 109]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, n]
+Indices of k-nearest neighbors are [155, 53, 140, 171, 137, 71, 32]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, y, y, y, n, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [139, 25, 22, 100, 201, 107, 153]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, y, y, y, n, n, n, n, y, y, y, y, n, y]
+Indices of k-nearest neighbors are [121, 84, 26, 109, 189, 120, 34]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [192, 145, 126, 118, 94, 80, 39]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, n, y, y, y, n, n, n, n, y, y, y, y, n, n]
+Indices of k-nearest neighbors are [140, 101, 53, 135, 155, 199, 136]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, y, y, y, n, y, y, n, y, y, y, y]
+Indices of k-nearest neighbors are [154, 91, 69, 50, 1, 4, 9]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, n, y]
+Indices of k-nearest neighbors are [114, 79, 15, 190, 188, 40, 29]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [86, 196, 49, 197, 1, 9, 182]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, n, n, y, y, y, y, n, y, n, n, y, y, y]
+Indices of k-nearest neighbors are [16, 1, 182, 92, 204, 76, 150]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, y, y, y, y, y, n, y]
+Indices of k-nearest neighbors are [34, 120, 109, 184, 166, 55, 54]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, y, y, y, y, y, n, y, n, y, n, y, y, y]
+Indices of k-nearest neighbors are [207, 174, 68, 18, 83, 104, 21]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [192, 145, 126, 118, 94, 80, 39]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, y, y, n, n, n, n, n, n, y, y, n, n]
+Indices of k-nearest neighbors are [180, 78, 60, 195, 42, 67, 38]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [196, 49, 197, 209, 64, 203, 96]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, y, y, y, n, n, n, n, y, y, y, y, n, n]
+Indices of k-nearest neighbors are [53, 135, 155, 140, 101, 152, 132]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, y, y, n, y, n, n, y, n]
+Indices of k-nearest neighbors are [173, 12, 128, 134, 52, 124, 113]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [192, 145, 126, 118, 94, 80, 39]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, n, n, y, y, y, y, n, y, y, n, n, y, y]
+Indices of k-nearest neighbors are [95, 168, 86, 134, 11, 117, 193]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, n, y, y, n, y, n, y, y, y, y, y]
+Indices of k-nearest neighbors are [99, 207, 19, 169, 205, 111, 65]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, n, y]
+Indices of k-nearest neighbors are [114, 79, 15, 190, 188, 40, 29]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [89, 51, 46, 184, 166, 55, 54]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, n, y, y, n, n, n, n, n]
+Indices of k-nearest neighbors are [56, 201, 107, 15, 114, 79, 141]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, n, n, n, n]
+Indices of k-nearest neighbors are [181, 122, 202, 75, 148, 36, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, n, n, y, y, y, n, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [153, 212, 185, 139, 25, 22, 86]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, n, n, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [107, 201, 212, 91, 149, 112, 52]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, y, y, y, y, y, n, y, y, y, n, y, y, y]
+Indices of k-nearest neighbors are [174, 68, 21, 207, 99, 18, 84]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, y, y, y, y, y, y, y, y, y, n, n]
+Indices of k-nearest neighbors are [144, 31, 193, 117, 154, 3, 146]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, y, y, y, y, y, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [86, 100, 139, 25, 22, 203, 96]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, n, n, n, n, y, y, n, y, n, n, n, y, n]
+Indices of k-nearest neighbors are [76, 204, 172, 149, 112, 52, 74]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 192, 145, 126, 118, 94, 80]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, n, n, n, n, n, n, n, n]
+Indices of k-nearest neighbors are [56, 201, 188, 40, 29, 14, 141]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, y, y, y, n, n, y, y, n, y, n, y]
+Indices of k-nearest neighbors are [31, 50, 117, 144, 14, 93, 91]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, n, y, y, n, n, n, y, y, y, y, y, n, y]
+Indices of k-nearest neighbors are [81, 147, 38, 67, 42, 189, 120]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [184, 166, 55, 54, 89, 51, 46]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, n, y, y, y, n, n, n, y, y, n, y, n, n, n]
+Indices of k-nearest neighbors are [165, 170, 200, 161, 160, 202, 26]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, y, y, y, y, y, y, n, n, n, n, y]
+Indices of k-nearest neighbors are [15, 114, 79, 141, 130, 159, 129]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, n, n, y, y, n, n, n, n, y, y, n, y, n, y]
+Indices of k-nearest neighbors are [81, 147, 88, 36, 42, 75, 67]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [192, 145, 126, 118, 94, 80, 39]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [171, 137, 71, 32, 152, 132, 90]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 206, 175, 98, 62, 27, 20]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [184, 166, 55, 54, 89, 51, 46]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, y, y, y, y, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [84, 121, 65, 142, 13, 85, 82]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [89, 51, 46, 184, 166, 55, 54]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, n, y, n, y, y, n, n, y, y, n, n, y, y, n, y]
+Indices of k-nearest neighbors are [186, 78, 146, 2, 3, 138, 180]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, y, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [198, 183, 61, 44, 0, 108, 103]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, y, n, y, y, y, y, y, y, n, y, y, y, y]
+Indices of k-nearest neighbors are [208, 69, 154, 21, 4, 9, 182]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, n, n, n, y, y, y, y, n, n, y, n, y, y]
+Indices of k-nearest neighbors are [133, 178, 106, 179, 151, 209, 64]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, n, n, n, n, n, y]
+Indices of k-nearest neighbors are [141, 130, 188, 40, 29, 190, 6]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, y, n, n, n, n, y, n, y, y, n, n]
+Indices of k-nearest neighbors are [78, 26, 180, 138, 81, 60, 195]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, y, y, y, y, n, n, y, n, y, y, y]
+Indices of k-nearest neighbors are [117, 31, 144, 95, 173, 12, 128]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [196, 49, 197, 209, 64, 203, 96]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, y, n, n, y, y, y, n, y, y, n, y, y, n, y]
+Indices of k-nearest neighbors are [50, 153, 69, 154, 138, 157, 102]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, y, n, y, y, n, y, n, y, n, y, y]
+Indices of k-nearest neighbors are [167, 35, 9, 4, 194, 154, 106]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, y]
+Indices of k-nearest neighbors are [120, 109, 34, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [89, 51, 46, 184, 166, 55, 54]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, y, y, y, y, y, n, y]
+Indices of k-nearest neighbors are [120, 109, 34, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, n, y, n, n, y, y, y, n, y, n, n, y, n, y]
+Indices of k-nearest neighbors are [8, 204, 208, 17, 114, 79, 15]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [199, 136, 125, 123, 66, 162, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, y, n, n, y, n, y, y]
+Indices of k-nearest neighbors are [106, 133, 194, 178, 10, 156, 115]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [89, 51, 46, 184, 166, 55, 54]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, y, y, y, y, y, y, y, y, n, n, y]
+Indices of k-nearest neighbors are [93, 24, 11, 157, 156, 31, 9]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, y, y, y, n, y, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [19, 189, 211, 108, 103, 87, 207]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [108, 103, 87, 198, 183, 61, 44]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, y, y, y, n, n, n, n, y, n, y, n, n, y]
+Indices of k-nearest neighbors are [26, 195, 78, 160, 170, 176, 191]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [199, 136, 125, 123, 66, 162, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [184, 166, 55, 54, 89, 51, 46]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, n, n, n, y, y, y, y, n, y, y, y, y, y]
+Indices of k-nearest neighbors are [69, 204, 178, 16, 163, 133, 8]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [203, 96, 70, 74, 149, 112, 124]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, y, n, y, y, y, n, n, n, n, y, y, y, y, y, y]
+Indices of k-nearest neighbors are [109, 120, 34, 108, 103, 87, 53]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [162, 199, 136, 125, 123, 66, 171]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, n, y, y, y, y, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [177, 135, 101, 142, 65, 152, 132]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, n, y, y, y, n, n, n, n, n, n, y, y, n, y]
+Indices of k-nearest neighbors are [160, 200, 161, 170, 116, 108, 103]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, n]
+Indices of k-nearest neighbors are [52, 209, 64, 151, 206, 175, 98]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [209, 64, 151, 206, 175, 98, 62]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [124, 113, 30, 23, 206, 175, 98]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, y, y, y, y, y, n, n, y, n, y]
+Indices of k-nearest neighbors are [72, 15, 114, 79, 119, 45, 57]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, y, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [100, 86, 22, 209, 64, 139, 25]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, n, y, n, n, n, n, y, y, y, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [124, 113, 30, 23, 206, 175, 98]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, n, y, n, n, n, n, n, y]
+Indices of k-nearest neighbors are [14, 190, 141, 130, 188, 40, 29]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, y, y, y, y, y, n, y, n, n, n, y, n, y]
+Indices of k-nearest neighbors are [18, 83, 110, 47, 105, 50, 33]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, n, y]
+Indices of k-nearest neighbors are [114, 79, 15, 190, 188, 40, 29]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, n, n, y, y, y, n, n]
+Indices of k-nearest neighbors are [199, 136, 125, 123, 66, 162, 152]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, n, n, y, y, n, n, n, n, y, y, y, y, y, n]
+Indices of k-nearest neighbors are [158, 81, 147, 60, 53, 135, 155]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, n, y, n, y]
+Indices of k-nearest neighbors are [36, 122, 184, 166, 55, 54, 89]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, n, y, y, y, n, n, n, n, n, y, y]
+Indices of k-nearest neighbors are [192, 145, 126, 118, 94, 80, 39]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, y, y, y, y, y, y, y, n, y, y, y, y, y]
+Indices of k-nearest neighbors are [21, 47, 174, 68, 205, 111, 48]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, n, y, y, y, y, y, n, n, n, n, n, y]
+Indices of k-nearest neighbors are [129, 190, 141, 130, 139, 25, 188]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, n, n, n, n, n, n, y, n, y, y, y]
+Indices of k-nearest neighbors are [36, 77, 122, 5, 89, 51, 46]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, y, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [86, 196, 49, 197, 1, 182, 9]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, y, n, n, y, y, y, y, y, n, n, n, y, n, y]
+Indices of k-nearest neighbors are [102, 119, 58, 150, 129, 1, 182]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, y, n, n, n, y, y, y, n, y, n, n, n, y, y]
+Indices of k-nearest neighbors are [149, 112, 74, 203, 96, 70, 192]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, y, y, y, y, n, n, n, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [177, 142, 65, 189, 82, 108, 103]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, n, y, y, y, n, n, n, n, y, n, y, y, y]
+Indices of k-nearest neighbors are [147, 110, 36, 65, 142, 143, 82]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, n, n, n, n, y, y, n, y, n, n, y, y, y]
+Indices of k-nearest neighbors are [187, 172, 57, 163, 182, 72, 4]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, y, y, y, n, n, n, n, y, n, y, y, n, y]
+Indices of k-nearest neighbors are [160, 170, 81, 165, 109, 189, 200]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, y, y, n, y, y, n, n, n, n, n, n, y, y, y, y]
+Indices of k-nearest neighbors are [78, 158, 195, 63, 38, 42, 67]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [y, y, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [189, 198, 183, 61, 44, 0, 135]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, n, y, y, n, n, n, n, n, n, y, n, y, n, n]
+Indices of k-nearest neighbors are [122, 5, 75, 36, 77, 199, 136]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [y, y, y, n, y, y, n, y, y, n, y, n, n, y, n, n]
+Indices of k-nearest neighbors are [59, 3, 180, 138, 58, 119, 146]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+Query point: [n, n, n, y, y, y, n, n, n, y, n, y, y, y, n, y]
+Indices of k-nearest neighbors are [184, 166, 55, 54, 89, 51, 46]
+According to majority vote among k-nearest neighbors, instance classified as: republican
+Query point: [n, n, y, n, n, n, y, y, y, y, y, y, n, n, y, y]
+Indices of k-nearest neighbors are [134, 196, 49, 173, 12, 197, 128]
+According to majority vote among k-nearest neighbors, instance classified as: democrat
+All test data classified.
+
+Begin evaluation.
+######################################
+RESULTS
+2 class classification problem
+Results for this fold:
+Average Accuracy: 1.90990990990991
+Macro Precision: 0.9516369047619048
+Macro Precision: 0.956772575250836
+Macro Score: 0.956772575250836
+######################################

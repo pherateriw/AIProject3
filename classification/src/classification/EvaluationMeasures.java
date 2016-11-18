@@ -1,7 +1,6 @@
 package classification;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /*
  * Measures used to evaluate the classification performance of each
@@ -15,7 +14,7 @@ import java.util.Arrays;
  * 
  * 3. Recall with macro averaging 
  * 
- * 4.Fscore with macro averaging 
+ * 4. Fscore with macro averaging 
  * 
  * Note: Macro-averaging treats all classes equally while micro-averaging 
  * favors bigger classes.
@@ -42,14 +41,17 @@ public class EvaluationMeasures {
 	// order -- 0: tpi, 1: fpi, 2: fni, 3: tni  
 	private ArrayList<Integer[]> results = new ArrayList<Integer[]>();
 	
+	// returns average accuracy, precision with macro averaging, recall with macro averaging 
+	// and fscore with macro averaging
+	private ArrayList<Double> evalResults = new ArrayList<Double>();		
+	
 	public EvaluationMeasures(int numClasses, ArrayList<String> classLabels, ArrayList<String[]> testData) {
 		this.numClasses = numClasses;
 		this.predictedCLs = classLabels;
 		this.testData = testData;
-		evaluate();
 	}
 
-	private void evaluate() {
+	public ArrayList<Double> evaluateData() {
 		// the location of the class variable
 		int classValLoc = testData.get(0).length - 1; 
 		
@@ -114,7 +116,7 @@ public class EvaluationMeasures {
 			} // end for: all values calculated for this class
 			
 			// put calculated values (for this class) in array
-			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);
+//			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);
 			Integer[] resultsArray = {tpi, fpi, fni, tni};
 			
 			results.add(resultsArray);
@@ -122,18 +124,31 @@ public class EvaluationMeasures {
 		
 		double accuracy = avgAccuracy();
 		
-		macroPrecision(); 
+		double precision = macroPrecision(); 
 		
-		macroRecall(); 
+		double recall = macroRecall(); 
 		
-		macroFmeasure(); 
+		// following convention (mentioned in class and in article), we set beta = 1
+		int beta = 1; 
+		double fScore = macroFscore(beta, precision, recall); 
+		
+		evalResults.add(accuracy);
+		evalResults.add(precision);		
+		evalResults.add(recall);
+		evalResults.add(fScore);	
+		
+		//System.out.println(accuracy + "," + precision + "," + recall + "," + fScore);
+		
+		// return 
+		return evalResults;
 	}
 	
 	// calculates the average per-class effectiveness of a classifier
 	// got equation from Sokolova and Lapalme Table 3, pg 430
+	// closer number is to number of classes, more effective classifier is
 	public double avgAccuracy() {
 		double accuracy;
-		double intermedSum = 0;
+		double intermedSum = 0.0;
 		
 		// sum over all classes in data set
 		for (int i = 0; i < numClasses; i++) {
@@ -142,46 +157,112 @@ public class EvaluationMeasures {
 			int fni = results.get(i)[2];
 			int tni = results.get(i)[3];
 			
-			System.out.println(tpi + "," + fpi + "," + fni + "," + tni);	
+			//System.out.println(tpi + "," + fpi + "," + fni + "," + tni);	
 			
 			int numer = tpi + tni;
 			int denom = tpi + fni + fpi + tni;
 			
-			System.out.println(numer);
-			System.out.println(denom);			
+//			System.out.println(numer);
+//			System.out.println(denom);			
 			
-			double acc = (double) numer / denom;
+			double ratio = (double) numer / denom;
 			
-			System.out.println(acc);
-			intermedSum += acc;
+//			System.out.println(acc);
+			intermedSum += ratio;
 		}
 		
 		accuracy = intermedSum;
-		System.out.println(accuracy);
+		//System.out.println(accuracy);
 		
 		return accuracy;
 	}
 	
 	// calculates an average per-class agreement of the data class labels with those of a classifier 
 	// got equation from Sokolova and Lapalme Table 3, pg 430
+	// a value closer to one indicates a higher per-class agreement between labels and classifier
 	public double macroPrecision() {
+		double precision; 
+		double itermedSum = 0.0; 
 		
-		return 0.0;
+		// sum over all classes in data set
+		for (int i = 0; i < numClasses; i++) {
+			int tpi = results.get(i)[0];
+			int fpi = results.get(i)[1];
+			
+//			System.out.println(tpi + "," + fpi);		
+			
+			int numer = tpi;
+			double denom = tpi + fpi;
+			
+			// no true positives or false positives (only true negatives or false negatives)
+			if (denom == 0) {
+				// small non-zero value to prevent NaN
+				denom = 0.00001;
+			}
+			
+			double ratio = numer / denom;
+			
+			itermedSum += ratio;
+		}
+		
+		precision = itermedSum/numClasses;
+		//System.out.println(precision);
+		
+		return precision;
 	}
 
 	// calculates an average per-class effectiveness of a classifier to identify class labels
 	// got equation from Sokolova and Lapalme Table 3, pg 430
 	public double macroRecall() {
+		double recall; 
+		double itermedSum = 0.0; 
 		
-		return 0.0;
+		// sum over all classes in data set
+		for (int i = 0; i < numClasses; i++) {
+			int tpi = results.get(i)[0];
+			int fni = results.get(i)[2];
+			
+			//System.out.println(tpi + "," + fni);		
+			
+			int numer = tpi;
+			double denom = tpi + fni;
+			
+			// no true positives or false negatives (only true negatives or false positives)
+			if (denom == 0) {
+				// small non-zero value to prevent NaN
+				denom = 0.00001;
+			}
+			
+			double ratio = numer / denom;
+			
+			itermedSum += ratio;
+		}
+		
+		recall = itermedSum/numClasses;
+		//System.out.println(recall);
+		
+		return recall;
 	}	
 	
 	// calculates the relations between data’s positive labels and those given by a classifier 
 	// based on a per-class average
 	// got equation from Sokolova and Lapalme Table 3, pg 430
-	public double macroFmeasure() {
+	public double macroFscore(int beta, double precision, double recall) {
+		double fScore;
 		
-		return 0.0;
+//		System.out.println(precision);
+//		System.out.println(recall);
+		
+		double betaPower = Math.pow(beta, 2);
+		
+		double numer = (betaPower + 1) * precision * recall;
+		double denom = (betaPower) * precision + recall;
+		
+		fScore = numer/denom;
+		
+//		System.out.println(fScore);
+		
+		return fScore;
 	}	
 	
 }
