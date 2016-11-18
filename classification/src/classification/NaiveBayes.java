@@ -4,6 +4,8 @@ import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;
 
 public class NaiveBayes extends Algorithm {
 
@@ -16,6 +18,10 @@ public class NaiveBayes extends Algorithm {
     ArrayList<HashMap> predictorPriors;     //All P(Features)
     HashMap<String, Integer> classFrequencies;  // Number of occurrences for each class
     HashMap<String, Double> posteriors = new HashMap<>();  // All Features and their value's posteriors
+    HashMap<String, Double> featureProbs = new HashMap<>(); // p(x1|x2)
+    HashMap<String, Double> togetherness = new HashMap<>(); // occurrences of x1 and x2
+    HashMap<String, Double> valOccurances = new HashMap<>();
+    Set<String> valNames = new HashSet<String>();
     int classesTotal;  // Total number of occurrences of all classes
     int numFeatures; // Total number of features
 
@@ -152,7 +158,27 @@ public class NaiveBayes extends Algorithm {
         for (Object obj : trainData) {
             String[] stringArray = (String[]) obj;
             for (int i = 0; i < numFeatures; i++) {
-                features.get(i).addInstance(stringArray[i], stringArray[stringArray.length - 1]);
+                String val = stringArray[i];
+                valNames.add(val);
+                features.get(i).addInstance(val, stringArray[stringArray.length - 1]);
+
+                //All occurances of this value
+                if (valOccurances.containsKey(val)) {
+                    valOccurances.put(val, valOccurances.get(val) + 1.0);
+                } else {
+                    valOccurances.put(val, 1.0);
+                }
+                // all occurences of these two features appearing together
+                for (int j = i +1; j < numFeatures; j++){
+                    String secondFeature = stringArray[j];
+                    String featureKey = val + "," +secondFeature;
+                    if (togetherness.containsKey(featureKey)){
+                        togetherness.put(featureKey, togetherness.get(featureKey) + 1.0);
+                    }
+                    else{
+                        togetherness.put(featureKey, 1.0);
+                    }
+                }
             }
             try {
                 int value = this.classFrequencies.get(stringArray[stringArray.length - 1]);
