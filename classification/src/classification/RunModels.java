@@ -30,8 +30,8 @@ public class RunModels {
     	String choice = "";
 
 		// get file location for training/test data    	
-    	String dataFileLocation = getData();
-//		String dataFileLocation = "/Users/lisapeters/Workspace/School/AIProject3/data/soybean-small.data.txt";
+//    	String dataFileLocation = getData();
+		String dataFileLocation = "/Users/lisapeters/Workspace/School/AIProject3/data/breast-cancer-wisconsin.data.txt";
     	
     	// gets short name of dataset (from file location), for use in printing information
     	String shortName = "";
@@ -123,7 +123,7 @@ public class RunModels {
     		Algorithm tan = new TreeAugNB(shortName, train1, test1); 
     	} else if (choice.equals("id3")) {	
     		System.out.println("Classifying data using the Iterative Dichotomiser 3"); 
-    		Algorithm id3 = new DecisionTree(shortName, train1, test1, 0.1);    		
+    		Algorithm id3 = new DecisionTree(shortName, train1, test1, 0.1);
     	} else {
     		// user chose to exit the program or typed their choice incorrectly
     		System.out.println("Exiting program.");

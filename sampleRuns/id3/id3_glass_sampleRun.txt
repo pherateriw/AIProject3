@@ -1,0 +1,280 @@
+Decision Tree Algorithm created.
+Working with glass dataset
+
+Training started:
+Class labels set created
+Validation set created
+Tree created
+Attribute set created
+Selecting attribute/label for Node number 1
+Expanding tree at 1
+Calculating gain ratio for attribute 0 : 0.6786101812636821
+Calculating gain ratio for attribute 1 : 0.6786022906724115
+Calculating gain ratio for attribute 2 : 0.6739351272663898
+Calculating gain ratio for attribute 3 : 0.673262208190631
+Calculating gain ratio for attribute 4 : 0.6786022906724115
+Calculating gain ratio for attribute 5 : 0.6739351272663898
+Calculating gain ratio for attribute 6 : 0.6750404826911487
+Calculating gain ratio for attribute 7 : 1.164298169822298
+Selecting attribute/label for Node number 2
+Expanding tree at 2
+Calculating gain ratio for attribute 1 : 0.6768066180788723
+Calculating gain ratio for attribute 2 : 0.7204101343117363
+Calculating gain ratio for attribute 3 : 0.7471010630985903
+Calculating gain ratio for attribute 4 : 0.8571590455079381
+Calculating gain ratio for attribute 5 : 0.6821438967618562
+Calculating gain ratio for attribute 6 : 0.828083689546136
+Calculating gain ratio for attribute 7 : 1.1002902605170226
+Selecting attribute/label for Node number 3
+Expanding tree at 3
+Calculating gain ratio for attribute 2 : 0.1778977288701126
+Calculating gain ratio for attribute 3 : 0.1355311268848677
+Calculating gain ratio for attribute 4 : 0.11519749529131282
+Calculating gain ratio for attribute 5 : 0.11519749529131282
+Calculating gain ratio for attribute 6 : 0.217167956971533
+Calculating gain ratio for attribute 7 : Infinity
+Selecting attribute/label for Node number 4
+All examples of Node Number 4 are the same class
+Selecting attribute/label for Node number 5
+Expanding tree at 5
+Calculating gain ratio for attribute 3 : 0.3297110042185003
+Calculating gain ratio for attribute 4 : 0.3844627245531761
+Calculating gain ratio for attribute 5 : 0.3297110042185003
+Calculating gain ratio for attribute 6 : 0.4388535128008994
+Calculating gain ratio for attribute 7 : Infinity
+Selecting attribute/label for Node number 6
+All examples of Node Number 6 are the same class
+Selecting attribute/label for Node number 7
+Expanding tree at 7
+Calculating gain ratio for attribute 4 : 0.3820488875265708
+Calculating gain ratio for attribute 5 : 0.5138331602298227
+Calculating gain ratio for attribute 6 : 0.5138331602298227
+Calculating gain ratio for attribute 7 : Infinity
+Selecting attribute/label for Node number 8
+Expanding tree at 8
+Calculating gain ratio for attribute 5 : -0.08897368681807862
+Calculating gain ratio for attribute 6 : -Infinity
+Calculating gain ratio for attribute 7 : -Infinity
+Selecting attribute/label for Node number 9
+Expanding tree at 9
+Calculating gain ratio for attribute 6 : NaN
+Calculating gain ratio for attribute 7 : NaN
+Selecting attribute/label for Node number 10
+Expanding tree at 10
+Calculating gain ratio for attribute 7 : NaN
+Selecting attribute/label for Node number 11
+Attributes for Node Number 11 are empty
+Selecting attribute/label for Node number 12
+All examples of Node Number 12 are the same class
+Selecting attribute/label for Node number 13
+Attributes for Node Number 13 are empty
+Selecting attribute/label for Node number 14
+All examples of Node Number 14 are the same class
+Selecting attribute/label for Node number 15
+Attributes for Node Number 15 are empty
+Selecting attribute/label for Node number 16
+Attributes for Node Number 16 are empty
+Selecting attribute/label for Node number 17
+Attributes for Node Number 17 are empty
+Selecting attribute/label for Node number 18
+Attributes for Node Number 18 are empty
+Tree Built
+Node 0 has parent -1 and splits on attribute 0
+Node 1 has parent 0 and splits on attribute 1
+	 and parents splits on 0 and this node has feature value 1.5140099999999999
+Node 2 has parent 1 and splits on attribute 2
+	 and parents splits on 1 and this node has feature value 13.33
+Node 3 has parent 2 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 4.025
+Node 4 has parent 2 and splits on attribute 3
+	 and parents splits on 2 and this node has feature value 3.325
+Node 5 has parent 4 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 0.77
+Node 6 has parent 4 and splits on attribute 4
+	 and parents splits on 3 and this node has feature value 1.395
+Node 7 has parent 6 and splits on attribute 5
+	 and parents splits on 4 and this node has feature value 72.755
+Node 8 has parent 7 and splits on attribute 6
+	 and parents splits on 5 and this node has feature value 0.45999999999999996
+Node 9 has parent 8 and splits on attribute 7
+	 and parents splits on 6 and this node has feature value 6.91
+Node 10 has parent 9 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 0.0
+Node 11 has parent 7 and splits on attribute -1
+	 and parents splits on 5 and this node has feature value 3.4
+Node 12 has parent 6 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value 74.205
+Node 13 has parent 4 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 2.52
+Node 14 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 15.51
+Node 15 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 11.875
+Node 16 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 1.517665
+Node 17 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 1.526195
+Pruning:
+Validation Error before node removed: 4.666666666666667, validation error after node removed: 4.666666666666667
+Node not removed
+Done pruning
+Node 0 has parent -1 and splits on attribute 0
+Node 1 has parent 0 and splits on attribute 1
+	 and parents splits on 0 and this node has feature value 1.5140099999999999
+Node 2 has parent 1 and splits on attribute 2
+	 and parents splits on 1 and this node has feature value 13.33
+Node 3 has parent 2 and splits on attribute -1
+	 and parents splits on 2 and this node has feature value 4.025
+Node 4 has parent 2 and splits on attribute 3
+	 and parents splits on 2 and this node has feature value 3.325
+Node 5 has parent 4 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 0.77
+Node 6 has parent 4 and splits on attribute 4
+	 and parents splits on 3 and this node has feature value 1.395
+Node 7 has parent 6 and splits on attribute 5
+	 and parents splits on 4 and this node has feature value 72.755
+Node 8 has parent 7 and splits on attribute 6
+	 and parents splits on 5 and this node has feature value 0.45999999999999996
+Node 9 has parent 8 and splits on attribute 7
+	 and parents splits on 6 and this node has feature value 6.91
+Node 10 has parent 9 and splits on attribute -1
+	 and parents splits on 7 and this node has feature value 0.0
+Node 11 has parent 7 and splits on attribute -1
+	 and parents splits on 5 and this node has feature value 3.4
+Node 12 has parent 6 and splits on attribute -1
+	 and parents splits on 4 and this node has feature value 74.205
+Node 13 has parent 4 and splits on attribute -1
+	 and parents splits on 3 and this node has feature value 2.52
+Node 14 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 15.51
+Node 15 has parent 1 and splits on attribute -1
+	 and parents splits on 1 and this node has feature value 11.875
+Node 16 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 1.517665
+Node 17 has parent 0 and splits on attribute -1
+	 and parents splits on 0 and this node has feature value 1.526195
+Done training
+
+Starting testing:
+Given features [1.517665, 13.33, 4.025, 0.77, 74.205, 0.16, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 11.875, 3.325, 1.395, 74.205, 3.4, 8.66, 0.0, 0.255]: predicted class is 1
+Given features [1.526195, 11.875, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 71.16, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.517665, 15.51, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 3.325, 0.77, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.526195, 15.51, 3.325, 1.395, 71.16, 0.45999999999999996, 8.66, 1.575, 0.0]: predicted class is 1
+Given features [1.517665, 11.875, 3.325, 0.77, 72.755, 3.4, 8.66, 0.0, 0.255]: predicted class is 1
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 3.325, 0.77, 71.16, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]: predicted class is 7
+Given features [1.5140099999999999, 13.33, 3.325, 2.52, 71.16, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.5140099999999999, 15.51, 3.325, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 7
+Given features [1.5140099999999999, 11.875, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 3.325, 1.395, 71.16, 0.45999999999999996, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.255]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 1
+Given features [1.526195, 11.875, 1.48, 1.395, 74.205, 0.16, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.517665, 11.875, 1.48, 1.395, 72.755, 3.4, 8.66, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 3.4, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 1.48, 1.395, 72.755, 0.45999999999999996, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 4.025, 0.77, 72.755, 0.16, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 4.025, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.5140099999999999, 11.875, 1.48, 2.52, 71.16, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.526195, 15.51, 1.48, 1.395, 71.16, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 11.875, 4.025, 2.52, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 11.875, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 0.77, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 3.325, 2.52, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 1
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.526195, 13.33, 4.025, 0.77, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 3.325, 2.52, 71.16, 3.4, 6.91, 0.0, 0.0]: predicted class is 7
+Given features [1.517665, 11.875, 3.325, 0.77, 74.205, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 11.875, 4.025, 1.395, 74.205, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]: predicted class is 7
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 11.875, 4.025, 1.395, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 8.66, 1.575, 0.255]: predicted class is 7
+Given features [1.517665, 13.33, 4.025, 0.77, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 0.77, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.517665, 15.51, 1.48, 2.52, 72.755, 3.4, 6.91, 1.575, 0.255]: predicted class is 1
+Given features [1.526195, 11.875, 1.48, 2.52, 71.16, 3.4, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.517665, 11.875, 4.025, 0.77, 74.205, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 0.77, 74.205, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.526195, 13.33, 1.48, 2.52, 71.16, 0.45999999999999996, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.526195, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]: predicted class is 1
+Given features [1.517665, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 3.325, 0.77, 71.16, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.255]: predicted class is 7
+Given features [1.5140099999999999, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 2
+Given features [1.517665, 13.33, 4.025, 1.395, 72.755, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 11.875, 4.025, 1.395, 74.205, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 1.395, 74.205, 0.16, 6.91, 0.0, 0.0]: predicted class is 7
+Given features [1.526195, 11.875, 1.48, 2.52, 72.755, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 11.875, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.526195, 13.33, 3.325, 1.395, 71.16, 3.4, 12.56, 0.0, 0.255]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 7
+Given features [1.517665, 13.33, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 7
+Given features [1.526195, 11.875, 1.48, 0.77, 71.16, 0.16, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 1.395, 71.16, 0.16, 8.66, 1.575, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 1.48, 2.52, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 7
+Given features [1.517665, 11.875, 4.025, 1.395, 74.205, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 11.875, 1.48, 2.52, 74.205, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.517665, 15.51, 4.025, 0.77, 72.755, 0.16, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 3.325, 0.77, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 11.875, 3.325, 2.52, 74.205, 3.4, 6.91, 0.0, 0.255]: predicted class is 2
+Given features [1.526195, 15.51, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 0.77, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 0.77, 72.755, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.517665, 11.875, 1.48, 2.52, 72.755, 3.4, 12.56, 0.0, 0.0]: predicted class is 1
+Given features [1.5140099999999999, 13.33, 3.325, 1.395, 74.205, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.517665, 15.51, 1.48, 0.77, 74.205, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]: predicted class is 1
+Given features [1.5140099999999999, 15.51, 4.025, 2.52, 71.16, 0.16, 6.91, 0.0, 0.255]: predicted class is 7
+Given features [1.517665, 11.875, 3.325, 1.395, 72.755, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.517665, 11.875, 4.025, 1.395, 72.755, 3.4, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 1.48, 2.52, 71.16, 0.16, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 1.48, 1.395, 71.16, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 0.77, 72.755, 0.16, 12.56, 1.575, 0.255]: predicted class is 1
+Given features [1.517665, 11.875, 3.325, 1.395, 72.755, 0.45999999999999996, 8.66, 0.0, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 4.025, 1.395, 71.16, 0.16, 8.66, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 13.33, 4.025, 0.77, 71.16, 0.16, 12.56, 0.0, 0.255]: predicted class is 1
+Given features [1.5140099999999999, 11.875, 3.325, 2.52, 72.755, 3.4, 6.91, 0.0, 0.0]: predicted class is 2
+Given features [1.517665, 11.875, 1.48, 0.77, 74.205, 0.45999999999999996, 12.56, 0.0, 0.255]: predicted class is 1
+Given features [1.517665, 15.51, 4.025, 2.52, 71.16, 0.45999999999999996, 6.91, 0.0, 0.255]: predicted class is 1
+Given features [1.517665, 13.33, 4.025, 1.395, 71.16, 0.45999999999999996, 8.66, 0.0, 0.255]: predicted class is 1
+Given features [1.526195, 11.875, 1.48, 2.52, 74.205, 0.45999999999999996, 12.56, 1.575, 0.0]: predicted class is 1
+Given features [1.526195, 15.51, 1.48, 2.52, 71.16, 0.16, 12.56, 0.0, 0.0]: predicted class is 1
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+6 class classification problem
+Results for this fold:
+Average Accuracy: 4.927272727272727
+Macro Precision: 0.29531763417305584
+Macro Precision: 0.2975810738968634
+Macro Score: 0.2975810738968634
+######################################

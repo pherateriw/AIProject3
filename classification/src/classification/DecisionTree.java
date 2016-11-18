@@ -11,6 +11,7 @@ public class DecisionTree extends Algorithm {
 	Tree tree;
 	ArrayList<String> classlabels;
 	EvaluationMeasures error;
+	ArrayList<String> predictedClasses;
 
 	public DecisionTree(String dataName, ArrayList<String[]> trainset, ArrayList<String[]> testset, double valratio) {
 		super.get_logger().log(Level.INFO, "Decision Tree Algorithm created.");
@@ -20,13 +21,40 @@ public class DecisionTree extends Algorithm {
 		this.valratio = valratio;
 		train(trainset);
 		test(testset);
+		evaluate(testset);
+	}
+
+	private void evaluate(ArrayList<String[]> testData){
+		super.get_logger().log(Level.INFO, "");
+		super.get_logger().log(Level.INFO, "Starting evaluation.");
+
+		// after all test set instances have been classified, evaluate the performance of classifier
+		EvaluationMeasures em = new EvaluationMeasures(classlabels.size(), predictedClasses, testData);
+		ArrayList<Double> evaluationResults = em.evaluateData();
+
+		double accuracy = evaluationResults.get(0);
+		double precision = evaluationResults.get(1);
+		double recall = evaluationResults.get(2);
+		double fScore = evaluationResults.get(3);
+
+
+		super.get_logger().log(Level.INFO, "######################################");
+		super.get_logger().log(Level.INFO, "RESULTS");
+		super.get_logger().log(Level.INFO, classlabels.size() + " class classification problem");
+		super.get_logger().log(Level.INFO, "Results for this fold:");
+		super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);
+		super.get_logger().log(Level.INFO, "Macro Precision: " + precision);
+		super.get_logger().log(Level.INFO, "Macro Precision: " + recall);
+		super.get_logger().log(Level.INFO, "Macro Score: " + recall);
+		super.get_logger().log(Level.INFO, "######################################");
 	}
 	
 	void test(ArrayList<String[]> data) {
+		super.get_logger().log(Level.INFO, "");
 		super.get_logger().log(Level.INFO, "Starting testing:");
 		// testset = data;
 		// create list of predicted class labels
-		ArrayList<String> predictedClass = new ArrayList<String>();
+		predictedClasses = new ArrayList<String>();
 
 		// for element in data
 		for (String[] instance : data) {
@@ -66,10 +94,10 @@ public class DecisionTree extends Algorithm {
 					
 				}
 				label = maxEntry.getKey();
-				predictedClass.add(maxEntry.getKey());
+				predictedClasses.add(maxEntry.getKey());
 			}else{
 				label = root.label;
-				predictedClass.add(root.label);
+				predictedClasses.add(root.label);
 			}
 
 			String[] newArray = Arrays.copyOfRange(instance, 0, instance.length -1);
@@ -79,13 +107,13 @@ public class DecisionTree extends Algorithm {
 		//System.out.println(data);
 		//HashMap<String, Integer> map = countAllClasses(data);
 		//System.out.println(map.toString());
-		System.out.println(predictedClass);
-		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
-		ArrayList<Double> results = error.evaluateData();
-		System.out.println("F-measure: " + results.get(3));
+		System.out.println(predictedClasses);
+		super.get_logger().log(Level.INFO, "Done testing");
+
 	}
 
 	void train(ArrayList<String[]> data) {
+		super.get_logger().log(Level.INFO, "");
 		super.get_logger().log(Level.INFO, "Training started:");
 		//trainset = data;
 		classlabels = new ArrayList<String>();
@@ -103,7 +131,7 @@ public class DecisionTree extends Algorithm {
 		// create root node
 		DecisionTreeNode root = new DecisionTreeNode(trainset, -1, 0);
 		tree = new Tree(root);
-		//super.get_logger().log(Level.INFO, "Tree created");
+		super.get_logger().log(Level.INFO, "Tree created");
 		// generate attribute array
 		ArrayList<Integer> attributes = new ArrayList<Integer>();
 		for (int i = 0; i < trainset.get(0).length - 2; i++) {
@@ -154,7 +182,7 @@ public class DecisionTree extends Algorithm {
 		super.get_logger().log(Level.INFO, "Selecting attribute/label for Node number " + tree.getTreeSize());
 		// count the numbers of examples for each class
 		HashMap<String, Integer> countmap = countAllClasses(subset);
-		super.get_logger().log(Level.INFO, "Hashmap of class numbers created");
+//		super.get_logger().log(Level.INFO, "Hashmap of class numbers created");
 		// if all examples have the same class
 		System.out.println(subset.size());
 		System.out.println(countmap.toString());
