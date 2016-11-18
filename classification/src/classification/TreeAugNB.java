@@ -116,7 +116,7 @@ public class TreeAugNB extends Algorithm {
 	private String predictSingle(String[] features){
 		posteriors = new HashMap<>();
 		for (String classKey : this.classPriors.keySet()){
-			String posteriorKey = classKey + "|";
+			String posteriorKey = classKey;
 			double posterior = 1.0;
 			posterior *= classPriors.get(classKey); //p(c)
 			String firstLikely = features[0] + "|" + classKey;
@@ -307,6 +307,7 @@ public class TreeAugNB extends Algorithm {
 
 	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex){
 		//p(y|z)p(y)p(x|z)  / p(y|z)
+		try{
 		HashMap<String, Double> xlikelihoods = likelihoods.get(xfeatureIndex);
 		Double classprior = classPriors.get(clas);
 		HashMap<String, Double> ylikelihoods = likelihoods.get(yfeatureIndex);
@@ -315,10 +316,11 @@ public class TreeAugNB extends Algorithm {
 		double mult = xlikelihoods.get(xgivenclass);
 		mult = mult*ylikelihoods.get(ygivenx);
 		mult = mult*classprior;
-		
-		
-		
 		return mult;
+		}
+		catch(Exception e){
+			return 1.0;
+		}
 	}
 
 
