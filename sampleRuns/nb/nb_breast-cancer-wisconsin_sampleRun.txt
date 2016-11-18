@@ -1,0 +1,677 @@
+Naive Bayes Algorithm created.
+Working with breast-cancer-wisconsin dataset
+Starting training:
+Counting all frequencies.
+Calculating likelihoods and predictorPriors.
+Calculating classPriors.
+Done training
+
+Training Results.
+Size of testing set: 341 instances, 9 attributes
+
+Feature 0 with values of: 1 2 3 4 5 6 7 8 9 10 
+PredictorPrior of 1: 0.22
+Likelihood of 1 given 2: 0.32
+Likelihood of 1 given 4: 0.03
+PredictorPrior of 2: 0.05
+Likelihood of 2 given 2: 0.06
+Likelihood of 2 given 4: 0.02
+PredictorPrior of 3: 0.17
+Likelihood of 3 given 2: 0.23
+Likelihood of 3 given 4: 0.06
+PredictorPrior of 4: 0.12
+Likelihood of 4 given 2: 0.16
+Likelihood of 4 given 4: 0.04
+PredictorPrior of 5: 0.21
+Likelihood of 5 given 2: 0.21
+Likelihood of 5 given 4: 0.21
+PredictorPrior of 6: 0.05
+Likelihood of 6 given 2: 0.04
+Likelihood of 6 given 4: 0.07
+PredictorPrior of 7: 0.05
+Likelihood of 7 given 2: 0.00
+Likelihood of 7 given 4: 0.13
+PredictorPrior of 8: 0.08
+Likelihood of 8 given 2: 0.01
+Likelihood of 8 given 4: 0.21
+PredictorPrior of 9: 0.03
+Likelihood of 9 given 2: 0.00
+Likelihood of 9 given 4: 0.07
+PredictorPrior of 10: 0.09
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.26
+
+Feature 1 with values of: 1 2 3 4 5 6 7 8 9 10 
+PredictorPrior of 1: 0.56
+Likelihood of 1 given 2: 0.84
+Likelihood of 1 given 4: 0.03
+PredictorPrior of 2: 0.07
+Likelihood of 2 given 2: 0.10
+Likelihood of 2 given 4: 0.03
+PredictorPrior of 3: 0.07
+Likelihood of 3 given 2: 0.04
+Likelihood of 3 given 4: 0.11
+PredictorPrior of 4: 0.07
+Likelihood of 4 given 2: 0.02
+Likelihood of 4 given 4: 0.15
+PredictorPrior of 5: 0.04
+Likelihood of 5 given 2: 0.00
+Likelihood of 5 given 4: 0.10
+PredictorPrior of 6: 0.05
+Likelihood of 6 given 2: 0.01
+Likelihood of 6 given 4: 0.11
+PredictorPrior of 7: 0.04
+Likelihood of 7 given 2: 0.01
+Likelihood of 7 given 4: 0.10
+PredictorPrior of 8: 0.04
+Likelihood of 8 given 2: 0.00
+Likelihood of 8 given 4: 0.11
+PredictorPrior of 9: 0.01
+Likelihood of 9 given 2: 0.00
+Likelihood of 9 given 4: 0.03
+PredictorPrior of 10: 0.11
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.31
+
+Feature 2 with values of: 1 2 3 4 5 6 7 8 9 10 
+PredictorPrior of 1: 0.52
+Likelihood of 1 given 2: 0.79
+Likelihood of 1 given 4: 0.02
+PredictorPrior of 2: 0.11
+Likelihood of 2 given 2: 0.13
+Likelihood of 2 given 4: 0.05
+PredictorPrior of 3: 0.07
+Likelihood of 3 given 2: 0.06
+Likelihood of 3 given 4: 0.09
+PredictorPrior of 4: 0.06
+Likelihood of 4 given 2: 0.02
+Likelihood of 4 given 4: 0.15
+PredictorPrior of 5: 0.04
+Likelihood of 5 given 2: 0.01
+Likelihood of 5 given 4: 0.11
+PredictorPrior of 6: 0.06
+Likelihood of 6 given 2: 0.01
+Likelihood of 6 given 4: 0.15
+PredictorPrior of 7: 0.04
+Likelihood of 7 given 2: 0.01
+Likelihood of 7 given 4: 0.11
+PredictorPrior of 8: 0.04
+Likelihood of 8 given 2: 0.00
+Likelihood of 8 given 4: 0.09
+PredictorPrior of 9: 0.02
+Likelihood of 9 given 2: 0.00
+Likelihood of 9 given 4: 0.04
+PredictorPrior of 10: 0.09
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.26
+
+Feature 3 with values of: 1 2 3 4 5 6 7 8 9 10 
+PredictorPrior of 1: 0.58
+Likelihood of 1 given 2: 0.82
+Likelihood of 1 given 4: 0.12
+PredictorPrior of 2: 0.08
+Likelihood of 2 given 2: 0.08
+Likelihood of 2 given 4: 0.08
+PredictorPrior of 3: 0.09
+Likelihood of 3 given 2: 0.08
+Likelihood of 3 given 4: 0.11
+PredictorPrior of 4: 0.05
+Likelihood of 4 given 2: 0.02
+Likelihood of 4 given 4: 0.11
+PredictorPrior of 5: 0.04
+Likelihood of 5 given 2: 0.01
+Likelihood of 5 given 4: 0.09
+PredictorPrior of 6: 0.04
+Likelihood of 6 given 2: 0.02
+Likelihood of 6 given 4: 0.09
+PredictorPrior of 7: 0.04
+Likelihood of 7 given 2: 0.00
+Likelihood of 7 given 4: 0.09
+PredictorPrior of 8: 0.04
+Likelihood of 8 given 2: 0.00
+Likelihood of 8 given 4: 0.12
+PredictorPrior of 9: 0.01
+Likelihood of 9 given 2: 0.01
+Likelihood of 9 given 4: 0.03
+PredictorPrior of 10: 0.09
+Likelihood of 10 given 2: 0.01
+Likelihood of 10 given 4: 0.25
+
+Feature 4 with values of: 1 2 3 4 5 6 7 8 9 10 
+PredictorPrior of 1: 0.10
+Likelihood of 1 given 2: 0.14
+Likelihood of 1 given 4: 0.02
+PredictorPrior of 2: 0.53
+Likelihood of 2 given 2: 0.77
+Likelihood of 2 given 4: 0.08
+PredictorPrior of 3: 0.10
+Likelihood of 3 given 2: 0.07
+Likelihood of 3 given 4: 0.16
+PredictorPrior of 4: 0.08
+Likelihood of 4 given 2: 0.02
+Likelihood of 4 given 4: 0.21
+PredictorPrior of 5: 0.06
+Likelihood of 5 given 2: 0.01
+Likelihood of 5 given 4: 0.15
+PredictorPrior of 6: 0.08
+Likelihood of 6 given 2: 0.01
+Likelihood of 6 given 4: 0.21
+PredictorPrior of 7: 0.02
+Likelihood of 7 given 2: 0.01
+Likelihood of 7 given 4: 0.05
+PredictorPrior of 8: 0.03
+Likelihood of 8 given 2: 0.01
+Likelihood of 8 given 4: 0.08
+PredictorPrior of 9: 0.01
+Likelihood of 9 given 2: 0.00
+Likelihood of 9 given 4: 0.02
+PredictorPrior of 10: 0.05
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.13
+
+Feature 5 with values of: 1 2 3 4 5 6 7 8 9 y n 10 
+PredictorPrior of 1: 0.58
+Likelihood of 1 given 2: 0.85
+Likelihood of 1 given 4: 0.08
+PredictorPrior of 2: 0.06
+Likelihood of 2 given 2: 0.06
+Likelihood of 2 given 4: 0.05
+PredictorPrior of 3: 0.05
+Likelihood of 3 given 2: 0.03
+Likelihood of 3 given 4: 0.09
+PredictorPrior of 4: 0.03
+Likelihood of 4 given 2: 0.01
+Likelihood of 4 given 4: 0.06
+PredictorPrior of 5: 0.05
+Likelihood of 5 given 2: 0.02
+Likelihood of 5 given 4: 0.10
+PredictorPrior of 6: 0.01
+Likelihood of 6 given 2: 0.00
+Likelihood of 6 given 4: 0.03
+PredictorPrior of 7: 0.02
+Likelihood of 7 given 2: 0.01
+Likelihood of 7 given 4: 0.03
+PredictorPrior of 8: 0.04
+Likelihood of 8 given 2: 0.01
+Likelihood of 8 given 4: 0.09
+PredictorPrior of 9: 0.02
+Likelihood of 9 given 2: 0.00
+Likelihood of 9 given 4: 0.05
+PredictorPrior of y: 0.02
+Likelihood of y given 2: 0.03
+Likelihood of y given 4: 0.01
+PredictorPrior of n: 0.02
+Likelihood of n given 2: 0.02
+Likelihood of n given 4: 0.01
+PredictorPrior of 10: 0.18
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.51
+
+Feature 6 with values of: 1 2 3 4 5 6 7 8 9 10 
+PredictorPrior of 1: 0.23
+Likelihood of 1 given 2: 0.34
+Likelihood of 1 given 4: 0.01
+PredictorPrior of 2: 0.25
+Likelihood of 2 given 2: 0.37
+Likelihood of 2 given 4: 0.03
+PredictorPrior of 3: 0.24
+Likelihood of 3 given 2: 0.26
+Likelihood of 3 given 4: 0.19
+PredictorPrior of 4: 0.06
+Likelihood of 4 given 2: 0.02
+Likelihood of 4 given 4: 0.15
+PredictorPrior of 5: 0.06
+Likelihood of 5 given 2: 0.01
+Likelihood of 5 given 4: 0.15
+PredictorPrior of 6: 0.01
+Likelihood of 6 given 2: 0.00
+Likelihood of 6 given 4: 0.03
+PredictorPrior of 7: 0.11
+Likelihood of 7 given 2: 0.03
+Likelihood of 7 given 4: 0.26
+PredictorPrior of 8: 0.04
+Likelihood of 8 given 2: 0.00
+Likelihood of 8 given 4: 0.11
+PredictorPrior of 9: 0.02
+Likelihood of 9 given 2: 0.00
+Likelihood of 9 given 4: 0.04
+PredictorPrior of 10: 0.04
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.10
+
+Feature 7 with values of: 1 2 3 4 5 6 7 8 9 10 
+PredictorPrior of 1: 0.62
+Likelihood of 1 given 2: 0.86
+Likelihood of 1 given 4: 0.15
+PredictorPrior of 2: 0.07
+Likelihood of 2 given 2: 0.08
+Likelihood of 2 given 4: 0.03
+PredictorPrior of 3: 0.09
+Likelihood of 3 given 2: 0.04
+Likelihood of 3 given 4: 0.18
+PredictorPrior of 4: 0.03
+Likelihood of 4 given 2: 0.01
+Likelihood of 4 given 4: 0.08
+PredictorPrior of 5: 0.03
+Likelihood of 5 given 2: 0.01
+Likelihood of 5 given 4: 0.08
+PredictorPrior of 6: 0.03
+Likelihood of 6 given 2: 0.01
+Likelihood of 6 given 4: 0.06
+PredictorPrior of 7: 0.03
+Likelihood of 7 given 2: 0.00
+Likelihood of 7 given 4: 0.08
+PredictorPrior of 8: 0.05
+Likelihood of 8 given 2: 0.02
+Likelihood of 8 given 4: 0.10
+PredictorPrior of 9: 0.03
+Likelihood of 9 given 2: 0.01
+Likelihood of 9 given 4: 0.08
+PredictorPrior of 10: 0.09
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.26
+
+Feature 8 with values of: 1 2 3 4 5 6 7 8 10 
+PredictorPrior of 1: 0.82
+Likelihood of 1 given 2: 0.96
+Likelihood of 1 given 4: 0.56
+PredictorPrior of 2: 0.06
+Likelihood of 2 given 2: 0.03
+Likelihood of 2 given 4: 0.13
+PredictorPrior of 3: 0.05
+Likelihood of 3 given 2: 0.01
+Likelihood of 3 given 4: 0.12
+PredictorPrior of 4: 0.03
+Likelihood of 4 given 2: 0.00
+Likelihood of 4 given 4: 0.08
+PredictorPrior of 5: 0.02
+Likelihood of 5 given 2: 0.01
+Likelihood of 5 given 4: 0.04
+PredictorPrior of 6: 0.01
+Likelihood of 6 given 2: 0.00
+Likelihood of 6 given 4: 0.03
+PredictorPrior of 7: 0.01
+Likelihood of 7 given 2: 0.01
+Likelihood of 7 given 4: 0.03
+PredictorPrior of 8: 0.02
+Likelihood of 8 given 2: 0.01
+Likelihood of 8 given 4: 0.03
+PredictorPrior of 10: 0.03
+Likelihood of 10 given 2: 0.00
+Likelihood of 10 given 4: 0.07
+
+
+ClassPrior of 2: 0.66
+ClassPrior of 4: 0.34
+
+Starting testing:
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 10, 4, 7, 3, 10, 9, 10, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 3, 3, 1, 2, 10, 7, 6, 1]: predicted class is 4
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [6, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 8, 6, 3, 4, 10, 7, 1, 1]: predicted class is 4
+Given features [5, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 3, 6, 2, 3, 5, 4, 10, 2]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 2, 10, 10, 5, 3, 3]: predicted class is 4
+Given features [8, 2, 3, 1, 6, 3, 7, 1, 1]: predicted class is 4
+Given features [6, 2, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 8, 4, 4, 4, 10, 3, 10, 4]: predicted class is 4
+Given features [1, 3, 1, 2, 2, 2, 5, 3, 2]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 3, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 10, 8, 10, 7, 10, 7]: predicted class is 4
+Given features [10, 8, 8, 4, 10, 10, 8, 1, 1]: predicted class is 4
+Given features [8, 3, 8, 3, 4, 9, 8, 9, 8]: predicted class is 4
+Given features [10, 7, 7, 4, 5, 10, 5, 7, 2]: predicted class is 4
+Given features [3, 4, 5, 3, 7, 3, 4, 6, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [8, 10, 5, 3, 8, 4, 4, 10, 3]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 3, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 4, 6, 1, 2, 10, 5, 3, 1]: predicted class is 4
+Given features [5, 1, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [8, 7, 8, 2, 4, 2, 5, 10, 1]: predicted class is 4
+Given features [1, 3, 3, 2, 2, 1, 7, 2, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 4, 1, 1, 1]: predicted class is 2
+Given features [7, 2, 4, 1, 6, 10, 5, 4, 3]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 3, 6, 4, 5, 8, 4, 4, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 4, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 2, 2, 1, 4, 3, 2, 1, 1]: predicted class is 2
+Given features [3, 2, 2, 2, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 3, 3, 3, 6, 10, 3, 1, 1]: predicted class is 4
+Given features [1, 1, 3, 1, 2, y, 2, 1, 1]: predicted class is 2
+Given features [8, 10, 10, 8, 7, 10, 9, 7, 1]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 3, 1, 1, 2, 1, 4, 8, 1]: predicted class is 2
+Given features [6, 3, 2, 1, 3, 4, 4, 1, 1]: predicted class is 4
+Given features [4, 1, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 10, 8, 5, 4, 1, 10, 1, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 7, 7, 3, 8, 5, 7, 4, 3]: predicted class is 4
+Given features [5, 5, 7, 8, 6, 10, 7, 4, 1]: predicted class is 4
+Given features [5, 1, 1, 1, 2, 2, 3, 3, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 10, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 2]: predicted class is 2
+Given features [5, 5, 5, 2, 5, 10, 4, 3, 1]: predicted class is 4
+Given features [5, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 4, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 2, 2, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 6, 3, 6, 4, 10, 7, 8, 4]: predicted class is 4
+Given features [2, 5, 7, 6, 4, 10, 7, 6, 1]: predicted class is 4
+Given features [5, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [7, 6, 4, 8, 10, 10, 9, 5, 3]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 4, 4, 5, 7, 10, 3, 2, 1]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 3, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [8, 3, 3, 1, 2, 2, 3, 2, 1]: predicted class is 2
+Given features [3, 1, 1, 3, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 4, 4, 2, 2, 3, 2, 1, 1]: predicted class is 2
+Given features [5, 10, 10, 5, 4, 5, 4, 4, 1]: predicted class is 4
+Given features [3, 2, 1, 1, 2, 2, 3, 1, 1]: predicted class is 2
+Given features [10, 4, 3, 10, 3, 10, 7, 1, 2]: predicted class is 4
+Given features [7, 1, 2, 3, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 10, 10, 1, 8, 8, 8]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 5, 5, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [3, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 10, 5, 10, 10, 10, 7]: predicted class is 4
+Given features [5, 2, 3, 1, 6, 10, 5, 1, 1]: predicted class is 4
+Given features [10, 10, 10, 4, 8, 1, 8, 10, 1]: predicted class is 4
+Given features [10, 10, 8, 6, 4, 5, 8, 10, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 3, 2, 1, 1]: predicted class is 2
+Given features [6, 9, 7, 5, 5, 8, 4, 2, 1]: predicted class is 4
+Given features [3, 1, 1, 1, 2, y, 3, 1, 1]: predicted class is 2
+Given features [5, 2, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 2, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 10, 10, 10, 4, 10, 10]: predicted class is 4
+Given features [7, 6, 10, 5, 3, 10, 9, 10, 2]: predicted class is 4
+Given features [5, 8, 9, 4, 3, 10, 7, 1, 1]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [8, 9, 9, 5, 3, 5, 7, 7, 1]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 2, 2, 4, 2, 4, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 3, 1, 1, 1]: predicted class is 2
+Given features [10, 3, 5, 1, 10, 5, 3, 10, 2]: predicted class is 4
+Given features [8, 10, 10, 10, 6, 10, 10, 10, 10]: predicted class is 4
+Given features [3, 4, 5, 2, 6, 8, 4, 1, 1]: predicted class is 4
+Given features [5, 5, 5, 8, 10, 8, 7, 3, 7]: predicted class is 4
+Given features [1, 1, 1, 1, 5, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 8, 8, 2, 8, 10, 4, 8, 10]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 2, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 7, 8, 3, 4, 10, 9, 1, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 4, 6, 4, 5, 10, 7, 1, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 8, 8, 2, 3, 4, 8, 7, 8]: predicted class is 4
+Given features [1, 1, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [6, 10, 5, 5, 4, 10, 6, 10, 1]: predicted class is 4
+Given features [8, 5, 5, 5, 2, 10, 4, 3, 1]: predicted class is 4
+Given features [1, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 3, 3, 1, 3, 3, 3, 3, 3]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 5, 5, 8, 6, 10, 10, 7, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 5, 7, 8, 8, 9, 7, 10, 7]: predicted class is 4
+Given features [10, 6, 6, 3, 4, 5, 3, 6, 1]: predicted class is 4
+Given features [6, 6, 7, 10, 3, 10, 8, 10, 2]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 8, 8, 1, 3, 4, 3, 7, 1]: predicted class is 4
+Given features [1, 1, 1, 3, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 3, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 3, 3, 3, 2, 3, 4, 4, 1]: predicted class is 4
+Given features [6, 1, 3, 2, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 3, 4, 4, 2, 5, 2, 5, 1]: predicted class is 4
+Given features [9, 6, 9, 2, 10, 6, 2, 9, 10]: predicted class is 4
+Given features [6, 5, 4, 4, 3, 9, 7, 8, 3]: predicted class is 4
+Given features [9, 10, 10, 1, 10, 8, 3, 3, 1]: predicted class is 4
+Given features [6, 3, 3, 5, 3, 10, 3, 5, 3]: predicted class is 4
+Given features [6, 1, 3, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [7, 5, 10, 10, 10, 10, 4, 10, 3]: predicted class is 4
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 10, 10, 10, 5, 2, 8, 5, 1]: predicted class is 4
+Given features [3, 1, 4, 1, 2, y, 3, 1, 1]: predicted class is 2
+Given features [5, 10, 10, 10, 6, 10, 6, 5, 2]: predicted class is 4
+Given features [8, 5, 6, 2, 3, 10, 6, 6, 1]: predicted class is 4
+Given features [5, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 4, 3, 10, 4, 10, 5, 6, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [1, 1, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 10, 7, 8, 5, 8, 7, 4, 1]: predicted class is 4
+Given features [1, 1, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 8, 7, 10, 4, 10, 7, 5, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 4, 1, 1, 1]: predicted class is 2
+Given features [10, 6, 5, 8, 5, 10, 8, 6, 1]: predicted class is 4
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 5, 1, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 3, 10, 8, 8, 1, 1]: predicted class is 4
+Given features [10, 8, 10, 1, 3, 10, 5, 1, 1]: predicted class is 4
+Given features [5, 4, 5, 1, 8, 1, 3, 6, 1]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 10, 4, 10, 7, 10, 1]: predicted class is 4
+Given features [3, 3, 2, 1, 2, 3, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 6, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 2, 4, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 8, 8, 10, 5, 10, 8, 10, 3]: predicted class is 4
+Given features [5, 3, 2, 1, 3, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [7, 5, 6, 10, 5, 10, 7, 9, 4]: predicted class is 4
+Given features [5, 2, 3, 4, 2, 7, 3, 6, 1]: predicted class is 4
+Given features [4, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 3, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 5, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 5, 5, 1, 1]: predicted class is 2
+Given features [10, 10, 10, 7, 9, 10, 7, 10, 10]: predicted class is 4
+Given features [7, 2, 4, 1, 3, 4, 3, 3, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 10, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [8, 6, 5, 4, 3, 10, 6, 1, 1]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 5, 8, 10, 3, 10, 5, 1, 3]: predicted class is 4
+Given features [1, 2, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 4, 7, 2, 2, 8, 6, 1, 1]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 4, 5, 5, 5, 10, 4, 1, 1]: predicted class is 4
+Given features [10, 10, 10, 1, 6, 1, 2, 8, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 3, 2, 1]: predicted class is 2
+Given features [4, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 7, 10, 6, 5, 10, 7, 5, 1]: predicted class is 4
+Given features [9, 10, 10, 10, 10, 10, 10, 10, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 1, n, 2, 1, 1]: predicted class is 2
+Given features [5, 8, 8, 8, 5, 10, 7, 8, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 3, 3, 1, 1]: predicted class is 2
+Given features [5, 10, 8, 10, 8, 10, 3, 6, 3]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [7, 8, 8, 7, 3, 10, 7, 2, 3]: predicted class is 4
+Given features [5, 3, 4, 3, 4, 5, 4, 7, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [8, 10, 4, 4, 8, 10, 8, 2, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 4, 3, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [7, 4, 7, 4, 3, 7, 7, 6, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 4, 4, 9, 2, 10, 5, 6, 1]: predicted class is 4
+Given features [2, 1, 2, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [8, 7, 8, 5, 5, 10, 9, 10, 1]: predicted class is 4
+Given features [8, 8, 8, 1, 2, y, 6, 10, 1]: predicted class is 4
+Given features [1, 2, 3, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 2, 1, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [10, 4, 3, 2, 3, 10, 5, 3, 2]: predicted class is 4
+Given features [5, 2, 2, 2, 3, 1, 1, 3, 1]: predicted class is 2
+Given features [9, 7, 7, 5, 5, 10, 7, 8, 3]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 6, 4, 3, 10, 10, 9, 10, 1]: predicted class is 4
+Given features [8, 4, 6, 3, 3, 1, 4, 3, 1]: predicted class is 4
+Given features [10, 6, 4, 1, 3, 4, 3, 2, 3]: predicted class is 4
+Given features [4, 2, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [6, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 4, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [8, 6, 4, 10, 10, 1, 3, 5, 1]: predicted class is 4
+Given features [9, 5, 8, 1, 2, 3, 2, 1, 5]: predicted class is 4
+Given features [10, 10, 10, 10, 7, 10, 7, 10, 4]: predicted class is 4
+Given features [2, 3, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 3, 3, 4, 2, 4, 3, 4, 1]: predicted class is 4
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [8, 4, 7, 1, 3, 10, 3, 9, 2]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 2, 3, 1]: predicted class is 2
+Given features [1, 2, 1, 3, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 2, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 3, 2, 1, 3, 1, 3, 6, 1]: predicted class is 2
+Given features [9, 8, 8, 9, 6, 3, 4, 1, 1]: predicted class is 4
+Given features [4, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [10, 5, 5, 6, 3, 10, 7, 9, 2]: predicted class is 4
+Given features [4, 1, 1, 3, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 5, 1, 1, 1]: predicted class is 2
+Given features [8, 4, 5, 1, 2, n, 7, 3, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 10, 7, 8, 7, 1, 10, 10, 3]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [6, 8, 7, 8, 6, 8, 8, 9, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 5, 3, 3, 6, 7, 7, 5, 1]: predicted class is 4
+Given features [2, 1, 1, 1, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 9, 7, 3, 4, 2, 7, 7, 1]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 2, 2, 1]: predicted class is 2
+Given features [10, 2, 2, 1, 2, 6, 1, 1, 2]: predicted class is 2
+Given features [2, 1, 1, 1, 1, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [8, 6, 4, 3, 5, 9, 3, 1, 1]: predicted class is 4
+Given features [3, 3, 5, 2, 3, 10, 7, 1, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 3, 1, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [8, 10, 10, 10, 7, 5, 4, 8, 7]: predicted class is 4
+Given features [2, 1, 1, 1, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 10, 8, 10, 10, 10, 7]: predicted class is 4
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 5, 5, 6, 3, 10, 3, 1, 1]: predicted class is 4
+Given features [5, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [4, 2, 2, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [9, 9, 10, 3, 6, 10, 7, 10, 6]: predicted class is 4
+Given features [2, 3, 2, 2, 2, 2, 3, 1, 1]: predicted class is 2
+Given features [10, 5, 5, 3, 6, 7, 7, 10, 1]: predicted class is 4
+Given features [10, 5, 5, 6, 8, 8, 7, 1, 1]: predicted class is 4
+Given features [5, 1, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 1, 4, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 2, 2, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 1, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 3, 4, 1, 4, 1, 3, 1, 1]: predicted class is 2
+Given features [3, 1, 1, 2, 3, 4, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 5, 5, 10, 4, 10, 7, 5, 8]: predicted class is 4
+Given features [3, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [5, 1, 1, 2, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [6, 10, 10, 10, 10, 10, 8, 10, 10]: predicted class is 4
+Given features [5, 10, 10, 10, 10, 2, 10, 10, 10]: predicted class is 4
+Given features [5, 3, 3, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 3, 1, 1, 5, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 2, 4, 3, 2, 2, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [1, 1, 3, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [8, 3, 5, 4, 5, 10, 1, 6, 2]: predicted class is 4
+Given features [6, 8, 7, 5, 6, 8, 8, 9, 2]: predicted class is 4
+Given features [3, 6, 6, 6, 5, 10, 6, 8, 3]: predicted class is 4
+Given features [5, 4, 6, 8, 4, 1, 8, 10, 1]: predicted class is 4
+Given features [1, 1, 3, 2, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [5, 3, 1, 1, 2, 1, 1, 1, 1]: predicted class is 2
+Given features [4, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [1, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Given features [4, 8, 6, 4, 3, 4, 10, 6, 1]: predicted class is 4
+Given features [6, 10, 10, 2, 8, 10, 7, 3, 3]: predicted class is 4
+Given features [4, 3, 2, 1, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [10, 1, 1, 1, 2, 10, 5, 4, 1]: predicted class is 4
+Given features [1, 1, 1, 1, 2, y, 2, 1, 1]: predicted class is 2
+Given features [10, 4, 4, 10, 2, 10, 5, 3, 3]: predicted class is 4
+Given features [2, 1, 1, 1, 2, 1, 3, 1, 1]: predicted class is 2
+Given features [2, 1, 1, 2, 3, 1, 2, 1, 1]: predicted class is 2
+Given features [6, 3, 3, 3, 3, 2, 6, 1, 1]: predicted class is 4
+Given features [5, 1, 1, 1, 2, 1, 2, 1, 1]: predicted class is 2
+Done testing
+
+Starting evaluation.
+######################################
+RESULTS
+2 class classification problem
+Results for this fold:
+Average Accuracy: 1.9441340782122905
+Macro Precision: 0.9636967015285599
+Macro Precision: 0.9767369727047146
+Macro Score: 0.9767369727047146
+######################################

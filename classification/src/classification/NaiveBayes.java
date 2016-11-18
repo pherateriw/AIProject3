@@ -1,6 +1,5 @@
 package classification;
 
-import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,21 +8,27 @@ import java.util.HashMap;
 public class NaiveBayes extends Algorithm {
 
     ArrayList trainData;  //Examples used to train the algorithm
+    ArrayList<String[]> testData;  //Examples used to test the algorithm
+    ArrayList<String> predictedClasses;
     ArrayList<Feature> features = new ArrayList();  //Features used to classify. Each feature has different values.
     HashMap<String, Double> classPriors;    //All P(Class)
     ArrayList<HashMap> likelihoods;         //All P(Features|Class)
     ArrayList<HashMap> predictorPriors;     //All P(Features)
     HashMap<String, Integer> classFrequencies;  // Number of occurrences for each class
     HashMap<String, Double> posteriors = new HashMap<>();  // All Features and their value's posteriors
-    int classesTotal;  //Total number of occurrences of all classes
+    int classesTotal;  // Total number of occurrences of all classes
+    int numFeatures; // Total number of features
 
-    public NaiveBayes(ArrayList<String[]> data) {
-        trainData = data;
+    public NaiveBayes(String dataName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
         super.get_logger().log(Level.INFO, "Naive Bayes Algorithm created.");
+        super.get_logger().log(Level.INFO, String.format("Working with %s dataset", dataName));
         this.classesTotal = trainData.size();
         this.classFrequencies = new HashMap<>();
-        train(data);
-        //TODO: test data!! Other than manually I mean.
+        this.trainData = trainData;
+        this.testData = testData;
+        train(trainData);
+        test(testData);
+        evaluate();
     }
 
     /*
@@ -35,7 +40,7 @@ public class NaiveBayes extends Algorithm {
 
         // get number of features from first data instance
         Object o = trainData.get(0);
-        int numFeatures = ((String[]) o).length - 1;
+        numFeatures = ((String[]) o).length - 1;
         for (int i = 0; i < numFeatures; i++) {
             features.add(new Feature(trainData.size()));
         }
@@ -58,6 +63,7 @@ public class NaiveBayes extends Algorithm {
         //get classPriors
         calculateClassPriors(classFrequencies);  //p(c)
         //log results
+        super.get_logger().log(Level.INFO, "Done training");
         printTrainResults();
 
     }
@@ -153,9 +159,12 @@ public class NaiveBayes extends Algorithm {
     //Log results of calculations and countings
     public void printTrainResults() {
         String s;
+        super.get_logger().log(Level.INFO, "");
         super.get_logger().log(Level.INFO, "Training Results.");
-        s = String.format("Total occurrences:%d", this.classesTotal);
+        s = String.format("Size of testing set: %d instances, %d attributes", this.classesTotal, this.numFeatures);
         super.get_logger().log(Level.INFO, s);
+        super.get_logger().log(Level.INFO, "");
+
         int i = 0;
         for (Feature f : this.features) {
             s = String.format("Feature %s with values of: ", i);
@@ -174,11 +183,12 @@ public class NaiveBayes extends Algorithm {
                     s = String.format("Likelihood of %s given %s: %.2f", valKey, classKey, this.likelihoods.get(i).get(valKey + "|" + classKey));
                     super.get_logger().log(Level.INFO, s);
                 }
-
             }
             i++;
+            super.get_logger().log(Level.INFO, "");
         }
 
+        super.get_logger().log(Level.INFO, "");
         for (String classKey : this.classFrequencies.keySet()) {
             s = String.format("ClassPrior of %s: %.2f", classKey, this.classPriors.get(classKey));
             super.get_logger().log(Level.INFO, s);
@@ -186,8 +196,49 @@ public class NaiveBayes extends Algorithm {
 
     }
 
-    void test(ArrayList testData) {
+    void test(ArrayList<String[]> testData) {
+        super.get_logger().log(Level.INFO, "");
         super.get_logger().log(Level.INFO, "Starting testing:");
+        predictedClasses = new ArrayList<>();
+        for (Object obj : testData){
+            String[] oldArray = (String[]) obj;
+            String[] newArray = Arrays.copyOfRange(oldArray, 0, oldArray.length -1);
+            String clas = predictSingle(newArray);
+            predictedClasses.add(clas);
+            super.get_logger().log(Level.INFO, String.format("Given features %s: predicted class is %s", Arrays.toString(newArray), clas));
+        }
+        super.get_logger().log(Level.INFO, "Done testing");
+    }
+
+    public void evaluate() {
+
+        // determine classification accuracy, required information - the number of classes for this
+        // dataset, the list of class labels (ArrayList String) as determined by the classifier, and the
+        // testData set (ArrayList String[]) that includes the true class labels.
+        super.get_logger().log(Level.INFO, "");
+        super.get_logger().log(Level.INFO, "Starting evaluation.");
+
+        // after all test set instances have been classified, evaluate the performance of classifier
+        EvaluationMeasures em = new EvaluationMeasures(this.classFrequencies.size(), predictedClasses, testData);
+        ArrayList<Double> evaluationResults = em.evaluateData();
+
+        double accuracy = evaluationResults.get(0);
+        double precision = evaluationResults.get(1);
+        double recall = evaluationResults.get(2);
+        double fScore = evaluationResults.get(3);
+
+
+        super.get_logger().log(Level.INFO, "######################################");
+        super.get_logger().log(Level.INFO, "RESULTS");
+        super.get_logger().log(Level.INFO, this.classFrequencies.size() + " class classification problem");
+        super.get_logger().log(Level.INFO, "Results for this fold:");
+        super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);
+        super.get_logger().log(Level.INFO, "Macro Precision: " + precision);
+        super.get_logger().log(Level.INFO, "Macro Precision: " + recall);
+        super.get_logger().log(Level.INFO, "Macro Score: " + recall);
+        super.get_logger().log(Level.INFO, "######################################");
+
+
     }
 
 
@@ -208,7 +259,7 @@ public class NaiveBayes extends Algorithm {
         testData.add(new String[]{"Overcast", "Mild", "High", "Strong", "Yes"});
         testData.add(new String[]{"Overcast", "Hot", "Normal", "Weak", "Yes"});
         testData.add(new String[]{"Sunny", "Mild", "Normal", "Strong", "Yes"});
-        NaiveBayes b = new NaiveBayes(testData);
+        NaiveBayes b = new NaiveBayes("DummyData", testData, null);
 
     }
 }
