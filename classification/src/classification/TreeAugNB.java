@@ -3,7 +3,12 @@ package classification;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+//import java.util.HashSet;
+import java.util.Set;
+
 import java.util.HashMap;
+
 import java.util.logging.Level;
 
 public class TreeAugNB extends Algorithm {
@@ -112,13 +117,62 @@ public class TreeAugNB extends Algorithm {
 	}
 
 	private Tree maxSpanTree(BayesTree tree) {
-		//new arraylist of edges edges
+		super.get_logger().log(Level.INFO, "Creating Max Spanning Tree");
+		//new arraylist of edges 
+		ArrayList<Edge> newedges = new ArrayList<Edge>();
+		//new arraylist of sets of nodes
+		ArrayList<TANTreeSet<BayesTreeNode>> sets = new ArrayList<TANTreeSet<BayesTreeNode>>();
+		//each node is own set in setlist
+		for(TreeNode n : tree.getNodes()){
+			TANTreeSet<BayesTreeNode> tempset = new TANTreeSet<BayesTreeNode>();
+			tempset.add((BayesTreeNode)n);
+		}
 		//sort edges in tree
-		//for each edge in tree
+		
+		//TODO write sorter for edges!
+		//for each edge in tree until edges.size = |nodes|-1
+		int edgecounter = 0;
+		int index = 0;
+		for(Edge e : tree.getEdges()){
+			//if x and y are not in the same set
+			BayesTreeNode xi = (BayesTreeNode)e.x;
+			BayesTreeNode yi = (BayesTreeNode)e.y;
+			boolean both = false;
+			for(TANTreeSet<BayesTreeNode> s : sets){
+				if(s.contains(xi)&& s.contains(yi)){
+					both = true;
+				}
+			}
+			if(!both){
+				//add edge to edges
+				newedges.add(e);
+			}
+			//find sets with x and y and union them
+			for(TANTreeSet<BayesTreeNode> s : sets){
+				if(s.contains(xi)){
+					for(TANTreeSet<BayesTreeNode> s2 : sets){
+						if(s2.contains(yi) && !s.equals(s2)){
+							s = (TANTreeSet)s.union(s, s2);
+							sets.remove(s2);
+						}
+					}
+				}
+			}
+			
+		}
+		//tree.edges = edges
+		tree.addEdges(newedges);
+		//for edge in edges
+		for(Edge e : tree.getEdges()){
+			//add edge to x.edges and y.edges
+			e.x.edges.add(e);
+			e.y.edges.add(e);
+		}
 		return tree;
 	}
 
 	private Tree directEdges(BayesTree tree, BayesTreeNode root) {
+		super.get_logger().log(Level.INFO, "Directing edges in tree");
 		for (Edge e : root.edges) {
 			if (e.directed == false) {
 				e.directed = true;
@@ -130,6 +184,8 @@ public class TreeAugNB extends Algorithm {
 				} else {
 					e.y = z;
 				}
+				
+				((BayesTreeNode)e.y).edges.remove(e);
 				tree = (BayesTree) directEdges(tree, (BayesTreeNode)e.traverseEdge(e.x));
 			}
 		}
