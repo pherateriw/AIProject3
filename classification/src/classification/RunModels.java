@@ -30,7 +30,8 @@ public class RunModels {
     	String choice = "";
 
 		// get file location for training/test data    	
-    	String dataFileLocation = getData();
+//    	String dataFileLocation = getData();
+		String dataFileLocation = "/Users/lisapeters/Workspace/School/AIProject3/data/soybean-small.data.txt";
     	
     	// gets short name of dataset (from file location), for use in printing information
     	String shortName = "";
@@ -114,8 +115,9 @@ public class RunModels {
     		// split data, train on B and test on A
     		
     	} else if (choice.equals("nb")) {	
-    		System.out.println("Classifying data using naive Bayes"); 
-    		//Algorithm nb = new NaiveBayes();                        
+    		System.out.println("Classifying data using Naive Bayes");
+    		Algorithm nb = new NaiveBayes(shortName, train1, test1);
+			System.out.println("Naive Bayes has finished running.");
     	} else if (choice.equals("tan")){
     		System.out.println("Classifying data using tree-augmented naive Bayes"); 
     		Algorithm tan = new TreeAugNB(); 

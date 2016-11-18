@@ -40,6 +40,7 @@ public class Feature {
     // Calculate likelihoods and predictorPriors for all values of feature
     public ArrayList calculateProbabilities(HashMap classFrequencies) {
         ArrayList allProbs = new ArrayList();
+        zeroFreqPrevent(classFrequencies);
         calculateValTotals();
 
         calculateLikelihoods(classFrequencies);
@@ -86,5 +87,12 @@ public class Feature {
         }
     }
 
-}
+    public void zeroFreqPrevent(HashMap<String, Integer> classFrequencies){
+        for (String varKey : this.vars.keySet()) {
+            for (String classKey: classFrequencies.keySet()){
+                addInstance(varKey, classKey);
+            }
+        }
+
+}}
 

@@ -1,6 +1,5 @@
 package classification;
 
-import java.text.MessageFormat;
 import java.util.logging.Level;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,6 +8,7 @@ import java.util.HashMap;
 public class NaiveBayes extends Algorithm {
 
     ArrayList trainData;  //Examples used to train the algorithm
+    ArrayList testData;  //Examples used to test the algorithm
     ArrayList<Feature> features = new ArrayList();  //Features used to classify. Each feature has different values.
     HashMap<String, Double> classPriors;    //All P(Class)
     ArrayList<HashMap> likelihoods;         //All P(Features|Class)
@@ -17,13 +17,15 @@ public class NaiveBayes extends Algorithm {
     HashMap<String, Double> posteriors = new HashMap<>();  // All Features and their value's posteriors
     int classesTotal;  //Total number of occurrences of all classes
 
-    public NaiveBayes(ArrayList<String[]> data) {
-        trainData = data;
+    public NaiveBayes(String dataName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
         super.get_logger().log(Level.INFO, "Naive Bayes Algorithm created.");
+        super.get_logger().log(Level.INFO, String.format("Working with %s dataset", dataName));
         this.classesTotal = trainData.size();
         this.classFrequencies = new HashMap<>();
-        train(data);
-        //TODO: test data!! Other than manually I mean.
+        this.trainData = trainData;
+        this.testData = testData;
+        train(trainData);
+        test(testData);
     }
 
     /*
@@ -156,6 +158,8 @@ public class NaiveBayes extends Algorithm {
         super.get_logger().log(Level.INFO, "Training Results.");
         s = String.format("Total occurrences:%d", this.classesTotal);
         super.get_logger().log(Level.INFO, s);
+        super.get_logger().log(Level.INFO, "");
+
         int i = 0;
         for (Feature f : this.features) {
             s = String.format("Feature %s with values of: ", i);
@@ -174,11 +178,12 @@ public class NaiveBayes extends Algorithm {
                     s = String.format("Likelihood of %s given %s: %.2f", valKey, classKey, this.likelihoods.get(i).get(valKey + "|" + classKey));
                     super.get_logger().log(Level.INFO, s);
                 }
-
             }
             i++;
+            super.get_logger().log(Level.INFO, "");
         }
 
+        super.get_logger().log(Level.INFO, "");
         for (String classKey : this.classFrequencies.keySet()) {
             s = String.format("ClassPrior of %s: %.2f", classKey, this.classPriors.get(classKey));
             super.get_logger().log(Level.INFO, s);
@@ -208,7 +213,7 @@ public class NaiveBayes extends Algorithm {
         testData.add(new String[]{"Overcast", "Mild", "High", "Strong", "Yes"});
         testData.add(new String[]{"Overcast", "Hot", "Normal", "Weak", "Yes"});
         testData.add(new String[]{"Sunny", "Mild", "Normal", "Strong", "Yes"});
-        NaiveBayes b = new NaiveBayes(testData);
+        NaiveBayes b = new NaiveBayes("DummyData", testData, null);
 
     }
 }
