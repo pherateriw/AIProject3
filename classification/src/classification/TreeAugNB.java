@@ -124,7 +124,7 @@ public class TreeAugNB extends Algorithm {
 				posteriorKey += f1 + " ";
 				String f2 = features[e.y.featureIndex];
 				posteriorKey += f2 + " ";
-				posterior *= probOfXGivenYandZ(f1, e.x.featureIndex, classKey, e.y.featureIndex,, f2);
+				posterior *= probOfXGivenYandZ(f1, e.x.featureIndex, classKey, f2, e.y.featureIndex);
 			}
 		}
 
@@ -277,7 +277,7 @@ public class TreeAugNB extends Algorithm {
 		}
 	}
 
-	private double probOfXGivenYandZ(String x, int xfeatureIndex, String y, String z, int zfeatureIndex){
+	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex){
 		//p(y|z)p(y)p(x|z)  / p(y|z)
 		HashMap<String, Double> xlikelihoods = likelihoods.get(xfeatureIndex);
 		HashMap<String, Double> xprior = predictorPriors.get(xfeatureIndex);
