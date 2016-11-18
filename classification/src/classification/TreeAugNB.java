@@ -114,6 +114,7 @@ public class TreeAugNB extends Algorithm {
 	}
 
 	private String predictSingle(String[] features){
+		posteriors = new HashMap<>();
 		for (String classKey : this.classPriors.keySet()){
 			String posteriorKey = classKey + "|";
 			double posterior = 1.0;
@@ -126,8 +127,6 @@ public class TreeAugNB extends Algorithm {
 				System.out.println();
 				String f1 = features[e.x.featureIndex];
 				String f2 = features[e.y.featureIndex];
-				posteriorKey += f1 + " ";
-				posteriorKey += f2 + " ";
 				posterior *= probOfXGivenYandZ(f1, e.x.featureIndex, classKey, f2, e.y.featureIndex);
 			}
 			try {
@@ -139,13 +138,19 @@ public class TreeAugNB extends Algorithm {
 		}
 
 		// Take the max
-		String maxKey = "";
+		String maxKey = "NoClassValueHigherThan0.0";
 		double maxVal = 0.0;
-		for (String classKey : this.posteriors.keySet()) {
-			if (this.posteriors.get(classKey) > maxVal) {
-				maxKey = classKey;
-				maxVal = this.posteriors.get(classKey);
+
+		try {
+			for (String classKey : this.posteriors.keySet()) {
+				if (this.posteriors.get(classKey) > maxVal) {
+					maxKey = classKey;
+					maxVal = this.posteriors.get(classKey);
+				}
 			}
+		}
+		catch(Exception e){
+
 		}
 		return maxKey;
 
