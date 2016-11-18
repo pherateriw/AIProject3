@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.logging.Level;
 
 public class DecisionTree extends Algorithm {
@@ -52,7 +53,6 @@ public class DecisionTree extends Algorithm {
 			// store root.label in predicted class labels
 			predictedClass.add(root.label);
 		}
-		//System.out.println("classlabels size: " + classlabels.size());
 		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
 	}
 
@@ -331,16 +331,24 @@ public class DecisionTree extends Algorithm {
 	}
 
 	public ArrayList<String[]> createValSet(ArrayList<String[]> data, double ratio) {
-		ArrayList<String[]> tempdata = new ArrayList<String[]>(data);
-		trainset.clear();
-		while(tempdata.size() > Math.ceil(ratio*data.size())){
-			DataSplitter splitter = new DataSplitter(tempdata);
-			splitter.splitData(1);
-			tempdata = splitter.getTestingData();
-			trainset.addAll(splitter.getTrainingData());
+		ArrayList<String[]> tempdata = new ArrayList<String[]>();
+		int classindex = data.get(0).length -1;
+		HashMap<String, ArrayList<String[]>> pool = subdivideData(tempdata, classindex);
+		Random rando = new Random();
+		for(ArrayList<String[]> val : pool.values()){
+			tempdata.add(val.get(rando.nextInt(val.size())));
+			data.remove(val);
 		}
-		
-		
+		int maxcount = 0;
+		int maxsize = (int)Math.floor(ratio*data.size());
+		while(tempdata.size() < maxsize && maxcount < 5){
+			for(ArrayList<String[]> val : pool.values()){
+				tempdata.add(val.get(rando.nextInt(val.size())));
+				data.remove(val);
+			}
+			maxcount = 5;
+		}
+		trainset = data;
 		return tempdata;
 	}
 
