@@ -1,8 +1,13 @@
 package classification;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+
 //import java.util.HashSet;
 import java.util.Set;
+
+import java.util.HashMap;
+
 import java.util.logging.Level;
 
 public class TreeAugNB extends Algorithm {
@@ -10,6 +15,12 @@ public class TreeAugNB extends Algorithm {
 	private String shortName;
 	private ArrayList<String[]> trainData;
 	private ArrayList<String[]> testData;
+	private Tree tree;
+	private NaiveBayes nb;
+	private HashMap<String, Double> classPriors;
+	private ArrayList<HashMap> predictorPriors;
+	private ArrayList<HashMap> likelihoods;
+
 
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
 
@@ -51,22 +62,17 @@ public class TreeAugNB extends Algorithm {
 	 * probabilities, so the m-estimate (or similar) is important to use.
 	 */
 	
-    void test(ArrayList<String[]> trainData){
+    void train(ArrayList<String[]> trainData){
 		createFullGraph(trainData);
-    	ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
-    	
-    	// TODO: these values just for testing, change to loop through all edges in graph
-    	// make sure max location of ai and aj are such that we are not getting class vals
-    	int aiLoc = 0;
-    	int ajLoc = 1;
-    	
-    	cm.calculate(aiLoc, ajLoc);
+		associateWeights();
+		createCondProbTables();
+
     	
     	
     }
 
     
-    void train(ArrayList<String[]> testData){
+    void test(ArrayList<String[]> testData){
     	
     	
     	
@@ -81,28 +87,32 @@ public class TreeAugNB extends Algorithm {
     	
     	
     }
-    
-    
 
-    private Tree createFullGraph(ArrayList<String[]> data){
+    private void createFullGraph(ArrayList<String[]> data){
 		super.get_logger().log(Level.INFO, "Creating full graph");
 
 		TreeNode root = new BayesTreeNode();  //class node
-    	Tree tree = new BayesTree(root);
+    	tree = new BayesTree(root);
 		for (int i = 0; i < data.get(0).length -2; i++){  //-2 because root is already created
-			TreeNode newNode = new BayesTreeNode();
+			BayesTreeNode newNode = new BayesTreeNode();
+			newNode.setFeatureIndex(i);
 			tree.addNode(newNode);
 			for (TreeNode node : tree.getNodes()){
 				if (node != newNode && node != root){
-					tree.addEdge(new Edge(newNode, node));
+					tree.addEdge(new Edge(newNode, (BayesTreeNode) node));
 				}
 			}
 		}
-    	return tree;
     }
     
-    private Tree associateWeights(Tree completeTree) {
-		return completeTree;
+    private void associateWeights() {
+		super.get_logger().log(Level.INFO, "Associating weights between features");
+		ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
+		// This depends on class node not being connected in graph!!
+		for (Edge e : tree.getEdges()){
+			double newWeight = cm.calculate(e.x.getFeatureIndex(), e.y.getFeatureIndex());
+			e.weight = newWeight;
+		}
 	}
 
 	private Tree maxSpanTree(BayesTree tree) {
@@ -162,8 +172,8 @@ public class TreeAugNB extends Algorithm {
 		for (Edge e : root.edges) {
 			if (e.directed == false) {
 				e.directed = true;
-				TreeNode z = e.y;
-				TreeNode w = e.x;
+				BayesTreeNode z = e.y;
+				BayesTreeNode w = e.x;
 				e.x = root;
 				if (e.x.equals(z)) {
 					e.y = w;
@@ -178,7 +188,10 @@ public class TreeAugNB extends Algorithm {
 		return tree;
 	}
 
-	private void createCondProbTables(Tree tree) {
-
+	private void createCondProbTables() {
+		nb = new NaiveBayes(trainData);
+		this.classPriors = nb.classPriors;
+		this.likelihoods = nb.likelihoods;
+		this.predictorPriors = nb.predictorPriors;
 	}
 }
