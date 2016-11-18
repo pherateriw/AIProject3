@@ -18,7 +18,11 @@ public class ConditionalMutualInfo {
 	// hold the classes, as gathered from the training data
 	ArrayList<String> classVals = new ArrayList<String>();
 	
+	// hold all possible values of attribute ai 
 	ArrayList<String> aiVals = new ArrayList<String>();
+
+	// hold all possible values of attribute ai 
+	ArrayList<String> ajVals = new ArrayList<String>();
 	
 	public ConditionalMutualInfo(ArrayList<String[]> trainData) {
 		this.trainData = trainData;		
@@ -35,24 +39,38 @@ public class ConditionalMutualInfo {
 			}
 		}
 		
-		// get all possible values of ai in problem domain
+		// get all possible values of attribute ai in problem domain
 		for (int inst = 0; inst < trainData.size(); inst++) {
 			if (!aiVals.contains(trainData.get(inst)[aiLoc])) {
 				aiVals.add(trainData.get(inst)[aiLoc]);
 			}
 		}		
 		
+
+		// get all possible values of attribute aj in problem domain
+		for (int inst = 0; inst < trainData.size(); inst++) {
+			if (!ajVals.contains(trainData.get(inst)[ajLoc])) {
+				ajVals.add(trainData.get(inst)[ajLoc]);
+			}
+		}	
 		
 		System.out.println("classes");
 		for(String c : classVals) {
-			System.out.println(c.toCharArray());
+			System.out.println(c);
 		}
 		
+		System.out.println();
 		System.out.println("aiVals");
 		for(String a : aiVals) {
-			System.out.println(a.toCharArray());
+			System.out.println(a);
 		}		
 		
+
+		System.out.println();
+		System.out.println("ajVals");
+		for(String a : ajVals) {
+			System.out.println(a);
+		}	
 		
 		
 		// sum over all classes v in the data set

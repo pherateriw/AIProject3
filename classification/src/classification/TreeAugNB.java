@@ -58,6 +58,7 @@ public class TreeAugNB extends Algorithm {
     	ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
     	
     	// TODO: these values just for testing, change to loop through all edges in graph
+    	// make sure max location of ai and aj are such that we are not getting class vals
     	int aiLoc = 0;
     	int ajLoc = 1;
     	
