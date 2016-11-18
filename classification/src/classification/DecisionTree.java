@@ -52,6 +52,7 @@ public class DecisionTree extends Algorithm {
 			// store root.label in predicted class labels
 			predictedClass.add(root.label);
 		}
+		//System.out.println("classlabels size: " + classlabels.size());
 		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
 	}
 
