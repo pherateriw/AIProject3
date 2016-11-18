@@ -15,6 +15,7 @@ public class DecisionTreeNode extends TreeNode {
 		this.examples = examples;
 		this.rootindex = rootindex;
 		this.locindex = locindex;
+		this.children = new ArrayList<TreeNode>();
 	}
 	
 	public int getLocindex() {
