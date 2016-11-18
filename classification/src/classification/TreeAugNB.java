@@ -54,7 +54,7 @@ public class TreeAugNB extends Algorithm {
 	
 	
     void test(ArrayList<String[]> trainData){
-    	
+		createFullGraph(trainData);
     	ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
     	
     	// TODO: these values just for testing, change to loop through all edges in graph
@@ -86,9 +86,19 @@ public class TreeAugNB extends Algorithm {
     
 
     private Tree createFullGraph(ArrayList<String[]> data){
-    	TreeNode root = new BayesTreeNode();
-    	Tree tree = new Tree(root);
-    	//TODo finish this
+		super.get_logger().log(Level.INFO, "Creating full graph");
+
+		TreeNode root = new BayesTreeNode();  //class node
+    	Tree tree = new BayesTree(root);
+		for (int i = 0; i < data.get(0).length -2; i++){  //-2 because root is already created
+			TreeNode newNode = new BayesTreeNode();
+			tree.addNode(newNode);
+			for (TreeNode node : tree.getNodes()){
+				if (node != newNode && node != root){
+					tree.addEdge(new Edge(newNode, node));
+				}
+			}
+		}
     	return tree;
     }
     

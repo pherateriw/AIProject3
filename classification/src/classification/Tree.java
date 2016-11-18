@@ -5,11 +5,15 @@ import java.util.ArrayList;
 public class Tree {
 	private TreeNode root;
 	private ArrayList<TreeNode> tree;
+	private ArrayList<Edge> edges;
+
 	public Tree(TreeNode root){
 		this.root = root;
 		tree = new ArrayList<TreeNode>();
 		tree.add(root);
+		edges = new ArrayList<>();
 	}
+
 	public Tree(ArrayList<TreeNode>tree){
 		this.tree = new ArrayList<TreeNode>(tree);
 		this.root = this.tree.get(0);
@@ -46,6 +50,17 @@ public class Tree {
 	}
 	public void addNode(TreeNode child){
 		tree.add(child);
+	}
+	public ArrayList<TreeNode> getNodes(){
+		return tree;
+	}
+
+	public void addEdge(Edge e){
+		edges.add(e);
+	}
+
+	public ArrayList<Edge> getEdges(){
+		return edges;
 	}
 	
 }
