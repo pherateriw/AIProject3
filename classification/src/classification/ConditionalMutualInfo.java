@@ -31,7 +31,7 @@ public class ConditionalMutualInfo {
 	public double calculate(int aiLoc, int ajLoc) {
 		// store location of class for easy retrieval
 		int classLoc = trainData.get(0).length- 1;
-				
+			
 		// get all possible class values in problem domain
 		for (int inst = 0; inst < trainData.size(); inst++) {
 			if (!classVals.contains(trainData.get(inst)[classLoc])) {
@@ -46,34 +46,77 @@ public class ConditionalMutualInfo {
 			}
 		}		
 		
-
 		// get all possible values of attribute aj in problem domain
 		for (int inst = 0; inst < trainData.size(); inst++) {
 			if (!ajVals.contains(trainData.get(inst)[ajLoc])) {
 				ajVals.add(trainData.get(inst)[ajLoc]);
 			}
 		}	
-		
-		System.out.println("classes");
-		for(String c : classVals) {
-			System.out.println(c);
-		}
-		
-		System.out.println();
-		System.out.println("aiVals");
-		for(String a : aiVals) {
-			System.out.println(a);
-		}		
-		
+	
+		// iterate through all class values
+		for (int v = 0; v < classVals.size(); v++) {
+			
+			// holds the probability of class V, given the data set			
+			double probV = 0.0;
+			
+			// number of times the class v appears in the training data
+			int numV = 0;
+			
+			for (int ai = 0; ai < aiVals.size(); ai++) {
+				// holds the probability of ai | V
+				double probAIandV = 0.0;
+				
+				// number of times ai and v appear together in the training data
+				int numAIandV = 0;
+				
+						
+				for (String[] arr : trainData) {
+					
+					// checks for number of times we find class v in the training data
+					if (arr[classLoc].equalsIgnoreCase(classVals.get(v))) {
+						numV++;
+						
+						// checks for number of times we find ai given v in the training data
+						if (arr[aiLoc].equals(aiVals.get(ai))) {
+							numAIandV++;							
+						} 
+					} // end if: v in training data 
+					
+					
+					
+					probAIandV = (double) numAIandV / aiVals.size();
+						
+				} 		
+				
+				
 
-		System.out.println();
-		System.out.println("ajVals");
-		for(String a : ajVals) {
-			System.out.println(a);
-		}	
+				probV = (double) numV / trainData.size();				
+				
+				
+			} // end for: have counted all occurrences of class		
+
+			
+
+			
+
+			
+
+		}
 		
 		
 		// sum over all classes v in the data set
+		
+		
+		// iterate over all aj in data set
+		// sum over all values of 
+		
+		
+		// iterate over all ai in data set
+		
+		
+		
+		
+		// get P(Ai,Aj,V) with chain rule?
 		
 		
 		
