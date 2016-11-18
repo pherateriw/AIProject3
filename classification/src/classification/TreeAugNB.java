@@ -116,6 +116,7 @@ public class TreeAugNB extends Algorithm {
 	}
 
 	private Tree maxSpanTree(BayesTree tree) {
+		super.get_logger().log(Level.INFO, "Creating Max Spanning Tree");
 		//new arraylist of edges 
 		ArrayList<Edge> newedges = new ArrayList<Edge>();
 		//new arraylist of sets of nodes
@@ -163,12 +164,14 @@ public class TreeAugNB extends Algorithm {
 		//for edge in edges
 		for(Edge e : tree.getEdges()){
 			//add edge to x.edges and y.edges
-			
+			e.x.edges.add(e);
+			e.y.edges.add(e);
 		}
 		return tree;
 	}
 
 	private Tree directEdges(BayesTree tree, BayesTreeNode root) {
+		super.get_logger().log(Level.INFO, "Directing edges in tree");
 		for (Edge e : root.edges) {
 			if (e.directed == false) {
 				e.directed = true;
