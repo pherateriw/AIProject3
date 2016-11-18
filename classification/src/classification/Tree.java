@@ -11,7 +11,7 @@ public class Tree {
 		tree.add(root);
 	}
 	public Tree(ArrayList<TreeNode>tree){
-		this.tree = tree;
+		this.tree = new ArrayList<TreeNode>(tree);
 		this.root = this.tree.get(0);
 	}
 	public ArrayList<TreeNode> findLeaves(TreeNode root){
@@ -23,7 +23,11 @@ public class Tree {
 		return tree;
 	}
 	public Tree removeNode(int index){
-		tree.remove(index);
+		if(tree.size() > index){
+			tree.remove(index);
+		}else{
+			System.out.println("Tree removal FAILURE!!!");
+		}
 		return this;
 	}
 	public TreeNode getNode(int index){

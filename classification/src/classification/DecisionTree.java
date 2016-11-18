@@ -53,13 +53,14 @@ public class DecisionTree extends Algorithm {
 			// store root.label in predicted class labels
 			predictedClass.add(root.label);
 		}
-		
+		HashMap<String, Integer> map = countAllClasses(data);
+		System.out.println(map.toString());
 		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
 	}
 
 	void train(ArrayList<String[]> data) {
-		super.get_logger().log(Level.INFO, "ID3 Training started");
-		trainset = data;
+		//super.get_logger().log(Level.INFO, "ID3 Training started");
+		//trainset = data;
 		classlabels = new ArrayList<String>();
 		// generate class label array
 		for (int i = 0; i < trainset.size(); i++) {
@@ -69,32 +70,33 @@ public class DecisionTree extends Algorithm {
 		}
 		super.get_logger().log(Level.INFO, "Class labels set created");
 		// create validation set
-		valset = createValSet(trainset, valratio);
+		//System.out.print(data);
+		valset = createValSet(data, valratio);
 		super.get_logger().log(Level.INFO, "Validation set created");
 		// create root node
 		DecisionTreeNode root = new DecisionTreeNode(trainset, -1, 0);
 		tree = new Tree(root);
-		super.get_logger().log(Level.INFO, "Tree created");
+		//super.get_logger().log(Level.INFO, "Tree created");
 		// generate attribute array
 		ArrayList<Integer> attributes = new ArrayList<Integer>();
 		for (int i = 0; i < trainset.get(0).length - 2; i++) {
 			attributes.add(i);
 		}
-		super.get_logger().log(Level.INFO, "Attribute set created");
+		//super.get_logger().log(Level.INFO, "Attribute set created");
 		// call treeBuilder on data, attribute array, root
 		treeBuilder(trainset, attributes, root);
 		super.get_logger().log(Level.INFO, "Tree Built");
 		ArrayList<TreeNode> t = tree.getTree();
-		for (TreeNode i : t) {
-			DecisionTreeNode j = (DecisionTreeNode) i;
-			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
-					+ " and splits on attribute " + j.attribute);
-			if (j.getRootindex() > -1) {
-				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
-						+ " and this node has feature value " + j.featValue);
-			}
-			
-		}
+//		for (TreeNode i : t) {
+//			DecisionTreeNode j = (DecisionTreeNode) i;
+//			System.out.println("Node " + j.getLocindex() + " has parent " + j.getRootindex()
+//					+ " and splits on attribute " + j.attribute);
+//			if (j.getRootindex() > -1) {
+//				System.out.println("\t and parent splits on " + ((DecisionTreeNode) t.get(j.getRootindex())).attribute
+//						+ " and this node has feature value " + j.featValue);
+//			}
+//			
+//		}
 		
 		pruneTree(tree);
 		// call pruning
@@ -113,10 +115,10 @@ public class DecisionTree extends Algorithm {
 	}
 
 	public void treeBuilder(ArrayList<String[]> subset, ArrayList<Integer> attributes, DecisionTreeNode parent) {
-		super.get_logger().log(Level.INFO, "Selecting attribute/label for Node number " + tree.getTreeSize());
+		//super.get_logger().log(Level.INFO, "Selecting attribute/label for Node number " + tree.getTreeSize());
 		// count the numbers of examples for each class
 		HashMap<String, Integer> countmap = countAllClasses(subset);
-		super.get_logger().log(Level.INFO, "Hashmap of class numbers created");
+		//super.get_logger().log(Level.INFO, "Hashmap of class numbers created");
 		// if all examples have the same class
 		System.out.println(subset.size());
 		System.out.println(countmap.toString());
@@ -212,7 +214,7 @@ public class DecisionTree extends Algorithm {
 				inner.put(g, russiandoll);
 				outer.put(i, inner);
 			}
-			super.get_logger().log(Level.INFO, "Really cool HashMap created!");
+			//super.get_logger().log(Level.INFO, "Really cool HashMap created!");
 
 			// find max gain
 			Map.Entry<Integer, HashMap<Double, HashMap<String, ArrayList<String[]>>>> maxEntry = null;
@@ -231,7 +233,7 @@ public class DecisionTree extends Algorithm {
 					}
 				}
 			}
-			super.get_logger().log(Level.INFO, "Max Gain Ratio is : " + maxEntry.getValue().keySet().toArray()[0]);
+			//super.get_logger().log(Level.INFO, "Max Gain Ratio is : " + maxEntry.getValue().keySet().toArray()[0]);
 			// set as attribute
 			// if(maxEntry.getValue().keySet().toArray()[0])
 			parent.attribute = maxEntry.getKey();
@@ -270,15 +272,53 @@ public class DecisionTree extends Algorithm {
 		Collections.reverse(internalnodes);
 		tree = clip(subtree, internalnodes);
 	}
+	private EvaluationMeasures validate(ArrayList<String[]> data, Tree minitree) {
+		// testset = data;
+		// create list of predicted class labels
+		ArrayList<String> predictedClass = new ArrayList<String>();
 
+		// for element in data
+		for (String[] instance : data) {
+			// run the element through the tree:
+			DecisionTreeNode root = (DecisionTreeNode) minitree.getRoot();
+			// start at root:
+			// while root.children is not empty
+			while (!root.children.isEmpty()) {
+				// find root.attribute in element
+				int att = root.attribute;
+				// for each root.child
+
+				for (TreeNode c : root.children) {
+					DecisionTreeNode child = (DecisionTreeNode) c;
+					// if featValue = attribute value for element
+					if (child.featValue.equals(instance[att])) {
+						// root = child
+						root = child;
+						break;
+					}
+				}
+			}
+			// store root.label in predicted class labels
+			predictedClass.add(root.label);
+		}
+		HashMap<String, Integer> map = countAllClasses(data);
+		System.out.println(map.toString());
+		EvaluationMeasures err = new EvaluationMeasures(classlabels.size(), predictedClass, data);
+		return err;
+	}
 	public Tree clip(Tree subtree, ArrayList<DecisionTreeNode> internalnodes) {
 		// create a copy of the list
 		if (internalnodes.isEmpty()) {
 			return subtree;
 		}
-		tree = subtree;
-		test(valset);
-		double besterror = error.avgAccuracy();
+		//tree = subtree;
+		HashMap<String, Integer> map = countAllClasses(valset);
+		//System.out.println(map.toString());
+		EvaluationMeasures  err = validate(valset, subtree);
+		ArrayList<Double> results= err.evaluateData();
+		double besterror = results.get(0);
+		//super.get_logger().log(Level.INFO, "Validation Error before node removed: " + besterror);
+		
 		Tree temptree = new Tree(subtree.getTree());
 		ArrayList<TreeNode> tlist = temptree.getTree();
 		DecisionTreeNode node = internalnodes.get(0);
@@ -298,11 +338,12 @@ public class DecisionTree extends Algorithm {
 		}
 		node.label = maxEntry.getKey();
 		// parent.label = class label with the highest count
-		tree = temptree;
-		test(valset);
-		double newerror = error.avgAccuracy();
+		
+		EvaluationMeasures err2 = validate(valset, temptree);
+		ArrayList<Double> results2= err2.evaluateData();
+		double newerror = results2.get(0);
 		super.get_logger().log(Level.INFO, "Validation Error before node removed: " + besterror + ", validation error after node removed: " + newerror);
-		if(besterror >= newerror){
+		if(besterror > newerror){
 			super.get_logger().log(Level.INFO, "node removed");
 			return temptree;
 			
@@ -332,12 +373,16 @@ public class DecisionTree extends Algorithm {
 	}
 
 	public ArrayList<String[]> createValSet(ArrayList<String[]> data, double ratio) {
+		System.out.println(data);
 		ArrayList<String[]> tempdata = new ArrayList<String[]>();
 		int classindex = data.get(0).length -1;
-		HashMap<String, ArrayList<String[]>> pool = subdivideData(tempdata, classindex);
+		System.out.println(data.get(0)[classindex]);
+		HashMap<String, ArrayList<String[]>> pool = subdivideData(data, classindex);
+		System.out.println(pool.toString());
 		Random rando = new Random();
 		for(ArrayList<String[]> val : pool.values()){
 			tempdata.add(val.get(rando.nextInt(val.size())));
+			System.out.println("Validation set size: " + tempdata.size());
 			data.remove(val);
 		}
 		int maxcount = 0;
@@ -349,6 +394,7 @@ public class DecisionTree extends Algorithm {
 			}
 			maxcount = 5;
 		}
+		//System.out.println("Validation set size: " + tempdata.size());
 		trainset = data;
 		return tempdata;
 	}
@@ -412,10 +458,7 @@ public class DecisionTree extends Algorithm {
 		return entropy - gain;
 	}
 
-	private double calcIV(ArrayList<String[]> subsubset, int attribute) {// probability
-																			// of
-																			// attribute
-																			// value
+	private double calcIV(ArrayList<String[]> subsubset, int attribute) {
 		HashMap<String, Integer> countmap = countInstances(subsubset, attribute);
 		double citok = subsubset.size();
 
@@ -436,8 +479,9 @@ public class DecisionTree extends Algorithm {
 	}
 
 	private int countclass(String classlabel, ArrayList<String[]> data) {
-		// System.out.println("data size: " + data.size());
+		//System.out.println("data size: " + data.size());
 		int classloc = data.get(0).length - 1;
+		
 		int count = 0;
 		for (String[] i : data) {
 			if (classlabel.equals(i[classloc])) {
@@ -483,7 +527,7 @@ public class DecisionTree extends Algorithm {
 	}
 
 	private HashMap<String, ArrayList<String[]>> subdivideData(ArrayList<String[]> data, int attribute) {
-
+		
 		HashMap<String, ArrayList<String[]>> countmap = new HashMap<String, ArrayList<String[]>>();
 		for (String[] ex : data) {
 			if (!countmap.containsKey(ex[attribute])) {
@@ -492,17 +536,13 @@ public class DecisionTree extends Algorithm {
 					if (ex[attribute].equals(ex2[attribute])) {
 						subset.add(ex2);
 					}
-					// System.out.println("subdivided set size : " +
-					// subset.size() + " at " + data.indexOf(ex) + " : " +
-					// ex[attribute] + " and " + data.indexOf(ex2) + " : " +
-					// ex2[attribute] + " and attribute " + attribute);
+					//System.out.println("subdivided set size : " + subset.size() + " at " + data.indexOf(ex) + " : " + ex[attribute] + " and " + data.indexOf(ex2) + " : " +ex2[attribute] + " and attribute " + attribute);
 				}
-				// System.out.println("subdivided set size : " + subset.size() +
-				// " at " + data.indexOf(ex) + " and " + data.indexOf(ex2) + "
-				// and attribute " + attribute);
+				//System.out.println("subdivided set size : " + subset.size() + " at " + data.indexOf(ex) + " and attribute " + attribute);
 				countmap.put(ex[attribute], subset);
 			}
 		}
+		//System.out.print(countmap.toString());
 		return countmap;
 	}
 
