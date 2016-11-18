@@ -93,4 +93,16 @@ public class TreeAugNB extends Algorithm {
     	return tree;
     }
     
+    private Tree associateWeights(Tree completeTree){
+    	return completeTree;
+    }
+    private Tree maxSpanTree(BayesTree tree){
+    	return tree;
+    }
+    private Tree directEdges(BayesTree tree){
+    	return tree;
+    }
+    private void createCondProbTables(Tree tree){
+    	
+    }
 }
