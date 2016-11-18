@@ -1,10 +1,28 @@
 package classification;
 import java.util.ArrayList;
+import java.util.logging.Level;
 public class TreeAugNB extends Algorithm {
+	
+	private String shortName;
+	private ArrayList<String[]> trainData;
+	private ArrayList<String[]> testData;
+
+
+
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData,
 			ArrayList<String[]> testData){
 		
-	
+		this.shortName = shortName;
+		this.trainData = trainData;
+		this.testData = testData;
+		super.get_logger().log(
+				Level.INFO,
+				"Running TAN to classify "
+						+ shortName + " data.");
+		super.get_logger().log(Level.INFO,"");
+		train(trainData);
+		test(testData);
+		evaluate();
 	
 	}
 	
@@ -36,15 +54,34 @@ public class TreeAugNB extends Algorithm {
 	
 	
     void test(ArrayList<String[]> trainData){
-
+    	
+    	ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
+    	
+    	// TODO: these values just for testing, change to loop through all edges in graph
+    	int aiLoc = 0;
+    	int ajLoc = 1;
+    	
+    	cm.calculate(aiLoc, ajLoc);
+    	
     	
     }
 
     
     void train(ArrayList<String[]> testData){
-
+    	
+    	
+    	
+    	
+    	
     }
     
+    void evaluate(){
+    	
+    	
+    	
+    	
+    	
+    }
     
     
 
