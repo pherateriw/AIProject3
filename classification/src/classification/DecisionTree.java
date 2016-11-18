@@ -53,6 +53,7 @@ public class DecisionTree extends Algorithm {
 			// store root.label in predicted class labels
 			predictedClass.add(root.label);
 		}
+		
 		error = new EvaluationMeasures(classlabels.size(), predictedClass, data);
 	}
 
@@ -76,7 +77,7 @@ public class DecisionTree extends Algorithm {
 		super.get_logger().log(Level.INFO, "Tree created");
 		// generate attribute array
 		ArrayList<Integer> attributes = new ArrayList<Integer>();
-		for (int i = 0; i < trainset.get(0).length - 1; i++) {
+		for (int i = 0; i < trainset.get(0).length - 2; i++) {
 			attributes.add(i);
 		}
 		super.get_logger().log(Level.INFO, "Attribute set created");
