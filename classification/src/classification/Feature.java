@@ -1,4 +1,5 @@
 package classification;
+
 import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -16,22 +17,21 @@ public class Feature {
     HashMap<String, Double> posteriors; // p(c|x)
     int classestotal;  //Total of all instances
 
-    public Feature(int classestotal){
+    public Feature(int classestotal) {
         vars = new HashMap<String, HashMap>();
         varTotals = new HashMap<>();
         this.classestotal = classestotal;
     }
 
-    public void addInstance(String name, String clas){
+    public void addInstance(String name, String clas) {
 
         HashMap<String, Integer> value = vars.get(name);
         if (value != null) {
             System.out.println();
             Integer num = value.get(clas);
-            if (num != null){
+            if (num != null) {
                 value.put(clas, num + 1);
-            }
-            else{
+            } else {
                 value.put(clas, 1);
             }
         } else {
@@ -42,7 +42,7 @@ public class Feature {
         }
     }
 
-    public ArrayList calculateProbabilities(HashMap classFrequencies){
+    public ArrayList calculateProbabilities(HashMap classFrequencies) {
         ArrayList allProbs = new ArrayList();
         getVarTotal();
 
@@ -52,25 +52,24 @@ public class Feature {
         allProbs.add(this.predictorPriors);
 
         return allProbs;
-        }
+    }
 
 
-
-    public  void calculatePredictorPriors(){
+    public void calculatePredictorPriors() {
         predictorPriors = new HashMap<>();
-        for (String varKey : this.varTotals.keySet()){
+        for (String varKey : this.varTotals.keySet()) {
             double value = (double) this.varTotals.get(varKey) / this.classestotal;
             predictorPriors.put(varKey, value);
         }
     }
 
-    public void calculateLikelihoods(HashMap classFrequencies){
+    public void calculateLikelihoods(HashMap classFrequencies) {
         this.likelihoods = new HashMap();
-        for (String varKey : this.vars.keySet()){
+        for (String varKey : this.vars.keySet()) {
             HashMap varFreqsInClasses = this.vars.get(varKey);
-            for (Object classKey :varFreqsInClasses.keySet()){
+            for (Object classKey : varFreqsInClasses.keySet()) {
                 String likelihoodKey = varKey + "|" + classKey;
-                double likelihood = (double)  (Integer) varFreqsInClasses.get(classKey) /  (Integer) classFrequencies.get(classKey);
+                double likelihood = (double) (Integer) varFreqsInClasses.get(classKey) / (Integer) classFrequencies.get(classKey);
                 this.likelihoods.put(likelihoodKey, likelihood);
             }
         }
@@ -78,11 +77,11 @@ public class Feature {
 
     //return total number of all vars across all classes
     // and init individuals total for a var across all classes
-    public void getVarTotal(){
+    public void getVarTotal() {
         int total = 0;
-        for (String key : this.vars.keySet()){
+        for (String key : this.vars.keySet()) {
             int temp = 0;
-            for (Object value : this.vars.get(key).values()){
+            for (Object value : this.vars.get(key).values()) {
                 temp += (Integer) value;
             }
             this.varTotals.put(key, temp);
@@ -91,7 +90,7 @@ public class Feature {
     }
 
 
-    public double BayesAlgo (double likelihood,double classPrior,double predictorPrior){
+    public double BayesAlgo(double likelihood, double classPrior, double predictorPrior) {
         double posterior = 0.0;
         return posterior;
     }

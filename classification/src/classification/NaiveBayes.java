@@ -18,7 +18,7 @@ public class NaiveBayes extends Algorithm {
     HashMap<String, Double> posteriors = new HashMap<>();
     int classesTotal;
 
-    public NaiveBayes(ArrayList<String[]> data){
+    public NaiveBayes(ArrayList<String[]> data) {
         trainData = data;
         super.get_logger().log(Level.INFO, "Naive Bayes Algorithm created.");
         this.classesTotal = trainData.size();
@@ -26,19 +26,17 @@ public class NaiveBayes extends Algorithm {
         train(data);
     }
 
-    void train(ArrayList trainData){
+    void train(ArrayList trainData) {
         super.get_logger().log(Level.INFO, "Starting training:");
 
         // get number of features from first data instance
         Object o = trainData.get(0);
         int numFeatures = ((String[]) o).length - 1;
-        for (int i = 0; i < numFeatures; i++){
+        for (int i = 0; i < numFeatures; i++) {
             features.add(new Feature(trainData.size()));
         }
 
         count(numFeatures);
-
-
 
         likelihoods = new ArrayList();
         predictorPriors = new ArrayList();
@@ -49,17 +47,15 @@ public class NaiveBayes extends Algorithm {
         }
         calculateClassPriors(classFrequencies);  //p(c)
 
-
     }
 
 
-
-    public String predictSingle(String[] testEx){
+    public String predictSingle(String[] testEx) {
         calculatePosteriors(testEx);
         String maxKey = "";
         double maxVal = 0.0;
-        for (String classKey : this.posteriors.keySet()){
-            if (this.posteriors.get(classKey) > maxVal){
+        for (String classKey : this.posteriors.keySet()) {
+            if (this.posteriors.get(classKey) > maxVal) {
                 maxKey = classKey;
                 maxVal = this.posteriors.get(classKey);
             }
@@ -67,32 +63,30 @@ public class NaiveBayes extends Algorithm {
         return maxKey;
     }
 
-    private void calculatePosteriors(String[] testEx){
+    private void calculatePosteriors(String[] testEx) {
         // bayes thoerem
         // p(c|X) = p(x1|c)*p(x2|c)...p(xn|c)*p(c) / p(x1)...p(xn)
         this.posteriors = new HashMap<>();
 
 
         double allPredPrior = 1.0;
-        for (int i = 0; i  < testEx.length; i++){
+        for (int i = 0; i < testEx.length; i++) {
             String featureKey = testEx[i];
-            HashMap<String,Double> featureLikelihood = this.likelihoods.get(i);
+            HashMap<String, Double> featureLikelihood = this.likelihoods.get(i);
             HashMap<String, Double> predictorPrior = this.predictorPriors.get(i);
 
             // multiple all likelihoods
-            for (String classKey : this.classPriors.keySet()){
+            for (String classKey : this.classPriors.keySet()) {
                 String likelihoodKey = featureKey + "|" + classKey;
                 String postKey = classKey;
-                if (this.posteriors.get(postKey) == null){
+                if (this.posteriors.get(postKey) == null) {
                     this.posteriors.put(postKey, featureLikelihood.get(likelihoodKey));
-                }
-                else{
-                    try{
-                    double likelihood = featureLikelihood.get(likelihoodKey);
+                } else {
+                    try {
+                        double likelihood = featureLikelihood.get(likelihoodKey);
                         this.posteriors.put(postKey, likelihood * this.posteriors.get(postKey));
 
-                    }
-                    catch (Exception e){
+                    } catch (Exception e) {
                         //zero frequency problem
                     }
                 }
@@ -105,52 +99,47 @@ public class NaiveBayes extends Algorithm {
         //multiply by classPriors then divide by all predictor priors
         for (String classKey : this.classPriors.keySet()) {
             this.posteriors.put(classKey, this.posteriors.get(classKey) * this.classPriors.get(classKey));
-            this.posteriors.put(classKey, this.posteriors.get(classKey)/allPredPrior);
+            this.posteriors.put(classKey, this.posteriors.get(classKey) / allPredPrior);
         }
-
 
 
     }
 
-    public void calculateClassPriors(HashMap classFrequencies){
+    public void calculateClassPriors(HashMap classFrequencies) {
         this.classPriors = new HashMap<>();
 
         for (Object classKey : classFrequencies.keySet()) {
-            double value = (double) (Integer) classFrequencies.get(classKey) /  this.classesTotal;
-            this.classPriors.put((String)classKey, value);
+            double value = (double) (Integer) classFrequencies.get(classKey) / this.classesTotal;
+            this.classPriors.put((String) classKey, value);
         }
 
     }
 
     //iterate through all instances and increment feature counts accordingly
-    public void count(int numFeatures){
-        for(Object obj: trainData){
+    public void count(int numFeatures) {
+        for (Object obj : trainData) {
             String[] stringArray = (String[]) obj;
-            for (int i = 0; i < numFeatures; i++){
+            for (int i = 0; i < numFeatures; i++) {
                 features.get(i).addInstance(stringArray[i], stringArray[stringArray.length - 1]);
             }
             try {
                 int value = this.classFrequencies.get(stringArray[stringArray.length - 1]);
                 this.classFrequencies.put(stringArray[stringArray.length - 1], value + 1);
-            }
-            catch (Exception e){
+            } catch (Exception e) {
                 this.classFrequencies.put(stringArray[stringArray.length - 1], 1);
             }
         }
     }
 
 
-    void test(ArrayList testData){
+    void test(ArrayList testData) {
 
         super.get_logger().log(Level.INFO, "Starting testing:");
 
     }
 
 
-
-
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         ArrayList testData = new ArrayList<Arrays>();
         testData.add(new String[]{"Rainy", "Mild", "High", "Weak", "Yes"});
