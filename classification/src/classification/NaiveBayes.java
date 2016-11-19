@@ -34,7 +34,7 @@ public class NaiveBayes extends Algorithm {
         this.testData = testData;
         train(trainData);
         test(testData);
-        evaluate();
+        results = evaluate();
     }
 
     public NaiveBayes(ArrayList trainData){
@@ -158,7 +158,7 @@ public class NaiveBayes extends Algorithm {
         for (Object obj : trainData) {
             String[] stringArray = (String[]) obj;
             for (int i = 0; i < numFeatures; i++) {
-                String val = stringArray[i];
+                String val = "f" + i + ":" + stringArray[i];
                 valNames.add(val);
                 features.get(i).addInstance(val, stringArray[stringArray.length - 1]);
 
@@ -170,8 +170,8 @@ public class NaiveBayes extends Algorithm {
                 }
                 // all occurences of these two features appearing together
                 for (int j = i +1; j < numFeatures; j++){
-                    String secondFeature = stringArray[j];
-                    String featureKey = val + "," +secondFeature;
+                    String secondFeature = "f" + j + ":" + stringArray[j];
+                    String featureKey = val + "," + secondFeature;
                     if (togetherness.containsKey(featureKey)){
                         togetherness.put(featureKey, togetherness.get(featureKey) + 1.0);
                     }
@@ -243,7 +243,7 @@ public class NaiveBayes extends Algorithm {
         super.get_logger().log(Level.INFO, "Done testing");
     }
 
-    public void evaluate() {
+    public ArrayList<Double> evaluate() {
 
         // determine classification accuracy, required information - the number of classes for this
         // dataset, the list of class labels (ArrayList String) as determined by the classifier, and the
@@ -271,7 +271,7 @@ public class NaiveBayes extends Algorithm {
         super.get_logger().log(Level.INFO, "Macro Score: " + recall);
         super.get_logger().log(Level.INFO, "######################################");
 
-
+        return evaluationResults;
     }
 
 

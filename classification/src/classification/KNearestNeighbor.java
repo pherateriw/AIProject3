@@ -27,7 +27,7 @@ public class KNearestNeighbor extends Algorithm {
 	int numClasses;
 
 	int k;
-
+	
 	public KNearestNeighbor(String shortName, ArrayList<String[]> trainData,
 			ArrayList<String[]> testData, int k) {
 		this.shortName = shortName;
@@ -41,7 +41,7 @@ public class KNearestNeighbor extends Algorithm {
 		super.get_logger().log(Level.INFO,"");
 		train(trainData);
 		test(testData);
-		evaluate();
+		results = evaluate();
 	}
 
 	/*
@@ -118,7 +118,7 @@ public class KNearestNeighbor extends Algorithm {
 	 * averaging). 
 	 */
 	
-	public void evaluate() {
+	public ArrayList<Double> evaluate() {
 
 		// determine classification accuracy, required information - the number of classes for this
 		// dataset, the list of class labels (ArrayList String) as determined by the classifier, and the 
@@ -146,7 +146,7 @@ public class KNearestNeighbor extends Algorithm {
 		super.get_logger().log(Level.INFO, "Macro Score: " + fScore);
 		super.get_logger().log(Level.INFO, "######################################");	
 		
-
+		return evaluationResults;
 	}
 	
 	// calculate the Value Difference Metric (VDM) to compare the query point with all points in training data

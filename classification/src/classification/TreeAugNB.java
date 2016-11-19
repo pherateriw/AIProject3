@@ -24,8 +24,6 @@ public class TreeAugNB extends Algorithm {
 	private HashMap<String, Double> posteriors;
 	Set<String> valNames = new HashSet<String>();
 
-
-
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
 
 		this.shortName = shortName;
@@ -35,7 +33,7 @@ public class TreeAugNB extends Algorithm {
 		super.get_logger().log(Level.INFO, "");
 		train(trainData);
 		test(testData);
-		evaluate();
+		results = evaluate();
 
 	}
 
@@ -65,13 +63,14 @@ public class TreeAugNB extends Algorithm {
 	 * just one. This is likely to increase the possibility of zero
 	 * probabilities, so the m-estimate (or similar) is important to use.
 	 */
-	
-    void train(ArrayList<String[]> trainData){
+
+	void train(ArrayList<String[]> trainData) {
 		createFullGraph(trainData);
 		associateWeights();
 		createCondProbTables();
-//		maxSpanTree();
-//		tree = directEdges((BayesTree) tree, (BayesTreeNode) tree.getRoot());
+		maxSpanTree();
+		addTreeEdgesToNode();
+		tree = directEdges((BayesTree) tree, (BayesTreeNode) tree.getRoot());
 		BayesTreeNode clas = new BayesTreeNode();
 		Tree testTree = new BayesTree(clas);
 		BayesTreeNode f1 = new BayesTreeNode();
@@ -89,16 +88,13 @@ public class TreeAugNB extends Algorithm {
 
 		testTree.addEdge(new Edge(f1, f2));
 		testTree.addEdge(new Edge(f2, f3));
-		testTree.addEdge(new Edge(f3, f4));
+		testTree.addEdge(new Edge(f2, f4));
 
 		tree = testTree;
 
-    	
-    	
-    }
+	}
 
-    
-    void test(ArrayList<String[]> testData){
+	void test(ArrayList<String[]> testData) {
 		super.get_logger().log(Level.INFO, "Starting testing:");
 		predictedClasses = new ArrayList<>();
 		for (Object obj : testData) {
@@ -106,35 +102,33 @@ public class TreeAugNB extends Algorithm {
 			String[] newArray = Arrays.copyOfRange(oldArray, 0, oldArray.length - 1);
 			String clas = predictSingle(newArray);
 			predictedClasses.add(clas);
-			super.get_logger().log(Level.INFO, String.format("Given features %s: predicted class is %s", Arrays.toString(newArray), clas));
+			super.get_logger().log(Level.INFO,
+					String.format("Given features %s: predicted class is %s", Arrays.toString(newArray), clas));
 		}
 
 		super.get_logger().log(Level.INFO, "Done testing");
 
 	}
 
-	private String predictSingle(String[] features){
+	private String predictSingle(String[] features) {
 		posteriors = new HashMap<>();
+
 		for (String classKey : this.classPriors.keySet()){
 			String posteriorKey = classKey;
 			double posterior = 1.0;
 			posterior *= classPriors.get(classKey); //p(c)
-			String firstLikely = features[0] + "|" + classKey;
+			String firstLikely = "f" + "0:" + features[0] + "|" + classKey;
 			posterior *= (Double) likelihoods.get(0).get(firstLikely); //p(root|c)
 			ArrayList<Edge> edges = tree.getEdges();
-			for (int i = 1; i< edges.size(); i++){
+			for (int i = 0; i< edges.size(); i++){
 				Edge e = edges.get(i);
-				System.out.println();
-				String f1 = features[e.x.featureIndex];
-				String f2 = features[e.y.featureIndex];
-				posterior *= probOfXGivenYandZ(f1, e.x.featureIndex, classKey, f2, e.y.featureIndex);
+				String f2 = "f" + e.x.featureIndex + ":" + features[e.x.featureIndex];
+				String f1 = "f" + e.y.featureIndex + ":" + features[e.y.featureIndex];
+				//p(x|clas, y)
+				posterior *= probOfXGivenYandZ(f1, e.y.featureIndex, classKey,  f2, e.x.featureIndex);
 			}
-			try {
-				posteriors.put(posteriorKey, posterior);
-			}
-			catch (Exception e){
-				//Why?
-			}
+
+			posteriors.put(posteriorKey, posterior);
 		}
 
 		// Take the max
@@ -148,44 +142,40 @@ public class TreeAugNB extends Algorithm {
 					maxVal = this.posteriors.get(classKey);
 				}
 			}
-		}
-		catch(Exception e){
+		} catch (Exception e) {
 
 		}
 		return maxKey;
 
 	}
-    
-    void evaluate(){
-    	
-    	
-    	
-    	
-    	
-    }
 
-    private void createFullGraph(ArrayList<String[]> data){
+	ArrayList<Double> evaluate() {
+		return results;
+	}
+
+	private void createFullGraph(ArrayList<String[]> data) {
 		super.get_logger().log(Level.INFO, "Creating full graph");
 
-		TreeNode root = new BayesTreeNode();  //class node
-    	tree = new BayesTree(root);
-		for (int i = 0; i < data.get(0).length -2; i++){  //-2 because root is already created
+		TreeNode root = new BayesTreeNode(); // class node
+		tree = new BayesTree(root);
+		for (int i = 0; i < data.get(0).length - 2; i++) { // -2 because root is
+															// already created
 			BayesTreeNode newNode = new BayesTreeNode();
 			newNode.setFeatureIndex(i);
 			tree.addNode(newNode);
-			for (TreeNode node : tree.getNodes()){
-				if (node != newNode && node != root){
+			for (TreeNode node : tree.getNodes()) {
+				if (node != newNode && node != root) {
 					tree.addEdge(new Edge(newNode, (BayesTreeNode) node));
 				}
 			}
 		}
-    }
-    
-    private void associateWeights() {
+	}
+
+	private void associateWeights() {
 		super.get_logger().log(Level.INFO, "Associating weights between features");
 		ConditionalMutualInfo cm = new ConditionalMutualInfo(trainData);
 		// This depends on class node not being connected in graph!!
-		for (Edge e : tree.getEdges()){
+		for (Edge e : tree.getEdges()) {
 			double newWeight = cm.calculate(e.x.getFeatureIndex(), e.y.getFeatureIndex());
 			e.weight = newWeight;
 		}
@@ -193,55 +183,82 @@ public class TreeAugNB extends Algorithm {
 
 	private void maxSpanTree() {
 		super.get_logger().log(Level.INFO, "Creating Max Spanning Tree");
-		//new arraylist of edges 
+		// get arraylist of edges
+		ArrayList<Edge> oldedges = tree.getEdges();
+		// new arraylist of edges
 		ArrayList<Edge> newedges = new ArrayList<Edge>();
-		//new arraylist of sets of nodes
+		// new arraylist of sets of nodes
 		ArrayList<TANTreeSet<BayesTreeNode>> sets = new ArrayList<TANTreeSet<BayesTreeNode>>();
-		//each node is own set in setlist
-		for(TreeNode n : tree.getNodes()){
+		// each node is own set in setlist
+		for (TreeNode n : tree.getNodes()) {
 			TANTreeSet<BayesTreeNode> tempset = new TANTreeSet<BayesTreeNode>();
-			tempset.add((BayesTreeNode)n);
+			tempset.add((BayesTreeNode) n);
 		}
-		//sort edges in tree
-		
-		//TODO write sorter for edges!
-		//for each edge in tree until edges.size = |nodes|-1
+		// sort edges in tree
+		Collections.sort(oldedges, new Comparator<Edge>() {
+			public int compare(Edge e1, Edge e2) {
+				// Parse values for to sort by
+
+				if (e1.weight > e2.weight)
+					return 1; // tells Arrays.sort() that e1 comes after e2
+				else if (e1.weight < e2.weight)
+					return -1; // tells Arrays.sort() that e1 comes before e2
+				else {
+					// e1 and e2 are equal. Arrays.sort() is stable, so thesetwo
+					// rows will appear in their original order.
+					return 0;
+				}
+			}
+		});
+
+		// for each edge in tree until edges.size = |nodes|-1
 		int edgecounter = 0;
 		int index = 0;
-		for(Edge e : tree.getEdges()){
-			//if x and y are not in the same set
-			BayesTreeNode xi = (BayesTreeNode)e.x;
-			BayesTreeNode yi = (BayesTreeNode)e.y;
+		for (Edge e : oldedges) {
+			// if x and y are not in the same set
+			BayesTreeNode xi = (BayesTreeNode) e.x;
+			BayesTreeNode yi = (BayesTreeNode) e.y;
 			boolean both = false;
-			for(TANTreeSet<BayesTreeNode> s : sets){
-				if(s.contains(xi)&& s.contains(yi)){
+			for (TANTreeSet<BayesTreeNode> s : sets) {
+				if (s.contains(xi) && s.contains(yi)) {
 					both = true;
 				}
 			}
-			if(!both){
-				//add edge to edges
+			if (!both && edgecounter < tree.getTreeSize()) {
+				// add edge to edges
 				newedges.add(e);
+				edgecounter++;
 			}
-			//find sets with x and y and union them
-			for(TANTreeSet<BayesTreeNode> s : sets){
-				if(s.contains(xi)){
-					for(TANTreeSet<BayesTreeNode> s2 : sets){
-						if(s2.contains(yi) && !s.equals(s2)){
-							s = (TANTreeSet)s.union(s, s2);
+			// find sets with x and y and union them
+			for (TANTreeSet<BayesTreeNode> s : sets) {
+				if (s.contains(xi)) {
+					for (TANTreeSet<BayesTreeNode> s2 : sets) {
+						if (s2.contains(yi) && !s.equals(s2)) {
+							s = (TANTreeSet) s.union(s, s2);
 							sets.remove(s2);
 						}
 					}
 				}
 			}
-			
+
 		}
-		//tree.edges = edges
+		// tree.edges = edges
 		tree.addEdges(newedges);
-		//for edge in edges
-		for(Edge e : tree.getEdges()){
-			//add edge to x.edges and y.edges
-			e.x.edges.add(e);
-			e.y.edges.add(e);
+	}
+
+	public void addTreeEdgesToNode(){
+		ArrayList<Edge> edges = tree.getEdges();
+		//ArrayList<BayesTreeNode> nodes = (ArrayList<BayesTreeNode>)(ArrayList<?>) tree.getNodes();
+		for(int i = 0; i < tree.getTreeSize(); i++){
+			((BayesTreeNode)tree.getNode(i)).edges = new ArrayList<Edge>();
+			for(Edge e : edges){
+				//System.out.println(e.x.featureIndex + " " + e.y.featureIndex + " " + ((BayesTreeNode)tree.getNode(i)).featureIndex);
+				if(e.x.featureIndex == ((BayesTreeNode)tree.getNode(i)).featureIndex || e.y.featureIndex == ((BayesTreeNode)tree.getNode(i)).featureIndex){
+					//System.out.println("Adding edge to node");
+					((BayesTreeNode)tree.getNode(i)).edges.add(e);
+
+				}
+			}
 		}
 	}
 
@@ -258,9 +275,9 @@ public class TreeAugNB extends Algorithm {
 				} else {
 					e.y = z;
 				}
-				
-				((BayesTreeNode)e.y).edges.remove(e);
-				tree = (BayesTree) directEdges(tree, (BayesTreeNode)e.traverseEdge(e.x));
+
+				((BayesTreeNode) e.y).edges.remove(e);
+				tree = (BayesTree) directEdges(tree, (BayesTreeNode) e.traverseEdge(e.x));
 			}
 		}
 		return tree;
@@ -277,21 +294,20 @@ public class TreeAugNB extends Algorithm {
 		calculateFeatureLikelihoods();
 	}
 
-	private void calculateFeatureLikelihoods(){
+	private void calculateFeatureLikelihoods() {
 		super.get_logger().log(Level.INFO, "Calculating FeatureLikelihoods");
 		featureLikelihoods = new HashMap<>();
-		for (String f1 : valNames){
-			for (String f2 : valNames){
-				if (f1 == f2){
+		for (String f1 : valNames) {
+			for (String f2 : valNames) {
+				if (f1 == f2) {
 					continue;
 				}
 				String fKey = f1 + "|" + f2;
-				if (!featureLikelihoods.containsKey(fKey)){
+				if (!featureLikelihoods.containsKey(fKey)) {
 					double possibleNull;
 					try {
 						possibleNull = togetherness.get(f1 + "," + f2);
-					}
-					catch(Exception e){
+					} catch (Exception e) {
 						possibleNull = .0001;
 					}
 					double likelihood = possibleNull / valOccurences.get(f2);
@@ -300,21 +316,20 @@ public class TreeAugNB extends Algorithm {
 			}
 		}
 
-		for (String f : featureLikelihoods.keySet()){
+		for (String f : featureLikelihoods.keySet()) {
 			super.get_logger().log(Level.INFO, String.format("Likelihood of %s is %s", f, featureLikelihoods.get(f)));
 		}
 	}
 
 	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex){
-		//p(y|z)p(y)p(x|z)  / p(y|z)
+		//p(x|clas, y)
 		try{
 		HashMap<String, Double> xlikelihoods = likelihoods.get(xfeatureIndex);
 		Double classprior = classPriors.get(clas);
-		HashMap<String, Double> ylikelihoods = likelihoods.get(yfeatureIndex);
 		String xgivenclass = x+"|"+clas;
 		String ygivenx = y+"|"+x;
 		double mult = xlikelihoods.get(xgivenclass);
-		mult = mult*ylikelihoods.get(ygivenx);
+		mult = mult*featureLikelihoods.get(ygivenx);
 		mult = mult*classprior;
 		return mult;
 		}
@@ -323,26 +338,25 @@ public class TreeAugNB extends Algorithm {
 		}
 	}
 
-
 	public static void main(String[] args) {
 
 		ArrayList testData = new ArrayList<Arrays>();
-		testData.add(new String[]{"Rainy", "Mild", "High", "Weak", "Yes"});
-		testData.add(new String[]{"Rainy", "Cool", "Normal", "Weak", "Yes"});
-		testData.add(new String[]{"Overcast", "Hot", "High", "Weak", "Yes"});
-		testData.add(new String[]{"Sunny", "Hot", "High", "Weak", "No"});
-		testData.add(new String[]{"Sunny", "Hot", "High", "Strong", "No"});
-		testData.add(new String[]{"Sunny", "Mild", "High", "Weak", "No"});
-		testData.add(new String[]{"Overcast", "Cool", "Normal", "Strong", "Yes"});
-		testData.add(new String[]{"Rainy", "Cool", "Normal", "Strong", "No"});
-		testData.add(new String[]{"Rainy", "Mild", "Normal", "Weak", "Yes"});
-		testData.add(new String[]{"Sunny", "Cool", "Normal", "Weak", "Yes"});
-		testData.add(new String[]{"Rainy", "Mild", "High", "Strong", "No"});
-		testData.add(new String[]{"Overcast", "Mild", "High", "Strong", "Yes"});
-		testData.add(new String[]{"Overcast", "Hot", "Normal", "Weak", "Yes"});
-		testData.add(new String[]{"Sunny", "Mild", "Normal", "Strong", "Yes"});
+		testData.add(new String[] { "Rainy", "Mild", "High", "Weak", "Yes" });
+		testData.add(new String[] { "Rainy", "Cool", "Normal", "Weak", "Yes" });
+		testData.add(new String[] { "Overcast", "Hot", "High", "Weak", "Yes" });
+		testData.add(new String[] { "Sunny", "Hot", "High", "Weak", "No" });
+		testData.add(new String[] { "Sunny", "Hot", "High", "Strong", "No" });
+		testData.add(new String[] { "Sunny", "Mild", "High", "Weak", "No" });
+		testData.add(new String[] { "Overcast", "Cool", "Normal", "Strong", "Yes" });
+		testData.add(new String[] { "Rainy", "Cool", "Normal", "Strong", "No" });
+		testData.add(new String[] { "Rainy", "Mild", "Normal", "Weak", "Yes" });
+		testData.add(new String[] { "Sunny", "Cool", "Normal", "Weak", "Yes" });
+		testData.add(new String[] { "Rainy", "Mild", "High", "Strong", "No" });
+		testData.add(new String[] { "Overcast", "Mild", "High", "Strong", "Yes" });
+		testData.add(new String[] { "Overcast", "Hot", "Normal", "Weak", "Yes" });
+		testData.add(new String[] { "Sunny", "Mild", "Normal", "Strong", "Yes" });
 
-		String[] test = new String[]{"Sunny", "Mild", "Normal", "Strong", "Yes"};
+		String[] test = new String[] { "Sunny", "Mild", "Normal", "Strong", "Yes" };
 		ArrayList<String[]> testit = new ArrayList<>();
 		testit.add(test);
 		TreeAugNB tan = new TreeAugNB("Dummy data", testData, testit);
