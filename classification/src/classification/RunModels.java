@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import javax.swing.JButton;
@@ -170,20 +171,133 @@ public class RunModels {
     	    Algorithm nb10 = new NaiveBayes(shortName, test5, train5);
     		String s10 = shortName + "_nb_5_test2";
     	    results.put(s10, nb10.getResults());
+    	    
+    	    //Training error
+    	    Algorithm nb11 = new NaiveBayes(shortName, train1, train1);
+    		String s11 = shortName + "_nb_1_train";
+    	    results.put(s11, nb11.getResults());
+    	    Algorithm nb12 = new NaiveBayes(shortName, train2, train2);
+    		String s12 = shortName + "_nb_2_train";
+    	    results.put(s12, nb12.getResults());
+    	    Algorithm nb13 = new NaiveBayes(shortName, train3, train3);
+    		String s13 = shortName + "_nb_3_train";
+    	    results.put(s13, nb13.getResults());
+    	    Algorithm nb14 = new NaiveBayes(shortName, train4, train4);
+    		String s14 = shortName + "_nb_4_train";
+    	    results.put(s14, nb14.getResults());
+    	    Algorithm nb15 = new NaiveBayes(shortName, train5, train5);
+    		String s15 = shortName + "_nb_5_train";
+    	    results.put(s15, nb15.getResults());
 			System.out.println("Naive Bayes has finished running.");
     	} else if (choice.equals("tan")){
     		System.out.println("Classifying data using tree-augmented naive Bayes"); 
     		Algorithm tan = new TreeAugNB(shortName, train1, test1); 
+    		String s1 = shortName + "_tan_1_test1";
+    	    results.put(s1, tan.getResults());
+    	    Algorithm tan2 = new TreeAugNB(shortName, test1, train1); 
+    		String s2 = shortName + "_tan_1_test2";
+    	    results.put(s2, tan2.getResults());
+    	    Algorithm tan3 = new TreeAugNB(shortName, train2, test2); 
+    		String s3 = shortName + "_tan_2_test1";
+    	    results.put(s3, tan3.getResults());
+    	    Algorithm tan4 = new TreeAugNB(shortName, test2, train2); 
+    		String s4 = shortName + "_tan_2_test2";
+    	    results.put(s4, tan4.getResults());
+    	    Algorithm tan5 = new TreeAugNB(shortName, train3, test3); 
+    		String s5 = shortName + "_tan_3_test1";
+    	    results.put(s5, tan5.getResults());
+    	    Algorithm tan6 = new TreeAugNB(shortName, test3, train3); 
+    		String s6 = shortName + "_tan_3_test2";
+    	    results.put(s6, tan6.getResults());
+    	    Algorithm tan7 = new TreeAugNB(shortName, train4, test4); 
+    		String s7 = shortName + "_tan_4_test1";
+    	    results.put(s7, tan7.getResults());
+    	    Algorithm tan8 = new TreeAugNB(shortName, test4, train4); 
+    		String s8 = shortName + "_tan_4_test2";
+    	    results.put(s8, tan8.getResults());
+    	    Algorithm tan9 = new TreeAugNB(shortName, train5, test5); 
+    		String s9 = shortName + "_tan_5_test1";
+    	    results.put(s9, tan9.getResults());
+    	    Algorithm tan10 = new TreeAugNB(shortName, test5, train5); 
+    		String s10 = shortName + "_tan_5_test2";
+    	    results.put(s10, tan10.getResults());
+    	    
+    	    //Training error
+    	    Algorithm tan11 = new TreeAugNB(shortName, train1, train1); 
+    		String s11 = shortName + "_tan_1_train";
+    	    results.put(s11, tan11.getResults());
+    	    Algorithm tan12 = new TreeAugNB(shortName, train2, train2); 
+    		String s12 = shortName + "_tan_2_train";
+    	    results.put(s12, tan12.getResults());
+    	    Algorithm tan13 = new TreeAugNB(shortName, train3, train3); 
+    		String s13 = shortName + "_tan_3_train";
+    	    results.put(s13, tan13.getResults());
+    	    Algorithm tan14 = new TreeAugNB(shortName, train4, train4); 
+    		String s14 = shortName + "_tan_4_train";
+    	    results.put(s14, tan14.getResults());
+    	    Algorithm tan15 = new TreeAugNB(shortName, train5, train5); 
+    		String s15 = shortName + "_tan_5_train";
+    	    results.put(s15, tan15.getResults());
+    	    
+    	    System.out.println("Tree-Augmented Naive Bayes has finished running.");
     	} else if (choice.equals("id3")) {	
     		System.out.println("Classifying data using the Iterative Dichotomiser 3"); 
-    		Algorithm id3 = new DecisionTree(shortName, train1, test1, 0.1);
+    		double valRatio = 0.1;
+    		
+    		Algorithm id = new DecisionTree(shortName, train1, test1, valRatio);
+    		String s1 = shortName + "_id3_1_test1";
+    	    results.put(s1, id.getResults());
+    	    Algorithm id2 = new DecisionTree(shortName, test1, train1, valRatio);
+    		String s2 = shortName + "_id3_1_test2";
+    	    results.put(s2, id2.getResults());
+    	    Algorithm id3 = new DecisionTree(shortName, train2, test2, valRatio);
+    		String s3 = shortName + "_id3_2_test1";
+    	    results.put(s3, id3.getResults());
+    	    Algorithm id4 = new DecisionTree(shortName, test2, train2, valRatio);
+    		String s4 = shortName + "_id3_2_test2";
+    	    results.put(s4, id4.getResults());
+    	    Algorithm id5 = new DecisionTree(shortName, train3, test3, valRatio);
+    		String s5 = shortName + "_id3_3_test1";
+    	    results.put(s5, id5.getResults());
+    	    Algorithm id6 = new DecisionTree(shortName, test3, train3, valRatio);
+    		String s6 = shortName + "_id3_3_test2";
+    	    results.put(s6, id6.getResults());
+    	    Algorithm id7 = new DecisionTree(shortName, train4, test4, valRatio);
+    		String s7 = shortName + "_id3_4_test1";
+    	    results.put(s7, id7.getResults());
+    	    Algorithm id8 = new DecisionTree(shortName, test4, train4, valRatio);
+    		String s8 = shortName + "_id3_4_test2";
+    	    results.put(s8, id8.getResults());
+    	    Algorithm id9 = new DecisionTree(shortName, train5, test5, valRatio);
+    		String s9 = shortName + "_id3_5_test1";
+    	    results.put(s9, id9.getResults());
+    	    Algorithm id10 = new DecisionTree(shortName, test5, train5, valRatio);
+    		String s10 = shortName + "_id3_5_test2";
+    	    results.put(s10, id10.getResults());
+    	    
+    	    //Training error
+    	    Algorithm id11 = new DecisionTree(shortName, train1, train1, valRatio);
+    		String s11 = shortName + "_id3_1_train";
+    	    results.put(s11, id11.getResults());
+    	    Algorithm id12 = new DecisionTree(shortName, train2, train2, valRatio);
+    		String s12 = shortName + "_id3_2_train";
+    	    results.put(s12, id12.getResults());
+    	    Algorithm id13 = new DecisionTree(shortName, train3, train3, valRatio);
+    		String s13 = shortName + "_id3_3_train";
+    	    results.put(s13, id13.getResults());
+    	    Algorithm id14 = new DecisionTree(shortName, train4, train4, valRatio);
+    		String s14 = shortName + "_id3_4_train";
+    	    results.put(s14, id14.getResults());
+    	    Algorithm id15 = new DecisionTree(shortName, train5, train5, valRatio);
+    		String s15 = shortName + "_id3_5_train";
+    	    results.put(s15, id15.getResults());
+    	    System.out.println("Decision Tree has finished running.");
     	} else {
     		// user chose to exit the program or typed their choice incorrectly
     		System.out.println("Exiting program.");
     		in.close();
     		System.exit(0);
     	}
-		
 		// closes the scanner 
 		in.close();
     }
@@ -307,6 +421,17 @@ public class RunModels {
         } else {
             return null;
         }
+    }
+    public static ArrayList<String> arrayhashtostringlist(HashMap<String, ArrayList<Double>> results){
+    	ArrayList<String> output = new ArrayList<String>();
+    	for(Map.Entry<String, ArrayList<Double>> entry : results.entrySet()){
+    		String tempout = entry.getKey();
+    		for(Double e : entry.getValue()){
+    			tempout += "," + e;
+    		}
+    		output.add(tempout);
+    	}
+    	return output;
     }
 }
 
