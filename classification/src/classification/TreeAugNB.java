@@ -166,8 +166,7 @@ public class TreeAugNB extends Algorithm {
 
 		TreeNode root = new BayesTreeNode(); // class node
 		tree = new BayesTree(root);
-		for (int i = 0; i < data.get(0).length - 1; i++) { // -2 because root is
-															// already created
+		for (int i = 0; i < data.get(0).length - 1; i++) { //-1 because root/class already created
 			BayesTreeNode newNode = new BayesTreeNode();
 			newNode.setFeatureIndex(i);
 			tree.addNode(newNode);
