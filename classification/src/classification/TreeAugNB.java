@@ -22,6 +22,7 @@ public class TreeAugNB extends Algorithm {
 	private HashMap<String, Double> featureLikelihoods;
 	private ArrayList<String> predictedClasses;
 	private HashMap<String, Double> posteriors;
+    int classNums;
 	Set<String> valNames = new HashSet<String>();
 
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
@@ -71,26 +72,6 @@ public class TreeAugNB extends Algorithm {
 		maxSpanTree();
 		addTreeEdgesToNode();
 		tree = directEdges((BayesTree) tree, (BayesTreeNode) tree.getRoot());
-		BayesTreeNode clas = new BayesTreeNode();
-		Tree testTree = new BayesTree(clas);
-		BayesTreeNode f1 = new BayesTreeNode();
-		f1.setFeatureIndex(0);
-		testTree.addNode(f1);
-		BayesTreeNode f2 = new BayesTreeNode();
-		f2.setFeatureIndex(1);
-		testTree.addNode(f2);
-		BayesTreeNode f3 = new BayesTreeNode();
-		f3.setFeatureIndex(2);
-		testTree.addNode(f3);
-		BayesTreeNode f4 = new BayesTreeNode();
-		f4.setFeatureIndex(3);
-		testTree.addNode(f4);
-
-		testTree.addEdge(new Edge(f1, f2));
-		testTree.addEdge(new Edge(f2, f3));
-		testTree.addEdge(new Edge(f2, f4));
-
-		tree = testTree;
 
 	}
 
@@ -150,7 +131,34 @@ public class TreeAugNB extends Algorithm {
 	}
 
 	ArrayList<Double> evaluate() {
-		return results;
+
+        // determine classification accuracy, required information - the number of classes for this
+        // dataset, the list of class labels (ArrayList String) as determined by the classifier, and the
+        // testData set (ArrayList String[]) that includes the true class labels.
+        super.get_logger().log(Level.INFO, "");
+        super.get_logger().log(Level.INFO, "Starting evaluation.");
+
+        // after all test set instances have been classified, evaluate the performance of classifier
+        EvaluationMeasures em = new EvaluationMeasures(classNums, predictedClasses, testData);
+        ArrayList<Double> evaluationResults = em.evaluateData();
+
+        double accuracy = evaluationResults.get(0);
+        double precision = evaluationResults.get(1);
+        double recall = evaluationResults.get(2);
+        double fScore = evaluationResults.get(3);
+
+
+        super.get_logger().log(Level.INFO, "######################################");
+        super.get_logger().log(Level.INFO, "RESULTS");
+        super.get_logger().log(Level.INFO, classNums + " class classification problem");
+        super.get_logger().log(Level.INFO, "Results for this fold:");
+        super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);
+        super.get_logger().log(Level.INFO, "Macro Precision: " + precision);
+        super.get_logger().log(Level.INFO, "Macro Recall: " + recall);
+        super.get_logger().log(Level.INFO, "Macro Score: " + fScore);
+        super.get_logger().log(Level.INFO, "######################################");
+
+		return evaluationResults;
 	}
 
 	private void createFullGraph(ArrayList<String[]> data) {
@@ -291,6 +299,7 @@ public class TreeAugNB extends Algorithm {
 		this.togetherness = nb.togetherness;
 		this.valOccurences = nb.valOccurances;
 		this.valNames = nb.valNames;
+        classNums = nb.classFrequencies.size();
 		calculateFeatureLikelihoods();
 	}
 

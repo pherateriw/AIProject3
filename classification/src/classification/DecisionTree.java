@@ -45,8 +45,8 @@ public class DecisionTree extends Algorithm {
 		super.get_logger().log(Level.INFO, "Results for this fold:");
 		super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);
 		super.get_logger().log(Level.INFO, "Macro Precision: " + precision);
-		super.get_logger().log(Level.INFO, "Macro Precision: " + recall);
-		super.get_logger().log(Level.INFO, "Macro Score: " + recall);
+		super.get_logger().log(Level.INFO, "Macro Recalls: " + recall);
+		super.get_logger().log(Level.INFO, "Macro Score: " + fScore);
 		super.get_logger().log(Level.INFO, "######################################");
 		return evaluationResults;
 	}
