@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public abstract class Algorithm {
 
     private static final Logger LOGGER = Logger.getLogger(Algorithm.class.getName());
-
+    
     public Algorithm(){
 
         try {
@@ -44,7 +44,7 @@ public abstract class Algorithm {
     public Logger get_logger(){
         return LOGGER;
     }
-
+    
     abstract void train(ArrayList<String[]> data);
     abstract void test(ArrayList<String[]> data);
 
