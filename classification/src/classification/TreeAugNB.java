@@ -22,7 +22,7 @@ public class TreeAugNB extends Algorithm {
 	private HashMap<String, Double> featureLikelihoods;
 	private ArrayList<String> predictedClasses;
 	private HashMap<String, Double> posteriors;
-    int classNums;
+	int classNums;
 	Set<String> valNames = new HashSet<String>();
 
 	public TreeAugNB(String shortName, ArrayList<String[]> trainData, ArrayList<String[]> testData) {
@@ -94,19 +94,19 @@ public class TreeAugNB extends Algorithm {
 	private String predictSingle(String[] features) {
 		posteriors = new HashMap<>();
 
-		for (String classKey : this.classPriors.keySet()){
+		for (String classKey : this.classPriors.keySet()) {
 			String posteriorKey = classKey;
 			double posterior = 1.0;
-			posterior *= classPriors.get(classKey); //p(c)
+			posterior *= classPriors.get(classKey); // p(c)
 			String firstLikely = "f" + "0:" + features[0] + "|" + classKey;
-			posterior *= (Double) likelihoods.get(0).get(firstLikely); //p(root|c)
+			posterior *= (Double) likelihoods.get(0).get(firstLikely); // p(root|c)
 			ArrayList<Edge> edges = tree.getEdges();
-			for (int i = 0; i< edges.size(); i++){
+			for (int i = 0; i < edges.size(); i++) {
 				Edge e = edges.get(i);
 				String f2 = "f" + e.x.featureIndex + ":" + features[e.x.featureIndex];
 				String f1 = "f" + e.y.featureIndex + ":" + features[e.y.featureIndex];
-				//p(x|clas, y)
-				posterior *= probOfXGivenYandZ(f1, e.y.featureIndex, classKey,  f2, e.x.featureIndex);
+				// p(x|clas, y)
+				posterior *= probOfXGivenYandZ(f1, e.y.featureIndex, classKey, f2, e.x.featureIndex);
 			}
 
 			posteriors.put(posteriorKey, posterior);
@@ -132,31 +132,34 @@ public class TreeAugNB extends Algorithm {
 
 	ArrayList<Double> evaluate() {
 
-        // determine classification accuracy, required information - the number of classes for this
-        // dataset, the list of class labels (ArrayList String) as determined by the classifier, and the
-        // testData set (ArrayList String[]) that includes the true class labels.
-        super.get_logger().log(Level.INFO, "");
-        super.get_logger().log(Level.INFO, "Starting evaluation.");
+		// determine classification accuracy, required information - the number
+		// of classes for this
+		// dataset, the list of class labels (ArrayList String) as determined by
+		// the classifier, and the
+		// testData set (ArrayList String[]) that includes the true class
+		// labels.
+		super.get_logger().log(Level.INFO, "");
+		super.get_logger().log(Level.INFO, "Starting evaluation.");
 
-        // after all test set instances have been classified, evaluate the performance of classifier
-        EvaluationMeasures em = new EvaluationMeasures(classNums, predictedClasses, testData);
-        ArrayList<Double> evaluationResults = em.evaluateData();
+		// after all test set instances have been classified, evaluate the
+		// performance of classifier
+		EvaluationMeasures em = new EvaluationMeasures(classNums, predictedClasses, testData);
+		ArrayList<Double> evaluationResults = em.evaluateData();
 
-        double accuracy = evaluationResults.get(0);
-        double precision = evaluationResults.get(1);
-        double recall = evaluationResults.get(2);
-        double fScore = evaluationResults.get(3);
+		double accuracy = evaluationResults.get(0);
+		double precision = evaluationResults.get(1);
+		double recall = evaluationResults.get(2);
+		double fScore = evaluationResults.get(3);
 
-
-        super.get_logger().log(Level.INFO, "######################################");
-        super.get_logger().log(Level.INFO, "RESULTS");
-        super.get_logger().log(Level.INFO, classNums + " class classification problem");
-        super.get_logger().log(Level.INFO, "Results for this fold:");
-        super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);
-        super.get_logger().log(Level.INFO, "Macro Precision: " + precision);
-        super.get_logger().log(Level.INFO, "Macro Recall: " + recall);
-        super.get_logger().log(Level.INFO, "Macro Score: " + fScore);
-        super.get_logger().log(Level.INFO, "######################################");
+		super.get_logger().log(Level.INFO, "######################################");
+		super.get_logger().log(Level.INFO, "RESULTS");
+		super.get_logger().log(Level.INFO, classNums + " class classification problem");
+		super.get_logger().log(Level.INFO, "Results for this fold:");
+		super.get_logger().log(Level.INFO, "Average Accuracy: " + accuracy);
+		super.get_logger().log(Level.INFO, "Macro Precision: " + precision);
+		super.get_logger().log(Level.INFO, "Macro Recall: " + recall);
+		super.get_logger().log(Level.INFO, "Macro Score: " + fScore);
+		super.get_logger().log(Level.INFO, "######################################");
 
 		return evaluationResults;
 	}
@@ -166,7 +169,9 @@ public class TreeAugNB extends Algorithm {
 
 		TreeNode root = new BayesTreeNode(); // class node
 		tree = new BayesTree(root);
-		for (int i = 0; i < data.get(0).length - 1; i++) { //-1 because root/class already created
+		for (int i = 0; i < data.get(0).length - 1; i++) { // -1 because
+															// root/class
+															// already created
 			BayesTreeNode newNode = new BayesTreeNode();
 			newNode.setFeatureIndex(i);
 			tree.addNode(newNode);
@@ -253,16 +258,19 @@ public class TreeAugNB extends Algorithm {
 		tree.addEdges(newedges);
 	}
 
-	public void addTreeEdgesToNode(){
+	public void addTreeEdgesToNode() {
 		ArrayList<Edge> edges = tree.getEdges();
-		//ArrayList<BayesTreeNode> nodes = (ArrayList<BayesTreeNode>)(ArrayList<?>) tree.getNodes();
-		for(int i = 0; i < tree.getTreeSize(); i++){
-			((BayesTreeNode)tree.getNode(i)).edges = new ArrayList<Edge>();
-			for(Edge e : edges){
-				//System.out.println(e.x.featureIndex + " " + e.y.featureIndex + " " + ((BayesTreeNode)tree.getNode(i)).featureIndex);
-				if(e.x.featureIndex == ((BayesTreeNode)tree.getNode(i)).featureIndex || e.y.featureIndex == ((BayesTreeNode)tree.getNode(i)).featureIndex){
-					//System.out.println("Adding edge to node");
-					((BayesTreeNode)tree.getNode(i)).edges.add(e);
+		// ArrayList<BayesTreeNode> nodes =
+		// (ArrayList<BayesTreeNode>)(ArrayList<?>) tree.getNodes();
+		for (int i = 0; i < tree.getTreeSize(); i++) {
+			((BayesTreeNode) tree.getNode(i)).edges = new ArrayList<Edge>();
+			for (Edge e : edges) {
+				// System.out.println(e.x.featureIndex + " " + e.y.featureIndex
+				// + " " + ((BayesTreeNode)tree.getNode(i)).featureIndex);
+				if (e.x.featureIndex == ((BayesTreeNode) tree.getNode(i)).featureIndex
+						|| e.y.featureIndex == ((BayesTreeNode) tree.getNode(i)).featureIndex) {
+					// System.out.println("Adding edge to node");
+					((BayesTreeNode) tree.getNode(i)).edges.add(e);
 
 				}
 			}
@@ -271,20 +279,24 @@ public class TreeAugNB extends Algorithm {
 
 	private Tree directEdges(BayesTree tree, BayesTreeNode root) {
 		super.get_logger().log(Level.INFO, "Directing edges in tree");
-		for (Edge e : root.edges) {
-			if (e.directed == false) {
-				e.directed = true;
-				BayesTreeNode z = e.y;
-				BayesTreeNode w = e.x;
-				e.x = root;
-				if (e.x.equals(z)) {
-					e.y = w;
-				} else {
-					e.y = z;
-				}
+		if (!root.edges.isEmpty()) {
+			for (Edge e : root.edges) {
+				if (e.directed == false) {
+					e.directed = true;
+					BayesTreeNode z = e.y;
+					BayesTreeNode w = e.x;
+					e.x = root;
+					if (e.x.equals(z)) {
+						e.y = w;
+					} else {
+						e.y = z;
+					}
 
-				((BayesTreeNode) e.y).edges.remove(e);
-				tree = (BayesTree) directEdges(tree, (BayesTreeNode) e.traverseEdge(e.x));
+					((BayesTreeNode) e.y).edges.remove(e);
+					if(!(root.featureIndex == e.y.featureIndex)){
+						tree = (BayesTree) directEdges(tree, (BayesTreeNode) e.y);
+					}
+				}
 			}
 		}
 		return tree;
@@ -298,7 +310,7 @@ public class TreeAugNB extends Algorithm {
 		this.togetherness = nb.togetherness;
 		this.valOccurences = nb.valOccurances;
 		this.valNames = nb.valNames;
-        classNums = nb.classFrequencies.size();
+		classNums = nb.classFrequencies.size();
 		calculateFeatureLikelihoods();
 	}
 
@@ -329,19 +341,18 @@ public class TreeAugNB extends Algorithm {
 		}
 	}
 
-	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex){
-		//p(x|clas, y)
-		try{
-		HashMap<String, Double> xlikelihoods = likelihoods.get(xfeatureIndex);
-		Double classprior = classPriors.get(clas);
-		String xgivenclass = x+"|"+clas;
-		String ygivenx = y+"|"+x;
-		double mult = xlikelihoods.get(xgivenclass);
-		mult = mult*featureLikelihoods.get(ygivenx);
-		mult = mult*classprior;
-		return mult;
-		}
-		catch(Exception e){
+	private double probOfXGivenYandZ(String x, int xfeatureIndex, String clas, String y, int yfeatureIndex) {
+		// p(x|clas, y)
+		try {
+			HashMap<String, Double> xlikelihoods = likelihoods.get(xfeatureIndex);
+			Double classprior = classPriors.get(clas);
+			String xgivenclass = x + "|" + clas;
+			String ygivenx = y + "|" + x;
+			double mult = xlikelihoods.get(xgivenclass);
+			mult = mult * featureLikelihoods.get(ygivenx);
+			mult = mult * classprior;
+			return mult;
+		} catch (Exception e) {
 			return 1.0;
 		}
 	}
