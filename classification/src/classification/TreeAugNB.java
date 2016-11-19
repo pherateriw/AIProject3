@@ -233,9 +233,10 @@ public class TreeAugNB extends Algorithm {
 					both = true;
 				}
 			}
-			if(!both){
+			if(!both && edgecounter < tree.getTreeSize()){
 				//add edge to edges
 				newedges.add(e);
+				edgecounter++;
 			}
 			//find sets with x and y and union them
 			for(TANTreeSet<BayesTreeNode> s : sets){
