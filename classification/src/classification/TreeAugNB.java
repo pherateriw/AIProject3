@@ -193,6 +193,8 @@ public class TreeAugNB extends Algorithm {
 
 	private void maxSpanTree() {
 		super.get_logger().log(Level.INFO, "Creating Max Spanning Tree");
+		//get arraylist of edges
+		ArrayList<Edge> oldedges = tree.getEdges();
 		//new arraylist of edges 
 		ArrayList<Edge> newedges = new ArrayList<Edge>();
 		//new arraylist of sets of nodes
@@ -203,12 +205,25 @@ public class TreeAugNB extends Algorithm {
 			tempset.add((BayesTreeNode)n);
 		}
 		//sort edges in tree
-		
+		Collections.sort(oldedges, new Comparator<Edge>() {
+			public int compare(Edge e1, Edge e2) {
+				// Parse values for to sort by
+				
+				if (e1.weight > e2.weight)
+					return 1; // tells Arrays.sort() that e1 comes after e2
+				else if (e1.weight < e2.weight)
+					return -1; // tells Arrays.sort() that e1 comes before e2
+				else {
+					//e1 and e2 are equal. Arrays.sort() is stable, so thesetwo rows will appear in their original order.
+					return 0;
+				}
+			}
+		});
 		//TODO write sorter for edges!
 		//for each edge in tree until edges.size = |nodes|-1
 		int edgecounter = 0;
 		int index = 0;
-		for(Edge e : tree.getEdges()){
+		for(Edge e : oldedges){
 			//if x and y are not in the same set
 			BayesTreeNode xi = (BayesTreeNode)e.x;
 			BayesTreeNode yi = (BayesTreeNode)e.y;
