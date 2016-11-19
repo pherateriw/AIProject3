@@ -12,6 +12,8 @@ import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import java.io.FileWriter;
+
 
 public class RunModels {
 	private static ArrayList<String[]> data = new ArrayList<String[]>();
@@ -422,6 +424,7 @@ public class RunModels {
             return null;
         }
     }
+
     public static ArrayList<String> arrayhashtostringlist(HashMap<String, ArrayList<Double>> results){
     	ArrayList<String> output = new ArrayList<String>();
     	for(Map.Entry<String, ArrayList<Double>> entry : results.entrySet()){
@@ -433,6 +436,16 @@ public class RunModels {
     	}
     	return output;
     }
+
+    public static void writeResults(ArrayList<String> results) throws IOException {
+			FileWriter writer = new FileWriter("results.txt");
+			for (String str : results) {
+				writer.write(str + "\n");
+			}
+			writer.close();
+	}
+
+
 }
 
 
