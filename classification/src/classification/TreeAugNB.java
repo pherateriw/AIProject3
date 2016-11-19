@@ -33,7 +33,7 @@ public class TreeAugNB extends Algorithm {
 		super.get_logger().log(Level.INFO, "");
 		train(trainData);
 		test(testData);
-		evaluate();
+		results = evaluate();
 
 	}
 
@@ -151,8 +151,8 @@ public class TreeAugNB extends Algorithm {
 
 	}
 
-	void evaluate() {
-
+	ArrayList<Double> evaluate() {
+		return results;
 	}
 
 	private void createFullGraph(ArrayList<String[]> data) {

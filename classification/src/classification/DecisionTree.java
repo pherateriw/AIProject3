@@ -12,6 +12,7 @@ public class DecisionTree extends Algorithm {
 	ArrayList<String> classlabels;
 	EvaluationMeasures error;
 	ArrayList<String> predictedClasses;
+	public ArrayList<Double> results;
 
 	public DecisionTree(String dataName, ArrayList<String[]> trainset, ArrayList<String[]> testset, double valratio) {
 		super.get_logger().log(Level.INFO, "Decision Tree Algorithm created.");
@@ -21,10 +22,10 @@ public class DecisionTree extends Algorithm {
 		this.valratio = valratio;
 		train(trainset);
 		test(testset);
-		evaluate(testset);
+		results = evaluate(testset);
 	}
 
-	private void evaluate(ArrayList<String[]> testData){
+	private ArrayList<Double> evaluate(ArrayList<String[]> testData){
 		super.get_logger().log(Level.INFO, "");
 		super.get_logger().log(Level.INFO, "Starting evaluation.");
 
@@ -47,6 +48,7 @@ public class DecisionTree extends Algorithm {
 		super.get_logger().log(Level.INFO, "Macro Precision: " + recall);
 		super.get_logger().log(Level.INFO, "Macro Score: " + recall);
 		super.get_logger().log(Level.INFO, "######################################");
+		return evaluationResults;
 	}
 	
 	void test(ArrayList<String[]> data) {

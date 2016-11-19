@@ -7,8 +7,10 @@ import java.util.ArrayList;
 public abstract class Algorithm {
 
     private static final Logger LOGGER = Logger.getLogger(Algorithm.class.getName());
+    public ArrayList<Double> results;
     
-    public Algorithm(){
+
+	public Algorithm(){
 
         try {
 
@@ -44,7 +46,10 @@ public abstract class Algorithm {
     public Logger get_logger(){
         return LOGGER;
     }
-    
+    public ArrayList<Double> getResults() {
+		return results;
+	}
+
     abstract void train(ArrayList<String[]> data);
     abstract void test(ArrayList<String[]> data);
 

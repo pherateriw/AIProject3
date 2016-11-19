@@ -34,7 +34,7 @@ public class NaiveBayes extends Algorithm {
         this.testData = testData;
         train(trainData);
         test(testData);
-        evaluate();
+        results = evaluate();
     }
 
     public NaiveBayes(ArrayList trainData){
@@ -243,7 +243,7 @@ public class NaiveBayes extends Algorithm {
         super.get_logger().log(Level.INFO, "Done testing");
     }
 
-    public void evaluate() {
+    public ArrayList<Double> evaluate() {
 
         // determine classification accuracy, required information - the number of classes for this
         // dataset, the list of class labels (ArrayList String) as determined by the classifier, and the
@@ -271,7 +271,7 @@ public class NaiveBayes extends Algorithm {
         super.get_logger().log(Level.INFO, "Macro Score: " + recall);
         super.get_logger().log(Level.INFO, "######################################");
 
-
+        return evaluationResults;
     }
 
 
