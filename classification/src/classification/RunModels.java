@@ -139,7 +139,8 @@ public class RunModels {
     		
     		System.out.println("k-NN has finished running.");
     		// split data, train on B and test on A
-    		
+    		ArrayList<String> output = arrayhashtostringlist(results);
+    		writeResults(output);
     	} else if (choice.equals("nb")) {	
     		System.out.println("Classifying data using Naive Bayes");
     		
@@ -191,6 +192,8 @@ public class RunModels {
     		String s15 = shortName + "_nb_5_train";
     	    results.put(s15, nb15.getResults());
 			System.out.println("Naive Bayes has finished running.");
+			ArrayList<String> output = arrayhashtostringlist(results);
+			writeResults(output);
     	} else if (choice.equals("tan")){
     		System.out.println("Classifying data using tree-augmented naive Bayes"); 
     		Algorithm tan = new TreeAugNB(shortName, train1, test1); 
@@ -242,6 +245,8 @@ public class RunModels {
     	    results.put(s15, tan15.getResults());
     	    
     	    System.out.println("Tree-Augmented Naive Bayes has finished running.");
+    	    ArrayList<String> output = arrayhashtostringlist(results);
+    		writeResults(output);
     	} else if (choice.equals("id3")) {	
     		System.out.println("Classifying data using the Iterative Dichotomiser 3"); 
     		double valRatio = 0.1;
@@ -294,6 +299,8 @@ public class RunModels {
     		String s15 = shortName + "_id3_5_train";
     	    results.put(s15, id15.getResults());
     	    System.out.println("Decision Tree has finished running.");
+    	    ArrayList<String> output = arrayhashtostringlist(results);
+    		writeResults(output);
     	} else {
     		// user chose to exit the program or typed their choice incorrectly
     		System.out.println("Exiting program.");
@@ -302,6 +309,7 @@ public class RunModels {
     	}
 		// closes the scanner 
 		in.close();
+		
     }
 
 
@@ -425,9 +433,9 @@ public class RunModels {
         }
     }
 
-    public static ArrayList<String> arrayhashtostringlist(HashMap<String, ArrayList<Double>> results){
+    public static ArrayList<String> arrayhashtostringlist(HashMap<String, ArrayList<Double>> res){
     	ArrayList<String> output = new ArrayList<String>();
-    	for(Map.Entry<String, ArrayList<Double>> entry : results.entrySet()){
+    	for(Map.Entry<String, ArrayList<Double>> entry : res.entrySet()){
     		String tempout = entry.getKey();
     		for(Double e : entry.getValue()){
     			tempout += "," + e;

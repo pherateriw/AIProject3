@@ -12,7 +12,7 @@ public class DecisionTree extends Algorithm {
 	ArrayList<String> classlabels;
 	EvaluationMeasures error;
 	ArrayList<String> predictedClasses;
-	public ArrayList<Double> results;
+	//public ArrayList<Double> results;
 
 	public DecisionTree(String dataName, ArrayList<String[]> trainset, ArrayList<String[]> testset, double valratio) {
 		super.get_logger().log(Level.INFO, "Decision Tree Algorithm created.");
@@ -48,6 +48,7 @@ public class DecisionTree extends Algorithm {
 		super.get_logger().log(Level.INFO, "Macro Recalls: " + recall);
 		super.get_logger().log(Level.INFO, "Macro Score: " + fScore);
 		super.get_logger().log(Level.INFO, "######################################");
+		
 		return evaluationResults;
 	}
 	
