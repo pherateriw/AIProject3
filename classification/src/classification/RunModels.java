@@ -102,8 +102,8 @@ public class RunModels {
     		// train on S1, test on S2
     		// test on S1, train on S2
     		// repeat 5 times, averaging over all folds
-    		//TODO: tune k
-    		int k = 7; 
+    		// selected k = 5 after running a series of tuning experiments
+    		int k = 5; 
     		
     		// TODO: for experiments set up 5 x 2 cross val, average across fold for all
     		Algorithm knn = new KNearestNeighbor(shortName, train1, test1, k);
