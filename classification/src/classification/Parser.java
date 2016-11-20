@@ -85,8 +85,9 @@ public class Parser {
 		// call the data discretizer to handle continuous variables (if
 		// necessary)
 		if (dataDiscretization == true) {
-
-			int r = 3;// TODO tune this!
+			// for soy use 8 (2c)
+			// for glass use 12 (2c)
+			int r = 8;
 			for (int i = 0; i < data.get(0).length - 1; i++) {
 				DataDiscretizer dd = new DataDiscretizer(data, i, r);
 				data = dd.discretize();
