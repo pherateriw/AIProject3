@@ -1,0 +1,15 @@
+soybean-small_nb_4_test2,4.0,1.0,1.0,1.0
+soybean-small_nb_4_test1,3.894736842105263,0.9583333333333334,0.9583333333333334,0.9583333333333334
+soybean-small_nb_5_train,4.0,1.0,1.0,1.0
+soybean-small_nb_3_train,4.0,1.0,1.0,1.0
+soybean-small_nb_2_test1,4.0,1.0,1.0,1.0
+soybean-small_nb_5_test1,4.0,1.0,1.0,1.0
+soybean-small_nb_5_test2,3.5384615384615383,0.6346153846153846,0.75,0.6875
+soybean-small_nb_4_train,4.0,1.0,1.0,1.0
+soybean-small_nb_1_test2,3.9130434782608696,0.9642857142857143,0.9642857142857143,0.9642857142857143
+soybean-small_nb_1_test1,4.0,1.0,1.0,1.0
+soybean-small_nb_1_train,4.0,1.0,1.0,1.0
+soybean-small_nb_2_train,4.0,1.0,1.0,1.0
+soybean-small_nb_2_test2,3.8260869565217392,0.9270833333333334,0.9166666666666667,0.9218455743879473
+soybean-small_nb_3_test1,3.92,0.96875,0.96875,0.96875
+soybean-small_nb_3_test2,4.0,1.0,1.0,1.0
