@@ -108,7 +108,7 @@ public class NaiveBayes extends Algorithm {
         double allPredPrior = 1.0; //p(X) = p(x1)*p(x2)...*p(xn)
 
         for (int i = 0; i < testEx.length; i++) {
-            String featureKey = testEx[i];
+            String featureKey = "f" + i +":" + testEx[i];
             HashMap<String, Double> thisFeatureLikelihood = this.likelihoods.get(i);
             HashMap<String, Double> thisPredictorPrior = this.predictorPriors.get(i);
 
@@ -128,9 +128,13 @@ public class NaiveBayes extends Algorithm {
                     }
                 }
             }
-
-            //multiple all predictors
-            allPredPrior *= thisPredictorPrior.get(featureKey);
+            try {
+                //multiple all predictors
+                allPredPrior *= thisPredictorPrior.get(featureKey);
+            }catch (Exception e){
+                //missing value because of folded data set
+                allPredPrior *= .001;
+            }
         }
 
         //multiply by classPriors then divide by all predictorPriors
