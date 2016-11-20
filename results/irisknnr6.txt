@@ -1,0 +1,10 @@
+soybean-smallknn_3_test2,4.0,1.0,1.0,1.0
+soybean-smallknn_3_test1,4.0,1.0,1.0,1.0
+soybean-small_knn_1_test1,4.0,1.0,1.0,1.0
+soybean-smallknn_2_test1,3.666666666666667,0.875,0.9090909090909091,0.8917197452229298
+soybean-smallknn_4_test2,3.642857142857143,0.8677884615384616,0.7916666666666667,0.8279816513761469
+soybean-smallknn_4_test1,4.0,1.0,1.0,1.0
+soybean-smallknn_1_test2,4.0,1.0,1.0,1.0
+soybean-smallknn_2_test2,4.0,1.0,1.0,1.0
+soybean-smallknn_5_test1,4.0,1.0,1.0,1.0
+soybean-smallknn_5_test2,3.6923076923076925,0.9,0.8571428571428572,0.8780487804878049
