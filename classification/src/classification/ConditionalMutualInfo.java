@@ -56,7 +56,7 @@ public class ConditionalMutualInfo {
 		
 		int vCount = 0; 
 		double vProb = 0.0;
-		double vCim = 0.0;
+		double cmi = 0.0;
 		
 		// goes through each class value
 		for (int v = 0; v < classVals.size(); v++) {
@@ -67,9 +67,11 @@ public class ConditionalMutualInfo {
 			
 			int aiVCount = 0; 
 			double aiVProb = 0.0;
-			double aiCim = 0.0;
 			
+				
 			for (int i = 0; i < aiVals.size(); i++) {								
+				aiVCount = countPofAIV(classLoc, aiLoc, v , i);
+				aiVProb = (double) aiVCount / trainData.size();	
 				
 				int ajVCount = 0; 
 				double ajVProb = 0.0;
@@ -101,20 +103,18 @@ public class ConditionalMutualInfo {
 					double product = aiajVProb * ajVProb * vProb * log;
 					
 					//System.out.println(product);
-					ajCim += product;
+					cmi += product;
 				}
 				
-				aiCim += ajCim;
+				cmi += cmi;
 				
 			} 
 			
-			vCim += aiCim;
+			cmi += cmi;
 			
 		} // end for: calculated all necessary probabilities
-		
-		double cim = vCim;
 				
-		return cim;
+		return cmi;
 	}
 	
 	// gets the number of times p is found in the training data
