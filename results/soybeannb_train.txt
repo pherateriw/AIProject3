@@ -1,0 +1,5 @@
+soybean-small_nb_5_train,4.0,1.0,1.0,1.0
+soybean-small_nb_3_train,4.0,1.0,1.0,1.0
+soybean-small_nb_4_train,4.0,1.0,1.0,1.0
+soybean-small_nb_1_train,4.0,1.0,1.0,1.0
+soybean-small_nb_2_train,4.0,1.0,1.0,1.0
